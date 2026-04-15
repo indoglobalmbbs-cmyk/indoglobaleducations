@@ -1,14 +1,19 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { logo } from '../../assets/images';
-import { FaBarsStaggered } from 'react-icons/fa6';
-import { FaChevronDown } from 'react-icons/fa6';
+import { FaBarsStaggered, FaChevronDown } from 'react-icons/fa6';
 import { FaTimesCircle } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+
+  const updates = [
+    'Admissions open for Fall 2026!',
+    'New partnership with UK Universities announced.',
+    'Join our webinar on Global Education trends this Friday.',
+  ];
 
   return (
     <header className="bg-primary-light text-primary p-4">
@@ -42,7 +47,7 @@ const Navbar = () => {
                 Indo Global
               </span>
             </div>
-            <div className="h-[1px] w-full bg-primary" />
+            <div className="h-0.5 w-full bg-primary" />
           </li>
           <li>
             <Link
@@ -91,7 +96,7 @@ const Navbar = () => {
           >
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="relative group hover:text-accent transition-colors flex items-center gap-1 w-full text-left pb-1"
+              className="relative group hover:text-accent transition-colors flex items-center gap-1 text-left pb-1"
             >
               Resources
               <FaChevronDown
@@ -143,7 +148,7 @@ const Navbar = () => {
           >
             <button
               onClick={() => setIsGalleryOpen(!isGalleryOpen)}
-              className="relative group hover:text-accent transition-colors flex items-center gap-1 w-full text-left pb-1"
+              className="relative group hover:text-accent transition-colors flex items-center gap-1 text-left pb-1"
             >
               Gallery
               <FaChevronDown
@@ -182,13 +187,27 @@ const Navbar = () => {
             <Link
               to="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className="hover:text-accent transition-colors"
+              className="relative group hover:text-accent transition-colors pb-1"
             >
               Contact Us
+              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </li>
         </ul>
       </nav>
+      <div className="bg-primary text-white py-2 rounded-ss-2xl rounded-ee-2xl overflow-hidden relative marquee-mask">
+        <div className="flex whitespace-nowrap animate-marquee">
+          {[...updates, ...updates].map((update, index) => (
+            <span
+              key={index}
+              className="mx-10 text-sm font-medium flex items-center"
+            >
+              <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
+              {update}
+            </span>
+          ))}
+        </div>
+      </div>
       {isMenuOpen && (
         <div
           className="fixed inset-0 bg-primary-light opacity-50 md:hidden z-30"

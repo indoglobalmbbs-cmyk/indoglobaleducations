@@ -1,5 +1,14 @@
 @import 'tailwindcss';
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @theme {
   --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
 
@@ -16,6 +25,8 @@
   --color-warning: #f97316;
   --color-error: #ef4444;
   --color-info: #0ea5e9;
+
+  --animate-marquee: marquee 30s linear infinite;
 }
 
 body {
@@ -23,4 +34,13 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.animate-marquee {
+  animation: var(--animate-marquee);
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

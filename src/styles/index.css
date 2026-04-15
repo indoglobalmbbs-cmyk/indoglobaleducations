@@ -1,20 +1,17 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
-  --background-image-login: url('../assets/images/LoginBg.jpg');
 
-  --color-primary: #96b8fa;
-  --color-secondary: #6366f1;
-  --color-primary-light: #dce8ff;
-
-  --color-primary-dark: #6a9ef6;
-  --color-accent: #f59e0b;
-  --color-background: #f5f5f5;
+  --color-primary: #1a428a;
+  --color-accent: #ff8c00;
+  --color-primary-light: #e8effd;
+  --color-background: #f9fafb;
   --color-surface: #ffffff;
-  --color-border: #e5e7eb;
   --color-text: #111827;
-  --color-text-muted: #6b7280;
+  --color-text-muted: #4b5563;
+
+  --color-secondary: #3b5d9a;
   --color-success: #22c55e;
   --color-warning: #f97316;
   --color-error: #ef4444;

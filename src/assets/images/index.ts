@@ -4,5 +4,26 @@ import banner2 from './banner2.jpeg';
 import banner3 from './banner3.jpeg';
 import banner4 from './banner4.jpeg';
 import banner5 from './banner5.jpeg';
+import banner6 from './banner6.jpeg';
+import banner7 from './banner7.jpeg';
+import banner8 from './banner8.jpeg';
+import banner9 from './banner9.jpeg';
+import banner10 from './banner10.jpeg';
+import banner11 from './banner11.jpeg';
+import banner12 from './banner12.jpeg';
 
-export { logo, banner1, banner2, banner3, banner4, banner5 };
+export {
+  logo,
+  banner1,
+  banner2,
+  banner3,
+  banner4,
+  banner5,
+  banner6,
+  banner7,
+  banner8,
+  banner9,
+  banner10,
+  banner11,
+  banner12,
+};

@@ -26,7 +26,7 @@
   --color-error: #ef4444;
   --color-info: #0ea5e9;
 
-  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee: marquee 15s linear infinite;
 }
 
 body {
@@ -43,4 +43,30 @@ body {
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+.swiper-pagination {
+  bottom: 30px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: white !important;
+  opacity: 0.5 !important;
+  margin: 0 6px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border-radius: 99px !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 35px !important;
+  opacity: 1 !important;
+  background: var(--color-accent) !important;
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+}
+
+.swiper-pagination-bullet:hover {
+  opacity: 0.8 !important;
+  transform: scale(1.2);
 }

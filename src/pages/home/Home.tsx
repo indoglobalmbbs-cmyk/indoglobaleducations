@@ -3,10 +3,6 @@ import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { FaCircleChevronRight } from 'react-icons/fa6';
 import { FaChevronCircleLeft } from 'react-icons/fa';
 import { slides } from '../../data/slideData';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
 
 const Home = () => {
   return (

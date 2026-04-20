@@ -8,9 +8,9 @@ import banner6 from './banner6.jpeg';
 import banner7 from './banner7.jpeg';
 import banner8 from './banner8.jpeg';
 import banner9 from './banner9.jpeg';
-import banner10 from './banner10.jpeg';
-import banner11 from './banner11.jpeg';
-import banner12 from './banner12.jpeg';
+import russia from './russia.jpeg';
+import armenia from './armenia.jpeg';
+import georgia from './georgia.jpeg';
 
 export {
   logo,
@@ -23,7 +23,7 @@ export {
   banner7,
   banner8,
   banner9,
-  banner10,
-  banner11,
-  banner12,
+  russia,
+  armenia,
+  georgia,
 };

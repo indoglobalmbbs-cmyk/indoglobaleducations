@@ -15,4 +15,12 @@ export const armeniaUniversities = [
     label: 'Haybusak Medical University',
     path: '/haybusakMedicalUniversity',
   },
+  {
+    label: 'University of Traditional Medicine',
+    path: '/universityTraditionalMedicine',
+  },
+  {
+    label: 'Armenian Medical Institute',
+    path: '/armenianMedicalInstitute',
+  },
 ];

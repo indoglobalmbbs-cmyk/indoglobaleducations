@@ -17,6 +17,7 @@ import {
   FaPhoneAlt,
 } from 'react-icons/fa';
 import Submenu from '../../components/Submenu';
+import { admissionUpdates } from '../../data/updates';
 import { russiaUniversities } from '../../data/russiaUniversities';
 import { armeniaUniversities } from '../../data/armeniaUniversities';
 import { georgiaUniversities } from '../../data/georgiaUniversities';
@@ -25,16 +26,11 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUnivOpen, setIsUnivOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [isRussiaOpen, setIsRussiaOpen] = useState(false);
   const [isArmeniaOpen, setIsArmeniaOpen] = useState(false);
   const [isGeorgiaOpen, setIsGeorgiaOpen] = useState(false);
-
-  const updates = [
-    'Admissions open for Fall 2026!',
-    'New partnership with UK Universities announced.',
-    'Join our webinar on Global Education trends this Friday.',
-  ];
+  const [isCountriesOpen, setIsCountriesOpen] = useState(false);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   return (
     <header className="bg-primary-light text-primary p-4">
@@ -244,16 +240,72 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-          <li>
-            <Link
-              to="/countries"
-              onClick={() => setIsMenuOpen(false)}
-              className="relative group hover:text-accent transition-colors pb-1"
+          <li
+            className="relative group"
+            onMouseEnter={() => setIsCountriesOpen(true)}
+            onMouseLeave={() => setIsCountriesOpen(false)}
+          >
+            <button
+              onClick={() => setIsCountriesOpen(!isCountriesOpen)}
+              className="relative group hover:text-accent transition-colors flex items-center gap-1 text-left pb-1"
             >
               Countries
+              <FaChevronDown
+                className={`text-md transition-transform duration-200 ${
+                  isCountriesOpen ? 'rotate-180' : 'rotate-0'
+                }`}
+              />
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+            </button>
+            <ul
+              className={`md:absolute left-0 mt-2 w-44 bg-primary-light text-primary rounded-lg shadow-lg overflow-hidden transition-all duration-200 ${
+                isCountriesOpen
+                  ? 'block opacity-100'
+                  : 'hidden md:block md:opacity-0 md:invisible'
+              }`}
+            >
+              <li>
+                <Link
+                  to="/russia"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsCountriesOpen(false);
+                  }}
+                  className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
+                >
+                  <span className="relative z-10">Russia</span>
+                  <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/armenia"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsCountriesOpen(false);
+                  }}
+                  className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
+                >
+                  <span className="relative z-10">Armenia</span>
+                  <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/georgia"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsCountriesOpen(false);
+                  }}
+                  className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
+                >
+                  <span className="relative z-10">Georgia</span>
+                  <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
+                </Link>
+              </li>
+            </ul>
           </li>
+
           <li
             className="relative group"
             onMouseEnter={() => setIsOpen(true)}
@@ -374,7 +426,7 @@ const Navbar = () => {
       </nav>
       <div className="bg-primary text-white py-2 rounded-ss-2xl rounded-ee-2xl overflow-hidden relative marquee-mask">
         <div className="flex whitespace-nowrap animate-marquee">
-          {[...updates, ...updates].map((update, index) => (
+          {[...admissionUpdates, ...admissionUpdates].map((update, index) => (
             <span
               key={index}
               className="mx-10 text-sm font-medium flex items-center"

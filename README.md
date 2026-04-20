@@ -11,3 +11,7 @@
    To Visit App:
 
    `localhost:3000`
+
+   Icon in nevbar
+   scrole ball
+   scrool good ui

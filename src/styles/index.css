@@ -17,14 +17,13 @@
   --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
 
   --color-primary: #1a428a;
+  --color-secondary: #3b5d9a;
   --color-accent: #ff8c00;
   --color-primary-light: #e8effd;
   --color-background: #f9fafb;
   --color-surface: #ffffff;
   --color-text: #111827;
   --color-text-muted: #4b5563;
-
-  --color-secondary: #3b5d9a;
   --color-success: #22c55e;
   --color-warning: #f97316;
   --color-error: #ef4444;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { logo } from '../../assets/images';
 import {
   FaBarsStaggered,
@@ -23,6 +23,7 @@ import { armeniaUniversities } from '../../data/armeniaUniversities';
 import { georgiaUniversities } from '../../data/georgiaUniversities';
 
 const Navbar = () => {
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUnivOpen, setIsUnivOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -32,8 +33,23 @@ const Navbar = () => {
   const [isCountriesOpen, setIsCountriesOpen] = useState(false);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
+  const getPageTitle = () => {
+    if (location.pathname === '/russia') return 'MBBS in Russia';
+    if (location.pathname === '/armenia') return 'MBBS in Armenia';
+    if (location.pathname === '/georgia') return 'MBBS in Georgia';
+    return null;
+  };
+  const pageTitle = getPageTitle();
+
   return (
-    <header className="bg-primary-light text-primary p-4">
+    <header className="sticky top-0 z-[100] bg-primary-light text-primary p-4">
+      {pageTitle && (
+        <div className="w-full text-center pb-2">
+          <h1 className="text-lg font-bold tracking-[0.2em] text-primary">
+            {pageTitle}
+          </h1>
+        </div>
+      )}
       <div className="bg-primary text-white py-1 rounded-ss-2xl rounded-ee-2xl px-4 flex flex-wrap justify-between items-center relative">
         <div className="flex items-center gap-4 sm:gap-6">
           <a
@@ -305,7 +321,6 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-
           <li
             className="relative group"
             onMouseEnter={() => setIsOpen(true)}

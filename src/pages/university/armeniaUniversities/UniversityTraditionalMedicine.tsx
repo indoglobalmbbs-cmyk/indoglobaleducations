@@ -1021,7 +1021,6 @@ const UniversityTraditionalMedicine = () => {
                   global career.
                 </p>
               </div>
-
               <div className="p-6 bg-accent text-primary rounded-2xl shadow-xl flex flex-col justify-center text-center">
                 <div className="text-3xl font-bold">100s</div>
                 <p className="text-xs font-bold uppercase tracking-wider">

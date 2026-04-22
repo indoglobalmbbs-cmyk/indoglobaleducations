@@ -637,7 +637,7 @@ const EuropeanMedicalUniversity = () => {
           </div>
         </div>
       </section>
-      <section className="py-16 px-4 bg-primary-light">
+      <section className="py-10 px-4 bg-primary-light">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <div className="text-3xl font-bold text-primary mb-4">
@@ -794,9 +794,7 @@ const EuropeanMedicalUniversity = () => {
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
           </div>
-
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* Cost of Living */}
             <div className="bg-surface p-8 rounded-2xl shadow-sm border border-gray-100">
               <div className="text-primary text-4xl mb-4">💰</div>
               <h4 className="text-xl font-bold text-primary mb-2">
@@ -1023,7 +1021,6 @@ const EuropeanMedicalUniversity = () => {
                   global career.
                 </p>
               </div>
-
               <div className="p-6 bg-accent text-primary rounded-2xl shadow-xl flex flex-col justify-center text-center">
                 <div className="text-3xl font-bold">100s</div>
                 <p className="text-xs font-bold uppercase tracking-wider">

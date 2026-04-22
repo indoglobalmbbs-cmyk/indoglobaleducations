@@ -121,18 +121,24 @@ const Navbar = () => {
           className="md:hidden text-xl z-50"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? <FaTimesCircle /> : <FaBarsStaggered />}
+          {isMenuOpen ? null : <FaBarsStaggered />}
         </button>
         <ul
-          className={`fixed md:static top-0 right-0 h-screen md:h-auto w-70 md:w-auto bg-primary-light md:bg-transparent flex flex-col md:flex-row gap-4 md:gap-6 font-medium px-4 md:px-0 pt-19 md:pt-0 whitespace-nowrap transition-transform duration-300 ease-in-out z-40 ${
+          className={`fixed md:static top-0 right-0 h-screen md:h-auto w-70 md:w-auto bg-primary-light md:bg-transparent flex flex-col md:flex-row gap-4 md:gap-6 font-medium px-4 pt-4 md:pt-0 whitespace-nowrap transition-transform duration-300 ease-in-out z-40 ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full items-center'
           } md:translate-x-0 md:flex`}
         >
-          <li className="md:hidden flex flex-col mt-2">
-            <div className="flex items-center justify-between pb-2">
-              <span className="text-xl font-bold tracking-wider">
+          <li className="md:hidden flex flex-col">
+            <div className="flex items-center justify-between py-2">
+              <span className="text-xl font-bold tracking-wider text-primary">
                 Indo Global Education
               </span>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="text-xl text-primary p-1"
+              >
+                <FaTimesCircle />
+              </button>
             </div>
             <div className="h-0.5 w-full bg-primary" />
           </li>

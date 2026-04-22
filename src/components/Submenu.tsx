@@ -21,7 +21,7 @@ const Submenu = ({
   return (
     <ul
       className={`md:absolute left-full top-0 mt-0 w-max bg-primary-light text-primary 
-      rounded-lg shadow-lg overflow-hidden transition-all duration-200
+      rounded-lg shadow-lg transition-all duration-200 max-h-[35vh] overflow-y-auto custom-scrollbar
       ${
         isOpen
           ? 'block opacity-100'

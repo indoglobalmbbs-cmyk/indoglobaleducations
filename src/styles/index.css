@@ -15,7 +15,6 @@
 
 @theme {
   --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
-
   --color-primary: #1a428a;
   --color-secondary: #3b5d9a;
   --color-accent: #ff8c00;
@@ -28,7 +27,6 @@
   --color-warning: #f97316;
   --color-error: #ef4444;
   --color-info: #0ea5e9;
-
   --animate-marquee: marquee 15s linear infinite;
 }
 

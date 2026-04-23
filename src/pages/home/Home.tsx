@@ -108,7 +108,7 @@ const Home = () => {
                 Consultants
               </h2>
               <p className="text-text-muted text-lg leading-relaxed">
-                Eklavya Overseas is dedicated to bridging the gap between your
+                Indo Global Education Overseas is dedicated to bridging the gap between your
                 dreams and world-class education. We specialize in securing
                 admissions to top-tier universities globally, ensuring a smooth
                 transition for your medical and professional journey.
@@ -153,7 +153,7 @@ const Home = () => {
               Why Study MBBS Abroad?
             </div>
             <p className="text-text-muted text-lg">
-              Eklavya Overseas provides comprehensive support and compelling
+              Indo Global Education Overseas provides comprehensive support and compelling
               reasons to start your medical career at prestigious international
               institutions.
             </p>
@@ -340,19 +340,19 @@ const Home = () => {
             </div>
             <p className="text-text-muted text-lg">
               Real stories from students who achieved their dreams of studying
-              medicine abroad with Eklavya Overseas.
+              medicine abroad with Indo Global Education Overseas.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <TestimonialCard
               name="Nishant Kharb"
               location="Haryana"
-              text="I am grateful to Eklavya to help me get admission in Irkutsk State Medical University, Russia. I strongly recommend them as the efficient faculty booked my seat for the course and helped me find accommodation."
+              text="I am grateful to Indo Global Education to help me get admission in Irkutsk State Medical University, Russia. I strongly recommend them as the efficient faculty booked my seat for the course and helped me find accommodation."
             />
             <TestimonialCard
               name="Sanskar Singh"
               location="Uttar Pradesh"
-              text="My dreams came true! I wanted to study MBBS in Georgia, but I was unable to complete my application due to proper guidance. The team of Eklavya guided me well and helped me study MBBS in Ivane Javakhishvili Tbilisi State University."
+              text="My dreams came true! I wanted to study MBBS in Georgia, but I was unable to complete my application due to proper guidance. The team of Indo Global Education guided me well and helped me study MBBS in Ivane Javakhishvili Tbilisi State University."
             />
             <TestimonialCard
               name="Harsh Gautam"
@@ -382,7 +382,7 @@ const Home = () => {
             <BlogCard
               title="PG in China"
               date="January 07, 2026"
-              desc="Are you planning to pursue a Master’s Degree from abroad? Eklavya Overseas will shed a light on this dream of yours."
+              desc="Are you planning to pursue a Master’s Degree from abroad? Indo Global Education Overseas will shed a light on this dream of yours."
             />
             <BlogCard
               title="Eligibility For MBBS in China"
@@ -537,7 +537,7 @@ const Home = () => {
             <MythCard
               icon={FaClipboardCheck}
               myth="High risk of fraud cases"
-              reality="With Eklavya, your investment is safe. We maintain transparent, authentic partnerships with universities to ensure a 100% fraud-free admission process."
+              reality="With Indo Global Education, your investment is safe. We maintain transparent, authentic partnerships with universities to ensure a 100% fraud-free admission process."
             />
             <div className="lg:col-span-2">
               <MythCard

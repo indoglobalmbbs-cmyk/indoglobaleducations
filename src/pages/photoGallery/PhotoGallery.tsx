@@ -63,7 +63,7 @@ const PhotoGallery = () => {
 
   return (
     <div className="w-full bg-white pb-10">
-      <section className="bg-primary py-16">
+      <section className="bg-primary py-10">
         <div className="container mx-auto px-6 text-center">
           <div className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md text-accent rounded-full text-sm font-bold uppercase mb-6">
             Visual Tour
@@ -77,8 +77,7 @@ const PhotoGallery = () => {
           </p>
         </div>
       </section>
-
-      <section className="py-12">
+      <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
             {galleryImages.map((image, index) => (

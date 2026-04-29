@@ -1,3 +1,4 @@
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { FaCircleChevronRight } from 'react-icons/fa6';
@@ -33,6 +34,9 @@ import MythCard from '../../components/home/MythCard';
 import FAQItem from '../../components/home/FAQItem';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const { openEnquiry } = useOutletContext();
+  
   return (
     <div className="w-full">
       <Swiper
@@ -64,10 +68,16 @@ const Home = () => {
                 {slide.desc}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="bg-primary border-2 border-primary hover:bg-accent hover:border-accent text-white px-9 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-xl">
+                <button
+                  onClick={openEnquiry}
+                  className="bg-primary border-2 border-primary hover:bg-accent hover:border-accent text-white px-9 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-xl"
+                >
                   Apply Now
                 </button>
-                <button className="bg-white/10 hover:bg-white text-white hover:text-primary px-9 py-3.5 rounded-full font-semibold border border-white/30 transition-all duration-300 backdrop-blur-md">
+                <button
+                  onClick={() => navigate('/contact')}
+                  className="bg-white/10 hover:bg-white text-white hover:text-primary px-9 py-3.5 rounded-full font-semibold border border-white/30 transition-all duration-300 backdrop-blur-md"
+                >
                   View Programs
                 </button>
               </div>
@@ -108,10 +118,10 @@ const Home = () => {
                 Consultants
               </h2>
               <p className="text-text-muted text-lg leading-relaxed">
-                Indo Global Education Overseas is dedicated to bridging the gap between your
-                dreams and world-class education. We specialize in securing
-                admissions to top-tier universities globally, ensuring a smooth
-                transition for your medical and professional journey.
+                Indo Global Education Overseas is dedicated to bridging the gap
+                between your dreams and world-class education. We specialize in
+                securing admissions to top-tier universities globally, ensuring
+                a smooth transition for your medical and professional journey.
               </p>
               <div className="grid sm:grid-cols-2 gap-6 pt-4">
                 <div className="flex items-start gap-4">
@@ -138,7 +148,10 @@ const Home = () => {
                 </div>
               </div>
               <div className="pt-6">
-                <button className="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-lg font-semibold transition-all shadow-lg hover:-translate-y-1">
+                <button
+                  onClick={() => navigate('/about')}
+                  className="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-lg font-semibold transition-all shadow-lg hover:-translate-y-1"
+                >
                   Learn More About Us
                 </button>
               </div>
@@ -153,9 +166,9 @@ const Home = () => {
               Why Study MBBS Abroad?
             </div>
             <p className="text-text-muted text-lg">
-              Indo Global Education Overseas provides comprehensive support and compelling
-              reasons to start your medical career at prestigious international
-              institutions.
+              Indo Global Education Overseas provides comprehensive support and
+              compelling reasons to start your medical career at prestigious
+              international institutions.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -251,7 +264,10 @@ const Home = () => {
                 counselors clear the fog, providing a structured roadmap to your
                 medical degree.
               </p>
-              <button className="hidden lg:block bg-primary text-white px-8 py-4 rounded-full font-bold shadow-blue-900/20 shadow-lg hover:bg-secondary transition-all">
+              <button
+                onClick={() => navigate('/contact')}
+                className="hidden lg:block bg-primary text-white px-8 py-4 rounded-full font-bold shadow-blue-900/20 shadow-lg hover:bg-secondary transition-all"
+              >
                 Book Free Consultation
               </button>
             </div>
@@ -328,7 +344,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="py-10 bg-primary-light/20">
+      <section className="py-10 bg-primary-light">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-bold tracking-wide uppercase mb-4">
@@ -374,7 +390,10 @@ const Home = () => {
                 on Studying Abroad
               </div>
             </div>
-            <button className="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-bold transition-all shrink-0">
+            <button
+              onClick={() => navigate('/blog')}
+              className="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-bold transition-all shrink-0"
+            >
               View All Posts
             </button>
           </div>
@@ -438,7 +457,10 @@ const Home = () => {
                 />
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-primary hover:bg-secondary text-white px-10 py-4 rounded-xl font-bold shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-2">
+                <button
+                  onClick={() => navigate('/contact')}
+                  className="bg-primary hover:bg-secondary text-white px-10 py-4 rounded-xl font-bold shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-2"
+                >
                   Contact Consultant <FaCircleChevronRight />
                 </button>
                 <div className="flex items-center gap-3 px-4 py-2">
@@ -551,7 +573,10 @@ const Home = () => {
             <p className="text-text-muted italic text-sm">
               Still have questions? Our counselors are ready to give you the
               facts.
-              <button className="ml-2 text-primary font-bold underline hover:text-accent transition-colors">
+              <button
+                onClick={() => navigate('/contact')}
+                className="ml-2 text-primary font-bold underline hover:text-accent transition-colors"
+              >
                 Speak to an Expert
               </button>
             </p>
@@ -580,7 +605,10 @@ const Home = () => {
                     Our dedicated counselors are just a phone call away to help
                     you with personalized guidance.
                   </p>
-                  <button className="w-full bg-accent hover:bg-white hover:text-primary text-white py-3 rounded-xl font-bold transition-all shadow-lg">
+                  <button
+                    onClick={() => navigate('/contact')}
+                    className="w-full bg-accent hover:bg-white hover:text-primary text-white py-3 rounded-xl font-bold transition-all shadow-lg"
+                  >
                     Request a Call Back
                   </button>
                 </div>

@@ -3,6 +3,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaClock,
+  FaChevronDown,
 } from 'react-icons/fa';
 import ContactCard from '../../components/ContactCard';
 
@@ -30,33 +31,28 @@ const Contact = () => {
             <div className="lg:w-2/3 space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <ContactCard
-                  icon={
-                    <FaPhoneAlt className="text-accent group-hover:text-white transition-colors" />
-                  }
+                  icon={<FaPhoneAlt />}
                   title="Call Us"
-                  detail="+1 (234) 567-890"
+                  detail="+91 7090000502"
+                  href="tel:+917090000502"
                   subDetail="Mon-Sat, 9am to 6pm"
                 />
                 <ContactCard
-                  icon={
-                    <FaEnvelope className="text-accent group-hover:text-white transition-colors" />
-                  }
+                  icon={<FaEnvelope />}
                   title="Email Us"
-                  detail="admissions@university.com"
+                  detail="Indoglobaledu.official@gmail.com"
+                  href="mailto:Indoglobaledu.official@gmail.com"
                   subDetail="Online support 24/7"
                 />
                 <ContactCard
-                  icon={
-                    <FaMapMarkerAlt className="text-accent group-hover:text-white transition-colors" />
-                  }
+                  icon={<FaMapMarkerAlt />}
                   title="Visit Office"
-                  detail="123 Education Plaza, Medical District"
-                  subDetail="New Delhi, India 110001"
+                  detail="Ground Floor, Hotel Biggboss International, NH4,"
+                  href="https://maps.app.goo.gl/CroHchUx4BJmJdCr9"
+                  subDetail="Chitradurga, Karnataka, India - 577501"
                 />
                 <ContactCard
-                  icon={
-                    <FaClock className="text-accent group-hover:text-white transition-colors" />
-                  }
+                  icon={<FaClock />}
                   title="Working Hours"
                   detail="Monday - Saturday"
                   subDetail="09:00 AM - 06:30 PM"
@@ -127,11 +123,57 @@ const Contact = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-primary mb-1">
+                        Country Preference
+                      </label>
+                      <div className="relative">
+                        <select
+                          defaultValue=""
+                          className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
+                        >
+                          <option value="" disabled>
+                            Select Country
+                          </option>
+                          <option value="russia">Russia</option>
+                          <option value="armenia">Armenia</option>
+                          <option value="georgia">Georgia</option>
+                        </select>
+                        <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                          <FaChevronDown className="text-gray-400 text-sm" />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-primary mb-1">
+                        Select Course
+                      </label>
+                      <div className="relative">
+                        <select
+                          defaultValue=""
+                          className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
+                        >
+                          <option value="" disabled>
+                            Select Course
+                          </option>
+                          <option value="mbbs">MBBS</option>
+                          <option value="ms">MS</option>
+                          <option value="bds">BDS</option>
+                          <option value="mds">MDS</option>
+                          <option value="md-ms">MD-MS</option>
+                        </select>
+                        <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                          <FaChevronDown className="text-gray-400 text-sm" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-primary mb-1">
                         Country
                       </label>
                       <input
                         type="text"
-                        placeholder="e.g. India"
+                        placeholder="Enter your Country"
                         className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
                       />
                     </div>
@@ -141,7 +183,7 @@ const Contact = () => {
                       </label>
                       <input
                         type="text"
-                        placeholder="e.g. Delhi"
+                        placeholder="Enter your State"
                         className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
                       />
                     </div>
@@ -171,11 +213,12 @@ const Contact = () => {
       <section className="w-full h-[450px] bg-gray-200 relative">
         <iframe
           title="Office Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.562064600213!2d77.2065171761474!3d28.61291198516053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5d34766357%3A0xd1d941766271d17c!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.2956281259553!2d76.38185757538793!3d14.235969085899287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bba75c760b80a07%3A0x8570eb0f1c18ff1c!2sIndo-Global%20Education%20Service%20Pvt.Ltd%20(%20Study%20MBBS%20Abroad%20)!5e0!3m2!1sen!2sin!4v1777280086543!5m2!1sen!2sin"
           className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
           style={{ border: 0 }}
-          allowFullScreen
+          allowFullScreen={true}
           loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
     </div>

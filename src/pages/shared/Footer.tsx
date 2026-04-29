@@ -132,26 +132,32 @@ const Footer = () => {
             </h4>
             <ul className="space-y-4 text-md text-primary-light">
               <li className="flex items-start gap-3">
-                <FaLocationDot className="mt-1 text-accent" />
-                <span>
-                  123 Education Hub, Metro Pillar 45,
-                  <br />
-                  New Delhi, India - 110001
-                </span>
+                <FaLocationDot className="mt-1 text-accent shrink-0" />
+                <address className="not-italic">
+                  <a
+                    href="https://maps.app.goo.gl/CroHchUx4BJmJdCr9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-accent transition-colors duration-300"
+                  >
+                    Ground Floor, Hotel Biggboss International, NH4,
+                    Chitradurga, Karnataka, India - 577501
+                  </a>
+                </address>
               </li>
               <li className="flex items-center gap-3">
                 <FaPhone className="text-accent" />
-                <a href="tel:+919060722799" className="hover:text-accent">
-                  +91 9060722799
+                <a href="tel:+917090000502" className="hover:text-accent">
+                  +91 7090000502
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <FaEnvelope className="text-accent" />
                 <a
-                  href="mailto:aditya822003@gmail.com"
+                  href="mailto:Indoglobaledu.official@gmail.com"
                   className="hover:text-accent"
                 >
-                  aditya822003@gmail.com
+                  Indoglobaledu.official@gmail.com
                 </a>
               </li>
             </ul>

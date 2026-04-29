@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa';
 import { faqData, type FAQItem } from '../../components/FaqData';
 
 const Faqs = () => {
+  const navigate = useNavigate();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
@@ -74,15 +76,18 @@ const Faqs = () => {
       <section className="py-10 bg-primary-light">
         <div className="container mx-auto px-6 text-center">
           <div className="bg-white p-10 rounded-3xl shadow-sm border border-primary/10 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-text mb-4">
+            <div className="text-2xl font-bold text-text mb-4">
               Still have questions?
-            </h3>
+            </div>
             <p className="text-text-muted mb-8">
               Our expert counselors are available 24/7 to help you navigate the
               2026 admission cycle.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="px-8 py-4 bg-primary text-white font-bold rounded-2xl hover:bg-secondary transition-all shadow-lg">
+              <button
+                onClick={() => navigate('/contact')}
+                className="px-8 py-4 bg-primary text-white font-bold rounded-2xl hover:bg-secondary transition-all shadow-lg"
+              >
                 Contact Support
               </button>
               <button className="px-8 py-4 bg-white border-2 border-primary text-primary font-bold rounded-2xl hover:bg-primary-light transition-all">

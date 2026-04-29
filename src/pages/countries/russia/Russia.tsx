@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { russia } from '../../../assets/images';
 import { russiaUniversities } from '../../../data/russiaUniversities';
 import { Link } from 'react-router-dom';
 import {
@@ -13,13 +12,16 @@ import {
   FaClock,
 } from 'react-icons/fa';
 import {
+  russia,
   banner1,
   banner2,
   banner3,
   banner4,
   banner5,
   banner6,
+  servicesBanner,
 } from '../../../assets/images';
+import { russiaFaq } from '../../../data/russiaFaq';
 
 const Russia = () => {
   const [showAll, setShowAll] = useState(false);
@@ -60,30 +62,30 @@ const Russia = () => {
   };
 
   const galleryImages = [
-    { src: banner1, title: 'University Campus' },
-    { src: banner2, title: 'Modern Classrooms' },
-    { src: banner3, title: 'Student Life' },
-    { src: banner4, title: 'Clinical Training' },
-    { src: banner5, title: 'Hostel Facilities' },
-    { src: banner6, title: 'Graduation Ceremony' },
+    { src: banner1, title: 'MBBS University Campus in Russia' },
+    { src: banner2, title: 'Modern Medical Classrooms Russia' },
+    { src: banner3, title: 'Indian Student Life in Russia' },
+    { src: banner4, title: 'Clinical Training for MBBS Students' },
+    { src: banner5, title: 'Student Hostel Facilities Russia' },
+    { src: banner6, title: 'MBBS Graduation Ceremony Russia' },
   ];
 
   return (
     <div className="bg-gray-50 min-h-screen">
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img
-          src={russia}
-          alt="Russia Education"
+          src={servicesBanner}
+          alt="Study MBBS in Russia - Indo Global Education"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
         <div className="relative z-10 container mx-auto px-6 text-white">
-          <div className="text-5xl md:text-6xl font-bold mb-4 animate-fade-in">
-            Study in Russia
+          <div className="text-5xl font-bold mb-4 animate-fade-in">
+            MBBS IN RUSSIA
           </div>
-          <p className="text-xl md:text-2xl max-w-2xl text-gray-200">
-            Experience world-class education with affordable tuition fees and
-            globally recognized degrees.
+          <p className="text-xl max-w-2xl text-gray-200">
+            Indo Global Education - MBBS in Russia
           </p>
         </div>
       </section>
@@ -223,7 +225,7 @@ const Russia = () => {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="md:w-1/2">
             <div className="text-3xl font-bold text-primary mb-6">
-              Why Choose Russia for Higher Education?
+              MBBS in Russia Fee for Indian Students (Updated 2026-27)
             </div>
             <ul className="space-y-4 text-gray-700">
               <li className="flex items-start gap-3">
@@ -1417,29 +1419,12 @@ const Russia = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto mt-4"></div>
           </div>
           <div className="space-y-4">
-            {[
-              {
-                q: 'What is the NEET score required for MBBS in Russia?',
-                a: 'To study MBBS in Russia, Indian students generally need a qualifying NEET score. For the current cycle, this is typically around 164 for the General category and 129 for reserved categories (OBC/SC/ST).',
-              },
-              {
-                q: 'How long is the MBBS program in Russia?',
-                a: 'The program duration is 5.8 to 6 years. This includes comprehensive theoretical studies and clinical clerkships (internships) in affiliated hospitals.',
-              },
-              {
-                q: 'Can Russian medical graduates work in India?',
-                a: 'Yes, degrees from NMC/WHO-approved Russian universities are valid in India. To practice, graduates must clear the National Exit Test (NEXT), which has replaced the FMGE as the mandatory licensing exam for all medical graduates.',
-              },
-              {
-                q: 'Do students get holidays in Russia?',
-                a: 'Yes. Students typically receive a summer vacation of approximately 45 days (July to August). Some universities also provide winter breaks in January after the first semester exams.',
-              },
-              {
-                q: 'Is Russia safe for Indian students?',
-                a: 'Russia is generally very safe for international students. Most universities have 24/7 campus security and CCTV-monitored hostels. Russia maintains a high ranking on the global safety index for students.',
-              },
-            ].map((faq, index) => (
-              <FaqItem key={index} question={faq.q} answer={faq.a} />
+            {russiaFaq.map((faq, index) => (
+              <FaqItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
             ))}
           </div>
         </div>

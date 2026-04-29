@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { georgia } from '../../../assets/images';
 import { georgiaUniversities } from '../../../data/georgiaUniversities';
 import { Link } from 'react-router-dom';
 import {
@@ -13,13 +12,16 @@ import {
   FaClock,
 } from 'react-icons/fa';
 import {
+  georgia,
   banner1,
   banner2,
   banner3,
   banner4,
   banner5,
   banner6,
+  servicesBanner,
 } from '../../../assets/images';
+import { georgiaFaq } from '../../../data/georgiaFaq';
 
 const Georgia = () => {
   const [showAll, setShowAll] = useState(false);
@@ -60,30 +62,30 @@ const Georgia = () => {
   };
 
   const galleryImages = [
-    { src: banner1, title: 'University Campus' },
-    { src: banner2, title: 'Modern Classrooms' },
-    { src: banner3, title: 'Student Life' },
-    { src: banner4, title: 'Clinical Training' },
-    { src: banner5, title: 'Hostel Facilities' },
-    { src: banner6, title: 'Graduation Ceremony' },
+    { src: banner1, title: 'MBBS University Campus in Georgia' },
+    { src: banner2, title: 'Modern Medical Classrooms Georgia' },
+    { src: banner3, title: 'Indian Student Life in Georgia' },
+    { src: banner4, title: 'Clinical Training for MBBS Students' },
+    { src: banner5, title: 'Student Hostel Facilities Georgia' },
+    { src: banner6, title: 'MBBS Graduation Ceremony Georgia' },
   ];
 
   return (
     <div className="bg-gray-50 min-h-screen">
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img
-          src={georgia}
-          alt="Georgia Education"
+          src={servicesBanner}
+          alt="Study MBBS in Georgia - Indo Global Education"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
         <div className="relative z-10 container mx-auto px-6 text-white">
           <div className="text-5xl md:text-6xl font-bold mb-4 animate-fade-in">
-            Study in Georgia
+            MBBS IN GEORGIA
           </div>
           <p className="text-xl md:text-2xl max-w-2xl text-gray-200">
-            Experience world-class education with affordable tuition fees and
-            globally recognized degrees.
+            Indo Global Education - MBBS in Georgia
           </p>
         </div>
       </section>
@@ -1309,36 +1311,12 @@ const Georgia = () => {
                 Career Paths After MBBS
               </h2>
               <div className="space-y-4">
-                {[
-                  {
-                    step: 'Return to India',
-                    text: 'Qualify the NEXT/NMC exam to practice as a licensed doctor in India.',
-                  },
-                  {
-                    step: 'Global Practice',
-                    text: 'Clear USMLE (USA) or PLAB (UK) to practice in English-speaking nations.',
-                  },
-                  {
-                    step: 'Stay in Georgia',
-                    text: 'Eligible to practice medicine or pursue specialized PG within the Georgian Federation.',
-                  },
-                  {
-                    step: 'PG Abroad',
-                    text: 'Degrees are recognized worldwide, allowing for PG opportunities in Europe and beyond.',
-                  },
-                ].map((path, i) => (
-                  <div
-                    key={i}
-                    className="flex gap-4 items-center bg-white p-4 rounded-xl shadow-sm"
-                  >
-                    <div className="h-10 w-10 bg-accent rounded-full flex items-center justify-center font-bold text-primary shrink-0">
-                      {i + 1}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-primary">{path.step}</h4>
-                      <p className="text-xs text-gray-500">{path.text}</p>
-                    </div>
-                  </div>
+                {georgiaFaq.map((faq, index) => (
+                  <FaqItem
+                    key={index}
+                    question={faq.question}
+                    answer={faq.answer}
+                  />
                 ))}
               </div>
             </div>

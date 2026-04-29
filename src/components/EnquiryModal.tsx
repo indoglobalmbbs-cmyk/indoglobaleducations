@@ -1,4 +1,4 @@
-import { FaTimes, FaPaperPlane } from 'react-icons/fa';
+import { FaTimes, FaPaperPlane, FaChevronDown } from 'react-icons/fa';
 
 interface EnquiryModalProps {
   isOpen: boolean;
@@ -59,6 +59,52 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
               className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
             />
           </div>
+                            <div className="grid grid-cols-2 gap-4">
+                              <div>
+                                <label className="block text-sm font-medium text-primary mb-1">
+                                  Country Preference
+                                </label>
+                                <div className="relative">
+                                  <select
+                                    defaultValue=""
+                                    className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
+                                  >
+                                    <option value="" disabled>
+                                      Select Country
+                                    </option>
+                                    <option value="russia">Russia</option>
+                                    <option value="armenia">Armenia</option>
+                                    <option value="georgia">Georgia</option>
+                                  </select>
+                                  <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                                    <FaChevronDown className="text-gray-400 text-sm" />
+                                  </div>
+                                </div>
+                              </div>
+                              <div>
+                                <label className="block text-sm font-medium text-primary mb-1">
+                                  Select Course
+                                </label>
+                                <div className="relative">
+                                  <select
+                                    defaultValue=""
+                                    className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
+                                  >
+                                    <option value="" disabled>
+                                      Select Course
+                                    </option>
+                                    <option value="mbbs">MBBS</option>
+                                    <option value="ms">MS</option>
+                                    <option value="bds">BDS</option>
+                                    <option value="mds">MDS</option>
+                                    <option value="md-ms">MD-MS</option>
+                                  </select>
+                                  <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                                    <FaChevronDown className="text-gray-400 text-sm" />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1">
               <label className="block text-sm font-medium text-primary">
@@ -66,7 +112,7 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
               </label>
               <input
                 type="text"
-                placeholder="e.g. India"
+                placeholder="Enter your Country"
                 className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
               />
             </div>
@@ -76,7 +122,7 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
               </label>
               <input
                 type="text"
-                placeholder="e.g. Delhi"
+                placeholder="Enter your State"
                 className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
               />
             </div>

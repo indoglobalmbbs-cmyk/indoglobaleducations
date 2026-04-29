@@ -3,6 +3,10 @@ import co1 from './co1.jpeg';
 import co2 from './co2.jpeg';
 import co3 from './co3.jpeg';
 import co4 from './co4.jpeg';
+import about from './about.jpeg';
+import aboutUs from './aboutus.webp';
+import about1 from './about1.jpeg';
+import servicesBanner from './servicesbanner.jpg';
 import banner1 from './banner1.jpeg';
 import banner2 from './banner2.jpeg';
 import banner3 from './banner3.jpeg';
@@ -33,12 +37,22 @@ import photo18 from './photo18.jpg';
 import photo19 from './photo19.jpg';
 import photo20 from './photo20.jpg';
 
+import maristateuniversity from './russia/maristateuniversity.webp';
+import permstatemedicaluniversity from './russia/permstatemedicaluniversity.webp';
+
+import yerevanstatemedicaluniversity from './armenia/yerevanstatemedicaluniversity.webp';
+import universityoftraditionalmedicine from './armenia/universityoftraditionalmedicine.webp';
+
 export {
   logo,
   co1,
   co2,
   co3,
   co4,
+  about,
+  aboutUs,
+  about1,
+  servicesBanner,
   banner1,
   banner2,
   banner3,
@@ -68,4 +82,8 @@ export {
   photo18,
   photo19,
   photo20,
+  permstatemedicaluniversity,
+  maristateuniversity,
+  yerevanstatemedicaluniversity,
+  universityoftraditionalmedicine,
 };

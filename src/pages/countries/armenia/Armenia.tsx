@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { armenia } from '../../../assets/images';
 import { armeniaUniversities } from '../../../data/armeniaUniversities';
 import { Link } from 'react-router-dom';
 import {
@@ -13,12 +12,14 @@ import {
   FaClock,
 } from 'react-icons/fa';
 import {
+  armenia,
   banner1,
   banner2,
   banner3,
   banner4,
   banner5,
   banner6,
+  servicesBanner,
 } from '../../../assets/images';
 
 const Armenia = () => {
@@ -60,30 +61,29 @@ const Armenia = () => {
   };
 
   const galleryImages = [
-    { src: banner1, title: 'University Campus' },
-    { src: banner2, title: 'Modern Classrooms' },
-    { src: banner3, title: 'Student Life' },
-    { src: banner4, title: 'Clinical Training' },
-    { src: banner5, title: 'Hostel Facilities' },
-    { src: banner6, title: 'Graduation Ceremony' },
+    { src: banner1, title: 'MBBS University Campus in Armenia' },
+    { src: banner2, title: 'Modern Medical Classrooms Armenia' },
+    { src: banner3, title: 'Indian Student Life in Armenia' },
+    { src: banner4, title: 'Clinical Training for MBBS Students' },
+    { src: banner5, title: 'Student Hostel Facilities Armenia' },
+    { src: banner6, title: 'MBBS Graduation Ceremony Armenia' },
   ];
 
   return (
     <div className="bg-gray-50 min-h-screen">
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img
-          src={armenia}
+          src={servicesBanner}
           alt="Armenia Education"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
         <div className="relative z-10 container mx-auto px-6 text-white">
           <div className="text-5xl md:text-6xl font-bold mb-4 animate-fade-in">
-            Study in Armenia
+            MBBS IN ARMENIA
           </div>
           <p className="text-xl md:text-2xl max-w-2xl text-gray-200">
-            Experience world-class education with affordable tuition fees and
-            globally recognized degrees.
+            Indo Global Education - MBBS in Armenia
           </p>
         </div>
       </section>

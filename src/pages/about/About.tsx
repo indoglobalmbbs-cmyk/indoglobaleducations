@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import {
   FaBullseye,
   FaEye,
@@ -8,15 +9,17 @@ import {
   FaAward,
   FaChevronRight,
 } from 'react-icons/fa';
-import { banner1 , banner2} from '../../assets/images';
+import { about, about1 } from '../../assets/images';
 
 const About = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full bg-surface">
       <section className="relative w-full h-[400px] md:h-[500px] flex items-center overflow-hidden bg-slate-900">
         <div className="absolute inset-0 z-0">
           <img
-            src={banner2}
+            src={about}
             alt="Medical Education Background"
             className="w-full h-full object-cover opacity-60"
           />
@@ -50,7 +53,7 @@ const About = () => {
             <div className="relative">
               <div className="rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                 <img
-                  src={banner1}
+                  src={about1}
                   alt="Education Consultancy"
                   className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -290,7 +293,10 @@ const About = () => {
                 blogs.
               </p>
             </div>
-            <button className="px-8 py-3 bg-white border-2 border-primary text-primary font-bold rounded-full hover:bg-primary hover:text-white transition-all duration-300">
+            <button
+              onClick={() => navigate('/news')}
+              className="px-8 py-3 bg-white border-2 border-primary text-primary font-bold rounded-full hover:bg-primary hover:text-white transition-all duration-300"
+            >
               View All Posts
             </button>
           </div>
@@ -314,7 +320,7 @@ const About = () => {
                 </p>
                 <div className="mt-auto">
                   <a
-                    href="#"
+                    href="/news"
                     className="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
                   >
                     Read More <span>&rarr;</span>
@@ -342,7 +348,7 @@ const About = () => {
                 </p>
                 <div className="mt-auto">
                   <a
-                    href="#"
+                    href="/news"
                     className="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
                   >
                     Read More <span>&rarr;</span>
@@ -369,7 +375,7 @@ const About = () => {
                 </p>
                 <div className="mt-auto">
                   <a
-                    href="#"
+                    href="/news"
                     className="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
                   >
                     Read More <span>&rarr;</span>

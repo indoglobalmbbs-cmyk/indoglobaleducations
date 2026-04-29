@@ -1,39 +1,10 @@
-import { FaHistory, FaUser, FaChevronRight, FaSearch } from 'react-icons/fa';
-import { banner3, russia, armenia, georgia } from '../../assets/images';
+import { useNavigate } from 'react-router-dom';
+import { FaHistory, FaUser, FaChevronRight } from 'react-icons/fa';
+import { russia } from '../../assets/images';
+import { posts } from '../../data/posts';
 
 const Blog = () => {
-  const posts = [
-    {
-      id: 1,
-      title: 'NMC Rules for MBBS Abroad in 2026: A Complete Breakdown',
-      excerpt:
-        'The university in which you pursue your MBBS can either make or break your career. Hence, there are several new guidelines you must follow...',
-      date: 'April 11, 2026',
-      author: 'Admin',
-      category: 'NMC Update',
-      image: banner3,
-    },
-    {
-      id: 2,
-      title: 'Why Georgia is Becoming the Top Choice for Indian Students',
-      excerpt:
-        'With world-class infrastructure and affordable living, Georgia offers a unique European medical education experience...',
-      date: 'April 08, 2026',
-      author: 'Education Expert',
-      category: 'Georgia',
-      image: georgia,
-    },
-    {
-      id: 3,
-      title: 'Life as an Indian Medical Student in Armenia',
-      excerpt:
-        'From Indian food availability to clinical rotations, here is everything you need to know about studying in Armenia...',
-      date: 'April 05, 2026',
-      author: 'Student Council',
-      category: 'Armenia',
-      image: armenia,
-    },
-  ];
+  const navigate = useNavigate();
 
   return (
     <div className="w-full bg-white">
@@ -102,7 +73,7 @@ const Blog = () => {
                         {post.author}
                       </div>
                       <a
-                        href="#"
+                        href="/news"
                         className="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
                       >
                         Read Story <span>&rarr;</span>
@@ -113,23 +84,10 @@ const Blog = () => {
               ))}
             </div>
             <aside className="lg:w-1/3 space-y-8">
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-                <h4 className="text-xl font-bold text-text mb-6">
-                  Search Articles
-                </h4>
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search keywords..."
-                    className="w-full pl-5 pr-12 py-4 bg-primary-light/50 border-none rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all"
-                  />
-                  <FaSearch className="absolute right-5 top-1/2 -translate-y-1/2 text-primary" />
-                </div>
-              </div>
               <div className="bg-primary p-8 rounded-3xl shadow-sm">
-                <h4 className="text-xl font-bold text-white mb-6">
+                <div className="text-xl font-bold text-white mb-6">
                   Categories
-                </h4>
+                </div>
                 <ul className="space-y-4">
                   {[
                     'Russia',
@@ -158,7 +116,10 @@ const Blog = () => {
                 <p className="mb-6 text-white">
                   Get personalized counseling from our experts today.
                 </p>
-                <button className="w-full py-4 bg-white text-primary font-bold rounded-2xl hover:bg-primary hover:text-white transition-all shadow-lg">
+                <button
+                  onClick={() => navigate('/contact')}
+                  className="w-full py-4 bg-white text-primary font-bold rounded-2xl hover:bg-primary hover:text-white transition-all shadow-lg"
+                >
                   Book Free Consultation
                 </button>
               </div>

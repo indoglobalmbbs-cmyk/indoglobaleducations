@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import {
@@ -17,49 +18,25 @@ import {
   banner4,
   banner5,
   banner6,
-  russia,
+  yerevanstatemedicaluniversity,
 } from '../../../assets/images';
-
-const Card = ({
-  icon,
-  title,
-  desc,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  desc: string;
-}) => (
-  <div className="rounded-xl bg-surface p-8 shadow-md transition-shadow hover:shadow-xl">
-    <div className="mb-4 flex justify-center">{icon}</div>
-    <h3 className="mb-2 text-xl font-bold text-primary">{title}</h3>
-    <p className="text-text-muted">{desc}</p>
-  </div>
-);
+import { academicFaculties } from '../../../data/academicfaculties';
+import { medicalUniversities } from '../../../data/universityname';
+import { requiredDocument } from '../../../data/requiredDocument';
+import { admissionProcess } from '../../../data/admissionProcess';
+import { rankedOverseas } from '../../../data/rankedOverseas';
+import { hostelFeature } from '../../../data/hostelFeature';
+import { galleryImages } from '../../../data/galleryImages';
+import Card from '../../../components/Card';
 
 const YerevanStateMedicalUniversity = () => {
+  const navigate = useNavigate();
+
   const universityStats = [
     { icon: <FaGraduationCap />, label: 'Years of Excellence', value: '80+' },
     { icon: <FaUserMd />, label: 'Global Students', value: '5000+' },
     { icon: <FaHospital />, label: 'Affiliated Hospitals', value: '12+' },
     { icon: <FaGlobeAmericas />, label: 'World Ranking', value: 'Top 500' },
-  ];
-
-  const highlights = [
-    'MCI/NMC & WHO Recognized',
-    'English Medium Curriculum',
-    'Modern Research Laboratories',
-    'Low Cost of Living & Tuition',
-    'High USMLE/FMGE Success Rate',
-    'Global Exposure & Internships',
-  ];
-
-  const galleryImages = [
-    { src: banner1, title: 'University Campus' },
-    { src: banner2, title: 'Modern Classrooms' },
-    { src: banner3, title: 'Student Life' },
-    { src: banner4, title: 'Clinical Training' },
-    { src: banner5, title: 'Hostel Facilities' },
-    { src: banner6, title: 'Graduation Ceremony' },
   ];
 
   return (
@@ -96,8 +73,11 @@ const YerevanStateMedicalUniversity = () => {
                       professionals with world-class education and clinical
                       training.
                     </p>
-                    <button className="rounded-full bg-accent px-8 py-3 font-bold transition-transform hover:scale-105">
-                      Apply Now for 2026
+                    <button
+                      onClick={() => navigate('/contact')}
+                      className="rounded-full bg-accent px-8 py-3 font-bold transition-transform hover:scale-105"
+                    >
+                      Apply Now
                     </button>
                   </div>
                 </div>
@@ -131,7 +111,7 @@ const YerevanStateMedicalUniversity = () => {
           <div className="md:w-1/2">
             <div className="mb-10 text-left">
               <div className="text-3xl font-bold text-primary mb-4">
-                Study MBBS in Russia at <br />
+                Study MBBS in Armenia at <br />
                 <span className="text-accent">
                   Yerevan State Medical University
                 </span>
@@ -139,24 +119,28 @@ const YerevanStateMedicalUniversity = () => {
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              Yerevan State Medical University stands as a beacon of medical
-              excellence in Russia. Known for its rigorous academic standards
-              and state-of-the-art clinical facilities, the university offers an
-              MD program (equivalent to MBBS in India) that is fully taught in
-              English for international students.
+              Yerevan State Medical University is centrally located in the
+              capital of Armenia, Yerevan. It is considered as one of the Top
+              Medical Universities in Armenia, leading with a number of 31,000
+              graduates till date. There are about 8,000 students in 6 faculties
+              of the State Medical University after Heratsi. Approximately, 1184
+              students are from various nations. It is considered to be the best
+              University for studying MD in Armenia (equivalent to MBBS in
+              India). Teaching and research activities are organized in more
+              than 100 chairs, leading clinical bases and research centers in
+              Yerevan. <br />
+              University has about 1,100 lecturers out of which, 171 are
+              well-qualified Doctors of Sciences, 504 are Candidates of
+              Sciences, 7 Academicians of the RANAS; who perform scientific &
+              pedagogical work at the University.
+              <br />
+              This cluster of scientific & intellectual potential has a
+              significant role in the development of medical science in Armenia.
             </p>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {highlights.map((item, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <FaCheckCircle className="text-success" />
-                  <span className="text-sm font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
           </div>
           <div className="md:w-1/2">
             <img
-              src={russia}
+              src={yerevanstatemedicaluniversity}
               alt="University Campus"
               className="rounded-2xl shadow-2xl transition-hover duration-500 hover:scale-[1.02]"
             />
@@ -175,7 +159,7 @@ const YerevanStateMedicalUniversity = () => {
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
                 Yerevan State Medical University is a leading institution for
-                medical education in Russia, offering a globally recognized MD
+                medical education in Armenia, offering a globally recognized MD
                 program. With a focus on practical clinical training and modern
                 research, we prepare students for successful careers in
                 healthcare worldwide.
@@ -254,16 +238,16 @@ const YerevanStateMedicalUniversity = () => {
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-4">
                 <p className="text-text-muted leading-relaxed">
-                  Yerevan State Medical University has played a pivotal role
-                  in the advancement of medical sciences and the education of
+                  Yerevan State Medical University has played a pivotal role in
+                  the advancement of medical sciences and the education of
                   medical professionals. Consistently ranked among the{' '}
-                  <strong>top 10 medical institutes in Russia</strong>, it
-                  stands out in the yearly official ratings among the 48 Russian
-                  Institutes of Medical Education.
+                  <strong>top 10 medical institutes in Armenia</strong>, it
+                  stands out in the yearly official ratings among the 48
+                  Armenian Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, Yerevan State Medical University is recognized
-                  as one of the largest centers for medical research, education,
+                  As of 2018, Yerevan State Medical University is recognized as
+                  one of the largest centers for medical research, education,
                   and science. The Academy is renowned for its highly qualified
                   teaching staff, extensive laboratory facilities, and robust
                   clinical base.
@@ -282,14 +266,7 @@ const YerevanStateMedicalUniversity = () => {
               Academic Faculties
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                'School of General Medicine',
-                'School of Stomatology (Dentistry)',
-                'School of International Medical Education',
-                'School of Pediatrics',
-                'School of Postgraduate Studies',
-                'School of Pharmacy',
-              ].map((faculty, idx) => (
+              {academicFaculties.map((faculty, idx) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"
@@ -311,27 +288,7 @@ const YerevanStateMedicalUniversity = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'Academic Records',
-                detail: '10th and 12th grade marksheets',
-              },
-              {
-                title: 'Transfer Certificate',
-                detail: 'Original TC from last school',
-              },
-              { title: 'Photographs', detail: '6 passport-size photographs' },
-              {
-                title: 'Migration Certificate',
-                detail: 'Issued by the respective board',
-              },
-              { title: 'Identity Proof', detail: 'Valid Passport (Original)' },
-              {
-                title: 'Medical Reports',
-                detail:
-                  'Medical insurance and HIV reports from a recognized hospital',
-              },
-            ].map((doc, index) => (
+            {requiredDocument.map((doc, index) => (
               <div
                 key={index}
                 className="group flex items-start p-6 bg-gray-50 rounded-xl border border-transparent hover:border-accent hover:bg-surface transition-all duration-300 shadow-sm"
@@ -368,43 +325,12 @@ const YerevanStateMedicalUniversity = () => {
             </div>
             <p className="text-text-muted max-w-2xl mx-auto">
               A straightforward 6-step journey to securing your medical future
-              in Russia.
+              in Armenia.
             </p>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto mt-4"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-            {[
-              {
-                step: '01',
-                title: 'Online Application',
-                desc: 'Submit your 10th, 11th, and 12th transcripts, school leaving certificate, and passport copy via email.',
-              },
-              {
-                step: '02',
-                title: 'Invitation Letter',
-                desc: 'Applications are processed in 1-2 working days. Successful candidates receive a formal admission & invitation letter.',
-              },
-              {
-                step: '03',
-                title: 'Enrollment Fees',
-                desc: 'Secure your seat by paying the initial enrollment fees through net banking or other available secure methods.',
-              },
-              {
-                step: '04',
-                title: 'Visa Application',
-                desc: 'Apply for your student visa using the invitation letter, 2-year valid passport, and attested certificates.',
-              },
-              {
-                step: '05',
-                title: 'Arrival in Russia',
-                desc: 'Pay first-year fees before departure. Provide flight details for airport reception and immigration clearance.',
-              },
-              {
-                step: '06',
-                title: 'Commencement',
-                desc: 'Register at the university with original documents within 3 days of arrival and start your medical classes.',
-              },
-            ].map((item, index) => (
+            {admissionProcess.map((item, index) => (
               <div
                 key={index}
                 className="relative p-8 bg-surface rounded-2xl shadow-sm border-t-4 border-accent hover:shadow-lg transition-shadow"
@@ -438,7 +364,7 @@ const YerevanStateMedicalUniversity = () => {
                 library is a cornerstone of academic life. It houses a massive
                 collection of over{' '}
                 <strong className="text-primary">440,000 copies</strong>
-                of books from both Russian and international authors.
+                of books from both Armenian and international authors.
               </p>
               <div className="bg-blue-50 p-6 rounded-xl border-r-4 border-primary">
                 <h4 className="font-bold text-primary mb-2 flex items-center gap-2">
@@ -527,28 +453,7 @@ const YerevanStateMedicalUniversity = () => {
               </div>
             </div>
             <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                {
-                  title: 'Indian Cuisine',
-                  desc: 'The hostel mess serves authentic Indian food with Hindi and Tamil TV channels available.',
-                  icon: '🍲',
-                },
-                {
-                  title: 'Safety & Security',
-                  desc: '24/7 CCTV surveillance and police guards. Strict night-out permissions for student safety.',
-                  icon: '🛡️',
-                },
-                {
-                  title: 'Connectivity',
-                  desc: 'High-speed broadband and Wi-Fi internet access throughout all hostel buildings.',
-                  icon: '🌐',
-                },
-                {
-                  title: 'Hygiene & Care',
-                  desc: 'Daily professional cleaning services and weekly changes of fresh bed linens.',
-                  icon: '✨',
-                },
-              ].map((item, i) => (
+              {hostelFeature.map((item, i) => (
                 <div
                   key={i}
                   className="p-6 bg-surface rounded-2xl border border-gray-100 hover:shadow-md transition-shadow"
@@ -730,7 +635,10 @@ const YerevanStateMedicalUniversity = () => {
                 </p>
               </div>
             </div>
-            <button className="whitespace-nowrap px-8 py-3 bg-primary text-white rounded-full font-bold hover:bg-accent hover:text-primary transition-all">
+            <button
+              onClick={() => navigate('/photosGallery')}
+              className="whitespace-nowrap px-8 py-3 bg-primary text-white rounded-full font-bold hover:bg-accent hover:text-primary transition-all"
+            >
               View Gallery
             </button>
           </div>
@@ -746,7 +654,7 @@ const YerevanStateMedicalUniversity = () => {
               <p className="text-text-muted leading-relaxed mb-4">
                 The undergraduate MBBS program at Tver spans a total of{' '}
                 <strong className="text-primary">6 years</strong>. This duration
-                is standardized across Russian medical universities to ensure
+                is standardized across Armenian medical universities to ensure
                 comprehensive training.
               </p>
               <div className="grid grid-cols-2 gap-4 mt-6">
@@ -802,7 +710,7 @@ const YerevanStateMedicalUniversity = () => {
               </h4>
               <p className="text-text-muted text-sm mb-4">
                 Tver is an affordable city for international students compared
-                to other Russian hubs.
+                to other Armenian hubs.
               </p>
               <div className="text-2xl font-bold text-success mb-1">
                 ~$150 / Month
@@ -826,7 +734,7 @@ const YerevanStateMedicalUniversity = () => {
                   {[
                     'NMC (India) Approved',
                     'WHO Recognized',
-                    'Top 10 Ranked in Russia',
+                    'Top 10 Ranked in Armenia',
                     'Research Oriented',
                   ].map((item, i) => (
                     <div
@@ -840,30 +748,17 @@ const YerevanStateMedicalUniversity = () => {
               </div>
             </div>
           </div>
-          <div className="mt-12 bg-primary rounded-2xl p-8 text-center text-white">
-            <h3 className="text-2xl font-bold mb-2">
-              Academic Excellence at Affordable Costs
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Join over 30 Russian medical schools featured in international
-              rankings. Start your journey in one of the world's most
-              prestigious educational environments.
-            </p>
-            <button className="bg-accent text-primary px-10 py-3 rounded-full font-bold hover:scale-105 transition-transform">
-              Get Full 2024-25 Fee Structure
-            </button>
-          </div>
         </div>
       </section>
       <section className="py-10 px-4 bg-white">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <div className="text-3xl font-bold text-primary mb-4">
-              Top Medical Universities in Russia
+              Top Medical Universities in Armenia
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto mb-6"></div>
             <p className="text-text-muted max-w-2xl mx-auto">
-              Explore other premier medical institutions in Russia recognized
+              Explore other premier medical institutions in Armenia recognized
               for their academic excellence and global clinical standards.
             </p>
           </div>
@@ -883,53 +778,7 @@ const YerevanStateMedicalUniversity = () => {
                 </tr>
               </thead>
               <tbody className="text-text">
-                {[
-                  [
-                    'Kazan State Medical University',
-                    'Crimea Federal University',
-                    'Altai State Medical University',
-                  ],
-                  [
-                    'Syktyvkar State Medical University',
-                    'Volgograd State Medical University',
-                    'Izhevsk State Medical University',
-                  ],
-                  [
-                    'Dagestan State Medical University',
-                    'Irkutsk State Medical University',
-                    'Kursk State Medical University',
-                  ],
-                  [
-                    'Mari State Medical University',
-                    'Orel State University',
-                    'Bashkir State Medical University',
-                  ],
-                  [
-                    'First Moscow State Medical University',
-                    'Kazan Federal University',
-                    'Nizhny Novgorod Medical University',
-                  ],
-                  [
-                    'Northern State Medical University',
-                    'Novosibirsk State Medical University',
-                    'Omsk State Medical University',
-                  ],
-                  [
-                    'Orenburg State Medical University',
-                    'Perm State Medical University',
-                    'Ryazan State Medical University',
-                  ],
-                  [
-                    'Saint Petersburg Medical University',
-                    'Smolensk State Medical University',
-                    'Tambov State University',
-                  ],
-                  [
-                    'Belgorod University',
-                    'Yerevan State Medical University',
-                    "People's Friendship University",
-                  ],
-                ].map((row, rowIndex) => (
+                {medicalUniversities.map((row, rowIndex) => (
                   <tr
                     key={rowIndex}
                     className="hover:bg-blue-50/50 transition-colors border-b border-gray-100 last:border-0"
@@ -968,7 +817,7 @@ const YerevanStateMedicalUniversity = () => {
                 <span className="text-accent">
                   Yerevan State Medical University
                 </span>{' '}
-                for MBBS in Russia?
+                for MBBS in Armenia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
               <p className="text-blue-100 leading-relaxed mb-6">
@@ -1029,15 +878,6 @@ const YerevanStateMedicalUniversity = () => {
               </div>
             </div>
           </div>
-          <div className="mt-12 p-8 bg-white rounded-2xl text-center shadow-2xl">
-            <p className="text-primary font-medium italic">
-              "Our team works closely with applicants, offering support at every
-              step, much like a family."
-            </p>
-            <button className="mt-6 bg-accent text-primary px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform shadow-lg shadow-accent/30">
-              Start Your Journey Today
-            </button>
-          </div>
         </div>
       </section>
       <section className="py-10 px-4 bg-white">
@@ -1070,48 +910,7 @@ const YerevanStateMedicalUniversity = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: 'One-Stop Solution',
-                desc: 'Comprehensive international course consultation from selection to departure.',
-                icon: '🎯',
-              },
-              {
-                title: '24/7 Support',
-                desc: 'Round-the-clock assistance for all your queries and urgent needs.',
-                icon: '🕒',
-              },
-              {
-                title: 'Transparency',
-                desc: 'Clear, honest, and ethical practices throughout the entire admission process.',
-                icon: '💎',
-              },
-              {
-                title: 'Competitive Fees',
-                desc: 'Affordable services with convenient EMI options available for processing.',
-                icon: '💳',
-              },
-              {
-                title: 'Official Partnerships',
-                desc: 'Direct collaborations with renowned NMC-accredited universities abroad.',
-                icon: '🤝',
-              },
-              {
-                title: 'Global Destinations',
-                desc: 'Expertise in Russia, Georgia, Kazakhstan, Kyrgyzstan, and more.',
-                icon: '🌍',
-              },
-              {
-                title: 'English Medium',
-                desc: 'Securing admissions in programs taught entirely in English.',
-                icon: '📖',
-              },
-              {
-                title: 'Proven Success',
-                desc: 'Trusted by thousands of students who have achieved their medical dreams.',
-                icon: '🚀',
-              },
-            ].map((item, i) => (
+            {rankedOverseas.map((item, i) => (
               <div
                 key={i}
                 className="group p-6 bg-gray-50 rounded-2xl border border-transparent hover:border-accent hover:bg-surface transition-all duration-300"

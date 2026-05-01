@@ -54,12 +54,13 @@ import DagestanStateMedicalUniversity from '../pages/university/russiaUniversiti
 import SaintPetersburgMedicalUniversity from '../pages/university/russiaUniversities/SaintPetersburgMedicalUniversity';
 import IzhevskStateMedicalUniversity from '../pages/university/russiaUniversities/IzhevskStateMedicalUniversity';
 
-import ProgressStateMedicalUniversity from '../pages/university/armeniaUniversities/ProgressStateMedicalUniversity';
-import MkhitarGoshArmenianUniversity from '../pages/university/armeniaUniversities/MkhitarGoshArmenianUniversity';
+import ProgressMedicalUniversity from '../pages/university/armeniaUniversities/ProgressMedicalUniversity';
+import MkhitarGoshArmenianRussianInternationalUniversity from '../pages/university/armeniaUniversities/MkhitarGoshArmenianRussianInternationalUniversity';
 import YerevanStateMedicalUniversity from '../pages/university/armeniaUniversities/YerevanStateMedicalUniversity';
-import HaybusakMedicalUniversity from '../pages/university/armeniaUniversities/HaybusakMedicalUniversity';
+import YerevanHaybusakUniversity from '../pages/university/armeniaUniversities/YerevanHaybusakUniversity';
 import UniversityTraditionalMedicine from '../pages/university/armeniaUniversities/UniversityTraditionalMedicine';
 import ArmenianMedicalInstitute from '../pages/university/armeniaUniversities/ArmenianMedicalInstitute';
+import TerezaMedicalUniversity from '../pages/university/armeniaUniversities/TerezaMedicalUniversity';
 
 import GeorgianNationalUniversity from '../pages/university/georgiaUniversities/GeorgianNationalUniversity';
 import EuropeanMedicalUniversity from '../pages/university/georgiaUniversities/EuropeanMedicalUniversity';
@@ -303,20 +304,20 @@ const MainRoutes = createBrowserRouter([
       },
 
       {
-        path: 'progressStateMedicalUniversity',
-        element: <ProgressStateMedicalUniversity />,
+        path: 'progressMedicalUniversity',
+        element: <ProgressMedicalUniversity />,
       },
       {
-        path: 'mkhitarGoshArmenianUniversity',
-        element: <MkhitarGoshArmenianUniversity />,
+        path: 'mkhitarGoshArmenianRussianInternationalUniversity',
+        element: <MkhitarGoshArmenianRussianInternationalUniversity />,
       },
       {
         path: 'yerevanStateMedicalUniversity',
         element: <YerevanStateMedicalUniversity />,
       },
       {
-        path: 'haybusakMedicalUniversity',
-        element: <HaybusakMedicalUniversity />,
+        path: 'yerevanHaybusakUniversity',
+        element: <YerevanHaybusakUniversity />,
       },
       {
         path: 'universityTraditionalMedicine',
@@ -325,6 +326,10 @@ const MainRoutes = createBrowserRouter([
       {
         path: 'armenianMedicalInstitute',
         element: <ArmenianMedicalInstitute />,
+      },
+      {
+        path: 'terezamedicaluniversity',
+        element: <TerezaMedicalUniversity />,
       },
 
       {

@@ -18,18 +18,18 @@ import {
   banner4,
   banner5,
   banner6,
-  universityoftraditionalmedicine,
+  progressmedicaluniversity,
 } from '../../../assets/images';
 import { academicFaculties } from '../../../data/academicfaculties';
-import { medicalUniversities } from '../../../data/universityname';
 import { requiredDocument } from '../../../data/requiredDocument';
 import { admissionProcess } from '../../../data/admissionProcess';
+import { medicalUniversities } from '../../../data/universityname';
 import { rankedOverseas } from '../../../data/rankedOverseas';
 import { hostelFeature } from '../../../data/hostelFeature';
 import { galleryImages } from '../../../data/galleryImages';
 import Card from '../../../components/Card';
 
-const UniversityTraditionalMedicine = () => {
+const ProgressMedicalUniversity = () => {
   const navigate = useNavigate();
 
   const universityStats = [
@@ -66,7 +66,7 @@ const UniversityTraditionalMedicine = () => {
                 >
                   <div className="flex h-full flex-col items-center justify-center px-4 text-center text-white">
                     <div className="mb-4 text-4xl font-bold md:text-6xl">
-                      University of Traditional Medicine
+                      Progress Medical University
                     </div>
                     <p className="mb-8 max-w-2xl text-lg md:text-xl">
                       Empowering the next generation of global medical
@@ -112,34 +112,29 @@ const UniversityTraditionalMedicine = () => {
             <div className="mb-10 text-left">
               <div className="text-3xl font-bold text-primary mb-4">
                 Study MBBS in Armenia at <br />
-                <span className="text-accent">
-                  University of Traditional Medicine
-                </span>
+                <span className="text-accent">Progress Medical University</span>
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              Founded in the 90's, the college is one of the higher instructive
-              foundations that was granted the most elevated status- "The State
-              Accreditation" from the Government for its high picture in
-              logical, academic and instructive exercises. The graduates of the
-              university get State Diploma. The University's instructive
-              movement goes for readiness of such new qualified authorities who
-              will build up the 21st century prescription by mix. <br />
-              The medium of instruction for foreign students is English. <br />
-              There are preliminary courses for the outside residents, to
-              consider the Armenian dialect. Amid a scholastic year, the
-              understudy thinks about all the while philanthropic and normal
-              sciences' subjects and Armenian dialect or enhances his insight
-              into the dialect. Bachelor course is accessible for remote
-              national understudies. <br />
-              Master course is additionally accessible for remote native
-              understudies.
+              Internationally Recognized: Our medical program is accredited by
+              leading organizations, ensuring your qualifications are respected
+              worldwide. Supportive Environment: Our faculty and staff are
+              dedicated to your academic and personal well-being. We offer
+              resources and guidance to help you adapt and thrive in Armenia.
+              Multi-cultural Community: You’ll join a diverse student body from
+              around the globe, enriching your learning with different
+              perspectives and fostering lifelong friendships. Progress
+              University equips you with the knowledge, skills, and cultural
+              sensitivity to become a well-rounded and successful physician,
+              ready to make a difference anywhere in the world. We look forward
+              to welcoming you to our campus and embarking on this rewarding
+              journey together!
             </p>
           </div>
           <div className="md:w-1/2">
             <img
-              src={universityoftraditionalmedicine}
+              src={progressmedicaluniversity}
               alt="University Campus"
               className="rounded-2xl shadow-2xl transition-hover duration-500 hover:scale-[1.02]"
             />
@@ -152,16 +147,17 @@ const UniversityTraditionalMedicine = () => {
             <div>
               <div className="mb-10 text-left">
                 <div className="text-3xl font-bold text-primary mb-4">
-                  About University of Traditional Medicine
+                  About Progress Medical University
                 </div>
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
-                University of Traditional Medicine is a leading institution for
-                medical education in Armenia, offering a globally recognized MD
-                program. With a focus on practical clinical training and modern
-                research, we prepare students for successful careers in
-                healthcare worldwide.
+                Progress University is thrilled to welcome you, our
+                international medical students, to our vibrant academic
+                community! We understand the excitement and challenges of
+                pursuing a medical education abroad. Progress University is here
+                to support you every step of the way, providing an exceptional
+                learning experience designed for international success.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -231,23 +227,23 @@ const UniversityTraditionalMedicine = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              University of Traditional Medicine
+              Progress Medical University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0 mb-8"></div>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-4">
                 <p className="text-text-muted leading-relaxed">
-                  University of Traditional Medicine has played a pivotal role
-                  in the advancement of medical sciences and the education of
-                  medical professionals. Consistently ranked among the{' '}
+                  Progress Medical University has played a pivotal role in the
+                  advancement of medical sciences and the education of medical
+                  professionals. Consistently ranked among the{' '}
                   <strong>top 10 medical institutes in Armenia</strong>, it
                   stands out in the yearly official ratings among the 48
                   Armenian Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, University of Traditional Medicine is recognized
-                  as one of the largest centers for medical research, education,
-                  and science. The Academy is renowned for its highly qualified
+                  As of 2018, Progress Medical University is recognized as one
+                  of the largest centers for medical research, education, and
+                  science. The Academy is renowned for its highly qualified
                   teaching staff, extensive laboratory facilities, and robust
                   clinical base.
                 </p>
@@ -282,7 +278,7 @@ const UniversityTraditionalMedicine = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              Required Documents for University of Traditional Medicine
+              Required Documents for Progress Medical University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0"></div>
           </div>
@@ -320,7 +316,7 @@ const UniversityTraditionalMedicine = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <div className="text-3xl font-bold text-primary mb-4">
-              Admission Process for University of Traditional Medicine
+              Admission Process for Progress Medical University
             </div>
             <p className="text-text-muted max-w-2xl mx-auto">
               A straightforward 6-step journey to securing your medical future
@@ -359,10 +355,9 @@ const UniversityTraditionalMedicine = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the University of Traditional Medicine
-                library is a cornerstone of academic life. It houses a massive
-                collection of over{' '}
-                <strong className="text-primary">440,000 copies</strong>
+                Established in 1936, the Progress Medical University library is
+                a cornerstone of academic life. It houses a massive collection
+                of over <strong className="text-primary">440,000 copies</strong>
                 of books from both Armenian and international authors.
               </p>
               <div className="bg-blue-50 p-6 rounded-xl border-r-4 border-primary">
@@ -430,10 +425,9 @@ const UniversityTraditionalMedicine = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                University of Traditional Medicine provides a comfortable and
-                secure living environment across{' '}
-                <strong>4 dedicated hostels</strong>, accommodating over 1,840
-                international students.
+                Progress Medical University provides a comfortable and secure
+                living environment across <strong>4 dedicated hostels</strong>,
+                accommodating over 1,840 international students.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-success">
@@ -541,11 +535,11 @@ const UniversityTraditionalMedicine = () => {
           </div>
         </div>
       </section>
-      <section className="py-10 px-4 bg-primary-light">
+      <section className="py-16 px-4 bg-primary-light">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <div className="text-3xl font-bold text-primary mb-4">
-              Student Life at University of Traditional Medicine
+              Student Life at Progress Medical University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
             <p className="mt-6 text-text-muted max-w-3xl mx-auto leading-relaxed">
@@ -813,9 +807,7 @@ const UniversityTraditionalMedicine = () => {
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
-                <span className="text-accent">
-                  University of Traditional Medicine
-                </span>{' '}
+                <span className="text-accent">Progress Medical University</span>{' '}
                 for MBBS in Armenia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
@@ -885,9 +877,7 @@ const UniversityTraditionalMedicine = () => {
             <div className="max-w-2xl">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
                 The{' '}
-                <span className="text-accent">
-                  University of Traditional Medicine
-                </span>{' '}
+                <span className="text-accent">Progress Medical University</span>{' '}
                 Advantage
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-6"></div>
@@ -930,7 +920,7 @@ const UniversityTraditionalMedicine = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Life at University of Traditional Medicine
+              Life at Progress Medical University
             </div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A glimpse into the world-class infrastructure and vibrant campus
@@ -965,4 +955,4 @@ const UniversityTraditionalMedicine = () => {
   );
 };
 
-export default UniversityTraditionalMedicine;
+export default ProgressMedicalUniversity;

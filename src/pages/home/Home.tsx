@@ -33,10 +33,14 @@ import ServiceFeature from '../../components/home/ServiceFeature';
 import MythCard from '../../components/home/MythCard';
 import FAQItem from '../../components/home/FAQItem';
 
+interface LayoutContext {
+  openEnquiry: () => void;
+}
+
 const Home = () => {
   const navigate = useNavigate();
-  const { openEnquiry } = useOutletContext();
-  
+  const { openEnquiry } = useOutletContext<LayoutContext>();
+
   return (
     <div className="w-full">
       <Swiper

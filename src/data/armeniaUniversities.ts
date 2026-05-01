@@ -1,19 +1,19 @@
 export const armeniaUniversities = [
   {
-    label: 'Progress State Medical University',
-    path: '/progressStateMedicalUniversity',
+    label: 'Progress Medical University',
+    path: '/progressMedicalUniversity',
   },
   {
-    label: 'Mkhitar Gosh Armenian University',
-    path: '/mkhitarGoshArmenianUniversity',
+    label: 'Mkhitar Gosh Armenian-Russian International University',
+    path: '/mkhitarGoshArmenianRussianInternationalUniversity',
   },
   {
     label: 'Yerevan State Medical University',
     path: '/yerevanStateMedicalUniversity',
   },
   {
-    label: 'Haybusak Medical University',
-    path: '/haybusakMedicalUniversity',
+    label: 'Yerevan Haybusak University',
+    path: '/yerevanHaybusakUniversity',
   },
   {
     label: 'University of Traditional Medicine',
@@ -22,5 +22,9 @@ export const armeniaUniversities = [
   {
     label: 'Armenian Medical Institute',
     path: '/armenianMedicalInstitute',
+  },
+  {
+    label: 'Tereza Medical University',
+    path: '/terezamedicaluniversity',
   },
 ];

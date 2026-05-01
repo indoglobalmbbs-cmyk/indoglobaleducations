@@ -40,8 +40,13 @@ import photo20 from './photo20.jpg';
 import maristateuniversity from './russia/maristateuniversity.webp';
 import permstatemedicaluniversity from './russia/permstatemedicaluniversity.webp';
 
+import progressmedicaluniversity from './armenia/progressmedicaluniversity.jpg';
+import mkhitargosharmenianrussianinternationaluniversity from './armenia/mkhitargosharmenianrussianinternationaluniversity.webp';
+import yerevanhaybusakuniversity from './armenia/yerevanhaybusakuniversity.webp';
 import yerevanstatemedicaluniversity from './armenia/yerevanstatemedicaluniversity.webp';
 import universityoftraditionalmedicine from './armenia/universityoftraditionalmedicine.webp';
+import armenianmedicalinstitute from './armenia/armenianmedicalinstitute.jpg';
+import terezamedicaluniversity from './armenia/terezamedicaluniversity.webp';
 
 export {
   logo,
@@ -84,6 +89,11 @@ export {
   photo20,
   permstatemedicaluniversity,
   maristateuniversity,
+  progressmedicaluniversity,
+  mkhitargosharmenianrussianinternationaluniversity,
+  yerevanhaybusakuniversity,
   yerevanstatemedicaluniversity,
   universityoftraditionalmedicine,
+  armenianmedicalinstitute,
+  terezamedicaluniversity,
 };

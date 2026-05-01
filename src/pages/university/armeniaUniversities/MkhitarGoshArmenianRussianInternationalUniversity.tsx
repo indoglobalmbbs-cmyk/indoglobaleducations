@@ -18,7 +18,7 @@ import {
   banner4,
   banner5,
   banner6,
-  russia,
+  mkhitargosharmenianrussianinternationaluniversity,
 } from '../../../assets/images';
 import { academicFaculties } from '../../../data/academicfaculties';
 import { requiredDocument } from '../../../data/requiredDocument';
@@ -29,7 +29,7 @@ import { rankedOverseas } from '../../../data/rankedOverseas';
 import { galleryImages } from '../../../data/galleryImages';
 import Card from '../../../components/Card';
 
-const HaybusakMedicalUniversity = () => {
+const MkhitarGoshArmenianRussianInternationalUniversity = () => {
   const navigate = useNavigate();
 
   const universityStats = [
@@ -37,15 +37,6 @@ const HaybusakMedicalUniversity = () => {
     { icon: <FaUserMd />, label: 'Global Students', value: '5000+' },
     { icon: <FaHospital />, label: 'Affiliated Hospitals', value: '12+' },
     { icon: <FaGlobeAmericas />, label: 'World Ranking', value: 'Top 500' },
-  ];
-
-  const highlights = [
-    'MCI/NMC & WHO Recognized',
-    'English Medium Curriculum',
-    'Modern Research Laboratories',
-    'Low Cost of Living & Tuition',
-    'High USMLE/FMGE Success Rate',
-    'Global Exposure & Internships',
   ];
 
   return (
@@ -75,7 +66,7 @@ const HaybusakMedicalUniversity = () => {
                 >
                   <div className="flex h-full flex-col items-center justify-center px-4 text-center text-white">
                     <div className="mb-4 text-4xl font-bold md:text-6xl">
-                      Haybusak Medical University
+                      Mkhitar Gosh Armenian-Russian International University
                     </div>
                     <p className="mb-8 max-w-2xl text-lg md:text-xl">
                       Empowering the next generation of global medical
@@ -121,29 +112,29 @@ const HaybusakMedicalUniversity = () => {
             <div className="mb-10 text-left">
               <div className="text-3xl font-bold text-primary mb-4">
                 Study MBBS in Armenia at <br />
-                <span className="text-accent">Haybusak Medical University</span>
+                <span className="text-accent">
+                  Mkhitar Gosh Armenian-Russian International University
+                </span>
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              Haybusak Medical University stands as a beacon of medical
-              excellence in Armenia. Known for its rigorous academic standards
-              and state-of-the-art clinical facilities, the university offers an
-              MD program (equivalent to MBBS in India) that is fully taught in
-              English for international students.
+              Mkhitar Gosh Armenian-Russian International University established
+              in 1996 is located in Yerevan, the capital city if Armenia. It is
+              accredited by ANQA (Armenia’s National Center for Professional
+              Education Quality Assurance) and officially approved by the
+              Medical Council of India which complies with the standards set by
+              the MCI. The university comes under the top university of Armenia
+              for providing high-quality education in the field of Medicine. The
+              medical education program offered by the University is approved by
+              the Ministry of Education and Science of Armenia. Indian students
+              graduating from the university are eligible to sit for MCI
+              screening test and practice in India as a doctor.
             </p>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {highlights.map((item, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <FaCheckCircle className="text-success" />
-                  <span className="text-sm font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
           </div>
           <div className="md:w-1/2">
             <img
-              src={russia}
+              src={mkhitargosharmenianrussianinternationaluniversity}
               alt="University Campus"
               className="rounded-2xl shadow-2xl transition-hover duration-500 hover:scale-[1.02]"
             />
@@ -156,16 +147,16 @@ const HaybusakMedicalUniversity = () => {
             <div>
               <div className="mb-10 text-left">
                 <div className="text-3xl font-bold text-primary mb-4">
-                  About Haybusak Medical University
+                  About Mkhitar Gosh Armenian-Russian International University
                 </div>
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
-                Haybusak Medical University is a leading institution for medical
-                education in Armenia, offering a globally recognized MD program.
-                With a focus on practical clinical training and modern research,
-                we prepare students for successful careers in healthcare
-                worldwide.
+                Mkhitar Gosh Armenian-Russian International University is a
+                leading institution for medical education in Armenia, offering a
+                globally recognized MD program. With a focus on practical
+                clinical training and modern research, we prepare students for
+                successful careers in healthcare worldwide.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -235,25 +226,26 @@ const HaybusakMedicalUniversity = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              Haybusak Medical University
+              Mkhitar Gosh Armenian-Russian International University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0 mb-8"></div>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-4">
                 <p className="text-text-muted leading-relaxed">
-                  Haybusak Medical University has played a pivotal role in the
-                  advancement of medical sciences and the education of medical
-                  professionals. Consistently ranked among the{' '}
+                  Mkhitar Gosh Armenian-Russian International University has
+                  played a pivotal role in the advancement of medical sciences
+                  and the education of medical professionals. Consistently
+                  ranked among the{' '}
                   <strong>top 10 medical institutes in Armenia</strong>, it
                   stands out in the yearly official ratings among the 48
                   Armenian Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, Haybusak Medical University is recognized as one
-                  of the largest centers for medical research, education, and
-                  science. The Academy is renowned for its highly qualified
-                  teaching staff, extensive laboratory facilities, and robust
-                  clinical base.
+                  As of 2018, Mkhitar Gosh Armenian-Russian International
+                  University is recognized as one of the largest centers for
+                  medical research, education, and science. The Academy is
+                  renowned for its highly qualified teaching staff, extensive
+                  laboratory facilities, and robust clinical base.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-accent italic text-primary">
@@ -286,7 +278,8 @@ const HaybusakMedicalUniversity = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              Required Documents for Haybusak Medical University
+              Required Documents for Mkhitar Gosh Armenian-Russian International
+              University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0"></div>
           </div>
@@ -324,7 +317,8 @@ const HaybusakMedicalUniversity = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <div className="text-3xl font-bold text-primary mb-4">
-              Admission Process for Haybusak Medical University
+              Admission Process for Mkhitar Gosh Armenian-Russian International
+              University
             </div>
             <p className="text-text-muted max-w-2xl mx-auto">
               A straightforward 6-step journey to securing your medical future
@@ -363,9 +357,10 @@ const HaybusakMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the Haybusak Medical University library is
-                a cornerstone of academic life. It houses a massive collection
-                of over <strong className="text-primary">440,000 copies</strong>
+                Established in 1936, the Mkhitar Gosh Armenian-Russian
+                International University library is a cornerstone of academic
+                life. It houses a massive collection of over{' '}
+                <strong className="text-primary">440,000 copies</strong>
                 of books from both Armenian and international authors.
               </p>
               <div className="bg-blue-50 p-6 rounded-xl border-r-4 border-primary">
@@ -433,9 +428,10 @@ const HaybusakMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                Haybusak Medical University provides a comfortable and secure
-                living environment across <strong>4 dedicated hostels</strong>,
-                accommodating over 1,840 international students.
+                Mkhitar Gosh Armenian-Russian International University provides
+                a comfortable and secure living environment across{' '}
+                <strong>4 dedicated hostels</strong>, accommodating over 1,840
+                international students.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-success">
@@ -500,9 +496,9 @@ const HaybusakMedicalUniversity = () => {
             </div>
             <div className="flex flex-col p-8 bg-primary text-white rounded-2xl shadow-xl transform lg:scale-105">
               <div className="mb-6">
-                <div className="text-2xl font-bold mb-2 flex items-center gap-3">
+                <h2 className="text-2xl font-bold mb-2 flex items-center gap-3">
                   Why Hostels are Safer
-                </div>
+                </h2>
                 <div className="h-1 w-16 bg-accent rounded-full"></div>
               </div>
               <p className="mb-6 text-blue-50">
@@ -543,11 +539,12 @@ const HaybusakMedicalUniversity = () => {
           </div>
         </div>
       </section>
-      <section className="py-10 px-4 bg-primary-light">
+      <section className="py-16 px-4 bg-primary-light">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <div className="text-3xl font-bold text-primary mb-4">
-              Student Life at Haybusak Medical University
+              Student Life at Mkhitar Gosh Armenian-Russian International
+              University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
             <p className="mt-6 text-text-muted max-w-3xl mx-auto leading-relaxed">
@@ -815,7 +812,9 @@ const HaybusakMedicalUniversity = () => {
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
-                <span className="text-accent">Haybusak Medical University</span>{' '}
+                <span className="text-accent">
+                  Mkhitar Gosh Armenian-Russian International University
+                </span>{' '}
                 for MBBS in Armenia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
@@ -885,7 +884,9 @@ const HaybusakMedicalUniversity = () => {
             <div className="max-w-2xl">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
                 The{' '}
-                <span className="text-accent">Haybusak Medical University</span>{' '}
+                <span className="text-accent">
+                  Mkhitar Gosh Armenian-Russian International University
+                </span>{' '}
                 Advantage
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-6"></div>
@@ -928,7 +929,7 @@ const HaybusakMedicalUniversity = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Life at Haybusak Medical University
+              Life at Mkhitar Gosh Armenian-Russian International University
             </div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A glimpse into the world-class infrastructure and vibrant campus
@@ -963,4 +964,4 @@ const HaybusakMedicalUniversity = () => {
   );
 };
 
-export default HaybusakMedicalUniversity;
+export default MkhitarGoshArmenianRussianInternationalUniversity;

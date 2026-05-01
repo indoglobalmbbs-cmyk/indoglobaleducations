@@ -18,7 +18,7 @@ import {
   banner4,
   banner5,
   banner6,
-  russia,
+  armenianmedicalinstitute,
 } from '../../../assets/images';
 import { academicFaculties } from '../../../data/academicfaculties';
 import { requiredDocument } from '../../../data/requiredDocument';
@@ -37,15 +37,6 @@ const ArmenianMedicalInstitute = () => {
     { icon: <FaUserMd />, label: 'Global Students', value: '5000+' },
     { icon: <FaHospital />, label: 'Affiliated Hospitals', value: '12+' },
     { icon: <FaGlobeAmericas />, label: 'World Ranking', value: 'Top 500' },
-  ];
-
-  const highlights = [
-    'MCI/NMC & WHO Recognized',
-    'English Medium Curriculum',
-    'Modern Research Laboratories',
-    'Low Cost of Living & Tuition',
-    'High USMLE/FMGE Success Rate',
-    'Global Exposure & Internships',
   ];
 
   return (
@@ -126,24 +117,32 @@ const ArmenianMedicalInstitute = () => {
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              Armenian Medical Institute stands as a beacon of medical
-              excellence in Armenia. Known for its rigorous academic standards
-              and state-of-the-art clinical facilities, the university offers an
-              MD program (equivalent to MBBS in India) that is fully taught in
-              English for international students.
+              Established in 1990, Armenian Medical Institute (AMI) is the first
+              private medical institution offering higher education on the
+              post-Soviet territory and its establishment is possible mainly due
+              to new and innovative thinking in the young Republic of Armenia.
+              Presently there are more than 45 faculties and cycles which
+              operate in ??I. More than 200 people work for the Institute which
+              includes teaching staff (56 Doctors of Sciences); 54 professors; 4
+              academicians of RA Academy of Sciences and 15 members of various
+              foreign academies. Higher excellence education, quality of
+              professional education, and ethical integrity are core to AMI
+              which help students in having an aspirational career post
+              completing their studies from here. The graduates of our Institute
+              start working as doctors post completing their medical studies
+              from the institute and not only get jobs in the Republic of
+              Armenia, but can also explore their career in other countries as
+              well. Also, AMI is a coeducational higher education institution
+              and offers courses and programs which lead to officially
+              recognized higher education degrees in several areas of study.
+              Students from Indian and other nations travel every year for the
+              MBBS studies and other professional courses facilitated at a
+              comparatively low tuition fee.
             </p>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {highlights.map((item, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <FaCheckCircle className="text-success" />
-                  <span className="text-sm font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
           </div>
           <div className="md:w-1/2">
             <img
-              src={russia}
+              src={armenianmedicalinstitute}
               alt="University Campus"
               className="rounded-2xl shadow-2xl transition-hover duration-500 hover:scale-[1.02]"
             />

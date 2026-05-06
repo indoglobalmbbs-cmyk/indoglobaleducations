@@ -283,7 +283,7 @@ const Novgorod = () => {
                 'School of Pediatrics',
                 'School of Postgraduate Studies',
                 'School of Pharmacy',
-              ].map((faculty, idx) => (
+              ].map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"

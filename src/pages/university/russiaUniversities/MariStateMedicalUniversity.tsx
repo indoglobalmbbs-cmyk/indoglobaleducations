@@ -289,7 +289,7 @@ const LobachevskyStateUniversity = () => {
                 'School of Pediatrics',
                 'School of Postgraduate Studies',
                 'School of Pharmacy',
-              ].map((faculty, idx) => (
+              ].map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"
@@ -434,9 +434,10 @@ const LobachevskyStateUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the Mari State Medical University library is
-                a cornerstone of academic life. It houses a massive collection
-                of over <strong className="text-primary">440,000 copies</strong>
+                Established in 1936, the Mari State Medical University library
+                is a cornerstone of academic life. It houses a massive
+                collection of over{' '}
+                <strong className="text-primary">440,000 copies</strong>
                 of books from both Russian and international authors.
               </p>
               <div className="bg-blue-50 p-6 rounded-xl border-r-4 border-primary">

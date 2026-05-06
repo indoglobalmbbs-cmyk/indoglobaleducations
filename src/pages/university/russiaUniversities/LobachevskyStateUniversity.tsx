@@ -254,17 +254,17 @@ const LobachevskyStateUniversity = () => {
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-4">
                 <p className="text-text-muted leading-relaxed">
-                  Lobachevsky State University has played a pivotal role in
-                  the advancement of medical sciences and the education of
-                  medical professionals. Consistently ranked among the{' '}
+                  Lobachevsky State University has played a pivotal role in the
+                  advancement of medical sciences and the education of medical
+                  professionals. Consistently ranked among the{' '}
                   <strong>top 10 medical institutes in Russia</strong>, it
                   stands out in the yearly official ratings among the 48 Russian
                   Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, Lobachevsky State University is recognized as
-                  one of the largest centers for medical research, education,
-                  and science. The Academy is renowned for its highly qualified
+                  As of 2018, Lobachevsky State University is recognized as one
+                  of the largest centers for medical research, education, and
+                  science. The Academy is renowned for its highly qualified
                   teaching staff, extensive laboratory facilities, and robust
                   clinical base.
                 </p>
@@ -289,7 +289,7 @@ const LobachevskyStateUniversity = () => {
                 'School of Pediatrics',
                 'School of Postgraduate Studies',
                 'School of Pharmacy',
-              ].map((faculty, idx) => (
+              ].map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"
@@ -434,10 +434,9 @@ const LobachevskyStateUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the Lobachevsky State University library
-                is a cornerstone of academic life. It houses a massive
-                collection of over{' '}
-                <strong className="text-primary">440,000 copies</strong>
+                Established in 1936, the Lobachevsky State University library is
+                a cornerstone of academic life. It houses a massive collection
+                of over <strong className="text-primary">440,000 copies</strong>
                 of books from both Russian and international authors.
               </p>
               <div className="bg-blue-50 p-6 rounded-xl border-r-4 border-primary">

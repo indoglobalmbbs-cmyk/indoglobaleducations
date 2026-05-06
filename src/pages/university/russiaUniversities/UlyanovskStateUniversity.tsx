@@ -137,10 +137,10 @@ const UlyanovskStateUniversity = () => {
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              Ulyanovsk State University stands as a beacon of medical excellence
-              in Russia. Known for its rigorous academic standards and
-              state-of-the-art clinical facilities, the university offers an MD
-              program (equivalent to MBBS in India) that is fully taught in
+              Ulyanovsk State University stands as a beacon of medical
+              excellence in Russia. Known for its rigorous academic standards
+              and state-of-the-art clinical facilities, the university offers an
+              MD program (equivalent to MBBS in India) that is fully taught in
               English for international students.
             </p>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -287,7 +287,7 @@ const UlyanovskStateUniversity = () => {
                 'School of Pediatrics',
                 'School of Postgraduate Studies',
                 'School of Pharmacy',
-              ].map((faculty, idx) => (
+              ].map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"
@@ -502,8 +502,8 @@ const UlyanovskStateUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                Ulyanovsk State University provides a comfortable and secure living
-                environment across <strong>4 dedicated hostels</strong>,
+                Ulyanovsk State University provides a comfortable and secure
+                living environment across <strong>4 dedicated hostels</strong>,
                 accommodating over 1,840 international students.
               </p>
               <div className="space-y-4">
@@ -961,8 +961,8 @@ const UlyanovskStateUniversity = () => {
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
-                <span className="text-accent">Ulyanovsk State University</span> for
-                MBBS in Russia?
+                <span className="text-accent">Ulyanovsk State University</span>{' '}
+                for MBBS in Russia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
               <p className="text-blue-100 leading-relaxed mb-6">
@@ -1039,7 +1039,8 @@ const UlyanovskStateUniversity = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-2xl">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                The <span className="text-accent">Ulyanovsk State University</span>{' '}
+                The{' '}
+                <span className="text-accent">Ulyanovsk State University</span>{' '}
                 Advantage
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-6"></div>

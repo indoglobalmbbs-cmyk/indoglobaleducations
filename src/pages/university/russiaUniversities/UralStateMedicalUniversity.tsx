@@ -132,7 +132,9 @@ const UralStateMedicalUniversity = () => {
             <div className="mb-10 text-left">
               <div className="text-3xl font-bold text-primary mb-4">
                 Study MBBS in Russia at <br />
-                <span className="text-accent">Ural State Medical University</span>
+                <span className="text-accent">
+                  Ural State Medical University
+                </span>
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
@@ -172,11 +174,11 @@ const UralStateMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
-                Ural State Medical University is a leading institution for medical
-                education in Russia, offering a globally recognized MD program.
-                With a focus on practical clinical training and modern research,
-                we prepare students for successful careers in healthcare
-                worldwide.
+                Ural State Medical University is a leading institution for
+                medical education in Russia, offering a globally recognized MD
+                program. With a focus on practical clinical training and modern
+                research, we prepare students for successful careers in
+                healthcare worldwide.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -260,8 +262,8 @@ const UralStateMedicalUniversity = () => {
                   Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, Ural State Medical University is recognized as one of
-                  the largest centers for medical research, education, and
+                  As of 2018, Ural State Medical University is recognized as one
+                  of the largest centers for medical research, education, and
                   science. The Academy is renowned for its highly qualified
                   teaching staff, extensive laboratory facilities, and robust
                   clinical base.
@@ -287,7 +289,7 @@ const UralStateMedicalUniversity = () => {
                 'School of Pediatrics',
                 'School of Postgraduate Studies',
                 'School of Pharmacy',
-              ].map((faculty, idx) => (
+              ].map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"
@@ -432,9 +434,10 @@ const UralStateMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the Ural State Medical University library is a
-                cornerstone of academic life. It houses a massive collection of
-                over <strong className="text-primary">440,000 copies</strong>
+                Established in 1936, the Ural State Medical University library
+                is a cornerstone of academic life. It houses a massive
+                collection of over{' '}
+                <strong className="text-primary">440,000 copies</strong>
                 of books from both Russian and international authors.
               </p>
               <div className="bg-blue-50 p-6 rounded-xl border-r-4 border-primary">
@@ -961,7 +964,9 @@ const UralStateMedicalUniversity = () => {
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
-                <span className="text-accent">Ural State Medical University</span>{' '}
+                <span className="text-accent">
+                  Ural State Medical University
+                </span>{' '}
                 for MBBS in Russia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
@@ -1040,7 +1045,9 @@ const UralStateMedicalUniversity = () => {
             <div className="max-w-2xl">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
                 The{' '}
-                <span className="text-accent">Ural State Medical University</span>{' '}
+                <span className="text-accent">
+                  Ural State Medical University
+                </span>{' '}
                 Advantage
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-6"></div>

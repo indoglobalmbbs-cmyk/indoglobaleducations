@@ -137,8 +137,8 @@ const KazanFederalUniversity = () => {
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              Kazan Federal University stands as a beacon of medical excellence in
-              Russia. Known for its rigorous academic standards and
+              Kazan Federal University stands as a beacon of medical excellence
+              in Russia. Known for its rigorous academic standards and
               state-of-the-art clinical facilities, the university offers an MD
               program (equivalent to MBBS in India) that is fully taught in
               English for international students.
@@ -260,11 +260,11 @@ const KazanFederalUniversity = () => {
                   Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, Kazan Federal University is recognized as one of the
-                  largest centers for medical research, education, and science.
-                  The Academy is renowned for its highly qualified teaching
-                  staff, extensive laboratory facilities, and robust clinical
-                  base.
+                  As of 2018, Kazan Federal University is recognized as one of
+                  the largest centers for medical research, education, and
+                  science. The Academy is renowned for its highly qualified
+                  teaching staff, extensive laboratory facilities, and robust
+                  clinical base.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-accent italic text-primary">
@@ -287,7 +287,7 @@ const KazanFederalUniversity = () => {
                 'School of Pediatrics',
                 'School of Postgraduate Studies',
                 'School of Pharmacy',
-              ].map((faculty, idx) => (
+              ].map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"
@@ -502,8 +502,8 @@ const KazanFederalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                Kazan Federal University provides a comfortable and secure living
-                environment across <strong>4 dedicated hostels</strong>,
+                Kazan Federal University provides a comfortable and secure
+                living environment across <strong>4 dedicated hostels</strong>,
                 accommodating over 1,840 international students.
               </p>
               <div className="space-y-4">
@@ -961,8 +961,8 @@ const KazanFederalUniversity = () => {
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
-                <span className="text-accent">Kazan Federal University</span> for
-                MBBS in Russia?
+                <span className="text-accent">Kazan Federal University</span>{' '}
+                for MBBS in Russia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
               <p className="text-blue-100 leading-relaxed mb-6">
@@ -1039,7 +1039,8 @@ const KazanFederalUniversity = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-2xl">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                The <span className="text-accent">Kazan Federal University</span>{' '}
+                The{' '}
+                <span className="text-accent">Kazan Federal University</span>{' '}
                 Advantage
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-6"></div>

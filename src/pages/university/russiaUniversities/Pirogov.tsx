@@ -137,8 +137,8 @@ const Pirogov = () => {
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              Pirogov stands as a beacon of medical excellence in Russia. Known for
-              its rigorous academic standards and state-of-the-art clinical
+              Pirogov stands as a beacon of medical excellence in Russia. Known
+              for its rigorous academic standards and state-of-the-art clinical
               facilities, the university offers an MD program (equivalent to
               MBBS in India) that is fully taught in English for international
               students.
@@ -172,9 +172,9 @@ const Pirogov = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
-                Pirogov is a leading institution for medical education in Russia,
-                offering a globally recognized MD program. With a focus on
-                practical clinical training and modern research, we prepare
+                Pirogov is a leading institution for medical education in
+                Russia, offering a globally recognized MD program. With a focus
+                on practical clinical training and modern research, we prepare
                 students for successful careers in healthcare worldwide.
               </p>
             </div>
@@ -249,18 +249,18 @@ const Pirogov = () => {
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-4">
                 <p className="text-text-muted leading-relaxed">
-                  Pirogov has played a pivotal role in the advancement of medical
-                  sciences and the education of medical professionals.
+                  Pirogov has played a pivotal role in the advancement of
+                  medical sciences and the education of medical professionals.
                   Consistently ranked among the{' '}
                   <strong>top 10 medical institutes in Russia</strong>, it
                   stands out in the yearly official ratings among the 48 Russian
                   Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, Pirogov is recognized as one of the largest centers
-                  for medical research, education, and science. The Academy is
-                  renowned for its highly qualified teaching staff, extensive
-                  laboratory facilities, and robust clinical base.
+                  As of 2018, Pirogov is recognized as one of the largest
+                  centers for medical research, education, and science. The
+                  Academy is renowned for its highly qualified teaching staff,
+                  extensive laboratory facilities, and robust clinical base.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-accent italic text-primary">
@@ -283,7 +283,7 @@ const Pirogov = () => {
                 'School of Pediatrics',
                 'School of Postgraduate Studies',
                 'School of Pharmacy',
-              ].map((faculty, idx) => (
+              ].map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"
@@ -498,9 +498,9 @@ const Pirogov = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                Pirogov provides a comfortable and secure living environment across{' '}
-                <strong>4 dedicated hostels</strong>, accommodating over 1,840
-                international students.
+                Pirogov provides a comfortable and secure living environment
+                across <strong>4 dedicated hostels</strong>, accommodating over
+                1,840 international students.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-success">
@@ -956,8 +956,8 @@ const Pirogov = () => {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
-                Why Choose <span className="text-accent">Pirogov</span> for MBBS in
-                Russia?
+                Why Choose <span className="text-accent">Pirogov</span> for MBBS
+                in Russia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
               <p className="text-blue-100 leading-relaxed mb-6">

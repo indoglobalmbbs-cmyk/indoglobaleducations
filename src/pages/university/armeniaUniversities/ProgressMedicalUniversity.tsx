@@ -261,7 +261,7 @@ const ProgressMedicalUniversity = () => {
               Academic Faculties
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {academicFaculties.map((faculty, idx) => (
+              {academicFaculties.map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"

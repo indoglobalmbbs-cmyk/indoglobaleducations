@@ -132,18 +132,16 @@ const IMSechenov = () => {
             <div className="mb-10 text-left">
               <div className="text-3xl font-bold text-primary mb-4">
                 Study MBBS in Russia at <br />
-                <span className="text-accent">
-                  I.M.Schenov
-                </span>
+                <span className="text-accent">I.M.Schenov</span>
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              I.M.Schenov stands as a beacon of
-              medical excellence in Russia. Known for its rigorous academic
-              standards and state-of-the-art clinical facilities, the university
-              offers an MD program (equivalent to MBBS in India) that is fully
-              taught in English for international students.
+              I.M.Schenov stands as a beacon of medical excellence in Russia.
+              Known for its rigorous academic standards and state-of-the-art
+              clinical facilities, the university offers an MD program
+              (equivalent to MBBS in India) that is fully taught in English for
+              international students.
             </p>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {highlights.map((item, index) => (
@@ -174,11 +172,10 @@ const IMSechenov = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
-                I.M.Schenov is a leading institution
-                for medical education in Russia, offering a globally recognized
-                MD program. With a focus on practical clinical training and
-                modern research, we prepare students for successful careers in
-                healthcare worldwide.
+                I.M.Schenov is a leading institution for medical education in
+                Russia, offering a globally recognized MD program. With a focus
+                on practical clinical training and modern research, we prepare
+                students for successful careers in healthcare worldwide.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -254,19 +251,18 @@ const IMSechenov = () => {
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-4">
                 <p className="text-text-muted leading-relaxed">
-                  I.M.Schenov has played a pivotal
-                  role in the advancement of medical sciences and the education
-                  of medical professionals. Consistently ranked among the{' '}
+                  I.M.Schenov has played a pivotal role in the advancement of
+                  medical sciences and the education of medical professionals.
+                  Consistently ranked among the{' '}
                   <strong>top 10 medical institutes in Russia</strong>, it
                   stands out in the yearly official ratings among the 48 Russian
                   Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, I.M.Schenov is
-                  recognized as one of the largest centers for medical research,
-                  education, and science. The Academy is renowned for its highly
-                  qualified teaching staff, extensive laboratory facilities, and
-                  robust clinical base.
+                  As of 2018, I.M.Schenov is recognized as one of the largest
+                  centers for medical research, education, and science. The
+                  Academy is renowned for its highly qualified teaching staff,
+                  extensive laboratory facilities, and robust clinical base.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-accent italic text-primary">
@@ -289,7 +285,7 @@ const IMSechenov = () => {
                 'School of Pediatrics',
                 'School of Postgraduate Studies',
                 'School of Pharmacy',
-              ].map((faculty, idx) => (
+              ].map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"
@@ -434,9 +430,8 @@ const IMSechenov = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the I.M.Schenov
-                library is a cornerstone of academic life. It houses a massive
-                collection of over{' '}
+                Established in 1936, the I.M.Schenov library is a cornerstone of
+                academic life. It houses a massive collection of over{' '}
                 <strong className="text-primary">440,000 copies</strong>
                 of books from both Russian and international authors.
               </p>
@@ -505,10 +500,9 @@ const IMSechenov = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                I.M.Schenov provides a comfortable
-                and secure living environment across{' '}
-                <strong>4 dedicated hostels</strong>, accommodating over 1,840
-                international students.
+                I.M.Schenov provides a comfortable and secure living environment
+                across <strong>4 dedicated hostels</strong>, accommodating over
+                1,840 international students.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-success">
@@ -964,11 +958,8 @@ const IMSechenov = () => {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
-                Why Choose{' '}
-                <span className="text-accent">
-                  I.M.Schenov
-                </span>{' '}
-                for MBBS in Russia?
+                Why Choose <span className="text-accent">I.M.Schenov</span> for
+                MBBS in Russia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
               <p className="text-blue-100 leading-relaxed mb-6">
@@ -1045,11 +1036,7 @@ const IMSechenov = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-2xl">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                The{' '}
-                <span className="text-accent">
-                  I.M.Schenov
-                </span>{' '}
-                Advantage
+                The <span className="text-accent">I.M.Schenov</span> Advantage
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-6"></div>
               <p className="text-text-muted leading-relaxed">

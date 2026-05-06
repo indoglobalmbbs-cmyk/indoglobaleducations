@@ -132,7 +132,9 @@ const ChuvashStateMedicalUniversity = () => {
             <div className="mb-10 text-left">
               <div className="text-3xl font-bold text-primary mb-4">
                 Study MBBS in Russia at <br />
-                <span className="text-accent">Chuvash State Medical University</span>
+                <span className="text-accent">
+                  Chuvash State Medical University
+                </span>
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
@@ -172,11 +174,11 @@ const ChuvashStateMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
-                Chuvash State Medical University is a leading institution for medical
-                education in Russia, offering a globally recognized MD program.
-                With a focus on practical clinical training and modern research,
-                we prepare students for successful careers in healthcare
-                worldwide.
+                Chuvash State Medical University is a leading institution for
+                medical education in Russia, offering a globally recognized MD
+                program. With a focus on practical clinical training and modern
+                research, we prepare students for successful careers in
+                healthcare worldwide.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -252,17 +254,17 @@ const ChuvashStateMedicalUniversity = () => {
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-4">
                 <p className="text-text-muted leading-relaxed">
-                  Chuvash State Medical University has played a pivotal role in the
-                  advancement of medical sciences and the education of medical
-                  professionals. Consistently ranked among the{' '}
+                  Chuvash State Medical University has played a pivotal role in
+                  the advancement of medical sciences and the education of
+                  medical professionals. Consistently ranked among the{' '}
                   <strong>top 10 medical institutes in Russia</strong>, it
                   stands out in the yearly official ratings among the 48 Russian
                   Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, Chuvash State Medical University is recognized as one
-                  of the largest centers for medical research, education, and
-                  science. The Academy is renowned for its highly qualified
+                  As of 2018, Chuvash State Medical University is recognized as
+                  one of the largest centers for medical research, education,
+                  and science. The Academy is renowned for its highly qualified
                   teaching staff, extensive laboratory facilities, and robust
                   clinical base.
                 </p>
@@ -287,7 +289,7 @@ const ChuvashStateMedicalUniversity = () => {
                 'School of Pediatrics',
                 'School of Postgraduate Studies',
                 'School of Pharmacy',
-              ].map((faculty, idx) => (
+              ].map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"
@@ -432,9 +434,10 @@ const ChuvashStateMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the Chuvash State Medical University library is
-                a cornerstone of academic life. It houses a massive collection
-                of over <strong className="text-primary">440,000 copies</strong>
+                Established in 1936, the Chuvash State Medical University
+                library is a cornerstone of academic life. It houses a massive
+                collection of over{' '}
+                <strong className="text-primary">440,000 copies</strong>
                 of books from both Russian and international authors.
               </p>
               <div className="bg-blue-50 p-6 rounded-xl border-r-4 border-primary">
@@ -502,9 +505,10 @@ const ChuvashStateMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                Chuvash State Medical University provides a comfortable and secure
-                living environment across <strong>4 dedicated hostels</strong>,
-                accommodating over 1,840 international students.
+                Chuvash State Medical University provides a comfortable and
+                secure living environment across{' '}
+                <strong>4 dedicated hostels</strong>, accommodating over 1,840
+                international students.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-success">
@@ -961,7 +965,9 @@ const ChuvashStateMedicalUniversity = () => {
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
-                <span className="text-accent">Chuvash State Medical University</span>{' '}
+                <span className="text-accent">
+                  Chuvash State Medical University
+                </span>{' '}
                 for MBBS in Russia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
@@ -1040,7 +1046,9 @@ const ChuvashStateMedicalUniversity = () => {
             <div className="max-w-2xl">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
                 The{' '}
-                <span className="text-accent">Chuvash State Medical University</span>{' '}
+                <span className="text-accent">
+                  Chuvash State Medical University
+                </span>{' '}
                 Advantage
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-6"></div>

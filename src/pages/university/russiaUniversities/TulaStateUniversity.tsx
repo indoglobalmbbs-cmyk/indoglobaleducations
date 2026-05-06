@@ -287,7 +287,7 @@ const TulaStateUniversity = () => {
                 'School of Pediatrics',
                 'School of Postgraduate Studies',
                 'School of Pharmacy',
-              ].map((faculty, idx) => (
+              ].map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"
@@ -961,8 +961,8 @@ const TulaStateUniversity = () => {
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
-                <span className="text-accent">Tula State University</span> for MBBS
-                in Russia?
+                <span className="text-accent">Tula State University</span> for
+                MBBS in Russia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
               <p className="text-blue-100 leading-relaxed mb-6">

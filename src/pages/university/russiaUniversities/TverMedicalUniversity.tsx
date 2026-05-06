@@ -137,8 +137,8 @@ const TverMedicalUniversity = () => {
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              Tver Medical University stands as a beacon of medical excellence in
-              Russia. Known for its rigorous academic standards and
+              Tver Medical University stands as a beacon of medical excellence
+              in Russia. Known for its rigorous academic standards and
               state-of-the-art clinical facilities, the university offers an MD
               program (equivalent to MBBS in India) that is fully taught in
               English for international students.
@@ -260,11 +260,11 @@ const TverMedicalUniversity = () => {
                   Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, Tver Medical University is recognized as one of the
-                  largest centers for medical research, education, and science.
-                  The Academy is renowned for its highly qualified teaching
-                  staff, extensive laboratory facilities, and robust clinical
-                  base.
+                  As of 2018, Tver Medical University is recognized as one of
+                  the largest centers for medical research, education, and
+                  science. The Academy is renowned for its highly qualified
+                  teaching staff, extensive laboratory facilities, and robust
+                  clinical base.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-accent italic text-primary">
@@ -287,7 +287,7 @@ const TverMedicalUniversity = () => {
                 'School of Pediatrics',
                 'School of Postgraduate Studies',
                 'School of Pharmacy',
-              ].map((faculty, idx) => (
+              ].map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"

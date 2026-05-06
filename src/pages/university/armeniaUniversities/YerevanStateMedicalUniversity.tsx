@@ -20,7 +20,7 @@ import {
   banner6,
   yerevanstatemedicaluniversity,
 } from '../../../assets/images';
-import { academicFaculties } from '../../../data/academicfaculties';
+import { academicFaculties } from '../../../data/academicFaculties';
 import { medicalUniversities } from '../../../data/universityname';
 import { requiredDocument } from '../../../data/requiredDocument';
 import { admissionProcess } from '../../../data/admissionProcess';

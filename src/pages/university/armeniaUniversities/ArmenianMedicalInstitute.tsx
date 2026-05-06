@@ -20,7 +20,7 @@ import {
   banner6,
   armenianmedicalinstitute,
 } from '../../../assets/images';
-import { academicFaculties } from '../../../data/academicfaculties';
+import { academicFaculties } from '../../../data/academicFaculties';
 import { requiredDocument } from '../../../data/requiredDocument';
 import { admissionProcess } from '../../../data/admissionProcess';
 import { hostelFeature } from '../../../data/hostelFeature';

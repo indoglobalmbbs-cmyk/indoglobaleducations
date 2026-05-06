@@ -20,7 +20,7 @@ import {
   banner6,
   progressmedicaluniversity,
 } from '../../../assets/images';
-import { academicFaculties } from '../../../data/academicfaculties';
+import { academicFaculties } from '../../../data/academicFaculties';
 import { requiredDocument } from '../../../data/requiredDocument';
 import { admissionProcess } from '../../../data/admissionProcess';
 import { medicalUniversities } from '../../../data/universityname';

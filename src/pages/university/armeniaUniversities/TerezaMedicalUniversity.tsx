@@ -20,7 +20,7 @@ import {
   banner6,
   terezamedicaluniversity,
 } from '../../../assets/images';
-import { academicFaculties } from '../../../data/academicfaculties';
+import { academicFaculties } from '../../../data/academicFaculties';
 import { requiredDocument } from '../../../data/requiredDocument';
 import { admissionProcess } from '../../../data/admissionProcess';
 import { hostelFeature } from '../../../data/hostelFeature';
@@ -112,7 +112,9 @@ const TerezaMedicalUniversity = () => {
             <div className="mb-10 text-left">
               <div className="text-3xl font-bold text-primary mb-4">
                 Study MBBS in Armenia at <br />
-                <span className="text-accent">St. Tereza Medical University</span>
+                <span className="text-accent">
+                  St. Tereza Medical University
+                </span>
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
@@ -146,11 +148,11 @@ const TerezaMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
-                St. Tereza Medical University is a leading institution for medical
-                education in Armenia, offering a globally recognized MD program.
-                With a focus on practical clinical training and modern research,
-                we prepare students for successful careers in healthcare
-                worldwide.
+                St. Tereza Medical University is a leading institution for
+                medical education in Armenia, offering a globally recognized MD
+                program. With a focus on practical clinical training and modern
+                research, we prepare students for successful careers in
+                healthcare worldwide.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -234,8 +236,8 @@ const TerezaMedicalUniversity = () => {
                   Armenian Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, St. Tereza Medical University is recognized as one of
-                  the largest centers for medical research, education, and
+                  As of 2018, St. Tereza Medical University is recognized as one
+                  of the largest centers for medical research, education, and
                   science. The Academy is renowned for its highly qualified
                   teaching staff, extensive laboratory facilities, and robust
                   clinical base.
@@ -348,9 +350,10 @@ const TerezaMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the St. Tereza Medical University library is a
-                cornerstone of academic life. It houses a massive collection of
-                over <strong className="text-primary">440,000 copies</strong>
+                Established in 1936, the St. Tereza Medical University library
+                is a cornerstone of academic life. It houses a massive
+                collection of over{' '}
+                <strong className="text-primary">440,000 copies</strong>
                 of books from both Armenian and international authors.
               </p>
               <div className="bg-blue-50 p-6 rounded-xl border-r-4 border-primary">
@@ -800,7 +803,9 @@ const TerezaMedicalUniversity = () => {
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
-                <span className="text-accent">St. Tereza Medical University</span>{' '}
+                <span className="text-accent">
+                  St. Tereza Medical University
+                </span>{' '}
                 for MBBS in Armenia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
@@ -870,7 +875,9 @@ const TerezaMedicalUniversity = () => {
             <div className="max-w-2xl">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
                 The{' '}
-                <span className="text-accent">St. Tereza Medical University</span>{' '}
+                <span className="text-accent">
+                  St. Tereza Medical University
+                </span>{' '}
                 Advantage
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-6"></div>

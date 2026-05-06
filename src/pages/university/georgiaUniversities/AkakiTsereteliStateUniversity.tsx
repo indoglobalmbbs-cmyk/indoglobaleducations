@@ -22,7 +22,7 @@ import {
 } from '../../../assets/images';
 import Card from '../../../components/Card';
 import { galleryImages } from '../../../data/galleryImages';
-import { academicFaculties } from '../../../data/academicfaculties';
+import { academicFaculties } from '../../../data/academicFaculties';
 import { requiredDocument } from '../../../data/requiredDocument';
 import { admissionProcess } from '../../../data/admissionProcess';
 import { hostelFeature } from '../../../data/hostelFeature';

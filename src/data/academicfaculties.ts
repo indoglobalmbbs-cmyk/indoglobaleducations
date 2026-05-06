@@ -1,7 +1,3 @@
-export interface Faculty {
-  name: string;
-}
-
 export const academicFaculties: string[] = [
   'School of General Medicine (MD- equivalent to MBBS in India)',
   'School of Pharmacy',

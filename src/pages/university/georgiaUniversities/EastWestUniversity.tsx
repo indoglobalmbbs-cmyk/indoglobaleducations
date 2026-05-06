@@ -18,7 +18,7 @@ import {
   banner4,
   banner5,
   banner6,
-  universityofgeorgia,
+  eastwestuniversity,
 } from '../../../assets/images';
 import Card from '../../../components/Card';
 import { galleryImages } from '../../../data/galleryImages';
@@ -29,7 +29,7 @@ import { hostelFeature } from '../../../data/hostelFeature';
 import { medicalUniversities } from '../../../data/universityname';
 import { rankedOverseas } from '../../../data/rankedOverseas';
 
-const UniversityofGeorgia = () => {
+const EastWestUniversity = () => {
   const navigate = useNavigate();
 
   const universityStats = [
@@ -66,7 +66,7 @@ const UniversityofGeorgia = () => {
                 >
                   <div className="flex h-full flex-col items-center justify-center px-4 text-center text-white">
                     <div className="mb-4 text-4xl font-bold md:text-6xl">
-                      University Of Georgia
+                      EAST-WEST UNIVERSITY
                     </div>
                     <p className="mb-8 max-w-2xl text-lg md:text-xl">
                       Empowering the next generation of global medical
@@ -112,31 +112,31 @@ const UniversityofGeorgia = () => {
             <div className="mb-10 text-left">
               <div className="text-3xl font-bold text-primary mb-4">
                 Study MBBS in Georgia at <br />
-                <span className="text-accent">University Of Georgia</span>
+                <span className="text-accent">EAST-WEST UNIVERSITY</span>
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              The University of Georgia was established in 2004 at Tbilisi, is a
-              private college which is recognized worldwide as being a member of
-              the Bologna Process. It ranks 9th as one of the best universities
-              in Georgia. It is accredited by the Ministry of Education of Iran
-              and officially listed in Medical Council of India (MCI). The
-              university offers quality education of global standards and
-              focuses on developing & polishing young talents for the future. It
-              enriches the students with creative skills through modern
-              educative techniques. It has an excellent group of faculties, who
-              are experts in their own respective fields and always there to
-              help & guide students. The University of Georgia offers one of the
-              best medical education in the world and offers versatile
-              opportunities to the students for collaboration with other
-              students, in renowned universities for enhancing their knowledge
-              base.
+              East West University is a prestigious university situated in
+              Tbilisi, Georgia. It is a private institution committed to
+              delivering high quality education, particularly in the fields of
+              medicine and healthcare. This university was founded with the
+              vision of cultivating open-minded and skilled professionals, and
+              aims at making a positive impact on both local and global
+              communities. East West University is the best to study MBBS in
+              Georgia. One of the most chosen programs of the university is its
+              six-year Medical Doctor (MD) program, which is entirely taught in
+              English. It holds accreditation from Georgia’s National Center for
+              Educational Quality Enhancement (NCEQE). The University aims at
+              integrating technology, research, and personal mentorship into its
+              curriculum to provide students with practical training. Candidates
+              get more facilities along with their studies. It is the best
+              university to study MBBS Abroad.
             </p>
           </div>
           <div className="md:w-1/2">
             <img
-              src={universityofgeorgia}
+              src={eastwestuniversity}
               alt="University Campus"
               className="rounded-2xl shadow-2xl transition-hover duration-500 hover:scale-[1.02]"
             />
@@ -149,12 +149,12 @@ const UniversityofGeorgia = () => {
             <div>
               <div className="mb-10 text-left">
                 <div className="text-3xl font-bold text-primary mb-4">
-                  About University Of Georgia
+                  About EAST-WEST UNIVERSITY
                 </div>
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
-                University Of Georgia is a leading institution for medical
+                EAST-WEST UNIVERSITY is a leading institution for medical
                 education in Georgia, offering a globally recognized MD program.
                 With a focus on practical clinical training and modern research,
                 we prepare students for successful careers in healthcare
@@ -228,13 +228,13 @@ const UniversityofGeorgia = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              University Of Georgia
+              EAST-WEST UNIVERSITY
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0 mb-8"></div>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-4">
                 <p className="text-text-muted leading-relaxed">
-                  University Of Georgia has played a pivotal role in the
+                  EAST-WEST UNIVERSITY has played a pivotal role in the
                   advancement of medical sciences and the education of medical
                   professionals. Consistently ranked among the{' '}
                   <strong>top 10 medical institutes in Georgia</strong>, it
@@ -242,7 +242,7 @@ const UniversityofGeorgia = () => {
                   Georgian Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, University Of Georgia is recognized as one of the
+                  As of 2018, EAST-WEST UNIVERSITY is recognized as one of the
                   largest centers for medical research, education, and science.
                   The Academy is renowned for its highly qualified teaching
                   staff, extensive laboratory facilities, and robust clinical
@@ -279,7 +279,7 @@ const UniversityofGeorgia = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              Required Documents for University Of Georgia
+              Required Documents for EAST-WEST UNIVERSITY
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0"></div>
           </div>
@@ -317,7 +317,7 @@ const UniversityofGeorgia = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <div className="text-3xl font-bold text-primary mb-4">
-              Admission Process for University Of Georgia
+              Admission Process for EAST-WEST UNIVERSITY
             </div>
             <p className="text-text-muted max-w-2xl mx-auto">
               A straightforward 6-step journey to securing your medical future
@@ -356,7 +356,7 @@ const UniversityofGeorgia = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the University Of Georgia library is a
+                Established in 1936, the EAST-WEST UNIVERSITY library is a
                 cornerstone of academic life. It houses a massive collection of
                 over <strong className="text-primary">440,000 copies</strong>
                 of books from both Georgian and international authors.
@@ -426,7 +426,7 @@ const UniversityofGeorgia = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                University Of Georgia provides a comfortable and secure living
+                EAST-WEST UNIVERSITY provides a comfortable and secure living
                 environment across <strong>4 dedicated hostels</strong>,
                 accommodating over 1,840 international students.
               </p>
@@ -540,7 +540,7 @@ const UniversityofGeorgia = () => {
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <div className="text-3xl font-bold text-primary mb-4">
-              Student Life at University Of Georgia
+              Student Life at EAST-WEST UNIVERSITY
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
             <p className="mt-6 text-text-muted max-w-3xl mx-auto leading-relaxed">
@@ -808,7 +808,7 @@ const UniversityofGeorgia = () => {
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
-                <span className="text-accent">University Of Georgia</span> for
+                <span className="text-accent">EAST-WEST UNIVERSITY</span> for
                 MBBS in Georgia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
@@ -877,7 +877,7 @@ const UniversityofGeorgia = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-2xl">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                The <span className="text-accent">University Of Georgia</span>{' '}
+                The <span className="text-accent">EAST-WEST UNIVERSITY</span>{' '}
                 Advantage
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-6"></div>
@@ -920,7 +920,7 @@ const UniversityofGeorgia = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Life at University Of Georgia
+              Life at EAST-WEST UNIVERSITY
             </div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A glimpse into the world-class infrastructure and vibrant campus
@@ -955,4 +955,4 @@ const UniversityofGeorgia = () => {
   );
 };
 
-export default UniversityofGeorgia;
+export default EastWestUniversity;

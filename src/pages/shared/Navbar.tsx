@@ -53,27 +53,27 @@ const Navbar = () => {
       <div className="bg-primary text-white py-1 rounded-ss-2xl rounded-ee-2xl px-4 flex flex-wrap justify-between items-center relative">
         <div className="flex items-center gap-4 sm:gap-6">
           <a
-            href="tel:+91-9060722799"
+            href="tel:+917090000502"
             className="group flex items-center gap-2 hover:text-accent transition-all duration-300"
           >
             <div className="p-1 rounded-full group-hover:bg-accent group-hover:text-primary">
               <FaPhoneAlt className="text-md" />
             </div>
             <span className="text-sm font-medium hidden sm:inline">
-              Student Helpline: +91 9060722799
+              Student Helpline: +91 7090000502
             </span>
           </a>
         </div>
         <div className="flex items-center gap-4 md:gap-6">
           <a
-            href="mailto:aditya822003@gmail.com"
+            href="mailto:Indoglobaledu.official@gmail.com"
             className="group flex items-center gap-2 hover:text-accent transition-all duration-300"
           >
             <div className="p-1 rounded-full group-hover:bg-accent group-hover:text-primary">
               <FaEnvelope className="text-lg" />
             </div>
             <span className="text-sm font-medium hidden md:inline">
-              Email Id: aditya822003@gmail.com
+              Email Id: Indoglobaledu.official@gmail.com
             </span>
           </a>
           <div className="flex items-center gap-3">

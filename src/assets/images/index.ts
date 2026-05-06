@@ -48,6 +48,29 @@ import universityoftraditionalmedicine from './armenia/universityoftraditionalme
 import armenianmedicalinstitute from './armenia/armenianmedicalinstitute.jpg';
 import terezamedicaluniversity from './armenia/terezamedicaluniversity.webp';
 
+import georgiannationaluniversity from './georgia/georgiannationaluniversity.jpg';
+import europeanmedicaluniversity from './georgia/europeanmedicaluniversity.jpg';
+import davidtvildianimedicaluniversity from './georgia/davidtvildianimedicaluniversity.jpg';
+import easteuropeanuniversity from './georgia/easteuropeanuniversity.webp';
+import alteuniversity from './georgia/alteuniversity.jpg';
+import universityofgeorgia from './georgia/universityofgeorgia.jpg';
+import caucasusinternationaluniversity from './georgia/caucasusinternationaluniversity.jpg';
+import tbiliststatemedicaluniversity from './georgia/tbiliststatemedicaluniversity.jpg';
+import batumishotarustavelistateuniversity from './georgia/batumishotarustavelistateuniversity.jpg';
+import bauinternationaluniversitybatumi from './georgia/bauinternationaluniversitybatumi.jpg';
+import centraluniversityofeurope from './georgia/centraluniversityofeurope.jpg';
+import georgianamericanuniversity from './georgia/georgianamericanuniversity.jpg';
+import internationalblackseauniversity from './georgia/internationalblackseauniversity.jpg';
+import eastwestuniversity from './georgia/eastwestuniversity.webp';
+import grigolrobakidzeuniversity from './georgia/grigolrobakidzeuniversity.jpg';
+import kenwalkerinternationaluniversity from './georgia/kenwalkerinternationaluniversity.jpg';
+import newvisionuniversity from './georgia/newvisionuniversity.jpg';
+import iliastateuniversity from './georgia/iliastateuniversity.jpg';
+import universitygeomedillc from './georgia/universitygeomedillc.webp';
+import avicennabatumimedicaluniversity from './georgia/avicennabatumimedicaluniversity.jpg';
+import davidaghmashenebeliuniversityofgeorgia from './georgia/davidaghmashenebeliuniversityofgeorgia.jpg';
+import akakitseretelistateuniversity from './georgia/akakitseretelistateuniversity.jpg';
+
 export {
   logo,
   co1,
@@ -96,4 +119,26 @@ export {
   universityoftraditionalmedicine,
   armenianmedicalinstitute,
   terezamedicaluniversity,
+  georgiannationaluniversity,
+  europeanmedicaluniversity,
+  davidtvildianimedicaluniversity,
+  easteuropeanuniversity,
+  alteuniversity,
+  universityofgeorgia,
+  caucasusinternationaluniversity,
+  tbiliststatemedicaluniversity,
+  batumishotarustavelistateuniversity,
+  bauinternationaluniversitybatumi,
+  centraluniversityofeurope,
+  georgianamericanuniversity,
+  internationalblackseauniversity,
+  eastwestuniversity,
+  grigolrobakidzeuniversity,
+  kenwalkerinternationaluniversity,
+  newvisionuniversity,
+  iliastateuniversity,
+  universitygeomedillc,
+  avicennabatumimedicaluniversity,
+  davidaghmashenebeliuniversityofgeorgia,
+  akakitseretelistateuniversity,
 };

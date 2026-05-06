@@ -12,11 +12,11 @@ export const georgiaUniversities = [
     path: '/davidTvildianiMedicalUniversity',
   },
   {
-    label: 'East European Medical University',
-    path: '/eastEuropeanMedicalUniversity',
+    label: 'East European University',
+    path: '/eastEuropeanUniversity',
   },
   {
-    label: 'ALTE University',
+    label: 'Alte University',
     path: '/alteUniversity',
   },
   {
@@ -36,32 +36,32 @@ export const georgiaUniversities = [
     path: '/batumiShotaRustaveliStateUniversity',
   },
   {
-    label: 'Batumi International University',
-    path: '/batumiInternationalUniversity',
+    label: 'BAU International University Batumi',
+    path: '/bauInternationalUniversityBatumi',
   },
   {
-    label: 'Kutaisi Medical University',
-    path: '/kutaisiMedicalUniversity',
+    label: 'Central University of Europe',
+    path: '/centralUniversityofEurope',
   },
   {
-    label: 'Georgian American Medical University',
-    path: '/georgianAmericanMedicalUniversity',
+    label: 'Georgian American University',
+    path: '/georgianAmericanUniversity',
   },
   {
     label: 'International Black Sea University',
     path: '/internationalBlackSeaUniversity',
   },
   {
-    label: 'East West University of Georgia',
-    path: '/eastWestUniversityGeorgia',
+    label: 'East West University',
+    path: '/eastWestUniversity',
   },
   {
     label: 'Grigol Robakidze University',
     path: '/grigolRobakidzeUniversity',
   },
   {
-    label: 'Kenwalker International University',
-    path: '/kenwalkerInternationalUniversity',
+    label: 'Ken Walker International University',
+    path: '/kenWalkerInternationalUniversity',
   },
   {
     label: 'New Vision University',
@@ -72,11 +72,19 @@ export const georgiaUniversities = [
     path: '/iliaStateUniversity',
   },
   {
-    label: 'GeoMed University',
-    path: '/geoMedUniversity',
+    label: 'University Geomedi LLC',
+    path: '/universityGeomediLLC',
   },
   {
-    label: 'Avicenna Batumi University',
-    path: '/avicennaBatumiUniversity',
+    label: 'Avicenna Batumi Medical University',
+    path: '/avicennaBatumiMedicalUniversity',
+  },
+  {
+    label: 'David Aghmashenebeli University Of Georgia',
+    path: '/davidAghmashenebeliUniversityOfGeorgia',
+  },
+  {
+    label: 'Akaki Tsereteli State University',
+    path: '/akakiTsereteliStateUniversity',
   },
 ];

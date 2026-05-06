@@ -18,7 +18,7 @@ import {
   banner4,
   banner5,
   banner6,
-  universityofgeorgia,
+  akakitseretelistateuniversity,
 } from '../../../assets/images';
 import Card from '../../../components/Card';
 import { galleryImages } from '../../../data/galleryImages';
@@ -29,7 +29,7 @@ import { hostelFeature } from '../../../data/hostelFeature';
 import { medicalUniversities } from '../../../data/universityname';
 import { rankedOverseas } from '../../../data/rankedOverseas';
 
-const UniversityofGeorgia = () => {
+const AkakiTsereteliStateUniversity = () => {
   const navigate = useNavigate();
 
   const universityStats = [
@@ -66,7 +66,7 @@ const UniversityofGeorgia = () => {
                 >
                   <div className="flex h-full flex-col items-center justify-center px-4 text-center text-white">
                     <div className="mb-4 text-4xl font-bold md:text-6xl">
-                      University Of Georgia
+                      Akaki Tsereteli State University
                     </div>
                     <p className="mb-8 max-w-2xl text-lg md:text-xl">
                       Empowering the next generation of global medical
@@ -112,31 +112,31 @@ const UniversityofGeorgia = () => {
             <div className="mb-10 text-left">
               <div className="text-3xl font-bold text-primary mb-4">
                 Study MBBS in Georgia at <br />
-                <span className="text-accent">University Of Georgia</span>
+                <span className="text-accent">
+                  Akaki Tsereteli State University
+                </span>
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              The University of Georgia was established in 2004 at Tbilisi, is a
-              private college which is recognized worldwide as being a member of
-              the Bologna Process. It ranks 9th as one of the best universities
-              in Georgia. It is accredited by the Ministry of Education of Iran
-              and officially listed in Medical Council of India (MCI). The
-              university offers quality education of global standards and
-              focuses on developing & polishing young talents for the future. It
-              enriches the students with creative skills through modern
-              educative techniques. It has an excellent group of faculties, who
-              are experts in their own respective fields and always there to
-              help & guide students. The University of Georgia offers one of the
-              best medical education in the world and offers versatile
-              opportunities to the students for collaboration with other
-              students, in renowned universities for enhancing their knowledge
-              base.
+              Akaki Tsereteli State University was established in 1930 and now
+              it is one of the toppest educational institutions in Georgia. Due
+              to its high level of scientific research, training and
+              institutions it has gained universal recognition. It was formed
+              after the annulment of the Tbilisi State University. The
+              University is a diverse higher education organization that carries
+              out academic and professional programs and is operated in active
+              research activities. It follows the traditions of Phase and Gelati
+              academics, principles of “Great Charter of Universities” and
+              national & European standards of Higher Education. It aspires to
+              offer students a high-quality education and research activities to
+              help them in developing their personalities, grow professionally
+              as leaders.
             </p>
           </div>
           <div className="md:w-1/2">
             <img
-              src={universityofgeorgia}
+              src={akakitseretelistateuniversity}
               alt="University Campus"
               className="rounded-2xl shadow-2xl transition-hover duration-500 hover:scale-[1.02]"
             />
@@ -149,16 +149,16 @@ const UniversityofGeorgia = () => {
             <div>
               <div className="mb-10 text-left">
                 <div className="text-3xl font-bold text-primary mb-4">
-                  About University Of Georgia
+                  About Akaki Tsereteli State University
                 </div>
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
-                University Of Georgia is a leading institution for medical
-                education in Georgia, offering a globally recognized MD program.
-                With a focus on practical clinical training and modern research,
-                we prepare students for successful careers in healthcare
-                worldwide.
+                Akaki Tsereteli State University is a leading institution for
+                medical education in Georgia, offering a globally recognized MD
+                program. With a focus on practical clinical training and modern
+                research, we prepare students for successful careers in
+                healthcare worldwide.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -228,25 +228,25 @@ const UniversityofGeorgia = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              University Of Georgia
+              Akaki Tsereteli State University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0 mb-8"></div>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-4">
                 <p className="text-text-muted leading-relaxed">
-                  University Of Georgia has played a pivotal role in the
-                  advancement of medical sciences and the education of medical
-                  professionals. Consistently ranked among the{' '}
+                  Akaki Tsereteli State University has played a pivotal role in
+                  the advancement of medical sciences and the education of
+                  medical professionals. Consistently ranked among the{' '}
                   <strong>top 10 medical institutes in Georgia</strong>, it
                   stands out in the yearly official ratings among the 48
                   Georgian Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, University Of Georgia is recognized as one of the
-                  largest centers for medical research, education, and science.
-                  The Academy is renowned for its highly qualified teaching
-                  staff, extensive laboratory facilities, and robust clinical
-                  base.
+                  As of 2018, Akaki Tsereteli State University is recognized as
+                  one of the largest centers for medical research, education,
+                  and science. The Academy is renowned for its highly qualified
+                  teaching staff, extensive laboratory facilities, and robust
+                  clinical base.
                 </p>
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-accent italic text-primary">
@@ -279,7 +279,7 @@ const UniversityofGeorgia = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              Required Documents for University Of Georgia
+              Required Documents for Akaki Tsereteli State University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0"></div>
           </div>
@@ -317,7 +317,7 @@ const UniversityofGeorgia = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <div className="text-3xl font-bold text-primary mb-4">
-              Admission Process for University Of Georgia
+              Admission Process for Akaki Tsereteli State University
             </div>
             <p className="text-text-muted max-w-2xl mx-auto">
               A straightforward 6-step journey to securing your medical future
@@ -356,9 +356,10 @@ const UniversityofGeorgia = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the University Of Georgia library is a
-                cornerstone of academic life. It houses a massive collection of
-                over <strong className="text-primary">440,000 copies</strong>
+                Established in 1936, the Akaki Tsereteli State University
+                library is a cornerstone of academic life. It houses a massive
+                collection of over{' '}
+                <strong className="text-primary">440,000 copies</strong>
                 of books from both Georgian and international authors.
               </p>
               <div className="bg-blue-50 p-6 rounded-xl border-r-4 border-primary">
@@ -426,9 +427,10 @@ const UniversityofGeorgia = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                University Of Georgia provides a comfortable and secure living
-                environment across <strong>4 dedicated hostels</strong>,
-                accommodating over 1,840 international students.
+                Akaki Tsereteli State University provides a comfortable and
+                secure living environment across{' '}
+                <strong>4 dedicated hostels</strong>, accommodating over 1,840
+                international students.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-success">
@@ -476,10 +478,7 @@ const UniversityofGeorgia = () => {
               <p className="text-text-muted leading-relaxed mb-6">
                 Renting in Tver offers independence and privacy. Apartments
                 generally come
-                <span className="font-semibold text-text">
-                  {' '}
-                  fully furnished
-                </span>{' '}
+                <span className="font-semibold text-text">fully furnished</span>
                 and equipped with essential appliances like refrigerators,
                 microwaves, TVs, and washing machines.
               </p>
@@ -540,7 +539,7 @@ const UniversityofGeorgia = () => {
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <div className="text-3xl font-bold text-primary mb-4">
-              Student Life at University Of Georgia
+              Student Life at Akaki Tsereteli State University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
             <p className="mt-6 text-text-muted max-w-3xl mx-auto leading-relaxed">
@@ -808,8 +807,10 @@ const UniversityofGeorgia = () => {
             <div className="lg:w-1/2">
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
-                <span className="text-accent">University Of Georgia</span> for
-                MBBS in Georgia?
+                <span className="text-accent">
+                  Akaki Tsereteli State University
+                </span>{' '}
+                for MBBS in Georgia?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
               <p className="text-blue-100 leading-relaxed mb-6">
@@ -877,7 +878,10 @@ const UniversityofGeorgia = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-2xl">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                The <span className="text-accent">University Of Georgia</span>{' '}
+                The{' '}
+                <span className="text-accent">
+                  Akaki Tsereteli State University
+                </span>{' '}
                 Advantage
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full mb-6"></div>
@@ -920,7 +924,7 @@ const UniversityofGeorgia = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Life at University Of Georgia
+              Life at Akaki Tsereteli State University
             </div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A glimpse into the world-class infrastructure and vibrant campus
@@ -955,4 +959,4 @@ const UniversityofGeorgia = () => {
   );
 };
 
-export default UniversityofGeorgia;
+export default AkakiTsereteliStateUniversity;

@@ -65,23 +65,25 @@ import TerezaMedicalUniversity from '../pages/university/armeniaUniversities/Ter
 import GeorgianNationalUniversity from '../pages/university/georgiaUniversities/GeorgianNationalUniversity';
 import EuropeanMedicalUniversity from '../pages/university/georgiaUniversities/EuropeanMedicalUniversity';
 import DavidTvildianiMedicalUniversity from '../pages/university/georgiaUniversities/DavidTvildianiMedicalUniversity';
-import EastEuropeanMedicalUniversity from '../pages/university/georgiaUniversities/EastEuropeanMedicalUniversity';
+import EastEuropeanUniversity from '../pages/university/georgiaUniversities/EastEuropeanUniversity';
 import AlteUniversity from '../pages/university/georgiaUniversities/AlteUniversity';
 import UniversityofGeorgia from '../pages/university/georgiaUniversities/UniversityofGeorgia';
 import CaucasusInternationalUniversity from '../pages/university/georgiaUniversities/CaucasusInternationalUniversity';
 import TbilisiStateMedicalUniversity from '../pages/university/georgiaUniversities/TbilisiStateMedicalUniversity';
 import BatumiShotaRustaveliStateUniversity from '../pages/university/georgiaUniversities/BatumiShotaRustaveliStateUniversity';
-import BatumiInternationalUniversity from '../pages/university/georgiaUniversities/BatumiInternationalUniversity';
-import KutaisiMedicalUniversity from '../pages/university/georgiaUniversities/KutaisiMedicalUniversity';
-import GeorgianAmericanMedicalUniversity from '../pages/university/georgiaUniversities/GeorgianAmericanMedicalUniversity';
+import BAUInternationalUniversityBatumi from '../pages/university/georgiaUniversities/BAUInternationalUniversityBatumi';
+import CentralUniversityofEurope from '../pages/university/georgiaUniversities/CentralUniversityofEurope';
+import GeorgianAmericanUniversity from '../pages/university/georgiaUniversities/GeorgianAmericanUniversity';
 import InternationalBlackSeaUniversity from '../pages/university/georgiaUniversities/InternationalBlackSeaUniversity';
-import EastWestUniversityGeorgia from '../pages/university/georgiaUniversities/EastWestUniversityGeorgia';
+import EastWestUniversity from '../pages/university/georgiaUniversities/EastWestUniversity';
 import GrigolRobakidzeUniversity from '../pages/university/georgiaUniversities/GrigolRobakidzeUniversity';
-import KenwalkerInternationalUniversity from '../pages/university/georgiaUniversities/KenwalkerInternationalUniversity';
+import KenWalkerInternationalUniversity from '../pages/university/georgiaUniversities/KenWalkerInternationalUniversity';
 import NewVisionUniversity from '../pages/university/georgiaUniversities/NewVisionUniversity';
 import IliaStateUniversity from '../pages/university/georgiaUniversities/IliaStateUniversity';
-import GeoMedUniversity from '../pages/university/georgiaUniversities/GeoMedUniversity';
-import AvicennaBatumiUniversity from '../pages/university/georgiaUniversities/AvicennaBatumiUniversity';
+import UniversityGeomediLLC from '../pages/university/georgiaUniversities/UniversityGeomediLLC';
+import AvicennaBatumiMedicalUniversity from '../pages/university/georgiaUniversities/AvicennaBatumiMedicalUniversity';
+import DavidAghmashenebeliUniversityOfGeorgia from '../pages/university/georgiaUniversities/DavidAghmashenebeliUniversityofGeorgia';
+import AkakiTsereteliStateUniversity from '../pages/university/georgiaUniversities/AkakiTsereteliStateUniversity';
 
 import Russia from '../pages/countries/russia/Russia';
 import Armenia from '../pages/countries/armenia/Armenia';
@@ -345,8 +347,8 @@ const MainRoutes = createBrowserRouter([
         element: <DavidTvildianiMedicalUniversity />,
       },
       {
-        path: 'eastEuropeanMedicalUniversity',
-        element: <EastEuropeanMedicalUniversity />,
+        path: 'eastEuropeanUniversity',
+        element: <EastEuropeanUniversity />,
       },
       {
         path: 'alteUniversity',
@@ -369,32 +371,32 @@ const MainRoutes = createBrowserRouter([
         element: <BatumiShotaRustaveliStateUniversity />,
       },
       {
-        path: 'batumiInternationalUniversity',
-        element: <BatumiInternationalUniversity />,
+        path: 'bauInternationalUniversityBatumi',
+        element: <BAUInternationalUniversityBatumi />,
       },
       {
-        path: 'kutaisiMedicalUniversity',
-        element: <KutaisiMedicalUniversity />,
+        path: 'centralUniversityofEurope',
+        element: <CentralUniversityofEurope />,
       },
       {
-        path: 'georgianAmericanMedicalUniversity',
-        element: <GeorgianAmericanMedicalUniversity />,
+        path: 'georgianAmericanUniversity',
+        element: <GeorgianAmericanUniversity />,
       },
       {
         path: 'internationalBlackSeaUniversity',
         element: <InternationalBlackSeaUniversity />,
       },
       {
-        path: 'eastWestUniversityGeorgia',
-        element: <EastWestUniversityGeorgia />,
+        path: 'eastWestUniversity',
+        element: <EastWestUniversity />,
       },
       {
         path: 'grigolRobakidzeUniversity',
         element: <GrigolRobakidzeUniversity />,
       },
       {
-        path: 'kenwalkerInternationalUniversity',
-        element: <KenwalkerInternationalUniversity />,
+        path: 'kenWalkerInternationalUniversity',
+        element: <KenWalkerInternationalUniversity />,
       },
       {
         path: 'newVisionUniversity',
@@ -405,12 +407,20 @@ const MainRoutes = createBrowserRouter([
         element: <IliaStateUniversity />,
       },
       {
-        path: 'geoMedUniversity',
-        element: <GeoMedUniversity />,
+        path: 'universityGeomediLLC',
+        element: <UniversityGeomediLLC />,
       },
       {
-        path: 'avicennaBatumiUniversity',
-        element: <AvicennaBatumiUniversity />,
+        path: 'avicennaBatumiMedicalUniversity',
+        element: <AvicennaBatumiMedicalUniversity />,
+      },
+      {
+        path: 'davidAghmashenebeliUniversityOfGeorgia',
+        element: <DavidAghmashenebeliUniversityOfGeorgia />,
+      },
+      {
+        path: 'akakiTsereteliStateUniversity',
+        element: <AkakiTsereteliStateUniversity />,
       },
 
       { path: 'russia', element: <Russia /> },

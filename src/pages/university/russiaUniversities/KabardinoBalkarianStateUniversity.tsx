@@ -18,7 +18,7 @@ import {
   banner4,
   banner5,
   banner6,
-  kazanstatemedicaluniversity,
+  kabardinobalkarianstateuniversity,
 } from '../../../assets/images';
 import Card from '../../../components/Card';
 import { galleryImages } from '../../../data/galleryImages';
@@ -29,7 +29,7 @@ import { hostelFeature } from '../../../data/hostelFeature';
 import { medicalUniversities } from '../../../data/universityname';
 import { rankedOverseas } from '../../../data/rankedOverseas';
 
-const KazanStateMedicalUniversity = () => {
+const KabardinoBalkarianStateUniversity = () => {
   const navigate = useNavigate();
 
   const universityStats = [
@@ -66,7 +66,7 @@ const KazanStateMedicalUniversity = () => {
                 >
                   <div className="flex h-full flex-col items-center justify-center px-4 text-center text-white">
                     <div className="mb-4 text-4xl font-bold md:text-6xl">
-                      Kazan State Medical University
+                      Kabardino-Balkarian State University
                     </div>
                     <p className="mb-8 max-w-2xl text-lg md:text-xl">
                       Empowering the next generation of global medical
@@ -113,33 +113,34 @@ const KazanStateMedicalUniversity = () => {
               <div className="text-3xl font-bold text-primary mb-4">
                 Study MBBS in Russia at <br />
                 <span className="text-accent">
-                  Kazan State Medical University
+                  Kabardino-Balkarian State University
                 </span>
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              Founded in 1814, Kazan State Medical University is a top-ranked
-              medical university located in the Kazan city of Russia with more
-              than 200 years of experience in medical training. It is a higher
-              medical education institution that occupies 16th position in the
-              list of the top universities in Russia. KSMU has been a popular
-              choice among international medical aspirants to study MBBS in
-              Russia. The medical degrees awarded by the Kazan State Medical
-              University are globally accepted and the medical graduates of this
-              university can practice medicine anywhere in the world. The
-              medical education, lectures, laboratory sessions, practical
-              classes, tests, exams, etc. at Kazan State Medical University are
-              imparted in English to international students. Kazan State Medical
-              University has trained over 24,000 students till date, including
-              international students from 49 countries. At present, 700 students
-              from over 57 countries are pursuing medical education in English
-              at the university.
+              Established in 1957, Kabardino-Balkaria State University is one of
+              the leading scientific, educational, informational, social and
+              cultural University in Nalchik city of Kabardino-Balkaria, Russia.
+              On its 50th anniversary Kabardino-Balkaria State University
+              received Certificate of Merit and Medal from State Duma for its
+              outstanding services and achievements. In 2008, the University was
+              ranked among the 100 best universities in Russia. In 2010, it also
+              received an honorary diploma from the winner of the All-Russian
+              contest “100 Best University of Russia in the field of science and
+              education”. The University combines different levels of
+              educational institutions, implementing educational programs of
+              higher, secondary, post-graduate and additional professional
+              education. Today Kabardino-Balkaria State University holds 11
+              place among classical universities in Russia. Currently
+              Kabardino-Balkaria State University has 65+ departments with a
+              teaching staff of 800+ highly qualified teachers, for thousands of
+              the students.
             </p>
           </div>
           <div className="md:w-1/2">
             <img
-              src={kazanstatemedicaluniversity}
+              src={kabardinobalkarianstateuniversity}
               alt="University Campus"
               className="rounded-2xl shadow-2xl transition-hover duration-500 hover:scale-[1.02]"
             />
@@ -152,15 +153,15 @@ const KazanStateMedicalUniversity = () => {
             <div>
               <div className="mb-10 text-left">
                 <div className="text-3xl font-bold text-primary mb-4">
-                  About Kazan State Medical University
+                  About Kabardino-Balkarian State University
                 </div>
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
-                Kazan State Medical University is a leading institution for
-                medical education in Russia, offering a globally recognized MD
-                program. With a focus on practical clinical training and modern
-                research, we prepare students for successful careers in
+                Kabardino-Balkarian State University is a leading institution
+                for medical education in Russia, offering a globally recognized
+                MD program. With a focus on practical clinical training and
+                modern research, we prepare students for successful careers in
                 healthcare worldwide.
               </p>
             </div>
@@ -231,22 +232,22 @@ const KazanStateMedicalUniversity = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              Kazan State Medical University
+              Kabardino-Balkarian State University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0 mb-8"></div>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-4">
                 <p className="text-text-muted leading-relaxed">
-                  Kazan State Medical University has played a pivotal role in
-                  the advancement of medical sciences and the education of
+                  Kabardino-Balkarian State University has played a pivotal role
+                  in the advancement of medical sciences and the education of
                   medical professionals. Consistently ranked among the{' '}
                   <strong>top 10 medical institutes in Russia</strong>, it
                   stands out in the yearly official ratings among the 48 Russian
                   Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, Kazan State Medical University is recognized as
-                  one of the largest centers for medical research, education,
+                  As of 2018, Kabardino-Balkarian State University is recognized
+                  as one of the largest centers for medical research, education,
                   and science. The Academy is renowned for its highly qualified
                   teaching staff, extensive laboratory facilities, and robust
                   clinical base.
@@ -282,7 +283,7 @@ const KazanStateMedicalUniversity = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              Required Documents for Kazan State Medical University
+              Required Documents for Kabardino-Balkarian State University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0"></div>
           </div>
@@ -320,7 +321,7 @@ const KazanStateMedicalUniversity = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <div className="text-3xl font-bold text-primary mb-4">
-              Admission Process for Kazan State Medical University
+              Admission Process for Kabardino-Balkarian State University
             </div>
             <p className="text-text-muted max-w-2xl mx-auto">
               A straightforward 6-step journey to securing your medical future
@@ -359,8 +360,8 @@ const KazanStateMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the Kazan State Medical University library
-                is a cornerstone of academic life. It houses a massive
+                Established in 1936, the Kabardino-Balkarian State University
+                library is a cornerstone of academic life. It houses a massive
                 collection of over{' '}
                 <strong className="text-primary">440,000 copies</strong>
                 of books from both Russian and international authors.
@@ -430,9 +431,10 @@ const KazanStateMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                Kazan State Medical University provides a comfortable and secure
-                living environment across <strong>4 dedicated hostels</strong>,
-                accommodating over 1,840 international students.
+                Kabardino-Balkarian State University provides a comfortable and
+                secure living environment across{' '}
+                <strong>4 dedicated hostels</strong>, accommodating over 1,840
+                international students.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-success">
@@ -544,7 +546,7 @@ const KazanStateMedicalUniversity = () => {
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <div className="text-3xl font-bold text-primary mb-4">
-              Student Life at Kazan State Medical University
+              Student Life at Kabardino-Balkarian State University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
             <p className="mt-6 text-text-muted max-w-3xl mx-auto leading-relaxed">
@@ -813,7 +815,7 @@ const KazanStateMedicalUniversity = () => {
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
                 <span className="text-accent">
-                  Kazan State Medical University
+                  Kabardino-Balkarian State University
                 </span>{' '}
                 for MBBS in Russia?
               </div>
@@ -885,7 +887,7 @@ const KazanStateMedicalUniversity = () => {
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
                 The{' '}
                 <span className="text-accent">
-                  Kazan State Medical University
+                  Kabardino-Balkarian State University
                 </span>{' '}
                 Advantage
               </div>
@@ -929,7 +931,7 @@ const KazanStateMedicalUniversity = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Life at Kazan State Medical University
+              Life at Kabardino-Balkarian State University
             </div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A glimpse into the world-class infrastructure and vibrant campus
@@ -964,4 +966,4 @@ const KazanStateMedicalUniversity = () => {
   );
 };
 
-export default KazanStateMedicalUniversity;
+export default KabardinoBalkarianStateUniversity;

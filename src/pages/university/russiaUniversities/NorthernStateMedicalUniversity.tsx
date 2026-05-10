@@ -18,18 +18,16 @@ import {
   banner4,
   banner5,
   banner6,
-  kazanstatemedicaluniversity,
+  northernstatemedicaluniversity,
 } from '../../../assets/images';
 import Card from '../../../components/Card';
 import { galleryImages } from '../../../data/galleryImages';
 import { academicFaculties } from '../../../data/academicFaculties';
-import { requiredDocument } from '../../../data/requiredDocument';
-import { admissionProcess } from '../../../data/admissionProcess';
 import { hostelFeature } from '../../../data/hostelFeature';
 import { medicalUniversities } from '../../../data/universityname';
 import { rankedOverseas } from '../../../data/rankedOverseas';
 
-const KazanStateMedicalUniversity = () => {
+const NorthernStateMedicalUniversity = () => {
   const navigate = useNavigate();
 
   const universityStats = [
@@ -66,7 +64,7 @@ const KazanStateMedicalUniversity = () => {
                 >
                   <div className="flex h-full flex-col items-center justify-center px-4 text-center text-white">
                     <div className="mb-4 text-4xl font-bold md:text-6xl">
-                      Kazan State Medical University
+                      Northern State Medical University
                     </div>
                     <p className="mb-8 max-w-2xl text-lg md:text-xl">
                       Empowering the next generation of global medical
@@ -113,33 +111,30 @@ const KazanStateMedicalUniversity = () => {
               <div className="text-3xl font-bold text-primary mb-4">
                 Study MBBS in Russia at <br />
                 <span className="text-accent">
-                  Kazan State Medical University
+                  Northern State Medical University
                 </span>
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              Founded in 1814, Kazan State Medical University is a top-ranked
-              medical university located in the Kazan city of Russia with more
-              than 200 years of experience in medical training. It is a higher
-              medical education institution that occupies 16th position in the
-              list of the top universities in Russia. KSMU has been a popular
-              choice among international medical aspirants to study MBBS in
-              Russia. The medical degrees awarded by the Kazan State Medical
-              University are globally accepted and the medical graduates of this
-              university can practice medicine anywhere in the world. The
-              medical education, lectures, laboratory sessions, practical
-              classes, tests, exams, etc. at Kazan State Medical University are
-              imparted in English to international students. Kazan State Medical
-              University has trained over 24,000 students till date, including
-              international students from 49 countries. At present, 700 students
-              from over 57 countries are pursuing medical education in English
-              at the university.
+              The Northern State Medical University was founded in 1936 and it
+              is situated in Arkhangelsk. The University is the center of
+              Medical education in the North of Russia. Presently, there are
+              around 5500 students studying in Northern State Medical
+              University. The University has up-to-date equipment such as
+              computers, films and video aids, and other modern appliances.
+              Medical education is provided by the department of preventive
+              medicine and medical biochemistry. The institute also has good
+              international relations. The university has a remarkable campus
+              and well-maintained infrastructure. Along with MBBS various other
+              medical courses are offered to the students. The university staff
+              has around 980 members including researchers, professors, teachers
+              etc.
             </p>
           </div>
           <div className="md:w-1/2">
             <img
-              src={kazanstatemedicaluniversity}
+              src={northernstatemedicaluniversity}
               alt="University Campus"
               className="rounded-2xl shadow-2xl transition-hover duration-500 hover:scale-[1.02]"
             />
@@ -152,12 +147,12 @@ const KazanStateMedicalUniversity = () => {
             <div>
               <div className="mb-10 text-left">
                 <div className="text-3xl font-bold text-primary mb-4">
-                  About Kazan State Medical University
+                  About Northern State Medical University
                 </div>
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-4">
-                Kazan State Medical University is a leading institution for
+                Northern State Medical University is a leading institution for
                 medical education in Russia, offering a globally recognized MD
                 program. With a focus on practical clinical training and modern
                 research, we prepare students for successful careers in
@@ -231,13 +226,13 @@ const KazanStateMedicalUniversity = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              Kazan State Medical University
+              Northern State Medical University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0 mb-8"></div>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="space-y-4">
                 <p className="text-text-muted leading-relaxed">
-                  Kazan State Medical University has played a pivotal role in
+                  Northern State Medical University has played a pivotal role in
                   the advancement of medical sciences and the education of
                   medical professionals. Consistently ranked among the{' '}
                   <strong>top 10 medical institutes in Russia</strong>, it
@@ -245,7 +240,7 @@ const KazanStateMedicalUniversity = () => {
                   Institutes of Medical Education.
                 </p>
                 <p className="text-text-muted leading-relaxed">
-                  As of 2018, Kazan State Medical University is recognized as
+                  As of 2018, Northern State Medical University is recognized as
                   one of the largest centers for medical research, education,
                   and science. The Academy is renowned for its highly qualified
                   teaching staff, extensive laboratory facilities, and robust
@@ -282,12 +277,32 @@ const KazanStateMedicalUniversity = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center md:text-left">
             <div className="text-3xl font-bold text-primary mb-4">
-              Required Documents for Kazan State Medical University
+              Required Documents for Northern State Medical University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {requiredDocument.map((doc, index) => (
+            {[
+              {
+                title: 'Academic Records',
+                detail: '10th and 12th grade marksheets',
+              },
+              {
+                title: 'Transfer Certificate',
+                detail: 'Original TC from last school',
+              },
+              { title: 'Photographs', detail: '6 passport-size photographs' },
+              {
+                title: 'Migration Certificate',
+                detail: 'Issued by the respective board',
+              },
+              { title: 'Identity Proof', detail: 'Valid Passport (Original)' },
+              {
+                title: 'Medical Reports',
+                detail:
+                  'Medical insurance and HIV reports from a recognized hospital',
+              },
+            ].map((doc, index) => (
               <div
                 key={index}
                 className="group flex items-start p-6 bg-gray-50 rounded-xl border border-transparent hover:border-accent hover:bg-surface transition-all duration-300 shadow-sm"
@@ -320,7 +335,7 @@ const KazanStateMedicalUniversity = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <div className="text-3xl font-bold text-primary mb-4">
-              Admission Process for Kazan State Medical University
+              Admission Process for Northern State Medical University
             </div>
             <p className="text-text-muted max-w-2xl mx-auto">
               A straightforward 6-step journey to securing your medical future
@@ -329,7 +344,38 @@ const KazanStateMedicalUniversity = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto mt-4"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-            {admissionProcess.map((item, index) => (
+            {[
+              {
+                step: '01',
+                title: 'Online Application',
+                desc: 'Submit your 10th, 11th, and 12th transcripts, school leaving certificate, and passport copy via email.',
+              },
+              {
+                step: '02',
+                title: 'Invitation Letter',
+                desc: 'Applications are processed in 1-2 working days. Successful candidates receive a formal admission & invitation letter.',
+              },
+              {
+                step: '03',
+                title: 'Enrollment Fees',
+                desc: 'Secure your seat by paying the initial enrollment fees through net banking or other available secure methods.',
+              },
+              {
+                step: '04',
+                title: 'Visa Application',
+                desc: 'Apply for your student visa using the invitation letter, 2-year valid passport, and attested certificates.',
+              },
+              {
+                step: '05',
+                title: 'Arrival in Russia',
+                desc: 'Pay first-year fees before departure. Provide flight details for airport reception and immigration clearance.',
+              },
+              {
+                step: '06',
+                title: 'Commencement',
+                desc: 'Register at the university with original documents within 3 days of arrival and start your medical classes.',
+              },
+            ].map((item, index) => (
               <div
                 key={index}
                 className="relative p-8 bg-surface rounded-2xl shadow-sm border-t-4 border-accent hover:shadow-lg transition-shadow"
@@ -359,8 +405,8 @@ const KazanStateMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed">
-                Established in 1936, the Kazan State Medical University library
-                is a cornerstone of academic life. It houses a massive
+                Established in 1936, the Northern State Medical University
+                library is a cornerstone of academic life. It houses a massive
                 collection of over{' '}
                 <strong className="text-primary">440,000 copies</strong>
                 of books from both Russian and international authors.
@@ -430,9 +476,10 @@ const KazanStateMedicalUniversity = () => {
                 <div className="h-1.5 w-20 bg-accent rounded-full"></div>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                Kazan State Medical University provides a comfortable and secure
-                living environment across <strong>4 dedicated hostels</strong>,
-                accommodating over 1,840 international students.
+                Northern State Medical University provides a comfortable and
+                secure living environment across{' '}
+                <strong>4 dedicated hostels</strong>, accommodating over 1,840
+                international students.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-success">
@@ -544,7 +591,7 @@ const KazanStateMedicalUniversity = () => {
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <div className="text-3xl font-bold text-primary mb-4">
-              Student Life at Kazan State Medical University
+              Student Life at Northern State Medical University
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
             <p className="mt-6 text-text-muted max-w-3xl mx-auto leading-relaxed">
@@ -813,7 +860,7 @@ const KazanStateMedicalUniversity = () => {
               <div className="text-3xl md:text-4xl font-bold mb-6">
                 Why Choose{' '}
                 <span className="text-accent">
-                  Kazan State Medical University
+                  Northern State Medical University
                 </span>{' '}
                 for MBBS in Russia?
               </div>
@@ -885,7 +932,7 @@ const KazanStateMedicalUniversity = () => {
               <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
                 The{' '}
                 <span className="text-accent">
-                  Kazan State Medical University
+                  Northern State Medical University
                 </span>{' '}
                 Advantage
               </div>
@@ -929,7 +976,7 @@ const KazanStateMedicalUniversity = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Life at Kazan State Medical University
+              Life at Northern State Medical University
             </div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A glimpse into the world-class infrastructure and vibrant campus
@@ -964,4 +1011,4 @@ const KazanStateMedicalUniversity = () => {
   );
 };
 
-export default KazanStateMedicalUniversity;
+export default NorthernStateMedicalUniversity;

@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import {
@@ -17,49 +18,25 @@ import {
   banner4,
   banner5,
   banner6,
-  russia,
+  uralstatemedicaluniversity,
 } from '../../../assets/images';
-
-const Card = ({
-  icon,
-  title,
-  desc,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  desc: string;
-}) => (
-  <div className="rounded-xl bg-surface p-8 shadow-md transition-shadow hover:shadow-xl">
-    <div className="mb-4 flex justify-center">{icon}</div>
-    <h3 className="mb-2 text-xl font-bold text-primary">{title}</h3>
-    <p className="text-text-muted">{desc}</p>
-  </div>
-);
+import Card from '../../../components/Card';
+import { galleryImages } from '../../../data/galleryImages';
+import { academicFaculties } from '../../../data/academicFaculties';
+import { requiredDocument } from '../../../data/requiredDocument';
+import { admissionProcess } from '../../../data/admissionProcess';
+import { hostelFeature } from '../../../data/hostelFeature';
+import { medicalUniversities } from '../../../data/universityname';
+import { rankedOverseas } from '../../../data/rankedOverseas';
 
 const UralStateMedicalUniversity = () => {
+  const navigate = useNavigate();
+
   const universityStats = [
     { icon: <FaGraduationCap />, label: 'Years of Excellence', value: '80+' },
     { icon: <FaUserMd />, label: 'Global Students', value: '5000+' },
     { icon: <FaHospital />, label: 'Affiliated Hospitals', value: '12+' },
     { icon: <FaGlobeAmericas />, label: 'World Ranking', value: 'Top 500' },
-  ];
-
-  const highlights = [
-    'MCI/NMC & WHO Recognized',
-    'English Medium Curriculum',
-    'Modern Research Laboratories',
-    'Low Cost of Living & Tuition',
-    'High USMLE/FMGE Success Rate',
-    'Global Exposure & Internships',
-  ];
-
-  const galleryImages = [
-    { src: banner1, title: 'University Campus' },
-    { src: banner2, title: 'Modern Classrooms' },
-    { src: banner3, title: 'Student Life' },
-    { src: banner4, title: 'Clinical Training' },
-    { src: banner5, title: 'Hostel Facilities' },
-    { src: banner6, title: 'Graduation Ceremony' },
   ];
 
   return (
@@ -96,8 +73,11 @@ const UralStateMedicalUniversity = () => {
                       professionals with world-class education and clinical
                       training.
                     </p>
-                    <button className="rounded-full bg-accent px-8 py-3 font-bold transition-transform hover:scale-105">
-                      Apply Now for 2026
+                    <button
+                      onClick={() => navigate('/contact')}
+                      className="rounded-full bg-accent px-8 py-3 font-bold transition-transform hover:scale-105"
+                    >
+                      Apply Now
                     </button>
                   </div>
                 </div>
@@ -139,24 +119,23 @@ const UralStateMedicalUniversity = () => {
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <p className="mb-6 text-text-muted leading-relaxed">
-              Ural State Medical University stands as a beacon of medical
-              excellence in Russia. Known for its rigorous academic standards
-              and state-of-the-art clinical facilities, the university offers an
-              MD program (equivalent to MBBS in India) that is fully taught in
-              English for international students.
+              Founded in 1930, the Ural State Medical University (USMU) stands
+              as a cornerstone of medical education in Yekaterinburg, located in
+              the vibrant Ural region of Russia. With a rich history spanning
+              nearly a century, USMU has emerged as a distinguished institution
+              renowned for its commitment to excellence in medical training and
+              research. The institute made its humble beginning in 1930 with one
+              faculty and 100 students, presently, the university is the home of
+              more than 6,000 students from all over the world. It was awarded
+              the status of Academy in 1995 before elevating to a full-scale
+              university in 2013. A public university that receives funding and
+              direction from the Ministry of Health, USMU, is one of the leading
+              universities for medical education in Russia.
             </p>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {highlights.map((item, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <FaCheckCircle className="text-success" />
-                  <span className="text-sm font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
           </div>
           <div className="md:w-1/2">
             <img
-              src={russia}
+              src={uralstatemedicaluniversity}
               alt="University Campus"
               className="rounded-2xl shadow-2xl transition-hover duration-500 hover:scale-[1.02]"
             />
@@ -282,14 +261,7 @@ const UralStateMedicalUniversity = () => {
               Academic Faculties
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                'School of General Medicine',
-                'School of Stomatology (Dentistry)',
-                'School of International Medical Education',
-                'School of Pediatrics',
-                'School of Postgraduate Studies',
-                'School of Pharmacy',
-              ].map((faculty: string, idx: number) => (
+              {academicFaculties.map((faculty: string, idx: number) => (
                 <div
                   key={idx}
                   className="flex items-center p-4 bg-surface border border-gray-100 rounded-lg shadow-sm hover:border-accent transition-colors"
@@ -311,27 +283,7 @@ const UralStateMedicalUniversity = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto md:mx-0"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'Academic Records',
-                detail: '10th and 12th grade marksheets',
-              },
-              {
-                title: 'Transfer Certificate',
-                detail: 'Original TC from last school',
-              },
-              { title: 'Photographs', detail: '6 passport-size photographs' },
-              {
-                title: 'Migration Certificate',
-                detail: 'Issued by the respective board',
-              },
-              { title: 'Identity Proof', detail: 'Valid Passport (Original)' },
-              {
-                title: 'Medical Reports',
-                detail:
-                  'Medical insurance and HIV reports from a recognized hospital',
-              },
-            ].map((doc, index) => (
+            {requiredDocument.map((doc, index) => (
               <div
                 key={index}
                 className="group flex items-start p-6 bg-gray-50 rounded-xl border border-transparent hover:border-accent hover:bg-surface transition-all duration-300 shadow-sm"
@@ -373,38 +325,7 @@ const UralStateMedicalUniversity = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto mt-4"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-            {[
-              {
-                step: '01',
-                title: 'Online Application',
-                desc: 'Submit your 10th, 11th, and 12th transcripts, school leaving certificate, and passport copy via email.',
-              },
-              {
-                step: '02',
-                title: 'Invitation Letter',
-                desc: 'Applications are processed in 1-2 working days. Successful candidates receive a formal admission & invitation letter.',
-              },
-              {
-                step: '03',
-                title: 'Enrollment Fees',
-                desc: 'Secure your seat by paying the initial enrollment fees through net banking or other available secure methods.',
-              },
-              {
-                step: '04',
-                title: 'Visa Application',
-                desc: 'Apply for your student visa using the invitation letter, 2-year valid passport, and attested certificates.',
-              },
-              {
-                step: '05',
-                title: 'Arrival in Russia',
-                desc: 'Pay first-year fees before departure. Provide flight details for airport reception and immigration clearance.',
-              },
-              {
-                step: '06',
-                title: 'Commencement',
-                desc: 'Register at the university with original documents within 3 days of arrival and start your medical classes.',
-              },
-            ].map((item, index) => (
+            {admissionProcess.map((item, index) => (
               <div
                 key={index}
                 className="relative p-8 bg-surface rounded-2xl shadow-sm border-t-4 border-accent hover:shadow-lg transition-shadow"
@@ -526,28 +447,7 @@ const UralStateMedicalUniversity = () => {
               </div>
             </div>
             <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                {
-                  title: 'Indian Cuisine',
-                  desc: 'The hostel mess serves authentic Indian food with Hindi and Tamil TV channels available.',
-                  icon: '🍲',
-                },
-                {
-                  title: 'Safety & Security',
-                  desc: '24/7 CCTV surveillance and police guards. Strict night-out permissions for student safety.',
-                  icon: '🛡️',
-                },
-                {
-                  title: 'Connectivity',
-                  desc: 'High-speed broadband and Wi-Fi internet access throughout all hostel buildings.',
-                  icon: '🌐',
-                },
-                {
-                  title: 'Hygiene & Care',
-                  desc: 'Daily professional cleaning services and weekly changes of fresh bed linens.',
-                  icon: '✨',
-                },
-              ].map((item, i) => (
+              {hostelFeature.map((item, i) => (
                 <div
                   key={i}
                   className="p-6 bg-surface rounded-2xl border border-gray-100 hover:shadow-md transition-shadow"
@@ -729,7 +629,10 @@ const UralStateMedicalUniversity = () => {
                 </p>
               </div>
             </div>
-            <button className="whitespace-nowrap px-8 py-3 bg-primary text-white rounded-full font-bold hover:bg-accent hover:text-primary transition-all">
+            <button
+              onClick={() => navigate('/photosGallery')}
+              className="whitespace-nowrap px-8 py-3 bg-primary text-white rounded-full font-bold hover:bg-accent hover:text-primary transition-all"
+            >
               View Gallery
             </button>
           </div>
@@ -839,19 +742,6 @@ const UralStateMedicalUniversity = () => {
               </div>
             </div>
           </div>
-          <div className="mt-12 bg-primary rounded-2xl p-8 text-center text-white">
-            <h3 className="text-2xl font-bold mb-2">
-              Academic Excellence at Affordable Costs
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Join over 30 Russian medical schools featured in international
-              rankings. Start your journey in one of the world's most
-              prestigious educational environments.
-            </p>
-            <button className="bg-accent text-primary px-10 py-3 rounded-full font-bold hover:scale-105 transition-transform">
-              Get Full 2024-25 Fee Structure
-            </button>
-          </div>
         </div>
       </section>
       <section className="py-10 px-4 bg-white">
@@ -882,53 +772,7 @@ const UralStateMedicalUniversity = () => {
                 </tr>
               </thead>
               <tbody className="text-text">
-                {[
-                  [
-                    'Kazan State Medical University',
-                    'Crimea Federal University',
-                    'Altai State Medical University',
-                  ],
-                  [
-                    'Syktyvkar State Medical University',
-                    'Volgograd State Medical University',
-                    'Izhevsk State Medical University',
-                  ],
-                  [
-                    'Dagestan State Medical University',
-                    'Irkutsk State Medical University',
-                    'Kursk State Medical University',
-                  ],
-                  [
-                    'Mari State Medical University',
-                    'Orel State University',
-                    'Bashkir State Medical University',
-                  ],
-                  [
-                    'First Moscow State Medical University',
-                    'Kazan Federal University',
-                    'Nizhny Novgorod Medical University',
-                  ],
-                  [
-                    'Northern State Medical University',
-                    'Novosibirsk State Medical University',
-                    'Omsk State Medical University',
-                  ],
-                  [
-                    'Orenburg State Medical University',
-                    'Perm State Medical University',
-                    'Ryazan State Medical University',
-                  ],
-                  [
-                    'Saint Petersburg Medical University',
-                    'Smolensk State Medical University',
-                    'Tambov State University',
-                  ],
-                  [
-                    'Belgorod University',
-                    'Ural State Medical University',
-                    "People's Friendship University",
-                  ],
-                ].map((row, rowIndex) => (
+                {medicalUniversities.map((row, rowIndex) => (
                   <tr
                     key={rowIndex}
                     className="hover:bg-blue-50/50 transition-colors border-b border-gray-100 last:border-0"
@@ -1028,15 +872,6 @@ const UralStateMedicalUniversity = () => {
               </div>
             </div>
           </div>
-          <div className="mt-12 p-8 bg-white rounded-2xl text-center shadow-2xl">
-            <p className="text-primary font-medium italic">
-              "Our team works closely with applicants, offering support at every
-              step, much like a family."
-            </p>
-            <button className="mt-6 bg-accent text-primary px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform shadow-lg shadow-accent/30">
-              Start Your Journey Today
-            </button>
-          </div>
         </div>
       </section>
       <section className="py-10 px-4 bg-white">
@@ -1069,48 +904,7 @@ const UralStateMedicalUniversity = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: 'One-Stop Solution',
-                desc: 'Comprehensive international course consultation from selection to departure.',
-                icon: '🎯',
-              },
-              {
-                title: '24/7 Support',
-                desc: 'Round-the-clock assistance for all your queries and urgent needs.',
-                icon: '🕒',
-              },
-              {
-                title: 'Transparency',
-                desc: 'Clear, honest, and ethical practices throughout the entire admission process.',
-                icon: '💎',
-              },
-              {
-                title: 'Competitive Fees',
-                desc: 'Affordable services with convenient EMI options available for processing.',
-                icon: '💳',
-              },
-              {
-                title: 'Official Partnerships',
-                desc: 'Direct collaborations with renowned NMC-accredited universities abroad.',
-                icon: '🤝',
-              },
-              {
-                title: 'Global Destinations',
-                desc: 'Expertise in Russia, Georgia, Kazakhstan, Kyrgyzstan, and more.',
-                icon: '🌍',
-              },
-              {
-                title: 'English Medium',
-                desc: 'Securing admissions in programs taught entirely in English.',
-                icon: '📖',
-              },
-              {
-                title: 'Proven Success',
-                desc: 'Trusted by thousands of students who have achieved their medical dreams.',
-                icon: '🚀',
-              },
-            ].map((item, i) => (
+            {rankedOverseas.map((item, i) => (
               <div
                 key={i}
                 className="group p-6 bg-gray-50 rounded-2xl border border-transparent hover:border-accent hover:bg-surface transition-all duration-300"

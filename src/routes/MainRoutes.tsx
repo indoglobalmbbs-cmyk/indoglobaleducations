@@ -3,28 +3,28 @@ import MainLayout from '../layouts/MainLayout';
 import Home from '../pages/home/Home';
 import About from '../pages/about/About';
 
-import MariStateMedicalUniversity from '../pages/university/russiaUniversities/MariStateMedicalUniversity';
+import MariStateUniversity from '../pages/university/russiaUniversities/MariStateUniversity';
 import PermStateMedicalUniversity from '../pages/university/russiaUniversities/PermStateMedicalUniversity';
-import OrenburgMedicalUniversity from '../pages/university/russiaUniversities/OrenburgMedicalUniversity';
-import TverMedicalUniversity from '../pages/university/russiaUniversities/TverMedicalUniversity';
+import OrenburgStateMedicalUniversity from '../pages/university/russiaUniversities/OrenburgStateMedicalUniversity';
+import TverStateMedicalUniversity from '../pages/university/russiaUniversities/TverStateMedicalUniversity';
 import KazanStateMedicalUniversity from '../pages/university/russiaUniversities/KazanStateMedicalUniversity';
 import KazanFederalUniversity from '../pages/university/russiaUniversities/KazanFederalUniversity';
-import Omsk from '../pages/university/russiaUniversities/Omsk';
-import Altai from '../pages/university/russiaUniversities/Altai';
-import Bashkir from '../pages/university/russiaUniversities/Bashkir';
+import OmskStateMedicalUniversity from '../pages/university/russiaUniversities/OmskStateMedicalUniversity';
+import AltaiStateMedicalUniversity from '../pages/university/russiaUniversities/AltaiStateMedicalUniversity';
+import BashkirStateMedicalUniversity from '../pages/university/russiaUniversities/BashkirStateMedicalUniversity';
 import CrimeaFederalUniversity from '../pages/university/russiaUniversities/CrimeaFederalUniversity';
-import Samara from '../pages/university/russiaUniversities/Samara';
-import Orel from '../pages/university/russiaUniversities/Orel';
+import SamaraStateMedicalUniversity from '../pages/university/russiaUniversities/SamaraStateMedicalUniversity';
+import OrelStateUniversity from '../pages/university/russiaUniversities/OrelStateUniversity';
 import UralStateMedicalUniversity from '../pages/university/russiaUniversities/UralStateMedicalUniversity';
-import Pirogov from '../pages/university/russiaUniversities/Pirogov';
-import Kursk from '../pages/university/russiaUniversities/Kursk';
-import Northern from '../pages/university/russiaUniversities/Northern';
-import Novgorod from '../pages/university/russiaUniversities/Novgorod';
-import Volgograd from '../pages/university/russiaUniversities/Volgograd';
-import FarEastern from '../pages/university/russiaUniversities/FarEastern';
-import Kirov from '../pages/university/russiaUniversities/Kirov';
-import Kemerovo from '../pages/university/russiaUniversities/Kemerovo';
-import KabardinoBalkarian from '../pages/university/russiaUniversities/KabardinoBalkarian';
+import PirogovRussianNationalResearchMedicalUniversity from '../pages/university/russiaUniversities/PirogovRussianNationalResearchMedicalUniversity';
+import KurskStateMedicalUniversity from '../pages/university/russiaUniversities/KurskStateMedicalUniversity';
+import NorthernStateMedicalUniversity from '../pages/university/russiaUniversities/NorthernStateMedicalUniversity';
+import NizhnyNovgorodStateMedicalUniversity from '../pages/university/russiaUniversities/NizhnyNovgorodStateMedicalUniversity';
+import VolgogradStateMedicalUniversity from '../pages/university/russiaUniversities/VolgogradStateMedicalUniversity';
+import FarEasternFederalUniversity from '../pages/university/russiaUniversities/FarEasternFederalUniversity';
+import KirovStateMedicalUniversity from '../pages/university/russiaUniversities/KirovStateMedicalUniversity';
+import KemerovoStateMedicalUniversity from '../pages/university/russiaUniversities/KemerovoStateMedicalUniversity';
+import KabardinoBalkarianStateUniversity from '../pages/university/russiaUniversities/KabardinoBalkarianStateUniversity';
 import Komi from '../pages/university/russiaUniversities/Komi';
 import Pskov from '../pages/university/russiaUniversities/Pskov';
 import SevastopolStateUniversity from '../pages/university/russiaUniversities/SevastopolStateUniversity';
@@ -105,20 +105,20 @@ const MainRoutes = createBrowserRouter([
       { path: 'about', element: <About /> },
 
       {
-        path: 'mariStateMedicalUniversity',
-        element: <MariStateMedicalUniversity />,
+        path: 'mariStateUniversity',
+        element: <MariStateUniversity />,
       },
       {
         path: 'permStateMedicalUniversity',
         element: <PermStateMedicalUniversity />,
       },
       {
-        path: 'orenburgMedicalUniversity',
-        element: <OrenburgMedicalUniversity />,
+        path: 'orenburgStateMedicalUniversity',
+        element: <OrenburgStateMedicalUniversity />,
       },
       {
-        path: 'tverMedicalUniversity',
-        element: <TverMedicalUniversity />,
+        path: 'tverstateMedicalUniversity',
+        element: <TverStateMedicalUniversity />,
       },
       {
         path: 'kazanStateMedicalUniversity',
@@ -129,68 +129,68 @@ const MainRoutes = createBrowserRouter([
         element: <KazanFederalUniversity />,
       },
       {
-        path: 'omsk',
-        element: <Omsk />,
+        path: 'omskStateMedicalUniversity',
+        element: <OmskStateMedicalUniversity />,
       },
       {
-        path: 'altai',
-        element: <Altai />,
+        path: 'altaiStateMedicalUniversity',
+        element: <AltaiStateMedicalUniversity />,
       },
       {
-        path: 'bashkir',
-        element: <Bashkir />,
+        path: 'bashkirStateMedicalUniversity',
+        element: <BashkirStateMedicalUniversity />,
       },
       {
         path: 'crimeaFederalUniversity',
         element: <CrimeaFederalUniversity />,
       },
       {
-        path: 'samara',
-        element: <Samara />,
+        path: 'samaraStateMedicalUniversity',
+        element: <SamaraStateMedicalUniversity />,
       },
       {
-        path: 'orel',
-        element: <Orel />,
+        path: 'orelStateUniversity',
+        element: <OrelStateUniversity />,
       },
       {
         path: 'uralStateMedicalUniversity',
         element: <UralStateMedicalUniversity />,
       },
       {
-        path: 'pirogov',
-        element: <Pirogov />,
+        path: 'pirogovRussianNationalResearchMedicalUniversity',
+        element: <PirogovRussianNationalResearchMedicalUniversity />,
       },
       {
-        path: 'kursk',
-        element: <Kursk />,
+        path: 'kurskStateMedicalUniversity',
+        element: <KurskStateMedicalUniversity />,
       },
       {
-        path: 'northern',
-        element: <Northern />,
+        path: 'northernStateMedicalUniversity',
+        element: <NorthernStateMedicalUniversity />,
       },
       {
-        path: 'novgorod',
-        element: <Novgorod />,
+        path: 'nizhnyNovgorodStateMedicalUniversity',
+        element: <NizhnyNovgorodStateMedicalUniversity />,
       },
       {
-        path: 'volgograd',
-        element: <Volgograd />,
+        path: 'volgogradStateMedicalUniversity',
+        element: <VolgogradStateMedicalUniversity />,
       },
       {
-        path: 'farEastern',
-        element: <FarEastern />,
+        path: 'farEasternFederalUniversity',
+        element: <FarEasternFederalUniversity />,
       },
       {
-        path: 'kirov',
-        element: <Kirov />,
+        path: 'kirovStateMedicalUniversity',
+        element: <KirovStateMedicalUniversity />,
       },
       {
-        path: 'kemerovo',
-        element: <Kemerovo />,
+        path: 'kemerovoStateMedicalUniversity',
+        element: <KemerovoStateMedicalUniversity />,
       },
       {
-        path: 'kabardinoBalkarian',
-        element: <KabardinoBalkarian />,
+        path: 'kabardinoBalkarianStateUniversity',
+        element: <KabardinoBalkarianStateUniversity />,
       },
       {
         path: 'komi',

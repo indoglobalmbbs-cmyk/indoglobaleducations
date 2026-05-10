@@ -37,8 +37,38 @@ import photo18 from './photo18.jpg';
 import photo19 from './photo19.jpg';
 import photo20 from './photo20.jpg';
 
-import maristateuniversity from './russia/maristateuniversity.webp';
-import permstatemedicaluniversity from './russia/permstatemedicaluniversity.webp';
+import maristateuniversity from './russia/maristateuniversity.jpg';
+import permstatemedicaluniversity from './russia/permstatemedicaluniversity.jpg';
+import orenburgstatemedicaluniversity from './russia/orenburgstatemedicaluniversity.jpg';
+import tverstatemedicaluniversity from './russia/tverstatemedicaluniversity.jpg';
+import kazanstatemedicaluniversity from './russia/kazanstatemedicaluniversity.jpg';
+import kazanfederaluniversity from './russia/kazanfederaluniversity.jpg';
+import omskstatemedicaluniversity from './russia/omskstatemedicaluniversity.jpg';
+import altaistatemedicaluniversity from './russia/altaistatemedicaluniversity.jpg';
+import bashkirstatemedicaluniversity from './russia/bashkirstatemedicaluniversity.jpg';
+import crimeafederaluniversity from './russia/crimeafederaluniversity.jpg';
+import samarastatemedicaluniversity from './russia/samarastatemedicaluniversity.png';
+import orelstateuniversity from './russia/orelstateuniversity.jpg';
+import uralstatemedicaluniversity from './russia/uralstatemedicaluniversity.jpg';
+import pirogovrussiannationalresearchmedicaluniversity from './russia/pirogovrussiannationalresearchmedicaluniversity.jpg';
+import kurskstatemedicaluniversity from './russia/kurskstatemedicaluniversity.jpg';
+import northernstatemedicaluniversity from './russia/northernstatemedicaluniversity.jpg';
+import nizhnynovgorodstatemedicaluniversity from './russia/nizhnynovgorodstatemedicaluniversity.jpg';
+import volgogradstatemedicaluniversity from './russia/volgogradstatemedicaluniversity.jpg';
+import fareasternfederaluniversity from './russia/fareasternfederaluniversity.jpeg';
+import kirovstatemedicaluniversity from './russia/kirovstatemedicaluniversity.jpg';
+import kemerovostatemedicaluniversity from './russia/kemerovostatemedicaluniversity.jpg';
+import kabardinobalkarianstateuniversity from './russia/kabardinobalkarianstateuniversity.jpg';
+// import maristateuniversity from './russia/maristateuniversity.jpg';
+// import maristateuniversity from './russia/maristateuniversity.jpg';
+// import maristateuniversity from './russia/maristateuniversity.jpg';
+// import maristateuniversity from './russia/maristateuniversity.jpg';
+// import maristateuniversity from './russia/maristateuniversity.jpg';
+// import maristateuniversity from './russia/maristateuniversity.jpg';
+// import maristateuniversity from './russia/maristateuniversity.jpg';
+// import maristateuniversity from './russia/maristateuniversity.jpg';
+// import maristateuniversity from './russia/maristateuniversity.jpg';
+// import maristateuniversity from './russia/maristateuniversity.jpg';
 
 import progressmedicaluniversity from './armenia/progressmedicaluniversity.jpg';
 import mkhitargosharmenianrussianinternationaluniversity from './armenia/mkhitargosharmenianrussianinternationaluniversity.webp';
@@ -110,8 +140,28 @@ export {
   photo18,
   photo19,
   photo20,
-  permstatemedicaluniversity,
   maristateuniversity,
+  permstatemedicaluniversity,
+  orenburgstatemedicaluniversity,
+  tverstatemedicaluniversity,
+  kazanstatemedicaluniversity,
+  kazanfederaluniversity,
+  omskstatemedicaluniversity,
+  altaistatemedicaluniversity,
+  bashkirstatemedicaluniversity,
+  crimeafederaluniversity,
+  samarastatemedicaluniversity,
+  orelstateuniversity,
+  uralstatemedicaluniversity,
+  pirogovrussiannationalresearchmedicaluniversity,
+  kurskstatemedicaluniversity,
+  northernstatemedicaluniversity,
+  nizhnynovgorodstatemedicaluniversity,
+  volgogradstatemedicaluniversity,
+  fareasternfederaluniversity,
+  kirovstatemedicaluniversity,
+  kemerovostatemedicaluniversity,
+  kabardinobalkarianstateuniversity,
   progressmedicaluniversity,
   mkhitargosharmenianrussianinternationaluniversity,
   yerevanhaybusakuniversity,

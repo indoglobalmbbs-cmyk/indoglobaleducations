@@ -59,9 +59,30 @@ import fareasternfederaluniversity from './russia/fareasternfederaluniversity.jp
 import kirovstatemedicaluniversity from './russia/kirovstatemedicaluniversity.jpg';
 import kemerovostatemedicaluniversity from './russia/kemerovostatemedicaluniversity.jpg';
 import kabardinobalkarianstateuniversity from './russia/kabardinobalkarianstateuniversity.jpg';
-// import maristateuniversity from './russia/maristateuniversity.jpg';
-// import maristateuniversity from './russia/maristateuniversity.jpg';
-// import maristateuniversity from './russia/maristateuniversity.jpg';
+import pskovstateuniversity from './russia/pskovstateuniversity.jpg';
+import sevastopolstateuniversity from './russia/sevastopolstateuniversity.jpg';
+import immanuelkantbalticfederaluniversity from './russia/immanuelkantbalticfederaluniversity.jpg';
+import chechenstatemedicaluniversity from './russia/chechenstatemedicaluniversity.jpg';
+import murmanskarcticuniversity from './russia/murmanskarcticuniversity.jpg';
+import synergyuniversity from './russia/synergyuniversity.png';
+import yaroslavlstatemedicaluniversity from './russia/yaroslavlstatemedicaluniversity.jpg';
+import ulyanovskstateuniversity from './russia/ulyanovskstateuniversity.jpg';
+import siberianstatemedicaluniversity from './russia/siberianstatemedicaluniversity.jpg';
+import imsechenovfirstmoscowstatemedicaluniversity from './russia/imsechenovfirstmoscowstatemedicaluniversity.jpg';
+import southuralmedicaluniversity from './russia/southuralmedicaluniversity.jpg';
+import tulastateuniversity from './russia/tulastateuniversity.jpg';
+import chitastatemedicalacademy from './russia/chitastatemedicalacademy.jpg';
+import lobachevskystateuniversity from './russia/lobachevskystateuniversity.jpg';
+import chuvashstatemedicaluniversity from './russia/chuvashstatemedicaluniversity.jpg';
+import ingushstateuniversity from './russia/ingushstateuniversity.jpg';
+import astrakhanstateuniversity from './russia/astrakhanstateuniversity.jpg';
+import kubanstatemedicaluniversity from './russia/kubanstatemedicaluniversity.jpg';
+import smolenskstatemedicaluniversity from './russia/smolenskstatemedicaluniversity.jpg';
+import peoplesfriendshipuniversityofrussia from './russia/peoplesfriendshipuniversityofrussia.jpg';
+import ryazanstateuniversity from './russia/ryazanstateuniversity.jpg';
+import dagestanstatemedicaluniversity from './russia/dagestanstatemedicaluniversity.jpg';
+import pavlovfirstsaintpetersburgstatemedicaluniversity from './russia/pavlovfirstsaintpetersburgstatemedicaluniversity.jpg';
+import izhevskstatemedicalacademy from './russia/izhevskstatemedicalacademy.jpg';
 // import maristateuniversity from './russia/maristateuniversity.jpg';
 // import maristateuniversity from './russia/maristateuniversity.jpg';
 // import maristateuniversity from './russia/maristateuniversity.jpg';
@@ -71,10 +92,10 @@ import kabardinobalkarianstateuniversity from './russia/kabardinobalkarianstateu
 // import maristateuniversity from './russia/maristateuniversity.jpg';
 
 import progressmedicaluniversity from './armenia/progressmedicaluniversity.jpg';
-import mkhitargosharmenianrussianinternationaluniversity from './armenia/mkhitargosharmenianrussianinternationaluniversity.webp';
-import yerevanhaybusakuniversity from './armenia/yerevanhaybusakuniversity.webp';
-import yerevanstatemedicaluniversity from './armenia/yerevanstatemedicaluniversity.webp';
-import universityoftraditionalmedicine from './armenia/universityoftraditionalmedicine.webp';
+import mkhitargosharmenianrussianinternationaluniversity from './armenia/mkhitargosharmenianrussianinternationaluniversity.jpg';
+import yerevanhaybusakuniversity from './armenia/yerevanhaybusakuniversity.jpg';
+import yerevanstatemedicaluniversity from './armenia/yerevanstatemedicaluniversity.jpg';
+import universityoftraditionalmedicine from './armenia/universityoftraditionalmedicine.jpg';
 import armenianmedicalinstitute from './armenia/armenianmedicalinstitute.jpg';
 import terezamedicaluniversity from './armenia/terezamedicaluniversity.webp';
 
@@ -91,7 +112,7 @@ import bauinternationaluniversitybatumi from './georgia/bauinternationaluniversi
 import centraluniversityofeurope from './georgia/centraluniversityofeurope.jpg';
 import georgianamericanuniversity from './georgia/georgianamericanuniversity.jpg';
 import internationalblackseauniversity from './georgia/internationalblackseauniversity.jpg';
-import eastwestuniversity from './georgia/eastwestuniversity.webp';
+import eastwestuniversity from './georgia/eastwestuniversity.jpg';
 import grigolrobakidzeuniversity from './georgia/grigolrobakidzeuniversity.jpg';
 import kenwalkerinternationaluniversity from './georgia/kenwalkerinternationaluniversity.jpg';
 import newvisionuniversity from './georgia/newvisionuniversity.jpg';
@@ -162,6 +183,30 @@ export {
   kirovstatemedicaluniversity,
   kemerovostatemedicaluniversity,
   kabardinobalkarianstateuniversity,
+  pskovstateuniversity,
+  sevastopolstateuniversity,
+  immanuelkantbalticfederaluniversity,
+  chechenstatemedicaluniversity,
+  murmanskarcticuniversity,
+  synergyuniversity,
+  yaroslavlstatemedicaluniversity,
+  ulyanovskstateuniversity,
+  siberianstatemedicaluniversity,
+  imsechenovfirstmoscowstatemedicaluniversity,
+  southuralmedicaluniversity,
+  tulastateuniversity,
+  chitastatemedicalacademy,
+  lobachevskystateuniversity,
+  chuvashstatemedicaluniversity,
+  ingushstateuniversity,
+  astrakhanstateuniversity,
+  kubanstatemedicaluniversity,
+  smolenskstatemedicaluniversity,
+  peoplesfriendshipuniversityofrussia,
+  ryazanstateuniversity,
+  dagestanstatemedicaluniversity,
+  pavlovfirstsaintpetersburgstatemedicaluniversity,
+  izhevskstatemedicalacademy,
   progressmedicaluniversity,
   mkhitargosharmenianrussianinternationaluniversity,
   yerevanhaybusakuniversity,

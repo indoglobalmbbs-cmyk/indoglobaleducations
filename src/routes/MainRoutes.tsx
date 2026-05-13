@@ -26,16 +26,16 @@ import KirovStateMedicalUniversity from '../pages/university/russiaUniversities/
 import KemerovoStateMedicalUniversity from '../pages/university/russiaUniversities/KemerovoStateMedicalUniversity';
 import KabardinoBalkarianStateUniversity from '../pages/university/russiaUniversities/KabardinoBalkarianStateUniversity';
 import Komi from '../pages/university/russiaUniversities/Komi';
-import Pskov from '../pages/university/russiaUniversities/Pskov';
+import PskovStateUniversity from '../pages/university/russiaUniversities/PskovStateUniversity';
 import SevastopolStateUniversity from '../pages/university/russiaUniversities/SevastopolStateUniversity';
 import ImmanuelKantBalticFederalUniversity from '../pages/university/russiaUniversities/ImmanuelKantBalticFederalUniversity';
 import ChechenStateMedicalUniversity from '../pages/university/russiaUniversities/ChechenStateMedicalUniversity';
-import MurmanskArctic from '../pages/university/russiaUniversities/MurmanskArctic';
+import MurmanskArcticUniversity from '../pages/university/russiaUniversities/MurmanskArcticUniversity';
 import SynergyUniversity from '../pages/university/russiaUniversities/SynergyUniversity';
 import YaroslavlStateMedicalUniversity from '../pages/university/russiaUniversities/YaroslavlStateMedicalUniversity';
 import UlyanovskStateUniversity from '../pages/university/russiaUniversities/UlyanovskStateUniversity';
 import SiberianStateMedicalUniversity from '../pages/university/russiaUniversities/SiberianStateMedicalUniversity';
-import IMSechenov from '../pages/university/russiaUniversities/IMSechenov';
+import IMSechenovFirstMoscowStateMedicalUniversity from '../pages/university/russiaUniversities/IMSechenovFirstMoscowStateMedicalUniversity';
 import SouthUralMedicalUniversity from '../pages/university/russiaUniversities/SouthUralMedicalUniversity';
 import NorthOssetian from '../pages/university/russiaUniversities/NorthOssetian';
 import NorthCaucasian from '../pages/university/russiaUniversities/NorthCaucasian';
@@ -48,11 +48,11 @@ import NorthWesternStateUniversity from '../pages/university/russiaUniversities/
 import AstrakhanStateUniversity from '../pages/university/russiaUniversities/AstrakhanStateUniversity';
 import KubanStateMedicalUniversity from '../pages/university/russiaUniversities/KubanStateMedicalUniversity';
 import SmolenskStateMedicalUniversity from '../pages/university/russiaUniversities/SmolenskStateMedicalUniversity';
-import PeopleFriendshipUniversity from '../pages/university/russiaUniversities/PeopleFriendshipUniversity';
+import PeoplesFriendshipUniversityofRussia from '../pages/university/russiaUniversities/PeoplesFriendshipUniversityofRussia';
 import RyazanStateUniversity from '../pages/university/russiaUniversities/RyazanStateUniversity';
 import DagestanStateMedicalUniversity from '../pages/university/russiaUniversities/DagestanStateMedicalUniversity';
-import SaintPetersburgMedicalUniversity from '../pages/university/russiaUniversities/SaintPetersburgMedicalUniversity';
-import IzhevskStateMedicalUniversity from '../pages/university/russiaUniversities/IzhevskStateMedicalUniversity';
+import PavlovFirstSaintPetersburgStateMedicalUniversity from '../pages/university/russiaUniversities/PavlovFirstSaintPetersburgStateMedicalUniversity';
+import IzhevskStateMedicalAcademy from '../pages/university/russiaUniversities/IzhevskStateMedicalAcademy';
 
 import ProgressMedicalUniversity from '../pages/university/armeniaUniversities/ProgressMedicalUniversity';
 import MkhitarGoshArmenianRussianInternationalUniversity from '../pages/university/armeniaUniversities/MkhitarGoshArmenianRussianInternationalUniversity';
@@ -85,6 +85,7 @@ import AvicennaBatumiMedicalUniversity from '../pages/university/georgiaUniversi
 import DavidAghmashenebeliUniversityOfGeorgia from '../pages/university/georgiaUniversities/DavidAghmashenebeliUniversityofGeorgia';
 import AkakiTsereteliStateUniversity from '../pages/university/georgiaUniversities/AkakiTsereteliStateUniversity';
 
+import India from '../pages/countries/india/India';
 import Russia from '../pages/countries/russia/Russia';
 import Armenia from '../pages/countries/armenia/Armenia';
 import Georgia from '../pages/countries/georgia/Georgia';
@@ -197,8 +198,8 @@ const MainRoutes = createBrowserRouter([
         element: <Komi />,
       },
       {
-        path: 'pskov',
-        element: <Pskov />,
+        path: 'pskovStateUniversity',
+        element: <PskovStateUniversity />,
       },
       {
         path: 'sevastopolStateUniversity',
@@ -213,8 +214,8 @@ const MainRoutes = createBrowserRouter([
         element: <ChechenStateMedicalUniversity />,
       },
       {
-        path: 'murmanskArctic',
-        element: <MurmanskArctic />,
+        path: 'murmanskArcticUniversity',
+        element: <MurmanskArcticUniversity />,
       },
       {
         path: 'synergyUniversity',
@@ -233,8 +234,8 @@ const MainRoutes = createBrowserRouter([
         element: <SiberianStateMedicalUniversity />,
       },
       {
-        path: 'iMSechenov',
-        element: <IMSechenov />,
+        path: 'iMSechenovFirstMoscowStateMedicalUniversity',
+        element: <IMSechenovFirstMoscowStateMedicalUniversity />,
       },
       {
         path: 'southUralMedicalUniversity',
@@ -285,8 +286,8 @@ const MainRoutes = createBrowserRouter([
         element: <SmolenskStateMedicalUniversity />,
       },
       {
-        path: 'peopleFriendshipUniversity',
-        element: <PeopleFriendshipUniversity />,
+        path: 'peoplesFriendshipUniversityofRussia',
+        element: <PeoplesFriendshipUniversityofRussia />,
       },
       {
         path: 'ryazanStateUniversity',
@@ -297,12 +298,12 @@ const MainRoutes = createBrowserRouter([
         element: <DagestanStateMedicalUniversity />,
       },
       {
-        path: 'saintPetersburgMedicalUniversity',
-        element: <SaintPetersburgMedicalUniversity />,
+        path: 'pavlovFirstSaintPetersburgStateMedicalUniversity',
+        element: <PavlovFirstSaintPetersburgStateMedicalUniversity />,
       },
       {
-        path: 'izhevskStateMedicalUniversity',
-        element: <IzhevskStateMedicalUniversity />,
+        path: 'izhevskStateMedicalAcademy',
+        element: <IzhevskStateMedicalAcademy />,
       },
 
       {
@@ -423,15 +424,16 @@ const MainRoutes = createBrowserRouter([
         element: <AkakiTsereteliStateUniversity />,
       },
 
-      { path: 'russia', element: <Russia /> },
-      { path: 'armenia', element: <Armenia /> },
-      { path: 'georgia', element: <Georgia /> },
+      { path: 'mbbs-in-india', element: <India /> },
+      { path: 'mbbs-in-russia', element: <Russia /> },
+      { path: 'mbbs-in-armenia', element: <Armenia /> },
+      { path: 'mbbs-in-georgia', element: <Georgia /> },
       { path: 'blog', element: <Blog /> },
       { path: 'news', element: <News /> },
       { path: 'faqs', element: <Faqs /> },
       { path: 'photosGallery', element: <PhotoGallery /> },
       { path: 'videosGallery', element: <VideoGallery /> },
-      { path: 'contact', element: <Contact /> },
+      { path: 'contact-us', element: <Contact /> },
     ],
   },
 ]);

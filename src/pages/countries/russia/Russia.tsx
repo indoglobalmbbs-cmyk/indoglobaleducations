@@ -12,7 +12,6 @@ import {
   FaClock,
 } from 'react-icons/fa';
 import {
-  russia,
   banner1,
   banner2,
   banner3,
@@ -22,44 +21,13 @@ import {
   servicesBanner,
 } from '../../../assets/images';
 import { russiaFaq } from '../../../data/russiaFaq';
+import FaqItem from '../../../components/FaqItem';
 
 const Russia = () => {
   const [showAll, setShowAll] = useState(false);
   const visibleUniversities = showAll
     ? russiaUniversities
     : russiaUniversities.slice(0, 6);
-  const FaqItem = ({
-    question,
-    answer,
-  }: {
-    question: string;
-    answer: string;
-  }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    return (
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="w-full p-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-        >
-          <span className="font-bold text-primary">{question}</span>
-          <span
-            className={`text-accent transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-          >
-            ▼
-          </span>
-        </button>
-        <div
-          className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-        >
-          <div className="p-5 pt-0 text-gray-600 text-sm leading-relaxed border-t border-gray-50">
-            {answer}
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   const galleryImages = [
     { src: banner1, title: 'MBBS University Campus in Russia' },
@@ -286,7 +254,7 @@ const Russia = () => {
               >
                 <div className="h-48 bg-gray-200 overflow-hidden">
                   <img
-                    src={russia}
+                    src={uni.image}
                     alt={uni.label}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />

@@ -62,10 +62,10 @@ const Footer = () => {
             <ul className="space-y-4 text-md text-primary-light">
               {[
                 { name: 'About Our Agency', path: '/about' },
-                { name: 'MBBS in Russia', path: '/russia' },
-                { name: 'MBBS in Armenia', path: '/armenia' },
-                { name: 'MBBS in Georgia', path: '/georgia' },
-                { name: 'Student Gallery', path: '/photosGallery' },
+                { name: 'MBBS in India', path: '/mbbs-in-india' },
+                { name: 'MBBS in Russia', path: '/mbbs-in-russia' },
+                { name: 'MBBS in Armenia', path: '/mbbs-in-armenia' },
+                { name: 'MBBS in Georgia', path: '/mbbs-in-georgia' },
               ].map((link) => (
                 <li key={link.path}>
                   <Link

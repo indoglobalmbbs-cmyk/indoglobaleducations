@@ -288,40 +288,53 @@ const Navbar = () => {
             >
               <li>
                 <Link
-                  to="/russia"
+                  to="/mbbs-in-india"
                   onClick={() => {
                     setIsMenuOpen(false);
                     setIsCountriesOpen(false);
                   }}
                   className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
                 >
-                  <span className="relative z-10">Russia</span>
+                  <span className="relative z-10">MBBS In India</span>
                   <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/armenia"
+                  to="/mbbs-in-russia"
                   onClick={() => {
                     setIsMenuOpen(false);
                     setIsCountriesOpen(false);
                   }}
                   className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
                 >
-                  <span className="relative z-10">Armenia</span>
+                  <span className="relative z-10">MBBS In Russia</span>
                   <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/georgia"
+                  to="/mbbs-in-armenia"
                   onClick={() => {
                     setIsMenuOpen(false);
                     setIsCountriesOpen(false);
                   }}
                   className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
                 >
-                  <span className="relative z-10">Georgia</span>
+                  <span className="relative z-10">MBBS In Armenia</span>
+                  <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/mbbs-in-georgia"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsCountriesOpen(false);
+                  }}
+                  className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
+                >
+                  <span className="relative z-10">MBBS In Georgia</span>
                   <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
                 </Link>
               </li>
@@ -423,7 +436,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/contact"
+              to="/contact-us"
               onClick={() => setIsMenuOpen(false)}
               className="relative group hover:text-accent transition-colors pb-1"
             >

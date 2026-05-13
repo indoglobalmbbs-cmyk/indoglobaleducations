@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import {
@@ -19,24 +20,12 @@ import {
   banner6,
   russia,
 } from '../../../assets/images';
-
-const Card = ({
-  icon,
-  title,
-  desc,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  desc: string;
-}) => (
-  <div className="rounded-xl bg-surface p-8 shadow-md transition-shadow hover:shadow-xl">
-    <div className="mb-4 flex justify-center">{icon}</div>
-    <h3 className="mb-2 text-xl font-bold text-primary">{title}</h3>
-    <p className="text-text-muted">{desc}</p>
-  </div>
-);
+import Card from '../../../components/Card';
+import { galleryImages } from '../../../data/galleryImages';
 
 const NorthWesternStateUniversity = () => {
+  const navigate = useNavigate();
+
   const universityStats = [
     { icon: <FaGraduationCap />, label: 'Years of Excellence', value: '80+' },
     { icon: <FaUserMd />, label: 'Global Students', value: '5000+' },
@@ -51,15 +40,6 @@ const NorthWesternStateUniversity = () => {
     'Low Cost of Living & Tuition',
     'High USMLE/FMGE Success Rate',
     'Global Exposure & Internships',
-  ];
-
-  const galleryImages = [
-    { src: banner1, title: 'University Campus' },
-    { src: banner2, title: 'Modern Classrooms' },
-    { src: banner3, title: 'Student Life' },
-    { src: banner4, title: 'Clinical Training' },
-    { src: banner5, title: 'Hostel Facilities' },
-    { src: banner6, title: 'Graduation Ceremony' },
   ];
 
   return (
@@ -96,8 +76,11 @@ const NorthWesternStateUniversity = () => {
                       professionals with world-class education and clinical
                       training.
                     </p>
-                    <button className="rounded-full bg-accent px-8 py-3 font-bold transition-transform hover:scale-105">
-                      Apply Now for 2026
+                    <button
+                      onClick={() => navigate('/contact')}
+                      className="rounded-full bg-accent px-8 py-3 font-bold transition-transform hover:scale-105"
+                    >
+                      Apply Now
                     </button>
                   </div>
                 </div>

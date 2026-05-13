@@ -19,22 +19,8 @@ import {
   banner6,
   russia,
 } from '../../../assets/images';
-
-const Card = ({
-  icon,
-  title,
-  desc,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  desc: string;
-}) => (
-  <div className="rounded-xl bg-surface p-8 shadow-md transition-shadow hover:shadow-xl">
-    <div className="mb-4 flex justify-center">{icon}</div>
-    <h3 className="mb-2 text-xl font-bold text-primary">{title}</h3>
-    <p className="text-text-muted">{desc}</p>
-  </div>
-);
+import Card from '../../../components/Card';
+import { galleryImages } from '../../../data/galleryImages';
 
 const NorthOssetian = () => {
   const universityStats = [
@@ -51,15 +37,6 @@ const NorthOssetian = () => {
     'Low Cost of Living & Tuition',
     'High USMLE/FMGE Success Rate',
     'Global Exposure & Internships',
-  ];
-
-  const galleryImages = [
-    { src: banner1, title: 'University Campus' },
-    { src: banner2, title: 'Modern Classrooms' },
-    { src: banner3, title: 'Student Life' },
-    { src: banner4, title: 'Clinical Training' },
-    { src: banner5, title: 'Hostel Facilities' },
-    { src: banner6, title: 'Graduation Ceremony' },
   ];
 
   return (

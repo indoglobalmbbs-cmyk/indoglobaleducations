@@ -1,10 +1,9 @@
 [build]
-  command = "pnpm install && pnpm run build"
+  command = "pnpm build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
-  PNPM_VERSION = "9"
   VITE_CONVEX_URL = "https://confident-possum-737.convex.cloud"
 
 [[redirects]]

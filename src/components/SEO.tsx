@@ -16,6 +16,7 @@ interface PageMeta {
   secondaryKeywords: string[];
   ogTitle: string;
   ogDescription: string;
+  ogImage?: string;
   noindex?: boolean;
 }
 
@@ -26,6 +27,7 @@ const buildMeta = ({
   secondaryKeywords,
   ogTitle,
   ogDescription,
+  ogImage,
   noindex,
 }: PageMeta): PageMeta => ({
   title,
@@ -34,6 +36,7 @@ const buildMeta = ({
   secondaryKeywords,
   ogTitle,
   ogDescription,
+  ogImage,
   noindex,
 });
 
@@ -54,6 +57,7 @@ const DEFAULT_META = buildMeta({
     'MBBS Abroad for Indian Students 2026 | Fees, Eligibility & Admission Guidance',
   ogDescription:
     'Get MBBS abroad admission guidance for Indian students. Compare fees, eligibility, and medical university options across leading destinations.',
+  ogImage: `${SITE_URL}/social-share.jpg`,
 });
 
 const staticPages: Record<string, PageMeta> = {
@@ -498,6 +502,7 @@ const SEO = () => {
     document.title = pageMeta.title;
     setCanonical(canonicalUrl);
 
+    const image = pageMeta.ogImage ?? DEFAULT_IMAGE;
     setNameMeta('description', pageMeta.description);
     setNameMeta('keywords', keywords.join(', '));
     setNameMeta('robots', robotsContent(pageMeta.noindex));
@@ -505,14 +510,14 @@ const SEO = () => {
     setNameMeta('twitter:card', 'summary_large_image');
     setNameMeta('twitter:title', pageMeta.ogTitle);
     setNameMeta('twitter:description', pageMeta.ogDescription);
-    setNameMeta('twitter:image', DEFAULT_IMAGE);
+    setNameMeta('twitter:image', image);
 
     setPropertyMeta('og:title', pageMeta.ogTitle);
     setPropertyMeta('og:description', pageMeta.ogDescription);
     setPropertyMeta('og:type', 'website');
     setPropertyMeta('og:url', canonicalUrl);
     setPropertyMeta('og:site_name', SITE_NAME);
-    setPropertyMeta('og:image', DEFAULT_IMAGE);
+    setPropertyMeta('og:image', image);
 
     setJsonLd('organization-json-ld', organizationJsonLd);
     setJsonLd('website-json-ld', websiteJsonLd);

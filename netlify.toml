@@ -1,0 +1,12 @@
+[build]
+  command = "npm install && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  VITE_CONVEX_URL = "https://confident-possum-737.convex.cloud"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

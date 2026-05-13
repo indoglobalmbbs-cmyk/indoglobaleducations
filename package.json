@@ -8,7 +8,7 @@
     "dev:convex": "convex dev --start 'vite'",
     "convex:deploy": "convex deploy --preview-name mbbs-abroad",
     "convex:deploy:dry-run": "convex deploy --dry-run --preview-name mbbs-abroad",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

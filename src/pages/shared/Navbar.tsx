@@ -30,9 +30,10 @@ const Navbar = () => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   const getPageTitle = () => {
-    if (location.pathname === '/russia') return 'MBBS in Russia';
-    if (location.pathname === '/armenia') return 'MBBS in Armenia';
-    if (location.pathname === '/georgia') return 'MBBS in Georgia';
+    if (location.pathname === '/mbbs-in-russia') return 'MBBS in Russia';
+    if (location.pathname === '/mbbs-in-armenia') return 'MBBS in Armenia';
+    if (location.pathname === '/mbbs-in-georgia') return 'MBBS in Georgia';
+    if (location.pathname === '/mbbs-in-india') return 'MBBS in India';
     return null;
   };
   const pageTitle = getPageTitle();

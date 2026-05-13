@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   FaExpand,
   FaTimes,
@@ -37,15 +37,24 @@ const PhotoGallery = () => {
     { src: photos.photo20, title: 'Orientation Day', category: 'Events' },
   ];
 
+  useEffect(() => {
+    if (!selectedImage) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [selectedImage]);
+
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
     setSelectedImage(galleryImages[index].src);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     setSelectedImage(null);
-    document.body.style.overflow = 'auto';
   };
 
   const showNext = () => {

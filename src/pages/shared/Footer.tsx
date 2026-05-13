@@ -2,18 +2,28 @@ import { Link } from 'react-router-dom';
 import { logo } from '../../assets/images';
 import {
   FaFacebookF,
-  FaXTwitter,
-  FaLinkedinIn,
-  FaYoutube,
   FaInstagram,
   FaPhone,
   FaEnvelope,
   FaLocationDot,
 } from 'react-icons/fa6';
 import { FaAngleRight } from 'react-icons/fa6';
+import { openConsentPreferences } from '../../lib/consent';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const socialLinks = [
+    {
+      label: 'Facebook',
+      Icon: FaFacebookF,
+      href: 'https://www.facebook.com/p/Indo-Global-Education-Service-PvtLtd-100068973894679/',
+    },
+    {
+      label: 'Instagram',
+      Icon: FaInstagram,
+      href: 'https://www.instagram.com/indoglobaleducationservice/',
+    },
+  ];
 
   return (
     <footer className="bg-primary text-white pt-10 pb-8">
@@ -38,19 +48,16 @@ const Footer = () => {
               Armenia, and Georgia.
             </p>
             <div className="flex gap-3">
-              {[
-                FaFacebookF,
-                FaXTwitter,
-                FaLinkedinIn,
-                FaYoutube,
-                FaInstagram,
-              ].map((Icon, i) => (
+              {socialLinks.map((social) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={social.label}
                   className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center hover:bg-accent transition-colors duration-300"
                 >
-                  <Icon size={16} />
+                  <social.Icon size={16} />
                 </a>
               ))}
             </div>
@@ -84,46 +91,41 @@ const Footer = () => {
           </div>
           <div>
             <h4 className="text-lg font-bold mb-6 border-b-2 border-accent w-fit text-white">
-              Resources
+              Privacy & Ads
             </h4>
             <ul className="space-y-4 text-md text-primary-light">
               {[
-                { name: 'Latest Education Blogs', path: '/blog' },
-                { name: 'Admission News', path: '/news' },
-                { name: 'Frequently Asked Questions', path: '/faqs' },
-                {
-                  name: 'Download Brochure 2026',
-                  path: '/brochure-2026.pdf',
-                  isDownload: true,
-                },
-                { name: 'Work with Us', path: '/contact' },
+                { name: 'Privacy Policy', path: '/privacy-policy' },
+                { name: 'Cookie Policy', path: '/cookie-policy' },
+                { name: 'Terms & Conditions', path: '/terms-and-conditions' },
+                { name: 'Disclaimer', path: '/disclaimer' },
               ].map((link) => (
                 <li key={link.path}>
-                  {link.isDownload ? (
-                    <a
-                      href={link.path}
-                      className="group flex items-center gap-2 hover:text-accent transition-colors duration-300"
-                    >
-                      <FaAngleRight
-                        className="text-accent transition-transform duration-300 group-hover:rotate-90"
-                        size={14}
-                      />
-                      <span>{link.name}</span>
-                    </a>
-                  ) : (
-                    <Link
-                      to={link.path}
-                      className="group flex items-center gap-2 hover:text-accent transition-colors duration-300"
-                    >
-                      <FaAngleRight
-                        className="text-accent transition-transform duration-300 group-hover:rotate-90"
-                        size={14}
-                      />
-                      <span>{link.name}</span>
-                    </Link>
-                  )}
+                  <Link
+                    to={link.path}
+                    className="group flex items-center gap-2 hover:text-accent transition-colors duration-300"
+                  >
+                    <FaAngleRight
+                      className="text-accent transition-transform duration-300 group-hover:rotate-90"
+                      size={14}
+                    />
+                    <span>{link.name}</span>
+                  </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={openConsentPreferences}
+                  className="group flex items-center gap-2 hover:text-accent transition-colors duration-300"
+                >
+                  <FaAngleRight
+                    className="text-accent transition-transform duration-300 group-hover:rotate-90"
+                    size={14}
+                  />
+                  <span>Cookie Preferences</span>
+                </button>
+              </li>
             </ul>
           </div>
           <div>
@@ -164,16 +166,22 @@ const Footer = () => {
           </div>
         </div>
         <hr className="border-secondary mb-8" />
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-md text-primary-light">
+        <div className="mb-6 grid gap-4 rounded-2xl bg-white/5 p-4 text-sm text-primary-light md:grid-cols-3">
+          <p>
+            Optional advertising technologies for Meta ads and Google ads
+            should only run after consent where required.
+          </p>
+          <p>
+            Google and other third-party vendors may use cookies or device
+            identifiers for measurement and remarketing when enabled.
+          </p>
+          <p>
+            WhatsApp is offered as a contact channel. Conversations initiated
+            there are also subject to WhatsApp and Meta policies.
+          </p>
+        </div>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-md text-primary-light">
           <p>© {currentYear} Indo Global Education. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link to="/privacy" className="hover:text-accent">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="hover:text-accent">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

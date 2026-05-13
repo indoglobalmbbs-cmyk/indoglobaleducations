@@ -1,3 +1,5 @@
+import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { useMutation } from 'convex/react';
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -5,9 +7,62 @@ import {
   FaClock,
   FaChevronDown,
 } from 'react-icons/fa';
+import { api } from '../../../convex/_generated/api';
 import ContactCard from '../../components/ContactCard';
+import {
+  getCurrentPagePath,
+  getSubmissionErrorMessage,
+  initialEnquiryForm,
+  validateDetailedEnquiryForm,
+  type EnquiryFormData,
+} from '../../lib/enquiry';
 
 const Contact = () => {
+  const [form, setForm] = useState<EnquiryFormData>(initialEnquiryForm);
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>(
+    'idle',
+  );
+  const [error, setError] = useState<string | null>(null);
+  const submitContact = useMutation(api.indoglobal.submitContact);
+
+  const updateField =
+    (field: keyof EnquiryFormData) =>
+    (
+      event: ChangeEvent<
+        HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+      >,
+    ) => {
+      setForm((current) => ({ ...current, [field]: event.target.value }));
+      setError(null);
+      if (status === 'success') setStatus('idle');
+    };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const validationError = validateDetailedEnquiryForm(form);
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+
+    setStatus('submitting');
+    setError(null);
+
+    try {
+      await submitContact({
+        ...form,
+        source: 'contact-page',
+        pagePath: getCurrentPagePath(),
+      });
+      setForm(initialEnquiryForm);
+      setStatus('success');
+    } catch (submissionError) {
+      setError(getSubmissionErrorMessage(submissionError));
+      setStatus('idle');
+    }
+  };
+
   return (
     <div className="w-full bg-background min-h-screen">
       <section className="bg-primary py-16">
@@ -88,7 +143,7 @@ const Contact = () => {
                 </div>
                 <form
                   className="p-6 space-y-4"
-                  onSubmit={(e) => e.preventDefault()}
+                  onSubmit={handleSubmit}
                 >
                   <div>
                     <label className="block text-sm font-medium text-primary mb-1">
@@ -97,6 +152,9 @@ const Contact = () => {
                     <input
                       type="text"
                       placeholder="Enter your name"
+                      value={form.fullName}
+                      onChange={updateField('fullName')}
+                      required
                       className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
                     />
                   </div>
@@ -107,6 +165,9 @@ const Contact = () => {
                     <input
                       type="email"
                       placeholder="Enter your email Id"
+                      value={form.email}
+                      onChange={updateField('email')}
+                      required
                       className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
                     />
                   </div>
@@ -117,6 +178,9 @@ const Contact = () => {
                     <input
                       type="tel"
                       placeholder="Enter your phone number"
+                      value={form.phone}
+                      onChange={updateField('phone')}
+                      required
                       className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
                     />
                   </div>
@@ -127,7 +191,9 @@ const Contact = () => {
                       </label>
                       <div className="relative">
                         <select
-                          defaultValue=""
+                          value={form.countryPreference}
+                          onChange={updateField('countryPreference')}
+                          required
                           className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
                         >
                           <option value="" disabled>
@@ -148,7 +214,9 @@ const Contact = () => {
                       </label>
                       <div className="relative">
                         <select
-                          defaultValue=""
+                          value={form.course}
+                          onChange={updateField('course')}
+                          required
                           className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
                         >
                           <option value="" disabled>
@@ -174,6 +242,8 @@ const Contact = () => {
                       <input
                         type="text"
                         placeholder="Enter your Country"
+                        value={form.country}
+                        onChange={updateField('country')}
                         className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
                       />
                     </div>
@@ -184,6 +254,8 @@ const Contact = () => {
                       <input
                         type="text"
                         placeholder="Enter your State"
+                        value={form.state}
+                        onChange={updateField('state')}
                         className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
                       />
                     </div>
@@ -195,14 +267,25 @@ const Contact = () => {
                     <textarea
                       rows={3}
                       placeholder="How can we help you?"
+                      value={form.message}
+                      onChange={updateField('message')}
                       className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all resize-none"
                     />
                   </div>
+                  {error ? (
+                    <p className="text-sm font-medium text-red-600">{error}</p>
+                  ) : null}
+                  {status === 'success' ? (
+                    <p className="text-sm font-medium text-green-700">
+                      Enquiry submitted. Our team will contact you shortly.
+                    </p>
+                  ) : null}
                   <button
                     type="submit"
+                    disabled={status === 'submitting'}
                     className="w-full bg-accent text-white font-bold py-2 rounded-md shadow-lg shadow-accent/30 transition-all active:scale-[0.98]"
                   >
-                    Apply Now
+                    {status === 'submitting' ? 'Submitting...' : 'Apply Now'}
                   </button>
                 </form>
               </div>

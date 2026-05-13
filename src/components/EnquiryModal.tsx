@@ -1,4 +1,14 @@
+import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { useMutation } from 'convex/react';
 import { FaTimes, FaPaperPlane, FaChevronDown } from 'react-icons/fa';
+import { api } from '../../convex/_generated/api';
+import {
+  getCurrentPagePath,
+  getSubmissionErrorMessage,
+  initialEnquiryForm,
+  validateDetailedEnquiryForm,
+  type EnquiryFormData,
+} from '../lib/enquiry';
 
 interface EnquiryModalProps {
   isOpen: boolean;
@@ -6,7 +16,52 @@ interface EnquiryModalProps {
 }
 
 const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
+  const [form, setForm] = useState<EnquiryFormData>(initialEnquiryForm);
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>(
+    'idle',
+  );
+  const [error, setError] = useState<string | null>(null);
+  const submitContact = useMutation(api.indoglobal.submitContact);
+
   if (!isOpen) return null;
+
+  const updateField =
+    (field: keyof EnquiryFormData) =>
+    (
+      event: ChangeEvent<
+        HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+      >,
+    ) => {
+      setForm((current) => ({ ...current, [field]: event.target.value }));
+      setError(null);
+      if (status === 'success') setStatus('idle');
+    };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const validationError = validateDetailedEnquiryForm(form);
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+
+    setStatus('submitting');
+    setError(null);
+
+    try {
+      await submitContact({
+        ...form,
+        source: 'modal',
+        pagePath: getCurrentPagePath(),
+      });
+      setForm(initialEnquiryForm);
+      setStatus('success');
+    } catch (submissionError) {
+      setError(getSubmissionErrorMessage(submissionError));
+      setStatus('idle');
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -26,7 +81,7 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
             <FaTimes size={20} />
           </button>
         </div>
-        <form className="p-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
+        <form className="p-8 space-y-4" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-1">
               <label className="block text-sm font-medium text-primary">
@@ -35,6 +90,9 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
               <input
                 type="text"
                 placeholder="Enter your name"
+                value={form.fullName}
+                onChange={updateField('fullName')}
+                required
                 className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
               />
             </div>
@@ -45,6 +103,9 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
               <input
                 type="tel"
                 placeholder="Enter your phone number"
+                value={form.phone}
+                onChange={updateField('phone')}
+                required
                 className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
               />
             </div>
@@ -56,6 +117,9 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
             <input
               type="email"
               placeholder="Enter your email Id"
+              value={form.email}
+              onChange={updateField('email')}
+              required
               className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
             />
           </div>
@@ -66,7 +130,9 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
                                 </label>
                                 <div className="relative">
                                   <select
-                                    defaultValue=""
+                                    value={form.countryPreference}
+                                    onChange={updateField('countryPreference')}
+                                    required
                                     className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
                                   >
                                     <option value="" disabled>
@@ -87,7 +153,9 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
                                 </label>
                                 <div className="relative">
                                   <select
-                                    defaultValue=""
+                                    value={form.course}
+                                    onChange={updateField('course')}
+                                    required
                                     className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
                                   >
                                     <option value="" disabled>
@@ -113,6 +181,8 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
               <input
                 type="text"
                 placeholder="Enter your Country"
+                value={form.country}
+                onChange={updateField('country')}
                 className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
               />
             </div>
@@ -123,6 +193,8 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
               <input
                 type="text"
                 placeholder="Enter your State"
+                value={form.state}
+                onChange={updateField('state')}
                 className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
               />
             </div>
@@ -134,14 +206,26 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
             <textarea
               rows={3}
               placeholder="How can we help you?"
+              value={form.message}
+              onChange={updateField('message')}
               className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all resize-none"
             />
           </div>
+          {error ? (
+            <p className="text-sm font-medium text-red-600">{error}</p>
+          ) : null}
+          {status === 'success' ? (
+            <p className="text-sm font-medium text-green-700">
+              Enquiry submitted. Our team will contact you shortly.
+            </p>
+          ) : null}
           <button
             type="submit"
+            disabled={status === 'submitting'}
             className="w-full bg-accent text-white font-bold py-3 rounded-md shadow-lg shadow-accent/30 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2"
           >
-            <FaPaperPlane size={14} /> Send Enquiry
+            <FaPaperPlane size={14} />
+            {status === 'submitting' ? 'Sending...' : 'Send Enquiry'}
           </button>
         </form>
       </div>

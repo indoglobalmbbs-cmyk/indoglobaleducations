@@ -117,7 +117,7 @@ const Blog = () => {
                   Get personalized counseling from our experts today.
                 </p>
                 <button
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate('/contact-us')}
                   className="w-full py-4 bg-white text-primary font-bold rounded-2xl hover:bg-primary hover:text-white transition-all shadow-lg"
                 >
                   Book Free Consultation

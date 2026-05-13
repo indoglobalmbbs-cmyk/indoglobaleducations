@@ -28,6 +28,7 @@ import { admissionProcess } from '../../../data/admissionProcess';
 import { hostelFeature } from '../../../data/hostelFeature';
 import { medicalUniversities } from '../../../data/universityname';
 import { rankedOverseas } from '../../../data/rankedOverseas';
+import CompactEnquiryForm from '../../../components/CompactEnquiryForm';
 
 const AvicennaBatumiMedicalUniversity = () => {
   const navigate = useNavigate();
@@ -74,7 +75,7 @@ const AvicennaBatumiMedicalUniversity = () => {
                       training.
                     </p>
                     <button
-                      onClick={() => navigate('/contact')}
+                      onClick={() => navigate('/contact-us')}
                       className="rounded-full bg-accent px-8 py-3 font-bold transition-transform hover:scale-105"
                     >
                       Apply Now
@@ -186,44 +187,7 @@ const AvicennaBatumiMedicalUniversity = () => {
                   Get a free counseling session today
                 </p>
               </div>
-              <form className="p-6 space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-primary mb-1">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your name"
-                    className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-primary mb-1">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Enter your email Id"
-                    className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-primary mb-1">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="Enter your phone number"
-                    className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-accent text-white font-bold py-2 rounded-md shadow-lg shadow-accent/30 transition-transform active:scale-[0.98]"
-                >
-                  Apply Now
-                </button>
-              </form>
+              <CompactEnquiryForm source="page-enquiry" />
             </div>
           </div>
         </div>
@@ -636,7 +600,7 @@ const AvicennaBatumiMedicalUniversity = () => {
               </div>
             </div>
             <button
-              onClick={() => navigate('/photosGallery')}
+              onClick={() => navigate('/photo-gallery')}
               className="whitespace-nowrap px-8 py-3 bg-primary text-white rounded-full font-bold hover:bg-accent hover:text-primary transition-all"
             >
               View Gallery

@@ -5,14 +5,10 @@ import {
   FaBarsStaggered,
   FaChevronDown,
   FaInstagram,
-  FaXTwitter,
-  FaPinterest,
 } from 'react-icons/fa6';
 import {
   FaTimesCircle,
   FaFacebookF,
-  FaLinkedinIn,
-  FaYoutube,
   FaEnvelope,
   FaPhoneAlt,
 } from 'react-icons/fa';
@@ -40,6 +36,18 @@ const Navbar = () => {
     return null;
   };
   const pageTitle = getPageTitle();
+  const socialLinks = [
+    {
+      label: 'Facebook',
+      Icon: FaFacebookF,
+      href: 'https://www.facebook.com/p/Indo-Global-Education-Service-PvtLtd-100068973894679/',
+    },
+    {
+      label: 'Instagram',
+      Icon: FaInstagram,
+      href: 'https://www.instagram.com/indoglobaleducationservice/',
+    },
+  ];
 
   return (
     <header className="sticky top-0 z-[100] bg-primary-light text-primary p-4">
@@ -81,19 +89,13 @@ const Navbar = () => {
               Follow Us
             </span>
             <div className="flex items-center gap-1">
-              {[
-                { Icon: FaFacebookF, href: 'https://facebook.com' },
-                { Icon: FaXTwitter, href: 'https://twitter.com' },
-                { Icon: FaLinkedinIn, href: 'https://linkedin.com' },
-                { Icon: FaYoutube, href: 'https://youtube.com' },
-                { Icon: FaPinterest, href: 'https://pinterest.com' },
-                { Icon: FaInstagram, href: 'https://instagram.com' },
-              ].map((social, index) => (
+              {socialLinks.map((social) => (
                 <a
-                  key={index}
+                  key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={social.label}
                   className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-accent hover:text-primary transition-all duration-300 text-md"
                 >
                   <social.Icon />
@@ -414,7 +416,7 @@ const Navbar = () => {
             >
               <li>
                 <Link
-                  to="/photosGallery"
+                  to="/photo-gallery"
                   onClick={() => setIsMenuOpen(false)}
                   className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
                 >
@@ -424,7 +426,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="/videosGallery"
+                  to="/video-gallery"
                   onClick={() => setIsMenuOpen(false)}
                   className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
                 >

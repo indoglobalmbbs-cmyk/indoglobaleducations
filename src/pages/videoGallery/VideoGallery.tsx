@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   FaPlay,
   FaTimes,
@@ -27,15 +27,24 @@ const VideoGallery = () => {
     { src: assets.video11, title: 'Graduation Day', category: 'Events' },
   ];
 
+  useEffect(() => {
+    if (!selectedVideo) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [selectedVideo]);
+
   const openVideo = (index: number) => {
     setCurrentIndex(index);
     setSelectedVideo(galleryVideos[index].src);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeVideo = () => {
     setSelectedVideo(null);
-    document.body.style.overflow = 'auto';
   };
 
   const showNext = (e: React.MouseEvent) => {

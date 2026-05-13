@@ -85,7 +85,7 @@ const Faqs = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/contact-us')}
                 className="px-8 py-4 bg-primary text-white font-bold rounded-2xl hover:bg-secondary transition-all shadow-lg"
               >
                 Contact Support

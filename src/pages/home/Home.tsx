@@ -79,7 +79,7 @@ const Home = () => {
                   Apply Now
                 </button>
                 <button
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate('/contact-us')}
                   className="bg-white/10 hover:bg-white text-white hover:text-primary px-9 py-3.5 rounded-full font-semibold border border-white/30 transition-all duration-300 backdrop-blur-md"
                 >
                   View Programs
@@ -269,7 +269,7 @@ const Home = () => {
                 medical degree.
               </p>
               <button
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/contact-us')}
                 className="hidden lg:block bg-primary text-white px-8 py-4 rounded-full font-bold shadow-blue-900/20 shadow-lg hover:bg-secondary transition-all"
               >
                 Book Free Consultation
@@ -462,7 +462,7 @@ const Home = () => {
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate('/contact-us')}
                   className="bg-primary hover:bg-secondary text-white px-10 py-4 rounded-xl font-bold shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-2"
                 >
                   Contact Consultant <FaCircleChevronRight />
@@ -578,7 +578,7 @@ const Home = () => {
               Still have questions? Our counselors are ready to give you the
               facts.
               <button
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/contact-us')}
                 className="ml-2 text-primary font-bold underline hover:text-accent transition-colors"
               >
                 Speak to an Expert
@@ -610,7 +610,7 @@ const Home = () => {
                     you with personalized guidance.
                   </p>
                   <button
-                    onClick={() => navigate('/contact')}
+                    onClick={() => navigate('/contact-us')}
                     className="w-full bg-accent hover:bg-white hover:text-primary text-white py-3 rounded-xl font-bold transition-all shadow-lg"
                   >
                     Request a Call Back

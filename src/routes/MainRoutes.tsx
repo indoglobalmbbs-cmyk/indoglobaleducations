@@ -95,6 +95,10 @@ import Faqs from '../pages/faqs/Faqs';
 import PhotoGallery from '../pages/photoGallery/PhotoGallery';
 import VideoGallery from '../pages/videoGallery/VideoGallery';
 import Contact from '../pages/contact/Contact';
+import PrivacyPolicy from '../pages/legal/PrivacyPolicy';
+import CookiePolicy from '../pages/legal/CookiePolicy';
+import TermsAndConditions from '../pages/legal/TermsAndConditions';
+import Disclaimer from '../pages/legal/Disclaimer';
 
 const MainRoutes = createBrowserRouter([
   {
@@ -106,321 +110,321 @@ const MainRoutes = createBrowserRouter([
       { path: 'about', element: <About /> },
 
       {
-        path: 'mariStateUniversity',
+        path: 'mbbs-in-russia/mari-state-university',
         element: <MariStateUniversity />,
       },
       {
-        path: 'permStateMedicalUniversity',
+        path: 'mbbs-in-russia/perm-state-medical-university',
         element: <PermStateMedicalUniversity />,
       },
       {
-        path: 'orenburgStateMedicalUniversity',
+        path: 'mbbs-in-russia/orenburg-state-medical-university',
         element: <OrenburgStateMedicalUniversity />,
       },
       {
-        path: 'tverstateMedicalUniversity',
+        path: 'mbbs-in-russia/tver-state-medical-university',
         element: <TverStateMedicalUniversity />,
       },
       {
-        path: 'kazanStateMedicalUniversity',
+        path: 'mbbs-in-russia/kazan-state-medical-university',
         element: <KazanStateMedicalUniversity />,
       },
       {
-        path: 'kazanFederalUniversity',
+        path: 'mbbs-in-russia/kazan-federal-university',
         element: <KazanFederalUniversity />,
       },
       {
-        path: 'omskStateMedicalUniversity',
+        path: 'mbbs-in-russia/omsk-state-medical-university',
         element: <OmskStateMedicalUniversity />,
       },
       {
-        path: 'altaiStateMedicalUniversity',
+        path: 'mbbs-in-russia/altai-state-medical-university',
         element: <AltaiStateMedicalUniversity />,
       },
       {
-        path: 'bashkirStateMedicalUniversity',
+        path: 'mbbs-in-russia/bashkir-state-medical-university',
         element: <BashkirStateMedicalUniversity />,
       },
       {
-        path: 'crimeaFederalUniversity',
+        path: 'mbbs-in-russia/crimea-federal-university',
         element: <CrimeaFederalUniversity />,
       },
       {
-        path: 'samaraStateMedicalUniversity',
+        path: 'mbbs-in-russia/samara-state-medical-university',
         element: <SamaraStateMedicalUniversity />,
       },
       {
-        path: 'orelStateUniversity',
+        path: 'mbbs-in-russia/orel-state-university',
         element: <OrelStateUniversity />,
       },
       {
-        path: 'uralStateMedicalUniversity',
+        path: 'mbbs-in-russia/ural-state-medical-university',
         element: <UralStateMedicalUniversity />,
       },
       {
-        path: 'pirogovRussianNationalResearchMedicalUniversity',
+        path: 'mbbs-in-russia/pirogov-russian-national-research-medical-university',
         element: <PirogovRussianNationalResearchMedicalUniversity />,
       },
       {
-        path: 'kurskStateMedicalUniversity',
+        path: 'mbbs-in-russia/kursk-state-medical-university',
         element: <KurskStateMedicalUniversity />,
       },
       {
-        path: 'northernStateMedicalUniversity',
+        path: 'mbbs-in-russia/northern-state-medical-university',
         element: <NorthernStateMedicalUniversity />,
       },
       {
-        path: 'nizhnyNovgorodStateMedicalUniversity',
+        path: 'mbbs-in-russia/nizhny-novgorod-state-medical-university',
         element: <NizhnyNovgorodStateMedicalUniversity />,
       },
       {
-        path: 'volgogradStateMedicalUniversity',
+        path: 'mbbs-in-russia/volgograd-state-medical-university',
         element: <VolgogradStateMedicalUniversity />,
       },
       {
-        path: 'farEasternFederalUniversity',
+        path: 'mbbs-in-russia/far-eastern-federal-university',
         element: <FarEasternFederalUniversity />,
       },
       {
-        path: 'kirovStateMedicalUniversity',
+        path: 'mbbs-in-russia/kirov-state-medical-university',
         element: <KirovStateMedicalUniversity />,
       },
       {
-        path: 'kemerovoStateMedicalUniversity',
+        path: 'mbbs-in-russia/kemerovo-state-medical-university',
         element: <KemerovoStateMedicalUniversity />,
       },
       {
-        path: 'kabardinoBalkarianStateUniversity',
+        path: 'mbbs-in-russia/kabardino-balkarian-state-university',
         element: <KabardinoBalkarianStateUniversity />,
       },
       {
-        path: 'komi',
+        path: 'mbbs-in-russia/komi',
         element: <Komi />,
       },
       {
-        path: 'pskovStateUniversity',
+        path: 'mbbs-in-russia/pskov-state-university',
         element: <PskovStateUniversity />,
       },
       {
-        path: 'sevastopolStateUniversity',
+        path: 'mbbs-in-russia/sevastopol-state-university',
         element: <SevastopolStateUniversity />,
       },
       {
-        path: 'immanuelKantBalticFederalUniversity',
+        path: 'mbbs-in-russia/immanuel-kant-baltic-federal-university',
         element: <ImmanuelKantBalticFederalUniversity />,
       },
       {
-        path: 'chechenStateMedicalUniversity',
+        path: 'mbbs-in-russia/chechen-state-medical-university',
         element: <ChechenStateMedicalUniversity />,
       },
       {
-        path: 'murmanskArcticUniversity',
+        path: 'mbbs-in-russia/murmansk-arctic-university',
         element: <MurmanskArcticUniversity />,
       },
       {
-        path: 'synergyUniversity',
+        path: 'mbbs-in-russia/synergy-university',
         element: <SynergyUniversity />,
       },
       {
-        path: 'yaroslavlStateMedicalUniversity',
+        path: 'mbbs-in-russia/yaroslavl-state-medical-university',
         element: <YaroslavlStateMedicalUniversity />,
       },
       {
-        path: 'ulyanovskStateUniversity',
+        path: 'mbbs-in-russia/ulyanovsk-state-university',
         element: <UlyanovskStateUniversity />,
       },
       {
-        path: 'siberianStateMedicalUniversity',
+        path: 'mbbs-in-russia/siberian-state-medical-university',
         element: <SiberianStateMedicalUniversity />,
       },
       {
-        path: 'iMSechenovFirstMoscowStateMedicalUniversity',
+        path: 'mbbs-in-russia/im-sechenov-first-moscow-state-medical-university',
         element: <IMSechenovFirstMoscowStateMedicalUniversity />,
       },
       {
-        path: 'southUralMedicalUniversity',
+        path: 'mbbs-in-russia/south-ural-medical-university',
         element: <SouthUralMedicalUniversity />,
       },
       {
-        path: 'northOssetian',
+        path: 'mbbs-in-russia/north-ossetian',
         element: <NorthOssetian />,
       },
       {
-        path: 'northCaucasian',
+        path: 'mbbs-in-russia/north-caucasian',
         element: <NorthCaucasian />,
       },
       {
-        path: 'tulaStateUniversity',
+        path: 'mbbs-in-russia/tula-state-university',
         element: <TulaStateUniversity />,
       },
       {
-        path: 'chitaStateMedicalAcademy',
+        path: 'mbbs-in-russia/chita-state-medical-academy',
         element: <ChitaStateMedicalAcademy />,
       },
       {
-        path: 'lobachevskyStateUniversity',
+        path: 'mbbs-in-russia/lobachevsky-state-university',
         element: <LobachevskyStateUniversity />,
       },
       {
-        path: 'chuvashStateMedicalUniversity',
+        path: 'mbbs-in-russia/chuvash-state-medical-university',
         element: <ChuvashStateMedicalUniversity />,
       },
       {
-        path: 'ingushStateUniversity',
+        path: 'mbbs-in-russia/ingush-state-university',
         element: <IngushStateUniversity />,
       },
       {
-        path: 'northWesternStateUniversity',
+        path: 'mbbs-in-russia/north-western-state-university',
         element: <NorthWesternStateUniversity />,
       },
       {
-        path: 'astrakhanStateUniversity',
+        path: 'mbbs-in-russia/astrakhan-state-university',
         element: <AstrakhanStateUniversity />,
       },
       {
-        path: 'kubanStateMedicalUniversity',
+        path: 'mbbs-in-russia/kuban-state-medical-university',
         element: <KubanStateMedicalUniversity />,
       },
       {
-        path: 'smolenskStateMedicalUniversity',
+        path: 'mbbs-in-russia/smolensk-state-medical-university',
         element: <SmolenskStateMedicalUniversity />,
       },
       {
-        path: 'peoplesFriendshipUniversityofRussia',
+        path: 'mbbs-in-russia/peoples-friendship-university-of-russia',
         element: <PeoplesFriendshipUniversityofRussia />,
       },
       {
-        path: 'ryazanStateUniversity',
+        path: 'mbbs-in-russia/ryazan-state-university',
         element: <RyazanStateUniversity />,
       },
       {
-        path: 'dagestanStateMedicalUniversity',
+        path: 'mbbs-in-russia/dagestan-state-medical-university',
         element: <DagestanStateMedicalUniversity />,
       },
       {
-        path: 'pavlovFirstSaintPetersburgStateMedicalUniversity',
+        path: 'mbbs-in-russia/pavlov-first-saint-petersburg-state-medical-university',
         element: <PavlovFirstSaintPetersburgStateMedicalUniversity />,
       },
       {
-        path: 'izhevskStateMedicalAcademy',
+        path: 'mbbs-in-russia/izhevsk-state-medical-academy',
         element: <IzhevskStateMedicalAcademy />,
       },
 
       {
-        path: 'progressMedicalUniversity',
+        path: 'mbbs-in-armenia/progress-medical-university',
         element: <ProgressMedicalUniversity />,
       },
       {
-        path: 'mkhitarGoshArmenianRussianInternationalUniversity',
+        path: 'mbbs-in-armenia/mkhitar-gosh-armenian-russian-international-university',
         element: <MkhitarGoshArmenianRussianInternationalUniversity />,
       },
       {
-        path: 'yerevanStateMedicalUniversity',
+        path: 'mbbs-in-armenia/yerevan-state-medical-university',
         element: <YerevanStateMedicalUniversity />,
       },
       {
-        path: 'yerevanHaybusakUniversity',
+        path: 'mbbs-in-armenia/yerevan-haybusak-university',
         element: <YerevanHaybusakUniversity />,
       },
       {
-        path: 'universityTraditionalMedicine',
+        path: 'mbbs-in-armenia/university-of-traditional-medicine',
         element: <UniversityTraditionalMedicine />,
       },
       {
-        path: 'armenianMedicalInstitute',
+        path: 'mbbs-in-armenia/armenian-medical-institute',
         element: <ArmenianMedicalInstitute />,
       },
       {
-        path: 'terezamedicaluniversity',
+        path: 'mbbs-in-armenia/tereza-medical-university',
         element: <TerezaMedicalUniversity />,
       },
 
       {
-        path: 'georgianNationalUniversity',
+        path: 'mbbs-in-georgia/georgian-national-university',
         element: <GeorgianNationalUniversity />,
       },
       {
-        path: 'europeanMedicalUniversity',
+        path: 'mbbs-in-georgia/european-medical-university',
         element: <EuropeanMedicalUniversity />,
       },
       {
-        path: 'davidTvildianiMedicalUniversity',
+        path: 'mbbs-in-georgia/david-tvildiani-medical-university',
         element: <DavidTvildianiMedicalUniversity />,
       },
       {
-        path: 'eastEuropeanUniversity',
+        path: 'mbbs-in-georgia/east-european-university',
         element: <EastEuropeanUniversity />,
       },
       {
-        path: 'alteUniversity',
+        path: 'mbbs-in-georgia/alte-university',
         element: <AlteUniversity />,
       },
       {
-        path: 'universityofGeorgia',
+        path: 'mbbs-in-georgia/university-of-georgia',
         element: <UniversityofGeorgia />,
       },
       {
-        path: 'caucasusInternationalUniversity',
+        path: 'mbbs-in-georgia/caucasus-international-university',
         element: <CaucasusInternationalUniversity />,
       },
       {
-        path: 'tbilisiStateMedicalUniversity',
+        path: 'mbbs-in-georgia/tbilisi-state-medical-university',
         element: <TbilisiStateMedicalUniversity />,
       },
       {
-        path: 'batumiShotaRustaveliStateUniversity',
+        path: 'mbbs-in-georgia/batumi-shota-rustaveli-state-university',
         element: <BatumiShotaRustaveliStateUniversity />,
       },
       {
-        path: 'bauInternationalUniversityBatumi',
+        path: 'mbbs-in-georgia/bau-international-university-batumi',
         element: <BAUInternationalUniversityBatumi />,
       },
       {
-        path: 'centralUniversityofEurope',
+        path: 'mbbs-in-georgia/central-university-of-europe',
         element: <CentralUniversityofEurope />,
       },
       {
-        path: 'georgianAmericanUniversity',
+        path: 'mbbs-in-georgia/georgian-american-university',
         element: <GeorgianAmericanUniversity />,
       },
       {
-        path: 'internationalBlackSeaUniversity',
+        path: 'mbbs-in-georgia/international-black-sea-university',
         element: <InternationalBlackSeaUniversity />,
       },
       {
-        path: 'eastWestUniversity',
+        path: 'mbbs-in-georgia/east-west-university',
         element: <EastWestUniversity />,
       },
       {
-        path: 'grigolRobakidzeUniversity',
+        path: 'mbbs-in-georgia/grigol-robakidze-university',
         element: <GrigolRobakidzeUniversity />,
       },
       {
-        path: 'kenWalkerInternationalUniversity',
+        path: 'mbbs-in-georgia/ken-walker-international-university',
         element: <KenWalkerInternationalUniversity />,
       },
       {
-        path: 'newVisionUniversity',
+        path: 'mbbs-in-georgia/new-vision-university',
         element: <NewVisionUniversity />,
       },
       {
-        path: 'iliaStateUniversity',
+        path: 'mbbs-in-georgia/ilia-state-university',
         element: <IliaStateUniversity />,
       },
       {
-        path: 'universityGeomediLLC',
+        path: 'mbbs-in-georgia/university-geomedi-llc',
         element: <UniversityGeomediLLC />,
       },
       {
-        path: 'avicennaBatumiMedicalUniversity',
+        path: 'mbbs-in-georgia/avicenna-batumi-medical-university',
         element: <AvicennaBatumiMedicalUniversity />,
       },
       {
-        path: 'davidAghmashenebeliUniversityOfGeorgia',
+        path: 'mbbs-in-georgia/david-aghmashenebeli-university-of-georgia',
         element: <DavidAghmashenebeliUniversityOfGeorgia />,
       },
       {
-        path: 'akakiTsereteliStateUniversity',
+        path: 'mbbs-in-georgia/akaki-tsereteli-state-university',
         element: <AkakiTsereteliStateUniversity />,
       },
 
@@ -431,9 +435,13 @@ const MainRoutes = createBrowserRouter([
       { path: 'blog', element: <Blog /> },
       { path: 'news', element: <News /> },
       { path: 'faqs', element: <Faqs /> },
-      { path: 'photosGallery', element: <PhotoGallery /> },
-      { path: 'videosGallery', element: <VideoGallery /> },
+      { path: 'photo-gallery', element: <PhotoGallery /> },
+      { path: 'video-gallery', element: <VideoGallery /> },
       { path: 'contact-us', element: <Contact /> },
+      { path: 'privacy-policy', element: <PrivacyPolicy /> },
+      { path: 'cookie-policy', element: <CookiePolicy /> },
+      { path: 'terms-and-conditions', element: <TermsAndConditions /> },
+      { path: 'disclaimer', element: <Disclaimer /> },
     ],
   },
 ]);

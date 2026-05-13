@@ -11,37 +11,37 @@ import {
 export const armeniaUniversities = [
   {
     label: 'Progress Medical University',
-    path: '/progressMedicalUniversity',
+    path: '/mbbs-in-armenia/progress-medical-university',
     image: progressmedicaluniversity,
   },
   {
     label: 'Mkhitar Gosh Armenian-Russian International University',
-    path: '/mkhitarGoshArmenianRussianInternationalUniversity',
+    path: '/mbbs-in-armenia/mkhitar-gosh-armenian-russian-international-university',
     image: mkhitargosharmenianrussianinternationaluniversity,
   },
   {
     label: 'Yerevan State Medical University',
-    path: '/yerevanStateMedicalUniversity',
+    path: '/mbbs-in-armenia/yerevan-state-medical-university',
     image: yerevanstatemedicaluniversity,
   },
   {
     label: 'Yerevan Haybusak University',
-    path: '/yerevanHaybusakUniversity',
+    path: '/mbbs-in-armenia/yerevan-haybusak-university',
     image: yerevanhaybusakuniversity,
   },
   {
     label: 'University of Traditional Medicine',
-    path: '/universityTraditionalMedicine',
+    path: '/mbbs-in-armenia/university-of-traditional-medicine',
     image: universityoftraditionalmedicine,
   },
   {
     label: 'Armenian Medical Institute',
-    path: '/armenianMedicalInstitute',
+    path: '/mbbs-in-armenia/armenian-medical-institute',
     image: armenianmedicalinstitute,
   },
   {
     label: 'Tereza Medical University',
-    path: '/terezamedicaluniversity',
+    path: '/mbbs-in-armenia/tereza-medical-university',
     image: terezamedicaluniversity,
   },
 ];

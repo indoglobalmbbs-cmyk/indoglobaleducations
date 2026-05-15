@@ -5,26 +5,28 @@ export interface FaqItemType {
 
 export const georgiaFaq: FaqItemType[] = [
   {
-    question: 'Is a Georgia MBBS degree valid in India?',
+    question: 'What is the NEET score required for MBBS in Georgia?',
     answer:
-      'Yes, the MBBS degree issued by medical universities in Georgia is valid in India, provided that the university is well-recognized by the National Medical Commission.',
+      'To study MBBS in Georgia, Indian students generally need a qualifying NEET score. For the current cycle, this is typically around 164 for the General category and 129 for reserved categories (OBC/SC/ST).',
   },
   {
-    question: 'What is the duration of MBBS in Georgia?',
+    question: 'How long is the MBBS program in Georgia?',
     answer:
-      'The duration of MBBS in Georgia is 6 years, including one year of internship.',
+      'The program duration is 5.8 to 6 years. This includes comprehensive theoretical studies and clinical clerkships (internships) in affiliated hospitals.',
   },
   {
-    question: 'How much NEET score is required for MBBS in Georgia?',
-    answer: 'A passing NEET score is required to study MBBS in Georgia.',
-  },
-  {
-    question: 'Is IELTS mandatory for MBBS in Georgia?',
-    answer: 'No. IELTS is not required for an MBBS course in Georgia.',
-  },
-  {
-    question: 'Is MBBS in Georgia better than in India?',
+    question: 'Can Georgian medical graduates work in India?',
     answer:
-      'The quality of medical education in Georgia and India is hard to compare. But MBBS in Georgia is more affordable than MBBS in India.',
+      'Yes, degrees from NMC/WHO-approved Georgian universities are valid in India. To practice, graduates must clear the National Exit Test (NEXT), which has replaced the FMGE as the mandatory licensing exam for all medical graduates.',
+  },
+  {
+    question: 'Do students get holidays in Georgia?',
+    answer:
+      'Yes. Students typically receive a summer vacation of approximately 45 days (July to August). Some universities also provide winter breaks in January after the first semester exams.',
+  },
+  {
+    question: 'Is Georgia safe for Indian students?',
+    answer:
+      'Georgia is generally very safe for international students. Most universities have 24/7 campus security and CCTV-monitored hostels. Georgia maintains a high ranking on the global safety index for students.',
   },
 ];

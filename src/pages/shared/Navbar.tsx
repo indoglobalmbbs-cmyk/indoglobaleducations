@@ -51,12 +51,10 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-[100] bg-primary-light text-primary p-4">
+    <header className="md:sticky md:top-0 z-[100] bg-primary-light text-primary p-0">
       {pageTitle && (
-        <div className="w-full text-center pb-2">
-          <h1 className="text-lg font-bold tracking-[0.2em] text-primary">
-            {pageTitle}
-          </h1>
+        <div className="w-full text-center">
+          <h1 className="text-lg font-bold text-primary">{pageTitle}</h1>
         </div>
       )}
       <div className="bg-primary text-white py-1 rounded-ss-2xl rounded-ee-2xl px-4 flex flex-wrap justify-between items-center relative">

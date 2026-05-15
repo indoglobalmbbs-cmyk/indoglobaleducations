@@ -7,8 +7,6 @@ import {
   FaGlobeAmericas,
   FaAward,
   FaCheckCircle,
-  FaHospital,
-  FaMoneyBillWave,
   FaClock,
 } from 'react-icons/fa';
 import {
@@ -23,6 +21,16 @@ import {
 import { russiaFaq } from '../../../data/russiaFaq';
 import FaqItem from '../../../components/FaqItem';
 import CompactEnquiryForm from '../../../components/CompactEnquiryForm';
+import { armeniaStats } from '../../../data/armeniaStats';
+import { armeniaFeatures } from '../../../data/armeniaFeatures';
+import { whyStudyArmenia } from '../../../data/whyStudyArmenia';
+import { armeniaAdmissionSteps } from '../../../data/armeniaAdmissionSteps';
+import { armeniaBenefits } from '../../../data/armeniaBenefits';
+import { russiaFeeStructure } from '../../../data/russiaFeeStructure';
+import { armeniaGuidelines } from '../../../data/armeniaGuidelines';
+import { armeniaSyllabus } from '../../../data/armeniaSyllabus';
+import { armeniaChallenges } from '../../../data/armeniaChallenges';
+import { armeniaCareerPaths } from '../../../data/armeniaCareerPaths';
 
 const Russia = () => {
   const [showAll, setShowAll] = useState(false);
@@ -61,30 +69,11 @@ const Russia = () => {
       <section className="py-10 bg-white shadow-sm">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              {
-                icon: <FaUniversity />,
-                label: '30+ Universities',
-                color: 'text-blue-600',
-              },
-              {
-                icon: <FaGraduationCap />,
-                label: 'MCI/WHO Approved',
-                color: 'text-red-600',
-              },
-              {
-                icon: <FaGlobeAmericas />,
-                label: 'English Medium',
-                color: 'text-green-600',
-              },
-              {
-                icon: <FaAward />,
-                label: 'Top-Tier Faculty',
-                color: 'text-yellow-600',
-              },
-            ].map((stat, idx) => (
+            {armeniaStats.map((stat, idx) => (
               <div key={idx} className="flex flex-col items-center">
-                <div className={`${stat.color} text-3xl mb-2`}>{stat.icon}</div>
+                <div className={`${stat.color} text-3xl mb-2`}>
+                  <stat.icon />
+                </div>
                 <p className="font-bold text-primary text-lg">{stat.label}</p>
               </div>
             ))}
@@ -101,34 +90,13 @@ const Russia = () => {
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  icon: <FaMoneyBillWave />,
-                  title: 'Affordable Fees',
-                  desc: 'Low tuition fees and living costs compared to Western countries.',
-                },
-                {
-                  icon: <FaCheckCircle />,
-                  title: 'Global Recognition',
-                  desc: 'Degrees recognized by WHO, NMC (MCI), and ECFMG (USA).',
-                },
-                {
-                  icon: <FaHospital />,
-                  title: 'Modern Infrastructure',
-                  desc: 'State-of-the-art labs and hospitals for clinical practice.',
-                },
-                {
-                  icon: <FaGraduationCap />,
-                  title: 'No Entrance Exam',
-                  desc: 'Direct admission based on NEET score. No donation fees.',
-                },
-              ].map((feature, idx) => (
+              {armeniaFeatures.map((feature, idx) => (
                 <div
                   key={idx}
                   className="p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-accent/30 transition-all duration-300"
                 >
                   <div className="text-accent text-2xl mb-3">
-                    {feature.icon}
+                    <feature.icon />
                   </div>
                   <h3 className="text-lg font-bold text-primary mb-2">
                     {feature.title}
@@ -225,7 +193,7 @@ const Russia = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-primary mb-2 line-clamp-1">
-                    {uni.label || 'University Name'}
+                    {uni.label}
                   </h3>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                     {'Russia, Eastern Europe'}
@@ -354,59 +322,13 @@ const Russia = () => {
             <div className="h-1.5 w-24 bg-accent rounded-full mx-auto mt-6"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <FaMoneyBillWave />,
-                title: 'Affordable Tuition Fees',
-                desc: 'Tuition fees are nearly five times lower than in India, making it a highly cost-effective option for medical aspirants.',
-              },
-              {
-                icon: <FaUniversity />,
-                title: 'WHO & NMC Accredited',
-                desc: 'Over 70 medical universities accredited by WHO and NMC, providing advanced technology and global recognition.',
-              },
-              {
-                icon: <FaCheckCircle />,
-                title: 'NMC Screening Training',
-                desc: 'Students receive specialized training for screening exams, allowing them to practice medicine globally, including India.',
-              },
-              {
-                icon: <FaGlobeAmericas />,
-                title: 'English Medium Courses',
-                desc: 'Courses are available in English, with additional opportunities to learn Russian for clinical practice with locals.',
-              },
-              {
-                icon: <FaGraduationCap />,
-                title: 'Direct Admission',
-                desc: 'No donation fees or stressful entrance exams are required. Admission is simple and based on merit.',
-              },
-              {
-                icon: <FaAward />,
-                title: 'Global Faculty & Research',
-                desc: 'Learn from highly experienced faculty and engage in cutting-edge research and medical innovation programs.',
-              },
-              {
-                icon: <FaHospital />,
-                title: 'Modern Infrastructure',
-                desc: 'Access to state-of-the-art laboratories, advanced medical equipment, and top-tier clinical training facilities.',
-              },
-              {
-                icon: <FaGlobeAmericas />,
-                title: 'Exchange Programs',
-                desc: 'Benefit from various exchange programs with prestigious European universities and global institutions.',
-              },
-              {
-                icon: <FaHospital />,
-                title: 'Cultural Experience',
-                desc: 'Experience a rich culture, scenic landscapes, and a welcoming environment with friendly relations with India.',
-              },
-            ].map((item, idx) => (
+            {whyStudyArmenia.map((item, idx) => (
               <div
                 key={idx}
                 className="group p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-white hover:shadow-xl hover:border-accent/20 transition-all duration-300"
               >
                 <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center text-accent text-3xl shadow-sm group-hover:scale-110 transition-transform duration-300 mb-6">
-                  {item.icon}
+                  <item.icon />
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-3">
                   {item.title}
@@ -551,38 +473,7 @@ const Russia = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              {
-                step: '01',
-                title: 'Counseling',
-                desc: 'Consult our experts about fees and colleges.',
-              },
-              {
-                step: '02',
-                title: 'Apply',
-                desc: 'Submit your documents and application form.',
-              },
-              {
-                step: '03',
-                title: 'Letter',
-                desc: 'Get your official Admission Letter.',
-              },
-              {
-                step: '04',
-                title: 'Fees',
-                desc: 'Deposit tuition fees to secure seat.',
-              },
-              {
-                step: '05',
-                title: 'Visa',
-                desc: 'Visa processing and embassy interviews.',
-              },
-              {
-                step: '06',
-                title: 'Departure',
-                desc: 'Fly to Russia and begin your journey.',
-              },
-            ].map((item, idx) => (
+            {armeniaAdmissionSteps.map((item, idx) => (
               <div
                 key={idx}
                 className="relative p-6 bg-gray-50 rounded-xl text-center hover:bg-primary hover:text-white transition-all duration-300 group"
@@ -609,28 +500,7 @@ const Russia = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <FaHospital />,
-                title: 'Govt. Universities',
-                desc: 'Directly governed by the Russian government, ensuring stability and standards.',
-              },
-              {
-                icon: <FaMoneyBillWave />,
-                title: 'Loan & Scholarship',
-                desc: 'Comprehensive guidance for education loans and merit-based scholarship programs.',
-              },
-              {
-                icon: <FaCheckCircle />,
-                title: 'Safety First',
-                desc: 'A student-friendly environment with strict anti-ragging laws and 24/7 security.',
-              },
-              {
-                icon: <FaGraduationCap />,
-                title: 'Indian Food',
-                desc: 'Dedicated Indian messes and canteens serving authentic food in university hostels.',
-              },
-            ].map((benefit, idx) => (
+            {armeniaBenefits.map((benefit, idx) => (
               <div
                 key={idx}
                 className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 
@@ -642,7 +512,7 @@ const Russia = () => {
                           text-accent text-3xl mb-6 group-hover:scale-110 group-hover:bg-accent 
                           group-hover:text-white transition-all duration-300 shadow-inner"
                 >
-                  {benefit.icon}
+                  <benefit.icon />
                 </div>
                 <h4 className="font-bold text-xl text-white mb-3 tracking-tight">
                   {benefit.title}
@@ -664,42 +534,14 @@ const Russia = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              'Altai State Medical University',
-              'Crimea Federal University',
-              'Kazan State Medical University',
-              'Izhevsk State MBBS University',
-              'Volgograd State MBBS University',
-              'Syktyvkar State MBBS University',
-              'Kursk State MBBS University',
-              'Irkutsk State MBBS University',
-              'Dagestan State MBBS University',
-              'Bashkir State MBBS University',
-              'Orel State University',
-              'Mari State MBBS University',
-              'Nizhny Novgorod MBBS University',
-              'Kazan Federal University',
-              'First Moscow State MBBS University',
-              'Omsk State MBBS University',
-              'Novosibirsk State MBBS University',
-              'Northern State MBBS University',
-              'Ryazan State MBBS University',
-              'Perm State MBBS University',
-              'Orenburg State MBBS University',
-              'Tambov State University',
-              'Smolensk State MBBS University',
-              'Saint Petersburg MBBS University',
-              "People's Friendship University",
-              'Tver State MBBS University',
-              'Belgorod University',
-            ].map((uni, idx) => (
+            {russiaUniversities.map((uni, idx) => (
               <div
                 key={idx}
                 className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm border-l-4 border-accent hover:shadow-md transition-shadow"
               >
                 <FaUniversity className="text-primary shrink-0" />
                 <span className="text-sm font-semibold text-gray-700">
-                  {uni}
+                  {uni.label}
                 </span>
               </div>
             ))}
@@ -722,59 +564,38 @@ const Russia = () => {
             <table className="w-full text-left border-collapse min-w-[800px]">
               <thead>
                 <tr className="bg-primary text-white">
-                  <th className="p-5 font-semibold uppercase text-sm tracking-wider">
-                    University Name
+                  <th className="p-5 font-semibold text-sm tracking-wider">
+                    University
                   </th>
-                  <th className="p-5 font-semibold uppercase text-sm tracking-wider">
-                    Tuition Fee (Approx. INR)
+                  <th className="p-5 font-semibold text-sm tracking-wider">
+                    Fee
                   </th>
-                  <th className="p-5 font-semibold uppercase text-sm tracking-wider text-center">
-                    Hostel Fee (USD)
+                  <th className="p-5 font-semibold text-sm tracking-wider">
+                    Hostel & Mess
                   </th>
-                  <th className="p-5 font-semibold uppercase text-sm tracking-wider text-right">
-                    Total Tuition (USD)
+                  <th className="p-5 font-semibold text-sm tracking-wider">
+                    Medical
+                  </th>
+                  <th className="p-5 font-semibold text-sm tracking-wider">
+                    OTC
+                  </th>
+                  <th className="p-5 font-semibold text-sm tracking-wider">
+                    Processing
                   </th>
                 </tr>
               </thead>
               <tbody className="text-gray-700">
-                {[
-                  {
-                    name: 'Kazan Medical University',
-                    inr: '3,21,750',
-                    hostel: '600',
-                    usd: '4,500',
-                  },
-                  {
-                    name: 'St. Petersburg I.I. Mechnikov State Academy',
-                    inr: '3,21,750',
-                    hostel: '600',
-                    usd: '4,500',
-                  },
-                  {
-                    name: 'Stavropol Medical University',
-                    inr: '3,50,350',
-                    hostel: '750',
-                    usd: '4,900',
-                  },
-                  {
-                    name: 'Tver Medical University',
-                    inr: '4,29,000',
-                    hostel: '3,000',
-                    usd: '6,000',
-                  },
-                ].map((row, idx) => (
+                {russiaFeeStructure.map((row, idx) => (
                   <tr
                     key={idx}
                     className="border-b border-gray-100 hover:bg-blue-50/50 transition-colors duration-200"
                   >
                     <td className="p-5 font-bold text-primary">{row.name}</td>
-                    <td className="p-5">₹ {row.inr}</td>
-                    <td className="p-5 text-center text-gray-500">
-                      $ {row.hostel}
-                    </td>
-                    <td className="p-5 text-right font-semibold text-accent">
-                      $ {row.usd}
-                    </td>
+                    <td className="p-5">{row.fee}</td>
+                    <td className="p-5">{row.hostel}</td>
+                    <td className="p-5">{row.medical}</td>
+                    <td className="p-5">{row.otc}</td>
+                    <td className="p-5">{row.processing}</td>
                   </tr>
                 ))}
               </tbody>
@@ -800,32 +621,7 @@ const Russia = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto mt-4"></div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'No Donations',
-                desc: 'Admission is strictly based on eligibility. No hidden or unfair donation fees.',
-              },
-              {
-                title: 'Budget Friendly',
-                desc: 'Low tuition fees and affordable living costs compared to other European nations.',
-              },
-              {
-                title: 'NMC Approved',
-                desc: 'Degrees are recognized by the National Medical Commission and globally by WHO.',
-              },
-              {
-                title: 'Advanced Labs',
-                desc: 'Access to state-of-the-art laboratories and modern medical teaching equipment.',
-              },
-              {
-                title: 'Global Recognition',
-                desc: 'References and opportunities to work in leading hospitals worldwide after graduation.',
-              },
-              {
-                title: 'Safety & Insurance',
-                desc: 'Safe environment for Indian students with mandatory travel and health insurance.',
-              },
-            ].map((item, idx) => (
+            {armeniaGuidelines.map((item, idx) => (
               <div
                 key={idx}
                 className="p-6 bg-gray-50 rounded-xl border border-transparent hover:border-accent/20 hover:bg-white hover:shadow-lg transition-all duration-300"
@@ -938,109 +734,7 @@ const Russia = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto mt-4"></div>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {[
-              {
-                year: '1st Year',
-                sem: '1st - 2nd Sem',
-                subjects: [
-                  'Biology',
-                  'Physics',
-                  'Chemistry',
-                  'Nursing (Surgery & Therapy)',
-                  'Anatomy',
-                  'Histology',
-                  'Latin',
-                  'Public Health',
-                  'History',
-                ],
-                color: 'border-blue-500',
-              },
-              {
-                year: '2nd Year',
-                sem: '3rd - 4th Sem',
-                subjects: [
-                  'Economics',
-                  'Philosophy',
-                  'Culturology',
-                  'Basics of Research',
-                  'Mathematics',
-                  'Physiology',
-                  'Biochemistry',
-                  'Immunology',
-                  'Hygiene',
-                  'Psychology',
-                  'Medical Law',
-                  'Bioethics',
-                  'Russian Language',
-                ],
-                color: 'border-purple-500',
-              },
-              {
-                year: '3rd Year',
-                sem: '5th - 6th Sem',
-                subjects: [
-                  'Microbiology',
-                  'Pathology',
-                  'Pharmacology',
-                  'Internal Medicine',
-                  'Topographical Anatomy',
-                  'Operative Surgery',
-                  'Radiology',
-                ],
-                color: 'border-green-500',
-              },
-              {
-                year: '4th Year',
-                sem: '7th - 8th Sem',
-                subjects: [
-                  'Surgery',
-                  'Dermatology & Venereology',
-                  'Obstetrics & Gynaecology',
-                  'Neurology',
-                  'Therapy',
-                  'Medical Rehabilitation',
-                  'Urology',
-                  'Public Health',
-                  'Pediatrics',
-                  'Phthisiology',
-                  'Endocrinology',
-                ],
-                color: 'border-yellow-500',
-              },
-              {
-                year: '5th Year',
-                sem: '9th - 10th Sem',
-                subjects: [
-                  'E.N.T.',
-                  'Ophthalmology',
-                  'Surgical Gynaecology',
-                  'Psychiatry',
-                  'Traumatology',
-                  'Orthopedics',
-                  'Physiotherapy',
-                  'Outpatient Therapy',
-                  'Gene Therapy',
-                  'Infectious Diseases',
-                ],
-                color: 'border-orange-500',
-              },
-              {
-                year: '6th Year',
-                sem: '11th - 12th Sem',
-                subjects: [
-                  'Oncology & Radiation Therapy',
-                  'Occupational Diseases',
-                  'Anesthesiology',
-                  'Intensive Care Training',
-                  'Dentistry',
-                  'Clinical Immunology',
-                  'General Medical Practice',
-                  'Neurosurgery',
-                  'Forensic Medicine',
-                ],
-                color: 'border-red-500',
-              },
-            ].map((item, idx) => (
+            {armeniaSyllabus.map((item, idx) => (
               <div
                 key={idx}
                 className={`p-8 bg-gray-50 rounded-2xl border-l-8 ${item.color} shadow-sm hover:shadow-md transition-all duration-300`}
@@ -1167,23 +861,7 @@ const Russia = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto mt-4"></div>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'Extreme Weather',
-                desc: 'Expect bitterly cold winters. Students are advised to carry heavy thermal wear.',
-                icon: '❄️',
-              },
-              {
-                title: 'Language Barrier',
-                desc: 'While the course is English, learning basic Russian is essential for clinical practice.',
-                icon: '🗣️',
-              },
-              {
-                title: 'Cultural Shift',
-                desc: 'Adapting to a new lifestyle and homesickness is common in the first semester.',
-                icon: '🌍',
-              },
-            ].map((item, idx) => (
+            {armeniaChallenges.map((item, idx) => (
               <div
                 key={idx}
                 className="p-8 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition-all"
@@ -1243,24 +921,7 @@ const Russia = () => {
                 Career Paths After MBBS
               </h2>
               <div className="space-y-4">
-                {[
-                  {
-                    step: 'Return to India',
-                    text: 'Qualify the NEXT/NMC exam to practice as a licensed doctor in India.',
-                  },
-                  {
-                    step: 'Global Practice',
-                    text: 'Clear USMLE (USA) or PLAB (UK) to practice in English-speaking nations.',
-                  },
-                  {
-                    step: 'Stay in Russia',
-                    text: 'Eligible to practice medicine or pursue specialized PG within the Russian Federation.',
-                  },
-                  {
-                    step: 'PG Abroad',
-                    text: 'Degrees are recognized worldwide, allowing for PG opportunities in Europe and beyond.',
-                  },
-                ].map((path, i) => (
+                {armeniaCareerPaths.map((path, i) => (
                   <div
                     key={i}
                     className="flex gap-4 items-center bg-white p-4 rounded-xl shadow-sm"

@@ -2,8 +2,8 @@ const https = require('https');
 const fs = require('fs');
 
 const sql = fs.readFileSync('schema.sql', 'utf8');
-const projectRef = 'ykpkxtwnsoghvzpiatmz';
-const token = '<your_supabase_access_token>';
+const projectRef = process.env.SUPABASE_PROJECT_ID;
+const token = process.env.SUPABASE_ACCESS_TOKEN;
 
 const data = JSON.stringify({ query: sql });
 

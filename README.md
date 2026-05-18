@@ -14,7 +14,7 @@ Indo Global Education is a premium MBBS abroad consultancy helping Indian studen
 
 - **Frontend**: React 18, Vite, TypeScript
 - **Styling**: Tailwind CSS, Framer Motion (for animations)
-- **Backend/Data**: Convex (for serverless data management)
+- **Backend/Data**: Supabase (for serverless data management)
 - **Routing**: React Router DOM v6
 - **Icons**: React Icons (Fa6, Fa)
 
@@ -35,8 +35,39 @@ Indo Global Education is a premium MBBS abroad consultancy helping Indian studen
 3. Set up environment variables:
    Create a `.env.local` file with:
    ```env
-   VITE_CONVEX_URL=your_convex_url_here
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
    ```
+
+### Database Setup
+
+Run the following SQL in your Supabase SQL Editor:
+
+```sql
+create table indoglobal (
+  id uuid default gen_random_uuid() primary key,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null,
+  fullName text not null,
+  email text not null,
+  phone text not null,
+  countryPreference text,
+  course text,
+  country text,
+  state text,
+  message text,
+  source text not null,
+  pagePath text not null,
+  status text not null check (status in ('new', 'contacted', 'closed')) default 'new'
+);
+
+-- Enable RLS
+alter table indoglobal enable row level security;
+
+-- Create policy to allow anonymous inserts
+create policy "Allow anonymous inserts"
+  on indoglobal for insert
+  with check (true);
+```
 
 ### Development
 

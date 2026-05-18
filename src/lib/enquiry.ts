@@ -2,22 +2,22 @@ export interface EnquiryFormData {
   fullName: string;
   email: string;
   phone: string;
-  countryPreference?: string;
-  course?: string;
-  country: string;
-  state: string;
-  message: string;
+  address: string;
+  course: string;
+  collegeName: string;
+  howHeard: string;
+  preferences: string;
 }
 
 export const initialEnquiryForm: EnquiryFormData = {
   fullName: "",
   email: "",
   phone: "",
-  countryPreference: "",
+  address: "",
   course: "",
-  country: "",
-  state: "",
-  message: "",
+  collegeName: "",
+  howHeard: "",
+  preferences: "",
 };
 
 export const validateEnquiryForm = (form: EnquiryFormData) => {
@@ -34,8 +34,6 @@ export const validateEnquiryForm = (form: EnquiryFormData) => {
 export const validateDetailedEnquiryForm = (form: EnquiryFormData) => {
   const baseError = validateEnquiryForm(form);
   if (baseError) return baseError;
-  if (!form.countryPreference) return "Please select a country preference.";
-  if (!form.course) return "Please select a course.";
   return null;
 };
 

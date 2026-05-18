@@ -1,7 +1,6 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
-import { useMutation } from 'convex/react';
+import { supabase } from '../lib/supabase';
 import { FaTimes, FaPaperPlane, FaChevronDown } from 'react-icons/fa';
-import { api } from '../../convex/_generated/api';
 import {
   getCurrentPagePath,
   getSubmissionErrorMessage,
@@ -21,7 +20,6 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
     'idle',
   );
   const [error, setError] = useState<string | null>(null);
-  const submitContact = useMutation(api.indoglobal.submitContact);
 
   if (!isOpen) return null;
 
@@ -50,14 +48,28 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
     setError(null);
 
     try {
-      await submitContact({
-        ...form,
-        source: 'modal',
-        pagePath: getCurrentPagePath(),
-      });
+      const { error: supabaseError } = await supabase.from('indoglobal').insert([
+        {
+          fullName: form.fullName.trim(),
+          email: form.email.trim().toLowerCase(),
+          phone: form.phone.trim().replace(/[^\d+]/g, ''),
+          address: form.address.trim(),
+          course: form.course,
+          collegeName: form.collegeName.trim(),
+          howHeard: form.howHeard,
+          preferences: form.preferences.trim(),
+          source: 'modal',
+          pagePath: getCurrentPagePath() || '/',
+          status: 'new',
+        },
+      ]);
+
+      if (supabaseError) throw supabaseError;
+
       setForm(initialEnquiryForm);
       setStatus('success');
     } catch (submissionError) {
+      console.error('Submission error:', submissionError);
       setError(getSubmissionErrorMessage(submissionError));
       setStatus('idle');
     }
@@ -65,7 +77,7 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <div className="absolute inset-0" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
       <div className="relative bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
         <div className="bg-primary p-6 text-white flex justify-between items-center">
           <div>
@@ -81,136 +93,95 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
             <FaTimes size={20} />
           </button>
         </div>
-        <form className="p-8 space-y-4" onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-1">
-              <label className="block text-sm font-medium text-primary">
-                Full Name
-              </label>
-              <input
-                type="text"
-                placeholder="Enter your name"
-                value={form.fullName}
-                onChange={updateField('fullName')}
-                required
-                className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
-              />
-            </div>
-            <div className="space-y-1">
-              <label className="block text-sm font-medium text-primary">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                placeholder="Enter your phone number"
-                value={form.phone}
-                onChange={updateField('phone')}
-                required
-                className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
-              />
-            </div>
-          </div>
-          <div className="space-y-1">
-            <label className="block text-sm font-medium text-primary">
-              Email Address
-            </label>
-            <input
-              type="email"
-              placeholder="Enter your email Id"
-              value={form.email}
-              onChange={updateField('email')}
+        <form className="p-4 space-y-4 max-h-[80vh] overflow-y-auto" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={form.fullName}
+            onChange={updateField('fullName')}
+            required
+            placeholder="Enter your name"
+            className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+          />
+          <input
+            type="email"
+            value={form.email}
+            onChange={updateField('email')}
+            required
+            placeholder="Enter your email Id"
+            className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+          />
+          <input
+            type="tel"
+            value={form.phone}
+            onChange={updateField('phone')}
+            required
+            placeholder="Enter your phone number"
+            className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+          />
+          <input
+            type="text"
+            value={form.address}
+            onChange={updateField('address')}
+            required
+            placeholder="Enter your Address"
+            className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+          />
+          <div className="relative">
+            <select
+              value={form.course}
+              onChange={updateField('course')}
               required
-              className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
-            />
-          </div>
-                            <div className="grid grid-cols-2 gap-4">
-                              <div>
-                                <label className="block text-sm font-medium text-primary mb-1">
-                                  Country Preference
-                                </label>
-                                <div className="relative">
-                                  <select
-                                    value={form.countryPreference}
-                                    onChange={updateField('countryPreference')}
-                                    required
-                                    className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
-                                  >
-                                    <option value="" disabled>
-                                      Select Country
-                                    </option>
-                                    <option value="russia">Russia</option>
-                                    <option value="armenia">Armenia</option>
-                                    <option value="georgia">Georgia</option>
-                                  </select>
-                                  <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
-                                    <FaChevronDown className="text-gray-400 text-sm" />
-                                  </div>
-                                </div>
-                              </div>
-                              <div>
-                                <label className="block text-sm font-medium text-primary mb-1">
-                                  Select Course
-                                </label>
-                                <div className="relative">
-                                  <select
-                                    value={form.course}
-                                    onChange={updateField('course')}
-                                    required
-                                    className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
-                                  >
-                                    <option value="" disabled>
-                                      Select Course
-                                    </option>
-                                    <option value="mbbs">MBBS</option>
-                                    <option value="ms">MS</option>
-                                    <option value="bds">BDS</option>
-                                    <option value="mds">MDS</option>
-                                    <option value="md-ms">MD-MS</option>
-                                  </select>
-                                  <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
-                                    <FaChevronDown className="text-gray-400 text-sm" />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-1">
-              <label className="block text-sm font-medium text-primary">
-                Country
-              </label>
-              <input
-                type="text"
-                placeholder="Enter your Country"
-                value={form.country}
-                onChange={updateField('country')}
-                className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
-              />
-            </div>
-            <div className="space-y-1">
-              <label className="block text-sm font-medium text-primary">
-                State
-              </label>
-              <input
-                type="text"
-                placeholder="Enter your State"
-                value={form.state}
-                onChange={updateField('state')}
-                className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
-              />
+              className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
+            >
+              <option value="" disabled>
+                Select Course
+              </option>
+              <option value="mbbs">MBBS</option>
+              <option value="ms">MS</option>
+              <option value="bds">BDS</option>
+              <option value="mds">MDS</option>
+              <option value="md-ms">MD-MS</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+              <FaChevronDown className="text-gray-400 text-sm" />
             </div>
           </div>
-          <div className="space-y-1">
-            <label className="block text-sm font-medium text-primary">
-              Message
-            </label>
-            <textarea
-              rows={3}
-              placeholder="How can we help you?"
-              value={form.message}
-              onChange={updateField('message')}
-              className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all resize-none"
-            />
+          <input
+            type="text"
+            value={form.collegeName}
+            onChange={updateField('collegeName')}
+            required
+            placeholder="Enter your College Name"
+            className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+          />
+          <div className="relative">
+            <select
+              value={form.howHeard}
+              onChange={updateField('howHeard')}
+              required
+              className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
+            >
+              <option value="" disabled>
+                How did you hear about us?
+              </option>
+              <option value="Facebook">Facebook</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Youtube">Youtube</option>
+              <option value="Friends & Family">Friends & Family</option>
+              <option value="Other">Other</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+              <FaChevronDown className="text-gray-400 text-sm" />
+            </div>
           </div>
+          <input
+            type="text"
+            required
+            placeholder="Enter your MBBS Country preference, College, Budget, Facility..."
+            value={form.preferences}
+            onChange={updateField('preferences')}
+            className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+          />
           {error ? (
             <p className="text-sm font-medium text-red-600">{error}</p>
           ) : null}

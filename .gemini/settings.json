@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "supabase": {
+      "command": "npx",
+      "args": ["-y", "@supabase/mcp-server-supabase"],
+      "env": {
+        "SUPABASE_URL": "https://ykpkxtwnsoghvzpiatmz.supabase.co",
+        "SUPABASE_ACCESS_TOKEN": "<your_supabase_access_token>"
+      }
+    },
+    "browser-use": {
+      "command": "/Users/adityakumar/.local/bin/uvx",
+      "args": ["--from", "browser-use[cli]", "browser-use", "--mcp"]
+    }
+  }
+}

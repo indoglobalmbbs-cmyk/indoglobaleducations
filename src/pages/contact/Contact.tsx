@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
-import { useMutation } from 'convex/react';
+import { supabase } from '../../lib/supabase';
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -7,7 +7,6 @@ import {
   FaClock,
   FaChevronDown,
 } from 'react-icons/fa';
-import { api } from '../../../convex/_generated/api';
 import ContactCard from '../../components/ContactCard';
 import {
   getCurrentPagePath,
@@ -23,7 +22,6 @@ const Contact = () => {
     'idle',
   );
   const [error, setError] = useState<string | null>(null);
-  const submitContact = useMutation(api.indoglobal.submitContact);
 
   const updateField =
     (field: keyof EnquiryFormData) =>
@@ -50,14 +48,28 @@ const Contact = () => {
     setError(null);
 
     try {
-      await submitContact({
-        ...form,
-        source: 'contact-page',
-        pagePath: getCurrentPagePath(),
-      });
+      const { error: supabaseError } = await supabase.from('indoglobal').insert([
+        {
+          fullName: form.fullName.trim(),
+          email: form.email.trim().toLowerCase(),
+          phone: form.phone.trim().replace(/[^\d+]/g, ''),
+          countryPreference: form.countryPreference?.trim() || undefined,
+          course: form.course?.trim() || undefined,
+          country: form.country?.trim() || undefined,
+          state: form.state?.trim() || undefined,
+          message: form.message?.trim() || undefined,
+          source: 'contact-page',
+          pagePath: getCurrentPagePath() || '/',
+          status: 'new',
+        },
+      ]);
+
+      if (supabaseError) throw supabaseError;
+
       setForm(initialEnquiryForm);
       setStatus('success');
     } catch (submissionError) {
+      console.error('Submission error:', submissionError);
       setError(getSubmissionErrorMessage(submissionError));
       setStatus('idle');
     }

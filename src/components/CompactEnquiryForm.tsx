@@ -1,6 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
-import { useMutation } from 'convex/react';
-import { api } from '../../convex/_generated/api';
+import { supabase } from '../lib/supabase';
 import {
   getCurrentPagePath,
   getSubmissionErrorMessage,
@@ -8,6 +7,7 @@ import {
   validateEnquiryForm,
   type EnquiryFormData,
 } from '../lib/enquiry';
+import { FaChevronDown } from 'react-icons/fa';
 
 interface CompactEnquiryFormProps {
   source: string;
@@ -19,11 +19,10 @@ const CompactEnquiryForm = ({ source }: CompactEnquiryFormProps) => {
     'idle',
   );
   const [error, setError] = useState<string | null>(null);
-  const submitContact = useMutation(api.indoglobal.submitContact);
 
   const updateField =
     (field: keyof EnquiryFormData) =>
-    (event: ChangeEvent<HTMLInputElement>) => {
+    (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
       setForm((current) => ({ ...current, [field]: event.target.value }));
       setError(null);
       if (status === 'success') setStatus('idle');
@@ -42,16 +41,28 @@ const CompactEnquiryForm = ({ source }: CompactEnquiryFormProps) => {
     setError(null);
 
     try {
-      await submitContact({
-        fullName: form.fullName,
-        email: form.email,
-        phone: form.phone,
-        source,
-        pagePath: getCurrentPagePath(),
-      });
+      const { error: supabaseError } = await supabase.from('indoglobal').insert([
+        {
+          fullName: form.fullName.trim(),
+          email: form.email.trim().toLowerCase(),
+          phone: form.phone.trim().replace(/[^\d+]/g, ''),
+          address: form.address.trim(),
+          course: form.course,
+          collegeName: form.collegeName.trim(),
+          howHeard: form.howHeard,
+          preferences: form.preferences.trim(),
+          source: source || 'website',
+          pagePath: getCurrentPagePath() || '/',
+          status: 'new',
+        },
+      ]);
+
+      if (supabaseError) throw supabaseError;
+
       setForm(initialEnquiryForm);
       setStatus('success');
     } catch (submissionError) {
+      console.error('Submission error:', submissionError);
       setError(getSubmissionErrorMessage(submissionError));
       setStatus('idle');
     }
@@ -59,46 +70,97 @@ const CompactEnquiryForm = ({ source }: CompactEnquiryFormProps) => {
 
   return (
     <form className="p-6 space-y-4" onSubmit={handleSubmit}>
-      <div>
-        <label className="block text-sm font-medium text-primary mb-1">
-          Full Name
-        </label>
-        <input
-          type="text"
-          placeholder="Enter your name"
-          value={form.fullName}
-          onChange={updateField('fullName')}
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={form.fullName}
+        onChange={updateField('fullName')}
+        required
+        className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+      />
+      <input
+        type="email"
+        placeholder="Enter your email Id"
+        value={form.email}
+        onChange={updateField('email')}
+        required
+        className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+      />
+      <input
+        type="tel"
+        placeholder="Enter your phone number"
+        value={form.phone}
+        onChange={updateField('phone')}
+        required
+        className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+      />
+      <input
+        type="text"
+        placeholder="Enter your Address"
+        value={form.address}
+        onChange={updateField('address')}
+        required
+        className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+      />
+      <div className="relative">
+        <select
+          value={form.course}
+          onChange={updateField('course')}
           required
-          className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
-        />
+          className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
+        >
+          <option value="" disabled>
+            Select Course
+          </option>
+          <option value="mbbs">MBBS</option>
+          <option value="ms">MS</option>
+          <option value="bds">BDS</option>
+          <option value="mds">MDS</option>
+          <option value="md-ms">MD-MS</option>
+        </select>
+        <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+          <FaChevronDown className="text-gray-400 text-sm" />
+        </div>
       </div>
-      <div>
-        <label className="block text-sm font-medium text-primary mb-1">
-          Email Address
-        </label>
-        <input
-          type="email"
-          placeholder="Enter your email Id"
-          value={form.email}
-          onChange={updateField('email')}
+      <input
+        type="text"
+        placeholder="Enter your College Name"
+        value={form.collegeName}
+        onChange={updateField('collegeName')}
+        required
+        className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+      />
+      <div className="relative">
+        <select
+          value={form.howHeard}
+          onChange={updateField('howHeard')}
           required
-          className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
-        />
+          className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
+        >
+          <option value="" disabled>
+            How did you hear about us?
+          </option>
+          <option value="Facebook">Facebook</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Youtube">Youtube</option>
+          <option value="Friends & Family">Friends & Family</option>
+          <option value="Other">Other</option>
+        </select>
+        <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+          <FaChevronDown className="text-gray-400 text-sm" />
+        </div>
       </div>
-      <div>
-        <label className="block text-sm font-medium text-primary mb-1">
-          Phone Number
-        </label>
-        <input
-          type="tel"
-          placeholder="Enter your phone number"
-          value={form.phone}
-          onChange={updateField('phone')}
-          required
-          className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
-        />
-      </div>
-      {error ? <p className="text-sm font-medium text-red-600">{error}</p> : null}
+      <input
+        type="text"
+        required
+        placeholder="Enter your MBBS Country preference, College, Budget, Facility..."
+        value={form.preferences}
+        onChange={updateField('preferences')}
+        className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
+      />
+      {error ? (
+        <p className="text-sm font-medium text-red-600">{error}</p>
+      ) : null}
       {status === 'success' ? (
         <p className="text-sm font-medium text-green-700">
           Enquiry submitted. Our team will contact you shortly.

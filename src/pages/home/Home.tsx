@@ -24,7 +24,7 @@ import {
   FaAward,
 } from 'react-icons/fa';
 import { slides } from '../../data/slideData';
-import { banner1 } from '../../assets/images';
+import CompactEnquiryForm from '../../components/CompactEnquiryForm';
 import ContactReason from '../../components/home/ContactReason';
 import StatCard from '../../components/home/StatCard';
 import TestimonialCard from '../../components/home/TestimonialCard';
@@ -98,21 +98,6 @@ const Home = () => {
       <section className="py-10 bg-surface">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src={banner1}
-                  alt="Students Studying"
-                  className="w-full h-[400px] object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-accent text-white p-6 rounded-xl shadow-xl hidden md:block">
-                <p className="text-4xl font-bold">10+</p>
-                <p className="text-sm uppercase tracking-wider">
-                  Years of Excellence
-                </p>
-              </div>
-            </div>
             <div className="space-y-6">
               <div className="inline-block px-4 py-1.5 bg-primary-light text-primary rounded-full text-sm font-bold tracking-wide uppercase">
                 Who We Are
@@ -159,6 +144,15 @@ const Home = () => {
                   Learn More About Us
                 </button>
               </div>
+            </div>
+            <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden sticky top-24">
+              <div className="bg-primary p-6 text-white text-center">
+                <div className="text-xl font-bold">Enquire Now</div>
+                <p className="text-blue-100 text-sm">
+                  Get a free counseling session today
+                </p>
+              </div>
+              <CompactEnquiryForm source="contact-page" />
             </div>
           </div>
         </div>

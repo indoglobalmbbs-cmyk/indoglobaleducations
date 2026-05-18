@@ -9,10 +9,6 @@ create table if not exists indoglobal (
   collegeName text,
   howHeard text,
   preferences text,
-  countryPreference text,
-  country text,
-  state text,
-  message text,
   source text not null,
   pagePath text not null,
   status text not null check (status in ('new', 'contacted', 'closed')) default 'new'

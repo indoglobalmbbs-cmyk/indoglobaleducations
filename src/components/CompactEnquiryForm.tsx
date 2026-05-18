@@ -43,16 +43,16 @@ const CompactEnquiryForm = ({ source }: CompactEnquiryFormProps) => {
     try {
       const { error: supabaseError } = await supabase.from('indoglobal').insert([
         {
-          fullName: form.fullName.trim(),
+          fullname: form.fullName.trim(),
           email: form.email.trim().toLowerCase(),
           phone: form.phone.trim().replace(/[^\d+]/g, ''),
           address: form.address.trim(),
           course: form.course,
-          collegeName: form.collegeName.trim(),
-          howHeard: form.howHeard,
+          collegename: form.collegeName.trim(),
+          howheard: form.howHeard,
           preferences: form.preferences.trim(),
           source: source || 'website',
-          pagePath: getCurrentPagePath() || '/',
+          pagepath: getCurrentPagePath() || '/',
           status: 'new',
         },
       ]);

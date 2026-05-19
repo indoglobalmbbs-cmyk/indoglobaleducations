@@ -1,11 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { logo } from '../../assets/images';
-import {
-  FaBarsStaggered,
-  FaChevronDown,
-  FaInstagram,
-} from 'react-icons/fa6';
+import { FaBarsStaggered, FaChevronDown, FaInstagram } from 'react-icons/fa6';
 import {
   FaTimesCircle,
   FaFacebookF,
@@ -36,7 +32,20 @@ const Navbar = () => {
     if (location.pathname === '/mbbs-in-india') return 'MBBS in India';
     return null;
   };
+
   const pageTitle = getPageTitle();
+
+  const closeAllMenus = () => {
+    setIsMenuOpen(false);
+    setIsUnivOpen(false);
+    setIsOpen(false);
+    setIsRussiaOpen(false);
+    setIsArmeniaOpen(false);
+    setIsGeorgiaOpen(false);
+    setIsCountriesOpen(false);
+    setIsGalleryOpen(false);
+  };
+
   const socialLinks = [
     {
       label: 'Facebook',
@@ -207,6 +216,7 @@ const Navbar = () => {
                   items={russiaUniversities}
                   isOpen={isRussiaOpen}
                   onItemClick={() => setIsMenuOpen(false)}
+                  onItemClick={closeAllMenus}
                 />
               </li>
               <li
@@ -233,6 +243,7 @@ const Navbar = () => {
                   items={armeniaUniversities}
                   isOpen={isArmeniaOpen}
                   onItemClick={() => setIsMenuOpen(false)}
+                  onItemClick={closeAllMenus}
                 />
               </li>
               <li
@@ -259,6 +270,7 @@ const Navbar = () => {
                   items={georgiaUniversities}
                   isOpen={isGeorgiaOpen}
                   onItemClick={() => setIsMenuOpen(false)}
+                  onItemClick={closeAllMenus}
                 />
               </li>
             </ul>

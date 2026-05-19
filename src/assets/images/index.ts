@@ -6,7 +6,6 @@ import co4 from './co4.jpeg';
 import about from './about.jpeg';
 import aboutUs from './aboutus.webp';
 import about1 from './about1.jpeg';
-import servicesBanner from './servicesbanner.jpg';
 import banner1 from './banner1.jpeg';
 import banner2 from './banner2.jpeg';
 import banner3 from './banner3.jpeg';
@@ -83,13 +82,6 @@ import ryazanstateuniversity from './russia/ryazanstateuniversity.jpg';
 import dagestanstatemedicaluniversity from './russia/dagestanstatemedicaluniversity.jpg';
 import pavlovfirstsaintpetersburgstatemedicaluniversity from './russia/pavlovfirstsaintpetersburgstatemedicaluniversity.jpg';
 import izhevskstatemedicalacademy from './russia/izhevskstatemedicalacademy.jpg';
-// import maristateuniversity from './russia/maristateuniversity.jpg';
-// import maristateuniversity from './russia/maristateuniversity.jpg';
-// import maristateuniversity from './russia/maristateuniversity.jpg';
-// import maristateuniversity from './russia/maristateuniversity.jpg';
-// import maristateuniversity from './russia/maristateuniversity.jpg';
-// import maristateuniversity from './russia/maristateuniversity.jpg';
-// import maristateuniversity from './russia/maristateuniversity.jpg';
 
 import progressmedicaluniversity from './armenia/progressmedicaluniversity.jpg';
 import mkhitargosharmenianrussianinternationaluniversity from './armenia/mkhitargosharmenianrussianinternationaluniversity.jpg';
@@ -131,7 +123,6 @@ export {
   about,
   aboutUs,
   about1,
-  servicesBanner,
   banner1,
   banner2,
   banner3,

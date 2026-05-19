@@ -461,20 +461,6 @@ const Home = () => {
                 >
                   Contact Consultant <FaCircleChevronRight />
                 </button>
-                <div className="flex items-center gap-3 px-4 py-2">
-                  <div className="flex -space-x-3">
-                    {[1, 2, 3].map((i) => (
-                      <div
-                        key={i}
-                        className="w-10 h-10 rounded-full border-2 border-white bg-gray-200"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-sm font-medium text-text-muted">
-                    <span className="text-primary font-bold">5000+</span>{' '}
-                    Students Assisted
-                  </p>
-                </div>
               </div>
             </div>
             <div className="relative">

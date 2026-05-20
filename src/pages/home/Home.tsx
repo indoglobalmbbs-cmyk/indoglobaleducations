@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
@@ -40,6 +41,16 @@ interface LayoutContext {
 const Home = () => {
   const navigate = useNavigate();
   const { openEnquiry } = useOutletContext<LayoutContext>();
+
+  useEffect(() => {
+    const hasFilled = localStorage.getItem('enquiry_submitted');
+    if (!hasFilled) {
+      const timer = setTimeout(() => {
+        openEnquiry();
+      }, 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [openEnquiry]);
 
   return (
     <div className="w-full">

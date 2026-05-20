@@ -10,6 +10,7 @@ import {
 } from 'react-icons/fa';
 import Submenu from '../../components/Submenu';
 import { admissionUpdates } from '../../data/updates';
+import { indiaUniversities } from '../../data/indiaUniversities';
 import { russiaUniversities } from '../../data/russiaUniversities';
 import { armeniaUniversities } from '../../data/armeniaUniversities';
 import { georgiaUniversities } from '../../data/georgiaUniversities';
@@ -19,6 +20,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUnivOpen, setIsUnivOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isIndiaOpen, setIsIndiaOpen] = useState(false);
   const [isRussiaOpen, setIsRussiaOpen] = useState(false);
   const [isArmeniaOpen, setIsArmeniaOpen] = useState(false);
   const [isGeorgiaOpen, setIsGeorgiaOpen] = useState(false);
@@ -39,6 +41,7 @@ const Navbar = () => {
     setIsMenuOpen(false);
     setIsUnivOpen(false);
     setIsOpen(false);
+    setIsIndiaOpen(false);
     setIsRussiaOpen(false);
     setIsArmeniaOpen(false);
     setIsGeorgiaOpen(false);
@@ -193,6 +196,32 @@ const Navbar = () => {
               className={`md:absolute left-0 mt-2 w-max bg-primary-light text-primary rounded-lg shadow-lg transition-all duration-200 ${isUnivOpen ? 'block opacity-100' : 'hidden md:block md:opacity-0 md:invisible'}`}
             >
               <li
+                className="relative group/india"
+                onMouseEnter={() => setIsIndiaOpen(true)}
+                onMouseLeave={() => setIsIndiaOpen(false)}
+              >
+                <button
+                  type="button"
+                  onClick={() => setIsIndiaOpen(!isIndiaOpen)}
+                  className="relative group/item w-full block px-4 py-2 hover:bg-primary hover:text-accent transition-colors flex items-center justify-between rounded-t-lg"
+                >
+                  <span className="relative z-10 text-left">
+                    Universities of India
+                  </span>
+                  <FaChevronDown
+                    className={`text-md transition-transform duration-200 ${
+                      isIndiaOpen ? '-rotate-90' : 'rotate-0'
+                    }`}
+                  />
+                  <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
+                </button>
+                <Submenu
+                  items={indiaUniversities}
+                  isOpen={isIndiaOpen}
+                  onItemClick={closeAllMenus}
+                />
+              </li>
+              <li
                 className="relative group/russia"
                 onMouseEnter={() => setIsRussiaOpen(true)}
                 onMouseLeave={() => setIsRussiaOpen(false)}
@@ -215,7 +244,6 @@ const Navbar = () => {
                 <Submenu
                   items={russiaUniversities}
                   isOpen={isRussiaOpen}
-                  onItemClick={() => setIsMenuOpen(false)}
                   onItemClick={closeAllMenus}
                 />
               </li>
@@ -242,7 +270,6 @@ const Navbar = () => {
                 <Submenu
                   items={armeniaUniversities}
                   isOpen={isArmeniaOpen}
-                  onItemClick={() => setIsMenuOpen(false)}
                   onItemClick={closeAllMenus}
                 />
               </li>
@@ -269,7 +296,6 @@ const Navbar = () => {
                 <Submenu
                   items={georgiaUniversities}
                   isOpen={isGeorgiaOpen}
-                  onItemClick={() => setIsMenuOpen(false)}
                   onItemClick={closeAllMenus}
                 />
               </li>

@@ -27,7 +27,7 @@ export const admissionProcess: AdmissionStep[] = [
   },
   {
     step: '05',
-    title: 'Arrival in Armenia',
+    title: 'Arrival',
     desc: 'Pay first-year fees before departure. Provide flight details for airport reception and immigration clearance.',
   },
   {

@@ -44,8 +44,8 @@ const Footer = () => {
             </Link>
             <p className="text-primary-light text-md leading-relaxed">
               Empowering students to achieve their dreams of international
-              medical education. Specializing in MBBS admissions across Russia,
-              Armenia, and Georgia.
+              medical education. Specializing in MBBS admissions across India,
+              Russia, Armenia, and Georgia.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -168,8 +168,8 @@ const Footer = () => {
         <hr className="border-secondary mb-8" />
         <div className="mb-6 grid gap-4 rounded-2xl bg-white/5 p-4 text-sm text-primary-light md:grid-cols-3">
           <p>
-            Optional advertising technologies for Meta ads and Google ads
-            should only run after consent where required.
+            Optional advertising technologies for Meta ads and Google ads should
+            only run after consent where required.
           </p>
           <p>
             Google and other third-party vendors may use cookies or device

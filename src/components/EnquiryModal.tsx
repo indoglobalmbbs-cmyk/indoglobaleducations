@@ -66,6 +66,7 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
 
       if (supabaseError) throw supabaseError;
 
+      localStorage.setItem('enquiry_submitted', 'true');
       setForm(initialEnquiryForm);
       setStatus('success');
     } catch (submissionError) {

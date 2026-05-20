@@ -3,6 +3,13 @@ import MainLayout from '../layouts/MainLayout';
 import Home from '../pages/home/Home';
 import About from '../pages/about/About';
 
+import AllIndiaInstituteOfMedicalSciencesDelhi from '../pages/university/indiaUniversities/AllIndiaInstituteOfMedicalSciencesDelhi';
+import ChristianMedicalCollege from '../pages/university/indiaUniversities/ChristianMedicalCollege';
+import MaulanaAzadMedicalCollege from '../pages/university/indiaUniversities/MaulanaAzadMedicalCollege';
+import KingGeorgesMedicalUniversity from '../pages/university/indiaUniversities/KingGeorgesMedicalUniversity';
+import JawaharlalInstituteOfPostgraduateMedicalEducationAndResearch from '../pages/university/indiaUniversities/JawaharlalInstituteOfPostgraduateMedicalEducationAndResearch';
+import ArmedForcesMedicalCollege from '../pages/university/indiaUniversities/ArmedForcesMedicalCollege';
+
 import MariStateUniversity from '../pages/university/russiaUniversities/MariStateUniversity';
 import PermStateMedicalUniversity from '../pages/university/russiaUniversities/PermStateMedicalUniversity';
 import OrenburgStateMedicalUniversity from '../pages/university/russiaUniversities/OrenburgStateMedicalUniversity';
@@ -108,6 +115,45 @@ const MainRoutes = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'home', element: <Home /> },
       { path: 'about', element: <About /> },
+
+      {
+        path: 'mbbs-in-india/all-india-institute-of-medical-sciences-delhi',
+        element: <AllIndiaInstituteOfMedicalSciencesDelhi />,
+      },
+      {
+        path: 'mbbs-in-india/christian-medical-college',
+        element: <ChristianMedicalCollege />,
+      },
+      {
+        path: 'mbbs-in-india/maulana-azad-medical-college',
+        element: <MaulanaAzadMedicalCollege />,
+      },
+      {
+        path: 'mbbs-in-india/king-georges-medical-university',
+        element: <KingGeorgesMedicalUniversity />,
+      },
+      {
+        path: 'mbbs-in-india/jawaharlal-institute-of-postgraduate-medical-education-and-research',
+        element: (
+          <JawaharlalInstituteOfPostgraduateMedicalEducationAndResearch />
+        ),
+      },
+      {
+        path: 'mbbs-in-india/armed-forces-medical-college',
+        element: <ArmedForcesMedicalCollege />,
+      },
+      // {
+      //   path: 'mbbs-in-russia/mari-state-university',
+      //   element: <MariStateUniversity />,
+      // },
+      // {
+      //   path: 'mbbs-in-russia/mari-state-university',
+      //   element: <MariStateUniversity />,
+      // },
+      // {
+      //   path: 'mbbs-in-russia/mari-state-university',
+      //   element: <MariStateUniversity />,
+      // },
 
       {
         path: 'mbbs-in-russia/mari-state-university',

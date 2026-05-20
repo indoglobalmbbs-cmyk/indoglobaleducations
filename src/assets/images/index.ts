@@ -36,6 +36,26 @@ import photo18 from './photo18.jpg';
 import photo19 from './photo19.jpg';
 import photo20 from './photo20.jpg';
 
+import allindiainstituteofmedicalsciencesdelhi from './india/allindiainstituteofmedicalsciencesdelhi.jpg';
+import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+import maulanaazadmedicalcollege from './india/maulanaazadmedicalcollege.jpg';
+import kinggeorgesmedicaluniversity from './india/kinggeorgesmedicaluniversity.jpg';
+import jawaharlalinstituteofpostgraduatemedicaleducationandresearch from './india/jawaharlalinstituteofpostgraduatemedicaleducationandresearch.jpg';
+import armedforcesmedicalcollege from './india/armedforcesmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
+
 import maristateuniversity from './russia/maristateuniversity.jpg';
 import permstatemedicaluniversity from './russia/permstatemedicaluniversity.jpg';
 import orenburgstatemedicaluniversity from './russia/orenburgstatemedicaluniversity.jpg';
@@ -152,6 +172,12 @@ export {
   photo18,
   photo19,
   photo20,
+  allindiainstituteofmedicalsciencesdelhi,
+  christianmedicalcollege,
+  maulanaazadmedicalcollege,
+  kinggeorgesmedicaluniversity,
+  jawaharlalinstituteofpostgraduatemedicaleducationandresearch,
+  armedforcesmedicalcollege,
   maristateuniversity,
   permstatemedicaluniversity,
   orenburgstatemedicaluniversity,

@@ -1,8 +1,4 @@
 import logo from './indoGlobal.png';
-import co1 from './co1.jpeg';
-import co2 from './co2.jpeg';
-import co3 from './co3.jpeg';
-import co4 from './co4.jpeg';
 import about from './about.jpeg';
 import aboutUs from './aboutus.webp';
 import about1 from './about1.jpeg';
@@ -12,29 +8,30 @@ import banner3 from './banner3.jpeg';
 import banner4 from './banner4.jpeg';
 import banner5 from './banner5.jpeg';
 import banner6 from './banner6.jpeg';
+import banner7 from './banner7.png';
 import russia from './russia.jpeg';
 import armenia from './armenia.jpeg';
 import georgia from './georgia.jpeg';
-import photo1 from './photo1.jpg';
-import photo2 from './photo2.jpg';
-import photo3 from './photo3.jpg';
-import photo4 from './photo4.jpg';
-import photo5 from './photo5.jpg';
-import photo6 from './photo6.jpg';
-import photo7 from './photo7.jpg';
-import photo8 from './photo8.jpg';
-import photo9 from './photo9.jpg';
-import photo10 from './photo10.jpg';
-import photo11 from './photo11.jpg';
-import photo12 from './photo12.jpg';
-import photo13 from './photo13.jpg';
-import photo14 from './photo14.jpg';
-import photo15 from './photo15.jpg';
-import photo16 from './photo16.jpg';
-import photo17 from './photo17.jpg';
-import photo18 from './photo18.jpg';
-import photo19 from './photo19.jpg';
-import photo20 from './photo20.jpg';
+import photo1 from './photoGallery/photo1.jpg';
+import photo2 from './photoGallery/photo2.jpg';
+import photo3 from './photoGallery/photo3.jpg';
+import photo4 from './photoGallery/photo4.jpg';
+import photo5 from './photoGallery/photo5.jpg';
+import photo6 from './photoGallery/photo6.jpg';
+import photo7 from './photoGallery/photo7.jpg';
+import photo8 from './photoGallery/photo8.jpg';
+import photo9 from './photoGallery/photo9.jpg';
+import photo10 from './photoGallery/photo10.jpg';
+import photo11 from './photoGallery/photo11.jpg';
+import photo12 from './photoGallery/photo12.jpg';
+import photo13 from './photoGallery/photo13.jpg';
+import photo14 from './photoGallery/photo14.jpg';
+import photo15 from './photoGallery/photo15.jpg';
+import photo16 from './photoGallery/photo16.jpg';
+import photo17 from './photoGallery/photo17.jpg';
+import photo18 from './photoGallery/photo18.jpg';
+import photo19 from './photoGallery/photo19.jpg';
+import photo20 from './photoGallery/photo20.jpg';
 
 import allindiainstituteofmedicalsciencesdelhi from './india/allindiainstituteofmedicalsciencesdelhi.jpg';
 import christianmedicalcollege from './india/christianmedicalcollege.jpg';
@@ -42,19 +39,6 @@ import maulanaazadmedicalcollege from './india/maulanaazadmedicalcollege.jpg';
 import kinggeorgesmedicaluniversity from './india/kinggeorgesmedicaluniversity.jpg';
 import jawaharlalinstituteofpostgraduatemedicaleducationandresearch from './india/jawaharlalinstituteofpostgraduatemedicaleducationandresearch.jpg';
 import armedforcesmedicalcollege from './india/armedforcesmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
-// import christianmedicalcollege from './india/christianmedicalcollege.jpg';
 
 import maristateuniversity from './russia/maristateuniversity.jpg';
 import permstatemedicaluniversity from './russia/permstatemedicaluniversity.jpg';
@@ -136,10 +120,6 @@ import akakitseretelistateuniversity from './georgia/akakitseretelistateuniversi
 
 export {
   logo,
-  co1,
-  co2,
-  co3,
-  co4,
   about,
   aboutUs,
   about1,
@@ -149,6 +129,7 @@ export {
   banner4,
   banner5,
   banner6,
+  banner7,
   russia,
   armenia,
   georgia,

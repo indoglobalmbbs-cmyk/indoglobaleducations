@@ -43,9 +43,24 @@ alter table blog_posts enable row level security;
 
 do $$ 
 begin 
+  -- Insert policy
   if not exists (select 1 from pg_policies where policyname = 'Allow anonymous inserts' and tablename = 'indoglobal') then 
     create policy "Allow anonymous inserts" on indoglobal for insert with check (true); 
   end if; 
+
+  -- Select policy (needed for checkDuplicateEnquiry)
+  if not exists (select 1 from pg_policies where policyname = 'Allow anonymous select' and tablename = 'indoglobal') then 
+    create policy "Allow anonymous select" on indoglobal for select using (true); 
+  end if; 
+
+  -- Unique constraints
+  if not exists (select 1 from pg_constraint where conname = 'indoglobal_email_key') then 
+    alter table indoglobal add constraint indoglobal_email_key unique (email); 
+  end if; 
+  if not exists (select 1 from pg_constraint where conname = 'indoglobal_phone_key') then 
+    alter table indoglobal add constraint indoglobal_phone_key unique (phone); 
+  end if; 
+
   if not exists (select 1 from pg_policies where policyname = 'Allow public read' and tablename = 'news_updates') then 
     create policy "Allow public read" on news_updates for select using (true); 
   end if; 

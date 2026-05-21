@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { russiaUniversities } from '../../../data/russiaUniversities';
 import { Link } from 'react-router-dom';
 import {
   FaGraduationCap,
@@ -10,13 +9,13 @@ import {
   FaClock,
 } from 'react-icons/fa';
 import {
-  russia,
   banner1,
   banner2,
   banner3,
   banner4,
   banner5,
   banner6,
+  banner7,
 } from '../../../assets/images';
 import { russiaFaq } from '../../../data/russiaFaq';
 import FaqItem from '../../../components/FaqItem';
@@ -30,12 +29,13 @@ import { armeniaGuidelines } from '../../../data/armeniaGuidelines';
 import { armeniaSyllabus } from '../../../data/armeniaSyllabus';
 import { armeniaChallenges } from '../../../data/armeniaChallenges';
 import { armeniaCareerPaths } from '../../../data/armeniaCareerPaths';
+import { indiaUniversities } from '../../../data/indiaUniversities';
 
 const India = () => {
   const [showAll, setShowAll] = useState(false);
   const visibleUniversities = showAll
-    ? russiaUniversities
-    : russiaUniversities.slice(0, 6);
+    ? indiaUniversities
+    : indiaUniversities.slice(0, 6);
 
   const galleryImages = [
     { src: banner1, title: 'MBBS University Campus in India' },
@@ -50,7 +50,7 @@ const India = () => {
     <div className="bg-gray-50 min-h-screen">
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img
-          src={banner6}
+          src={banner7}
           alt="Study MBBS in India - Indo Global Education"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
@@ -185,7 +185,7 @@ const India = () => {
               >
                 <div className="h-48 bg-gray-200 overflow-hidden">
                   <img
-                    src={russia}
+                    src={uni.image}
                     alt={uni.label}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -207,7 +207,7 @@ const India = () => {
               </div>
             ))}
           </div>
-          {russiaUniversities.length > 6 && (
+          {indiaUniversities.length > 6 && (
             <div className="text-center mt-12">
               <button
                 onClick={() => setShowAll(!showAll)}
@@ -533,7 +533,7 @@ const India = () => {
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {russiaUniversities.map((uni, idx) => (
+            {indiaUniversities.map((uni, idx) => (
               <div
                 key={idx}
                 className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm border-l-4 border-accent hover:shadow-md transition-shadow"

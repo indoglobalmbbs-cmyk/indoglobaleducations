@@ -1,3 +1,5 @@
+import { supabase } from "./supabase";
+
 export interface EnquiryFormData {
   fullName: string;
   email: string;
@@ -35,6 +37,25 @@ export const validateDetailedEnquiryForm = (form: EnquiryFormData) => {
   const baseError = validateEnquiryForm(form);
   if (baseError) return baseError;
   return null;
+};
+
+export const checkDuplicateEnquiry = async (email: string, phone: string) => {
+  const sanitizedEmail = email.trim().toLowerCase();
+  const sanitizedPhone = phone.trim().replace(/[^\d+]/g, "");
+
+  try {
+    const { data, error } = await supabase
+      .from("indoglobal")
+      .select("id")
+      .or(`email.eq.${sanitizedEmail},phone.eq.${sanitizedPhone}`)
+      .maybeSingle();
+
+    if (error) throw error;
+    return !!data;
+  } catch (error) {
+    console.error("Error checking duplicate enquiry:", error);
+    return false;
+  }
 };
 
 export const getCurrentPagePath = () =>

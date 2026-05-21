@@ -39,34 +39,4 @@ export const indiaUniversities = [
     path: '/mbbs-in-india/armed-forces-medical-college',
     image: armedforcesmedicalcollege,
   },
-  // {
-  //   label: 'Vardhman Mahavir Medical College (VMMC)',
-  //   path: '/mbbs-in-india/vmmc-delhi',
-  //   image: vmmcDelhi,
-  // },
-  // {
-  //   label: 'Lady Hardinge Medical College (LHMC)',
-  //   path: '/mbbs-in-india/lhmc-delhi',
-  //   image: lhmcDelhi,
-  // },
-  // {
-  //   label: 'Madras Medical College (MMC)',
-  //   path: '/mbbs-in-india/mmc-chennai',
-  //   image: mmcChennai,
-  // },
-  // {
-  //   label: 'Grant Government Medical College',
-  //   path: '/mbbs-in-india/grant-medical-college-mumbai',
-  //   image: grantMedicalCollege,
-  // },
-  // {
-  //   label: 'Institute of Medical Sciences, BHU',
-  //   path: '/mbbs-in-india/ims-bhu-varanasi',
-  //   image: imsBhu,
-  // },
-  // {
-  //   label: 'Bangalore Medical College and Research Institute (BMCRI)',
-  //   path: '/mbbs-in-india/bmcri-bangalore',
-  //   image: bmcriBangalore,
-  // },
 ];

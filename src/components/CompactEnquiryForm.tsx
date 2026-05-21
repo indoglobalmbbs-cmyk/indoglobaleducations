@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { supabase } from '../lib/supabase';
 import {
+  checkDuplicateEnquiry,
   getCurrentPagePath,
   getSubmissionErrorMessage,
   initialEnquiryForm,
@@ -41,6 +42,15 @@ const CompactEnquiryForm = ({ source }: CompactEnquiryFormProps) => {
     setError(null);
 
     try {
+      const isDuplicate = await checkDuplicateEnquiry(form.email, form.phone);
+      if (isDuplicate) {
+        setError(
+          'An enquiry with this email or phone number has already been submitted.',
+        );
+        setStatus('idle');
+        return;
+      }
+
       const { error: supabaseError } = await supabase.from('indoglobal').insert([
         {
           fullname: form.fullName.trim(),
@@ -56,6 +66,16 @@ const CompactEnquiryForm = ({ source }: CompactEnquiryFormProps) => {
           status: 'new',
         },
       ]);
+
+      if (supabaseError) {
+        if (supabaseError.code === '23505') {
+          setError('An enquiry with this email or phone number has already been submitted.');
+          setStatus('idle');
+          return;
+        }
+        throw supabaseError;
+      }
+
 
       if (supabaseError) throw supabaseError;
 
@@ -112,11 +132,11 @@ const CompactEnquiryForm = ({ source }: CompactEnquiryFormProps) => {
           <option value="" disabled>
             Select Course
           </option>
-          <option value="mbbs">MBBS</option>
-          <option value="ms">MS</option>
-          <option value="bds">BDS</option>
-          <option value="mds">MDS</option>
-          <option value="md-ms">MD-MS</option>
+          <option value="MBBS">MBBS</option>
+          <option value="MS">MS</option>
+          <option value="BDS">BDS</option>
+          <option value="MDS">MDS</option>
+          <option value="MD-MS">MD-MS</option>
         </select>
         <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
           <FaChevronDown className="text-gray-400 text-sm" />

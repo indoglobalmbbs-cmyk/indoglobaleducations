@@ -2,6 +2,7 @@ import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { supabase } from '../lib/supabase';
 import { FaTimes, FaPaperPlane, FaChevronDown } from 'react-icons/fa';
 import {
+  checkDuplicateEnquiry,
   getCurrentPagePath,
   getSubmissionErrorMessage,
   initialEnquiryForm,
@@ -48,6 +49,13 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
     setError(null);
 
     try {
+      const isDuplicate = await checkDuplicateEnquiry(form.email, form.phone);
+      if (isDuplicate) {
+        setError('An enquiry with this email or phone number has already been submitted.');
+        setStatus('idle');
+        return;
+      }
+
       const { error: supabaseError } = await supabase.from('indoglobal').insert([
         {
           fullname: form.fullName.trim(),
@@ -64,7 +72,14 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
         },
       ]);
 
-      if (supabaseError) throw supabaseError;
+      if (supabaseError) {
+        if (supabaseError.code === '23505') {
+          setError('An enquiry with this email or phone number has already been submitted.');
+          setStatus('idle');
+          return;
+        }
+        throw supabaseError;
+      }
 
       localStorage.setItem('enquiry_submitted', 'true');
       setForm(initialEnquiryForm);
@@ -78,7 +93,10 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+      <div
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        onClick={onClose}
+      />
       <div className="relative bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
         <div className="bg-primary p-6 text-white flex justify-between items-center">
           <div>
@@ -94,7 +112,10 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
             <FaTimes size={20} />
           </button>
         </div>
-        <form className="p-4 space-y-4 max-h-[80vh] overflow-y-auto" onSubmit={handleSubmit}>
+        <form
+          className="p-4 space-y-4 max-h-[80vh] overflow-y-auto"
+          onSubmit={handleSubmit}
+        >
           <input
             type="text"
             value={form.fullName}
@@ -137,11 +158,11 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
               <option value="" disabled>
                 Select Course
               </option>
-              <option value="mbbs">MBBS</option>
-              <option value="ms">MS</option>
-              <option value="bds">BDS</option>
-              <option value="mds">MDS</option>
-              <option value="md-ms">MD-MS</option>
+              <option value="MBBS">MBBS</option>
+              <option value="MS">MS</option>
+              <option value="BDS">BDS</option>
+              <option value="MDS">MDS</option>
+              <option value="MD-MS">MD-MS</option>
             </select>
             <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
               <FaChevronDown className="text-gray-400 text-sm" />

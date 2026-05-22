@@ -1,6 +1,5 @@
 import logo from './indoGlobal.png';
 import about from './about.jpeg';
-import aboutUs from './aboutus.webp';
 import about1 from './about1.jpeg';
 import banner1 from './banner1.jpeg';
 import banner2 from './banner2.jpeg';
@@ -8,10 +7,13 @@ import banner3 from './banner3.jpeg';
 import banner4 from './banner4.jpeg';
 import banner5 from './banner5.jpeg';
 import banner6 from './banner6.jpeg';
-import banner7 from './banner7.png';
+import mbbsindia from './mbbsindia.png';
+import mbbsRussia from './mbbsRussia.png';
 import russia from './russia.jpeg';
 import armenia from './armenia.jpeg';
 import georgia from './georgia.jpeg';
+import privacypolicy from './privacypolicy.jpg';
+import termsandconditions from './termsandconditions.jpg';
 import photo1 from './photoGallery/photo1.jpg';
 import photo2 from './photoGallery/photo2.jpg';
 import photo3 from './photoGallery/photo3.jpg';
@@ -121,7 +123,6 @@ import akakitseretelistateuniversity from './georgia/akakitseretelistateuniversi
 export {
   logo,
   about,
-  aboutUs,
   about1,
   banner1,
   banner2,
@@ -129,10 +130,13 @@ export {
   banner4,
   banner5,
   banner6,
-  banner7,
+  mbbsindia,
+  mbbsRussia,
   russia,
   armenia,
   georgia,
+  privacypolicy,
+  termsandconditions,
   photo1,
   photo2,
   photo3,

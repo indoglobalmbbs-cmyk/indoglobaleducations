@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import {
+  FaRss,
   FaBullseye,
   FaEye,
   FaHistory,
@@ -10,6 +11,7 @@ import {
   FaChevronRight,
 } from 'react-icons/fa';
 import { about, about1 } from '../../assets/images';
+import { newsUpdates } from '../../components/NewsUpdates';
 
 const About = () => {
   const navigate = useNavigate();
@@ -301,88 +303,53 @@ const About = () => {
             </button>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <article className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
-              <div className="h-48 bg-gray-200 relative">
-                <div className="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-lg text-xs font-bold">
-                  Russia
-                </div>
-              </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <span className="text-primary font-semibold text-sm mb-3 flex items-center gap-2">
-                  <FaHistory size={14} /> April 15, 2026
-                </span>
-                <h3 className="text-xl font-bold text-text mb-3 hover:text-primary cursor-pointer transition-colors">
-                  Common Admission Mistakes to Avoid for MBBS in Russia
-                </h3>
-                <p className="text-text-muted text-sm leading-relaxed mb-6 line-clamp-3">
-                  Becoming a doctor demands not just academic discipline and
-                  hard work, but also proper research before you apply...
-                </p>
-                <div className="mt-auto">
-                  <a
-                    href="/news"
-                    className="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
+            {newsUpdates.slice(0, 3).map((news) => (
+              <article
+                key={news.id}
+                className={`group flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border ${
+                  news.priority ? 'border-accent/30' : 'border-gray-100'
+                }`}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={news.image}
+                    alt={news.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div
+                    className={`absolute top-4 left-4 px-3 py-1 rounded-lg text-xs font-bold uppercase ${
+                      news.tag === 'Alert'
+                        ? 'bg-error text-white'
+                        : 'bg-accent text-white'
+                    }`}
                   >
-                    Read More <span>&rarr;</span>
-                  </a>
+                    {news.tag}
+                  </div>
                 </div>
-              </div>
-            </article>
-            <article className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
-              <div className="h-48 bg-gray-200 relative">
-                <div className="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-lg text-xs font-bold">
-                  Regulations
-                </div>
-              </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <span className="text-primary font-semibold text-sm mb-3 flex items-center gap-2">
-                  <FaHistory size={14} /> April 13, 2026
-                </span>
-                <h3 className="text-xl font-bold text-text mb-3 hover:text-primary cursor-pointer transition-colors">
-                  FMGL Regulations 2021 Explained for Indian MBBS Abroad
-                  Students
-                </h3>
-                <p className="text-text-muted text-sm leading-relaxed mb-6 line-clamp-3">
-                  Acquiring an MBBS degree abroad has now become a viable and
-                  smart option for many Indian students who...
-                </p>
-                <div className="mt-auto">
-                  <a
-                    href="/news"
-                    className="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
+                <div className="p-8 flex flex-col flex-grow">
+                  <span className="text-primary font-semibold text-sm mb-3 flex items-center gap-2">
+                    <FaRss className="text-accent" /> {news.date}
+                  </span>
+                  <h3
+                    onClick={() => navigate('/news')}
+                    className="text-xl font-bold text-text mb-3 hover:text-primary cursor-pointer transition-colors line-clamp-2"
                   >
-                    Read More <span>&rarr;</span>
-                  </a>
+                    {news.title}
+                  </h3>
+                  <p className="text-text-muted text-sm leading-relaxed mb-6 line-clamp-3">
+                    {news.summary}
+                  </p>
+                  <div className="mt-auto">
+                    <button
+                      onClick={() => navigate('/news')}
+                      className="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
+                    >
+                      Read More <span>&rarr;</span>
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </article>
-            <article className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
-              <div className="h-48 bg-gray-200 relative">
-                <div className="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-lg text-xs font-bold">
-                  NMC Update
-                </div>
-              </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <span className="text-primary font-semibold text-sm mb-3 flex items-center gap-2">
-                  <FaHistory size={14} /> April 11, 2026
-                </span>
-                <h3 className="text-xl font-bold text-text mb-3 hover:text-primary cursor-pointer transition-colors">
-                  NMC Rules for MBBS Abroad in 2026: A Complete Breakdown
-                </h3>
-                <p className="text-text-muted text-sm leading-relaxed mb-6 line-clamp-3">
-                  The university in which you pursue your MBBS can either make
-                  or break your career. Hence, there are...
-                </p>
-                <div className="mt-auto">
-                  <a
-                    href="/news"
-                    className="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
-                  >
-                    Read More <span>&rarr;</span>
-                  </a>
-                </div>
-              </div>
-            </article>
+              </article>
+            ))}
           </div>
         </div>
       </section>

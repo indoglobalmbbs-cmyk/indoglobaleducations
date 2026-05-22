@@ -16,6 +16,7 @@ import {
   banner4,
   banner5,
   banner6,
+  mbbsRussia,
 } from '../../../assets/images';
 import { russiaFaq } from '../../../data/russiaFaq';
 import FaqItem from '../../../components/FaqItem';
@@ -50,7 +51,7 @@ const Russia = () => {
     <div className="bg-gray-50 min-h-screen">
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img
-          src={banner6}
+          src={mbbsRussia}
           alt="Study MBBS in Russia - Indo Global Education"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"

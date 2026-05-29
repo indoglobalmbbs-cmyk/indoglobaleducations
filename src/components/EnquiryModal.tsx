@@ -3,7 +3,6 @@ import { supabase } from '../lib/supabase';
 import { FaTimes, FaPaperPlane, FaChevronDown } from 'react-icons/fa';
 import {
   checkDuplicateEnquiry,
-  getCurrentPagePath,
   getSubmissionErrorMessage,
   initialEnquiryForm,
   validateDetailedEnquiryForm,
@@ -51,30 +50,34 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
     try {
       const isDuplicate = await checkDuplicateEnquiry(form.email, form.phone);
       if (isDuplicate) {
-        setError('An enquiry with this email or phone number has already been submitted.');
+        setError(
+          'An enquiry with this email or phone number has already been submitted.',
+        );
         setStatus('idle');
         return;
       }
 
-      const { error: supabaseError } = await supabase.from('indoglobal').insert([
-        {
-          fullname: form.fullName.trim(),
-          email: form.email.trim().toLowerCase(),
-          phone: form.phone.trim().replace(/[^\d+]/g, ''),
-          address: form.address.trim(),
-          course: form.course,
-          collegename: form.collegeName.trim(),
-          howheard: form.howHeard,
-          preferences: form.preferences.trim(),
-          source: 'modal',
-          pagepath: getCurrentPagePath() || '/',
-          status: 'new',
-        },
-      ]);
+      const { error: supabaseError } = await supabase
+        .from('indoglobal')
+        .insert([
+          {
+            fullname: form.fullName.trim(),
+            email: form.email.trim().toLowerCase(),
+            phone: form.phone.trim().replace(/[^\d+]/g, ''),
+            address: form.address.trim(),
+            course: form.course,
+            collegename: form.collegeName.trim(),
+            howheard: form.howHeard,
+            preferences: form.preferences.trim(),
+            status: 'new',
+          },
+        ]);
 
       if (supabaseError) {
         if (supabaseError.code === '23505') {
-          setError('An enquiry with this email or phone number has already been submitted.');
+          setError(
+            'An enquiry with this email or phone number has already been submitted.',
+          );
           setStatus('idle');
           return;
         }
@@ -137,6 +140,9 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
             value={form.phone}
             onChange={updateField('phone')}
             required
+            maxLength={10}
+            pattern="[0-9]{10}"
+            inputMode="numeric"
             placeholder="Enter your phone number"
             className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
           />

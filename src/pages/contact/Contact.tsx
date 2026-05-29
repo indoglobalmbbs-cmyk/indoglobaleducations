@@ -84,7 +84,7 @@ const Contact = () => {
                   <div className="text-xl font-bold">Enquire Now</div>
                   <p className="text-blue-100 text-sm">Get a free counseling session today</p>
                 </div>
-                <CompactEnquiryForm source="contact-page" />
+                <CompactEnquiryForm />
               </div>
             </div>
           </div>

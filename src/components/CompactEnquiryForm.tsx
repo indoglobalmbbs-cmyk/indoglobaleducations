@@ -2,7 +2,6 @@ import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { supabase } from '../lib/supabase';
 import {
   checkDuplicateEnquiry,
-  getCurrentPagePath,
   getSubmissionErrorMessage,
   initialEnquiryForm,
   validateEnquiryForm,
@@ -10,11 +9,7 @@ import {
 } from '../lib/enquiry';
 import { FaChevronDown } from 'react-icons/fa';
 
-interface CompactEnquiryFormProps {
-  source: string;
-}
-
-const CompactEnquiryForm = ({ source }: CompactEnquiryFormProps) => {
+const CompactEnquiryForm = () => {
   const [form, setForm] = useState<EnquiryFormData>(initialEnquiryForm);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>(
     'idle',
@@ -51,33 +46,32 @@ const CompactEnquiryForm = ({ source }: CompactEnquiryFormProps) => {
         return;
       }
 
-      const { error: supabaseError } = await supabase.from('indoglobal').insert([
-        {
-          fullname: form.fullName.trim(),
-          email: form.email.trim().toLowerCase(),
-          phone: form.phone.trim().replace(/[^\d+]/g, ''),
-          address: form.address.trim(),
-          course: form.course,
-          collegename: form.collegeName.trim(),
-          howheard: form.howHeard,
-          preferences: form.preferences.trim(),
-          source: source || 'website',
-          pagepath: getCurrentPagePath() || '/',
-          status: 'new',
-        },
-      ]);
+      const { error: supabaseError } = await supabase
+        .from('indoglobal')
+        .insert([
+          {
+            fullname: form.fullName.trim(),
+            email: form.email.trim().toLowerCase(),
+            phone: form.phone.trim().replace(/[^\d+]/g, ''),
+            address: form.address.trim(),
+            course: form.course,
+            collegename: form.collegeName.trim(),
+            howheard: form.howHeard,
+            preferences: form.preferences.trim(),
+            status: 'new',
+          },
+        ]);
 
       if (supabaseError) {
         if (supabaseError.code === '23505') {
-          setError('An enquiry with this email or phone number has already been submitted.');
+          setError(
+            'An enquiry with this email or phone number has already been submitted.',
+          );
           setStatus('idle');
           return;
         }
         throw supabaseError;
       }
-
-
-      if (supabaseError) throw supabaseError;
 
       setForm(initialEnquiryForm);
       setStatus('success');
@@ -112,6 +106,9 @@ const CompactEnquiryForm = ({ source }: CompactEnquiryFormProps) => {
         value={form.phone}
         onChange={updateField('phone')}
         required
+        maxLength={10}
+        pattern="[0-9]{10}"
+        inputMode="numeric"
         className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
       />
       <input

@@ -30,6 +30,13 @@ export const validateEnquiryForm = (form: EnquiryFormData) => {
   if (form.phone.replace(/\D/g, "").length < 7) {
     return "Please enter a valid phone number.";
   }
+  if (form.address.trim().length < 5) return "Please enter your full address.";
+  if (!form.course) return "Please select a course.";
+  if (form.collegeName.trim().length < 2) return "Please enter your college name.";
+  if (!form.howHeard) return "Please tell us how you heard about us.";
+  if (form.preferences.trim().length < 5) {
+    return "Please enter your preferences (e.g., country, budget).";
+  }
   return null;
 };
 
@@ -57,9 +64,6 @@ export const checkDuplicateEnquiry = async (email: string, phone: string) => {
     return false;
   }
 };
-
-export const getCurrentPagePath = () =>
-  typeof window === "undefined" ? "/" : window.location.pathname;
 
 export const getSubmissionErrorMessage = (error: unknown) => {
   if (error instanceof Error && error.message) return error.message;

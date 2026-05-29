@@ -1,16 +1,16 @@
 create table if not exists indoglobal (
   id uuid default gen_random_uuid() primary key,
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-  fullName text not null,
+  fullname text not null,
   email text not null,
   phone text not null,
   address text,
   course text,
-  collegeName text,
-  howHeard text,
+  collegename text,
+  howheard text,
   preferences text,
-  source text not null,
-  pagePath text not null,
+  source text,
+  pagepath text,
   status text not null check (status in ('new', 'contacted', 'closed')) default 'new'
 );
 
@@ -66,5 +66,13 @@ begin
   end if; 
   if not exists (select 1 from pg_policies where policyname = 'Allow public read' and tablename = 'blog_posts') then 
     create policy "Allow public read" on blog_posts for select using (true); 
+  end if; 
+
+  -- Admin policies for indoglobal
+  if not exists (select 1 from pg_policies where policyname = 'Allow authenticated update' and tablename = 'indoglobal') then 
+    create policy "Allow authenticated update" on indoglobal for update using (auth.role() = 'authenticated'); 
+  end if; 
+  if not exists (select 1 from pg_policies where policyname = 'Allow authenticated delete' and tablename = 'indoglobal') then 
+    create policy "Allow authenticated delete" on indoglobal for delete using (auth.role() = 'authenticated'); 
   end if; 
 end $$;

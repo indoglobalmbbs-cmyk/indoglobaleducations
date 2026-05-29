@@ -100,6 +100,10 @@ import CookiePolicy from '../pages/legal/CookiePolicy';
 import TermsAndConditions from '../pages/legal/TermsAndConditions';
 import Disclaimer from '../pages/legal/Disclaimer';
 
+import Login from '../pages/admin/Login';
+import Dashboard from '../pages/admin/Dashboard';
+import ProtectedRoute from '../components/ProtectedRoute';
+
 const MainRoutes = createBrowserRouter([
   {
     path: '/',
@@ -442,6 +446,19 @@ const MainRoutes = createBrowserRouter([
       { path: 'cookie-policy', element: <CookiePolicy /> },
       { path: 'terms-and-conditions', element: <TermsAndConditions /> },
       { path: 'disclaimer', element: <Disclaimer /> },
+    ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    element: <ProtectedRoute />,
+    children: [
+      {
+        path: '/dashboard',
+        element: <Dashboard />,
+      },
     ],
   },
 ]);

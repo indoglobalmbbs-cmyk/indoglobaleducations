@@ -182,7 +182,7 @@ const GeorgianNationalUniversity = () => {
                   Get a free counseling session today
                 </p>
               </div>
-              <CompactEnquiryForm source="page-enquiry" />
+              <CompactEnquiryForm />
             </div>
           </div>
         </div>

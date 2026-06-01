@@ -14,6 +14,8 @@ interface EnquiryModalProps {
   onClose: () => void;
 }
 
+const WEBHOOK_URL = import.meta.env.VITE_WEBHOOK_URL;
+
 const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
   const [form, setForm] = useState<EnquiryFormData>(initialEnquiryForm);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>(
@@ -82,6 +84,19 @@ const EnquiryModal = ({ isOpen, onClose }: EnquiryModalProps) => {
           return;
         }
         throw supabaseError;
+      }
+
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(form),
+        });
+      } catch (webhookError) {
+        console.error('Webhook error:', webhookError);
       }
 
       localStorage.setItem('enquiry_submitted', 'true');

@@ -9,6 +9,8 @@ import {
 } from '../lib/enquiry';
 import { FaChevronDown } from 'react-icons/fa';
 
+const WEBHOOK_URL = import.meta.env.VITE_WEBHOOK_URL;
+
 const CompactEnquiryForm = () => {
   const [form, setForm] = useState<EnquiryFormData>(initialEnquiryForm);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>(
@@ -71,6 +73,19 @@ const CompactEnquiryForm = () => {
           return;
         }
         throw supabaseError;
+      }
+
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(form),
+        });
+      } catch (webhookError) {
+        console.error('Webhook error:', webhookError);
       }
 
       setForm(initialEnquiryForm);

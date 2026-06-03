@@ -133,9 +133,12 @@ const Dashboard: React.FC = () => {
           setEditForm(null);
           alert('Changes saved successfully!');
         }
-      } catch (error: any) {
+      } catch (error: unknown) {
         console.error('Error updating enquiry:', error);
-        alert('Error updating enquiry: ' + (error.message || 'Unknown error'));
+        alert(
+          'Error updating enquiry: ' +
+            (error instanceof Error ? error.message : 'Unknown error'),
+        );
       }
     }
   };

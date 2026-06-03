@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { supabase } from '../../lib/supabase';
+import { isSupabaseConfigured, supabase } from '../../lib/supabase';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login: React.FC = () => {
@@ -13,6 +13,14 @@ const Login: React.FC = () => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!isSupabaseConfigured) {
+      setError(
+        'Dashboard config missing. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in Vercel, then redeploy.',
+      );
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
@@ -24,8 +32,8 @@ const Login: React.FC = () => {
 
       if (error) throw error;
       navigate('/dashboard');
-    } catch (err: any) {
-      setError(err.message || 'Failed to login');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to login');
     } finally {
       setLoading(false);
     }

@@ -33,11 +33,24 @@ Indo Global Education is a premium MBBS abroad consultancy helping Indian studen
    pnpm install
    ```
 3. Set up environment variables:
-   Create a `.env.local` file with:
+   Copy `.env.example` to `.env.local` and fill in:
    ```env
    VITE_SUPABASE_URL=your_supabase_url
    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   VITE_WEBHOOK_URL=your_optional_google_apps_script_webhook_url
    ```
+
+### Vercel Deployment
+
+Add these Environment Variables in Vercel for Production, Preview, and Development, then redeploy:
+
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_WEBHOOK_URL=your_optional_google_apps_script_webhook_url
+```
+
+Do not add `SUPABASE_SERVICE_ROLE_KEY` to client-side Vite variables. It is only for trusted server-side scripts.
 
 ### Database Setup
 

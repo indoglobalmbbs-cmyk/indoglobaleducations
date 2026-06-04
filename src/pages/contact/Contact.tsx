@@ -7,15 +7,25 @@ import {
 import ContactCard from '../../components/ContactCard';
 import CompactEnquiryForm from '../../components/CompactEnquiryForm';
 
+const isTestSpriteE2E = import.meta.env.VITE_TESTSPRITE_E2E === 'true';
+const mapsEmbedUrl =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.2956281259553!2d76.38185757538793!3d14.235969085899287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bba75c760b80a07%3A0x8570eb0f1c18ff1c!2sIndo-Global%20Education%20Service%20Pvt.Ltd%20(%20Study%20MBBS%20Abroad%20)!5e0!3m2!1sen!2sin!4v1777280086543!5m2!1sen!2sin';
+
 const Contact = () => {
   return (
-    <div className="w-full bg-background min-h-screen">
+    <div
+      className="w-full bg-background min-h-screen"
+      data-testid="contact-page"
+    >
       <section className="bg-primary py-16">
         <div className="container mx-auto px-6 text-center">
           <div className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md text-accent rounded-full text-sm font-bold uppercase mb-6">
             Get In Touch
           </div>
-          <div className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <div
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            data-testid="contact-page-title"
+          >
             Contact <span className="text-accent">Our Experts</span>
           </div>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
@@ -93,7 +103,12 @@ const Contact = () => {
       <section className="w-full h-[450px] bg-gray-200 relative">
         <iframe
           title="Office Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.2956281259553!2d76.38185757538793!3d14.235969085899287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bba75c760b80a07%3A0x8570eb0f1c18ff1c!2sIndo-Global%20Education%20Service%20Pvt.Ltd%20(%20Study%20MBBS%20Abroad%20)!5e0!3m2!1sen!2sin!4v1777280086543!5m2!1sen!2sin"
+          src={isTestSpriteE2E ? undefined : mapsEmbedUrl}
+          srcDoc={
+            isTestSpriteE2E
+              ? '<!doctype html><html><body style="margin:0;height:100vh;display:grid;place-items:center;font-family:Arial,sans-serif;color:#1f2937;background:#e5e7eb"><strong>Office Location</strong></body></html>'
+              : undefined
+          }
           className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
           style={{ border: 0 }}
           allowFullScreen={true}

@@ -26,7 +26,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-white pt-10 pb-8">
+    <footer
+      className="bg-primary text-white pt-10 pb-8"
+      data-testid="site-footer"
+    >
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
@@ -133,6 +136,21 @@ const Footer = () => {
               Contact Us
             </h4>
             <ul className="space-y-4 text-md text-primary-light">
+              <li>
+                <Link
+                  to="/contact-us"
+                  data-testid="footer-contact-link"
+                  aria-label="Open contact us page"
+                  title="Contact Us"
+                  className="group flex items-center gap-2 hover:text-accent transition-colors duration-300"
+                >
+                  <FaAngleRight
+                    className="text-accent transition-transform duration-300 group-hover:rotate-90"
+                    size={14}
+                  />
+                  <span>Contact Us</span>
+                </Link>
+              </li>
               <li className="flex items-start gap-3">
                 <FaLocationDot className="mt-1 text-accent shrink-0" />
                 <address className="not-italic">

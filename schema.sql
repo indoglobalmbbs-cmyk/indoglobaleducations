@@ -68,6 +68,28 @@ begin
     create policy "Allow public read" on blog_posts for select using (true); 
   end if; 
 
+  -- Admin policies for news_updates
+  if not exists (select 1 from pg_policies where policyname = 'Allow authenticated insert' and tablename = 'news_updates') then 
+    create policy "Allow authenticated insert" on news_updates for insert with check (auth.role() = 'authenticated'); 
+  end if; 
+  if not exists (select 1 from pg_policies where policyname = 'Allow authenticated update' and tablename = 'news_updates') then 
+    create policy "Allow authenticated update" on news_updates for update using (auth.role() = 'authenticated'); 
+  end if; 
+  if not exists (select 1 from pg_policies where policyname = 'Allow authenticated delete' and tablename = 'news_updates') then 
+    create policy "Allow authenticated delete" on news_updates for delete using (auth.role() = 'authenticated'); 
+  end if; 
+
+  -- Admin policies for blog_posts
+  if not exists (select 1 from pg_policies where policyname = 'Allow authenticated insert' and tablename = 'blog_posts') then 
+    create policy "Allow authenticated insert" on blog_posts for insert with check (auth.role() = 'authenticated'); 
+  end if; 
+  if not exists (select 1 from pg_policies where policyname = 'Allow authenticated update' and tablename = 'blog_posts') then 
+    create policy "Allow authenticated update" on blog_posts for update using (auth.role() = 'authenticated'); 
+  end if; 
+  if not exists (select 1 from pg_policies where policyname = 'Allow authenticated delete' and tablename = 'blog_posts') then 
+    create policy "Allow authenticated delete" on blog_posts for delete using (auth.role() = 'authenticated'); 
+  end if; 
+
   -- Admin policies for indoglobal
   if not exists (select 1 from pg_policies where policyname = 'Allow authenticated update' and tablename = 'indoglobal') then 
     create policy "Allow authenticated update" on indoglobal for update using (auth.role() = 'authenticated'); 

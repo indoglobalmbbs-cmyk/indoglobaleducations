@@ -1,7 +1,9 @@
 import { FaWhatsapp } from 'react-icons/fa';
 
+const isTestSpriteE2E = import.meta.env.VITE_TESTSPRITE_E2E === 'true';
+
 const WhatsAppWidget = () => {
-  const phoneNumber = '919060722799';
+  const phoneNumber = '91709000502';
   const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
 
   return (
@@ -10,6 +12,7 @@ const WhatsAppWidget = () => {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={isTestSpriteE2E ? (event) => event.preventDefault() : undefined}
         className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-[0_8px_30px_rgb(37,211,102,0.4)] transition-all duration-300 hover:scale-110 active:scale-90 group"
         aria-label="Chat on WhatsApp"
       >

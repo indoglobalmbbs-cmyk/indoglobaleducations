@@ -6,6 +6,12 @@
         "mcp-remote",
         "https://mcp.supabase.com/mcp?project_ref=ykpkxtwnsoghvzpiatmz"
       ]
+    },
+    "TestSprite": {
+      "command": "sh",
+      "args": [
+        "/Users/adityakumar/BharatVyapari/indoglobaleducations/scripts/testsprite-mcp.sh"
+      ]
     }
   }
 }

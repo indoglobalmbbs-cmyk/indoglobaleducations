@@ -17,7 +17,7 @@ const About = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full bg-surface">
+    <div className="w-full bg-surface" data-testid="about-page">
       <section className="relative w-full h-[400px] md:h-[500px] flex items-center overflow-hidden bg-slate-900">
         <div className="absolute inset-0 z-0">
           <img
@@ -36,7 +36,10 @@ const About = () => {
               <FaChevronRight size={10} className="text-white/50" />
               <span className="text-white/70">About Us</span>
             </nav>
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight">
+            <h1
+              className="text-5xl md:text-7xl font-black text-white leading-tight"
+              data-testid="about-page-title"
+            >
               Empowering <br />
               <span className="text-accent underline decoration-white/20 underline-offset-8">
                 Global Doctors

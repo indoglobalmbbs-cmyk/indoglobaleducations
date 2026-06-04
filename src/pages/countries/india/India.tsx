@@ -47,7 +47,10 @@ const India = () => {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div
+      className="bg-gray-50 min-h-screen"
+      data-testid="india-country-page"
+    >
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img
           src={mbbsindia}
@@ -57,7 +60,10 @@ const India = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
         <div className="relative z-10 container mx-auto px-6 text-white">
-          <div className="text-5xl font-bold mb-4 animate-fade-in">
+          <div
+            className="text-5xl font-bold mb-4 animate-fade-in"
+            data-testid="india-page-title"
+          >
             MBBS IN INDIA
           </div>
           <p className="text-xl max-w-2xl text-gray-200">

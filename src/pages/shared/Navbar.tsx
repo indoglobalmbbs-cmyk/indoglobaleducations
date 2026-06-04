@@ -14,6 +14,8 @@ import { russiaUniversities } from '../../data/russiaUniversities';
 import { armeniaUniversities } from '../../data/armeniaUniversities';
 import { georgiaUniversities } from '../../data/georgiaUniversities';
 
+const isTestSpriteE2E = import.meta.env.VITE_TESTSPRITE_E2E === 'true';
+
 const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -115,7 +117,12 @@ const Navbar = () => {
       </div>
 
       <nav className="flex justify-between items-center w-full px-1">
-        <Link to="/" className="flex items-center -ml-6 -mt-8">
+        <Link
+          to="/"
+          className="flex items-center -ml-6 -mt-8"
+          data-testid="home-link"
+          aria-label="Go to homepage"
+        >
           <div className="h-30 w-30 rounded-full overflow-hidden flex items-center justify-center">
             <img
               src={logo}
@@ -128,12 +135,26 @@ const Navbar = () => {
           </span>
         </Link>
         <button
-          className="md:hidden text-xl z-50"
+          type="button"
+          aria-label={isMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="primary-navigation"
+          data-testid="mobile-menu-toggle"
+          className={`${isTestSpriteE2E ? 'flex items-center gap-2' : 'md:hidden'} text-xl z-50`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? null : <FaBarsStaggered />}
+          {isMenuOpen ? null : (
+            <>
+              <FaBarsStaggered />
+              {isTestSpriteE2E ? (
+                <span className="text-sm font-semibold">Menu</span>
+              ) : null}
+            </>
+          )}
         </button>
         <ul
+          id="primary-navigation"
+          data-testid="primary-navigation"
           className={`fixed md:static top-0 right-0 h-screen md:h-auto w-70 md:w-auto bg-primary-light md:bg-transparent flex flex-col md:flex-row gap-4 md:gap-6 font-medium px-4 pt-4 md:pt-0 whitespace-nowrap transition-transform duration-300 ease-in-out z-40 ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full items-center'
           } md:translate-x-0 md:flex`}
@@ -144,6 +165,9 @@ const Navbar = () => {
                 Indo Global Education
               </span>
               <button
+                type="button"
+                aria-label="Close mobile menu"
+                data-testid="mobile-menu-close"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-xl text-primary p-1"
               >
@@ -155,6 +179,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/"
+              data-testid="nav-home-link"
               onClick={() => setIsMenuOpen(false)}
               className="relative group hover:text-accent transition-colors pb-1"
             >
@@ -165,6 +190,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/about"
+              data-testid="nav-about-link"
               onClick={() => setIsMenuOpen(false)}
               className="relative group hover:text-accent transition-colors pb-1"
             >
@@ -278,6 +304,10 @@ const Navbar = () => {
             onMouseLeave={() => setIsCountriesOpen(false)}
           >
             <button
+              type="button"
+              aria-label="Open countries menu"
+              aria-expanded={isCountriesOpen}
+              data-testid="countries-menu-button"
               onClick={() => setIsCountriesOpen(!isCountriesOpen)}
               className="relative group hover:text-accent transition-colors flex items-center gap-1 text-left pb-1"
             >
@@ -299,6 +329,8 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/mbbs-in-india"
+                  aria-label="MBBS in India"
+                  data-testid="nav-india-link"
                   onClick={() => {
                     setIsMenuOpen(false);
                     setIsCountriesOpen(false);

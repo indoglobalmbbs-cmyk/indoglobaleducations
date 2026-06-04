@@ -1,0 +1,147 @@
+version: "2"
+type: frontend
+project:
+  name: indoglobaleducations
+  framework: Vite React
+  router: react-router-dom
+active_test_scope:
+  name: Public Frontend Only
+  endpoint: http://localhost:3000
+  include:
+    - public page rendering
+    - public navigation
+    - contact enquiry form UI behavior with mocked Supabase and webhook calls
+    - WhatsApp link href inspection
+    - FAQ accordion
+    - photo and video gallery modals
+    - responsive public layouts
+    - public accessibility checks
+    - legal pages
+  exclude:
+    - login flows
+    - dashboard flows
+    - authenticated admin CRUD
+    - real Supabase mutations
+    - real webhook calls
+    - third-party external navigation
+routes:
+  - path: /
+    file: src/pages/home/Home.tsx
+    auth_required: false
+    description: Public home page
+  - path: /home
+    file: src/pages/home/Home.tsx
+    auth_required: false
+    description: Public home page alias
+  - path: /about
+    file: src/pages/about/About.tsx
+    auth_required: false
+    description: Public about page
+  - path: /mbbs-in-india
+    file: src/pages/countries/india/India.tsx
+    auth_required: false
+    description: India country page
+  - path: /mbbs-in-russia
+    file: src/pages/countries/russia/Russia.tsx
+    auth_required: false
+    description: Russia country page
+  - path: /mbbs-in-armenia
+    file: src/pages/countries/armenia/Armenia.tsx
+    auth_required: false
+    description: Armenia country page
+  - path: /mbbs-in-georgia
+    file: src/pages/countries/georgia/Georgia.tsx
+    auth_required: false
+    description: Georgia country page
+  - path: /blog
+    file: src/pages/blog/Blog.tsx
+    auth_required: false
+    description: Public blog listing backed by Supabase reads
+  - path: /news
+    file: src/pages/news/News.tsx
+    auth_required: false
+    description: Public news listing backed by Supabase reads
+  - path: /faqs
+    file: src/pages/faqs/Faqs.tsx
+    auth_required: false
+    description: Public FAQ accordion page
+  - path: /photo-gallery
+    file: src/pages/photoGallery/PhotoGallery.tsx
+    auth_required: false
+    description: Public photo gallery with image modal
+  - path: /video-gallery
+    file: src/pages/videoGallery/VideoGallery.tsx
+    auth_required: false
+    description: Public video gallery with video modal
+  - path: /contact-us
+    file: src/pages/contact/Contact.tsx
+    auth_required: false
+    description: Public contact page with compact enquiry form and Google Maps iframe
+  - path: /privacy-policy
+    file: src/pages/legal/PrivacyPolicy.tsx
+    auth_required: false
+    description: Public legal page
+  - path: /cookie-policy
+    file: src/pages/legal/CookiePolicy.tsx
+    auth_required: false
+    description: Public legal page
+  - path: /terms-and-conditions
+    file: src/pages/legal/TermsAndConditions.tsx
+    auth_required: false
+    description: Public legal page
+  - path: /disclaimer
+    file: src/pages/legal/Disclaimer.tsx
+    auth_required: false
+    description: Public legal page
+features:
+  - name: Contact Enquiry Form
+    files:
+      - src/components/CompactEnquiryForm.tsx
+      - src/components/EnquiryModal.tsx
+      - src/lib/enquiry.ts
+    entry_route: /contact-us
+    behavior:
+      - validates name, email, phone, address, course, college, how-heard, and preferences
+      - checks duplicate enquiries through Supabase
+      - inserts into Supabase when valid and unique
+      - sends webhook in non-blocking no-cors mode
+      - shows success, duplicate, validation, and insert-error states
+    test_rule: mock Supabase and webhook calls; do not create real leads
+  - name: WhatsApp Widget
+    files:
+      - src/components/WhatsAppWidget.tsx
+    behavior:
+      - renders on public pages
+      - links to https://api.whatsapp.com/send?phone=91709000502
+    test_rule: inspect href and target attributes; do not navigate externally
+  - name: Google Maps Embed
+    files:
+      - src/pages/contact/Contact.tsx
+    behavior:
+      - renders iframe titled Office Location
+    test_rule: verify iframe presence only; do not interact with external map content
+  - name: Public Blog and News
+    files:
+      - src/pages/blog/Blog.tsx
+      - src/pages/news/News.tsx
+    behavior:
+      - fetch public Supabase records
+      - render loading, empty, error, and populated states
+    test_rule: mock records for deterministic UI states
+  - name: Galleries
+    files:
+      - src/pages/photoGallery/PhotoGallery.tsx
+      - src/pages/videoGallery/VideoGallery.tsx
+    behavior:
+      - render media lists
+      - open and close modals
+  - name: Public Navigation
+    files:
+      - src/routes/MainRoutes.tsx
+      - src/layouts/MainLayout.tsx
+      - src/pages/shared/Footer.tsx
+    behavior:
+      - desktop navbar, footer links, browser history, and mobile menu navigate public routes
+deferred_credentialed_scope:
+  - /login and /dashboard exist in the app but are not active for this TestSprite run
+  - backend Supabase RLS and admin CRUD scenarios require credentials and a dedicated test project

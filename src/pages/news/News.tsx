@@ -5,9 +5,54 @@ import {
   FaRss,
   FaArrowRight,
 } from 'react-icons/fa';
-import { newsUpdates } from '../../components/NewsUpdates';
+import { useEffect, useState } from 'react';
+import { banner4 } from '../../assets/images';
+import { supabase } from '../../lib/supabase';
+
+interface NewsUpdate {
+  id: string;
+  title: string;
+  summary: string;
+  publish_date: string;
+  tag: 'Alert' | 'Regulation' | 'Travel' | 'Update' | null;
+  image_url: string | null;
+  priority: boolean | null;
+}
+
+const formatDate = (value: string) =>
+  new Intl.DateTimeFormat('en-IN', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date(value));
 
 const News = () => {
+  const [newsUpdates, setNewsUpdates] = useState<NewsUpdate[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      setLoading(true);
+      setError(null);
+
+      const { data, error: requestError } = await supabase
+        .from('news_updates')
+        .select('id,title,summary,publish_date,tag,image_url,priority')
+        .order('priority', { ascending: false })
+        .order('publish_date', { ascending: false });
+
+      if (requestError) {
+        setError(requestError.message);
+      } else {
+        setNewsUpdates((data || []) as NewsUpdate[]);
+      }
+      setLoading(false);
+    };
+
+    fetchNews();
+  }, []);
+
   return (
     <div className="w-full bg-white">
       <section className="bg-primary py-10 text-white">
@@ -33,28 +78,52 @@ const News = () => {
       </section>
       <section className="py-10">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-8">
-            {newsUpdates.map((news) => (
+          {loading && (
+            <div className="grid gap-8 lg:grid-cols-3">
+              {[1, 2, 3].map((item) => (
+                <div
+                  key={item}
+                  className="h-[430px] animate-pulse rounded-3xl bg-primary-light"
+                />
+              ))}
+            </div>
+          )}
+
+          {!loading && error && (
+            <div className="rounded-2xl border border-error/20 bg-error/10 p-8 text-center text-error">
+              Unable to load news updates. Please try again later.
+            </div>
+          )}
+
+          {!loading && !error && newsUpdates.length === 0 && (
+            <div className="rounded-2xl border border-gray-100 bg-primary-light p-8 text-center text-text-muted">
+              No news updates are available right now.
+            </div>
+          )}
+
+          {!loading && !error && newsUpdates.length > 0 && (
+            <div className="grid gap-8 lg:grid-cols-3">
+              {newsUpdates.map((news) => (
               <div
                 key={news.id}
                 className={`group flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border ${news.priority ? 'border-accent/30' : 'border-gray-100'}`}
               >
                 <div className="relative h-60 overflow-hidden">
                   <img
-                    src={news.image}
+                    src={news.image_url || banner4}
                     alt={news.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div
                     className={`absolute top-4 left-4 px-4 py-1.5 rounded-full text-xs font-bold uppercase ${news.tag === 'Alert' ? 'bg-error text-white' : 'bg-primary text-white'}`}
                   >
-                    {news.tag}
+                    {news.tag || 'Update'}
                   </div>
                 </div>
                 <div className="p-8 flex flex-col flex-grow">
                   <div className="flex items-center gap-2 text-text-muted text-sm mb-4">
                     <FaRss className="text-accent" />
-                    <span>{news.date}</span>
+                    <span>{formatDate(news.publish_date)}</span>
                   </div>
                   <h3 className="text-2xl font-bold text-text mb-4 leading-tight group-hover:text-primary transition-colors">
                     {news.title}
@@ -69,8 +138,9 @@ const News = () => {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
       <section className="py-10 bg-primary-light">

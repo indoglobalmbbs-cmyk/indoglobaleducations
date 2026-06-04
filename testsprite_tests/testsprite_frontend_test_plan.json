@@ -1,0 +1,1093 @@
+[
+  {
+    "id": "TC001",
+    "title": "Submit a valid contact enquiry",
+    "description": "A visitor can complete the enquiry form with valid details and receive a success confirmation with the form reset. Use the contact form test ids: enquiry-full-name, enquiry-email, enquiry-phone, enquiry-address, enquiry-course, enquiry-college-name, enquiry-how-heard, enquiry-preferences, enquiry-submit, and enquiry-success. In TestSprite E2E mode, placeholder emails such as {{LOGIN_USER}} are normalized locally and no real Supabase/webhook submission is made.",
+    "category": "Contact Enquiry Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /contact-us"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the address field with a valid address"
+      },
+      {
+        "type": "action",
+        "description": "Select a course value"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the college name field with a valid college name"
+      },
+      {
+        "type": "action",
+        "description": "Select a how-heard value"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the preference fields with valid details"
+      },
+      {
+        "type": "action",
+        "description": "Submit the enquiry form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the form fields are reset"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "View contact details and embedded map",
+    "description": "A visitor can open the contact page and see the key contact information, enquiry form, and embedded office map.",
+    "category": "Contact Page Information",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /contact-us"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the contact details, enquiry form, and map area are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the embedded office map is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Reach the about page from the homepage",
+    "description": "A visitor can start on the homepage and navigate to the about page to view its content.",
+    "category": "Public Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the public navigation link to the about page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the about page content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Show required-field validation on contact enquiry",
+    "description": "A visitor who submits the enquiry form without required details sees validation feedback and the form is not submitted. Use enquiry-submit and assert enquiry-error is visible. The form has noValidate so app validation appears instead of browser-native validation.",
+    "category": "Contact Enquiry Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /contact-us"
+      },
+      {
+        "type": "action",
+        "description": "Submit the enquiry form without entering required details"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify required-field validation errors are visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no success confirmation is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Open the India country page from the homepage",
+    "description": "A visitor can start on the homepage and navigate to the India MBBS information page. Open the countries menu with countries-menu-button, click nav-india-link, then assert india-country-page or india-page-title is visible and the URL contains /mbbs-in-india.",
+    "category": "Public Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the public navigation link to the India MBBS page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the India MBBS information page is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Open the India MBBS landing page",
+    "description": "A visitor can open the India country page and view its MBBS information and primary call to action.",
+    "category": "Country Landing Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /mbbs-in-india"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the India MBBS landing page content is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the primary call to action is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Reject an invalid email in the enquiry form",
+    "description": "A visitor entering an invalid email address sees email validation feedback before the form can be submitted successfully.",
+    "category": "Contact Enquiry Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /contact-us"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with an invalid email address"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the address field with a valid address"
+      },
+      {
+        "type": "action",
+        "description": "Select a course value"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the college name field with a valid college name"
+      },
+      {
+        "type": "action",
+        "description": "Select a how-heard value"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the preference fields with valid details"
+      },
+      {
+        "type": "action",
+        "description": "Submit the enquiry form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an email validation error is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Open the Russia country page from the homepage",
+    "description": "A visitor can start on the homepage and navigate to the Russia MBBS information page.",
+    "category": "Public Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the public navigation link to the Russia MBBS page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Russia MBBS information page is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Open contact us from the footer",
+    "description": "A visitor can scroll to the footer on the homepage and use the footer Contact Us link to reach the contact page. Use data-testid=\"site-footer\" to scroll into view, click data-testid=\"footer-contact-link\", then assert data-testid=\"contact-page\" or data-testid=\"contact-page-title\" is visible and the URL contains /contact-us.",
+    "category": "Public Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the footer"
+      },
+      {
+        "type": "action",
+        "description": "Click the footer link to the contact page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the contact page content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Reject an invalid phone number in the enquiry form",
+    "description": "A visitor entering an invalid phone number sees phone validation feedback before the form can be submitted successfully.",
+    "category": "Contact Enquiry Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /contact-us"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a valid email address"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone field with an invalid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the address field with a valid address"
+      },
+      {
+        "type": "action",
+        "description": "Select a course value"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the college name field with a valid college name"
+      },
+      {
+        "type": "action",
+        "description": "Select a how-heard value"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the preference fields with valid details"
+      },
+      {
+        "type": "action",
+        "description": "Submit the enquiry form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a phone validation error is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "See the office map on the contact page",
+    "description": "A visitor can open the contact page and confirm the embedded map is present without leaving the site.",
+    "category": "Contact Page Information",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /contact-us"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the embedded office map is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Use browser history between public pages",
+    "description": "A visitor can move from the about page to the contact page and return using browser history.",
+    "category": "Public Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the public navigation link to the about page"
+      },
+      {
+        "type": "action",
+        "description": "Click the public navigation link to the contact page"
+      },
+      {
+        "type": "action",
+        "description": "Use browser back navigation"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the about page content is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Use browser forward navigation"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the contact page content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Open the Russia MBBS landing page",
+    "description": "A visitor can open the Russia country page and view its MBBS information and primary call to action.",
+    "category": "Country Landing Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /mbbs-in-russia"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Russia MBBS landing page content is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the primary call to action is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Use the mobile menu to reach a destination page",
+    "description": "A visitor on a small viewport can open the mobile menu and navigate to a public destination page successfully. At mobile viewport, open mobile-menu-toggle, click nav-about-link, then assert about-page or about-page-title is visible and mobile-menu-toggle remains visible for future use.",
+    "category": "Public Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Set the viewport to a mobile size"
+      },
+      {
+        "type": "action",
+        "description": "Open the mobile menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the mobile menu link to the about page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the about page content is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the mobile menu remains usable after navigation"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "Open the WhatsApp widget link on the homepage",
+    "description": "A visitor can see the floating WhatsApp widget on the homepage and confirm it points to the expected contact link.",
+    "category": "WhatsApp Widget",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the WhatsApp widget link is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the WhatsApp widget points to the expected contact destination"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC016",
+    "title": "Open the Armenia MBBS landing page",
+    "description": "A visitor can open the Armenia country page and view its MBBS information and primary call to action.",
+    "category": "Country Landing Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /mbbs-in-armenia"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Armenia MBBS landing page content is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the primary call to action is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC017",
+    "title": "Browse blog posts from the public listing",
+    "description": "This test verifies that a visitor can open the blog page and see blog content when posts are available.",
+    "category": "Public Blog and News",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /blog"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify loading feedback is shown"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify blog content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC018",
+    "title": "Keep the WhatsApp widget available on the contact page",
+    "description": "A visitor can open the contact page and still access the floating WhatsApp widget link.",
+    "category": "WhatsApp Widget",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /contact-us"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the WhatsApp widget link is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the WhatsApp widget points to the expected contact destination"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC019",
+    "title": "Open the Georgia MBBS landing page",
+    "description": "A visitor can open the Georgia country page and view its MBBS information and primary call to action.",
+    "category": "Country Landing Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /mbbs-in-georgia"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Georgia MBBS landing page content is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the primary call to action is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC020",
+    "title": "Browse news posts from the public listing",
+    "description": "This test verifies that a visitor can open the news page and see news content when posts are available.",
+    "category": "Public Blog and News",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /news"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify loading feedback is shown"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify news content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC021",
+    "title": "Read the blog listing page",
+    "description": "A visitor can open the blog page and see the blog listing content load successfully.",
+    "category": "Blog and News",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /blog"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the blog listing content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC022",
+    "title": "Read the news listing page",
+    "description": "A visitor can open the news page and see the news listing content load successfully.",
+    "category": "Blog and News",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /news"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the news listing content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC023",
+    "title": "Expand and collapse FAQ items",
+    "description": "A visitor can open an FAQ item to read the answer and close it again.",
+    "category": "FAQs, Galleries, and Legal Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /faqs"
+      },
+      {
+        "type": "action",
+        "description": "Expand an FAQ item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the FAQ answer is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Collapse the same FAQ item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the FAQ answer is hidden"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC024",
+    "title": "Open and close a photo gallery modal",
+    "description": "A visitor can open an image from the photo gallery and close the modal afterward.",
+    "category": "FAQs, Galleries, and Legal Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /photo-gallery"
+      },
+      {
+        "type": "action",
+        "description": "Open a gallery image"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the image modal is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Close the image modal"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the image modal is hidden"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC025",
+    "title": "Expand and collapse an FAQ answer",
+    "description": "This test verifies that a visitor can expand an FAQ item to read its answer and collapse it again.",
+    "category": "FAQ Accordion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /faqs"
+      },
+      {
+        "type": "action",
+        "description": "Expand an FAQ item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the answer is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Collapse the same FAQ item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the answer is hidden"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC026",
+    "title": "Open and close a video gallery modal",
+    "description": "A visitor can open a video from the video gallery and close the modal afterward.",
+    "category": "FAQs, Galleries, and Legal Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /video-gallery"
+      },
+      {
+        "type": "action",
+        "description": "Open a gallery video"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the video modal is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Close the video modal"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the video modal is hidden"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC027",
+    "title": "Move between legal pages from the footer",
+    "description": "A visitor can use footer navigation to move from one legal page to another and see the destination policy page load.",
+    "category": "Legal Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /privacy-policy"
+      },
+      {
+        "type": "action",
+        "description": "Click the footer link to another legal page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the destination legal page is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC028",
+    "title": "Keep selected enquiry form values visible",
+    "description": "A visitor can choose course and how-heard values and see the selections remain visible in the form.",
+    "category": "Contact Enquiry Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /contact-us"
+      },
+      {
+        "type": "action",
+        "description": "Select a course value"
+      },
+      {
+        "type": "action",
+        "description": "Select a how-heard value"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected course remains visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected how-heard value remains visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC029",
+    "title": "Open and close a photo from the gallery",
+    "description": "This test verifies that a visitor can open a gallery image in a modal and close it to return to the gallery.",
+    "category": "Galleries",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /photo-gallery"
+      },
+      {
+        "type": "action",
+        "description": "Select a gallery image"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the image modal is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Close the modal"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the gallery view is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC030",
+    "title": "Open and close a video from the gallery",
+    "description": "This test verifies that a visitor can open a gallery video in a modal and close it to return to the gallery.",
+    "category": "Galleries",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /video-gallery"
+      },
+      {
+        "type": "action",
+        "description": "Select a video item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the video modal is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Close the modal"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the gallery view is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC031",
+    "title": "Switch between FAQ items",
+    "description": "This test verifies that opening a different FAQ item updates the accordion so only the newly selected answer is shown.",
+    "category": "FAQ Accordion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /faqs"
+      },
+      {
+        "type": "action",
+        "description": "Expand one FAQ item"
+      },
+      {
+        "type": "action",
+        "description": "Expand another FAQ item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the newly selected answer is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the previously selected answer is hidden"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC032",
+    "title": "Read the privacy policy page",
+    "description": "A visitor can open the privacy policy page and read its content.",
+    "category": "Legal Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /privacy-policy"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the privacy policy content is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC033",
+    "title": "Read the terms and conditions page",
+    "description": "A visitor can open the terms and conditions page and read its content.",
+    "category": "Legal Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /terms-and-conditions"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the terms and conditions content is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC034",
+    "title": "Read the cookie policy page",
+    "description": "A visitor can open the cookie policy page and read its content.",
+    "category": "Legal Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /cookie-policy"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cookie policy content is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC035",
+    "title": "Show a duplicate enquiry message",
+    "description": "A visitor submitting an enquiry that already exists sees a duplicate enquiry message instead of a success confirmation.",
+    "category": "Contact Enquiry Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /contact-us"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a valid email address"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the address field with a valid address"
+      },
+      {
+        "type": "action",
+        "description": "Select a course value"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the college name field with a valid college name"
+      },
+      {
+        "type": "action",
+        "description": "Select a how-heard value"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the preference fields with valid details"
+      },
+      {
+        "type": "action",
+        "description": "Submit the enquiry form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a duplicate enquiry message is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC036",
+    "title": "Visit a legal page from the footer",
+    "description": "A visitor can navigate to a legal page from the footer and view its content.",
+    "category": "FAQs, Galleries, and Legal Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the footer"
+      },
+      {
+        "type": "action",
+        "description": "Click the footer link to the privacy policy page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the privacy policy content is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC037",
+    "title": "See an empty blog listing state",
+    "description": "This test verifies that a visitor sees an empty state on the blog page when no posts are returned.",
+    "category": "Public Blog and News",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /blog"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an empty state message is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC038",
+    "title": "Read the disclaimer page",
+    "description": "A visitor can open the disclaimer page and read its content.",
+    "category": "Legal Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /disclaimer"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the disclaimer content is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC039",
+    "title": "Move between legal pages using the footer",
+    "description": "A visitor can move from one legal page to another using footer links.",
+    "category": "FAQs, Galleries, and Legal Pages",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /privacy-policy"
+      },
+      {
+        "type": "action",
+        "description": "Click the footer link to the cookie policy page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cookie policy content is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC040",
+    "title": "See an empty news listing state",
+    "description": "This test verifies that a visitor sees an empty state on the news page when no posts are returned.",
+    "category": "Public Blog and News",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /news"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an empty state message is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC041",
+    "title": "Show an empty blog state when no posts are available",
+    "description": "A visitor can open the blog page and see an empty state when no blog records are available.",
+    "category": "Blog and News",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /blog"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an empty state message is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC042",
+    "title": "See a blog error state",
+    "description": "This test verifies that a visitor sees a user-visible error state on the blog page when records cannot be loaded.",
+    "category": "Public Blog and News",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /blog"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an error state is displayed"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC043",
+    "title": "See a news error state",
+    "description": "This test verifies that a visitor sees a user-visible error state on the news page when records cannot be loaded.",
+    "category": "Public Blog and News",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /news"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an error state is displayed"
+      }
+    ],
+    "priority": "Low"
+  }
+]

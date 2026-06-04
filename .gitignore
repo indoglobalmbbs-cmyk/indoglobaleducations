@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 .gemini/
 .env
+
+testsprite_tests/tmp/config.json

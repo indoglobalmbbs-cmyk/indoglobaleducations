@@ -1,10 +1,52 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaHistory, FaUser, FaChevronRight } from 'react-icons/fa';
-import { russia } from '../../assets/images';
-import { posts } from '../../data/posts';
+import { banner3, russia } from '../../assets/images';
+import { supabase } from '../../lib/supabase';
+
+interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  author: string | null;
+  category: string | null;
+  image_url: string | null;
+  publish_date: string;
+}
+
+const formatDate = (value: string) =>
+  new Intl.DateTimeFormat('en-IN', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date(value));
 
 const Blog = () => {
   const navigate = useNavigate();
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      setError(null);
+
+      const { data, error: requestError } = await supabase
+        .from('blog_posts')
+        .select('id,title,excerpt,author,category,image_url,publish_date')
+        .order('publish_date', { ascending: false });
+
+      if (requestError) {
+        setError(requestError.message);
+      } else {
+        setPosts((data || []) as BlogPost[]);
+      }
+      setLoading(false);
+    };
+
+    fetchPosts();
+  }, []);
 
   return (
     <div className="w-full bg-white">
@@ -38,14 +80,34 @@ const Blog = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-2/3 space-y-12">
-              {posts.map((post) => (
+              {loading &&
+                [1, 2, 3].map((item) => (
+                  <div
+                    key={item}
+                    className="h-72 animate-pulse rounded-3xl bg-primary-light"
+                  />
+                ))}
+
+              {!loading && error && (
+                <div className="rounded-2xl border border-error/20 bg-error/10 p-8 text-center text-error">
+                  Unable to load blog posts. Please try again later.
+                </div>
+              )}
+
+              {!loading && !error && posts.length === 0 && (
+                <div className="rounded-2xl border border-gray-100 bg-primary-light p-8 text-center text-text-muted">
+                  No blog posts are available right now.
+                </div>
+              )}
+
+              {!loading && !error && posts.map((post) => (
                 <article
                   key={post.id}
                   className="group grid md:grid-cols-2 gap-8 items-center bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100"
                 >
                   <div className="h-64 md:h-full overflow-hidden">
                     <img
-                      src={post.image}
+                      src={post.image_url || banner3}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
@@ -53,10 +115,10 @@ const Blog = () => {
                   <div className="p-6 md:pr-10">
                     <div className="flex items-center gap-4 mb-4">
                       <span className="bg-primary-light text-primary px-3 py-1 rounded-lg text-xs font-bold uppercase">
-                        {post.category}
+                        {post.category || 'Update'}
                       </span>
                       <span className="text-text-muted text-xs flex items-center gap-1">
-                        <FaHistory /> {post.date}
+                        <FaHistory /> {formatDate(post.publish_date)}
                       </span>
                     </div>
                     <h3 className="text-2xl font-bold text-text mb-4 group-hover:text-primary transition-colors leading-tight">
@@ -70,7 +132,7 @@ const Blog = () => {
                         <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center text-accent">
                           <FaUser size={12} />
                         </div>
-                        {post.author}
+                        {post.author || 'Admin'}
                       </div>
                       <a
                         href="/news"

@@ -1,15 +1,22 @@
-import { useState, type ChangeEvent, type FormEvent } from 'react';
-import { supabase } from '../lib/supabase';
 import {
-  checkDuplicateEnquiry,
+  useCallback,
+  useRef,
+  useState,
+  type ChangeEvent,
+  type FormEvent,
+} from 'react';
+import {
   getSubmissionErrorMessage,
   initialEnquiryForm,
   validateEnquiryForm,
   type EnquiryFormData,
 } from '../lib/enquiry';
 import { FaChevronDown } from 'react-icons/fa';
+import RecaptchaCheckbox, {
+  type RecaptchaCheckboxHandle,
+} from './RecaptchaCheckbox';
 
-const WEBHOOK_URL = import.meta.env.VITE_WEBHOOK_URL;
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 const isTestSpriteE2E = import.meta.env.VITE_TESTSPRITE_E2E === 'true';
 
 const normalizeTestSpriteForm = (form: EnquiryFormData): EnquiryFormData => {
@@ -23,6 +30,17 @@ const CompactEnquiryForm = () => {
     'idle',
   );
   const [error, setError] = useState<string | null>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<RecaptchaCheckboxHandle | null>(null);
+
+  const handleRecaptchaChange = useCallback((token: string | null) => {
+    setRecaptchaToken(token);
+    if (token) setError(null);
+  }, []);
+
+  const handleRecaptchaError = useCallback((message: string) => {
+    setError(message);
+  }, []);
 
   const updateField =
     (field: keyof EnquiryFormData) =>
@@ -32,6 +50,11 @@ const CompactEnquiryForm = () => {
       if (status === 'success') setStatus('idle');
     };
 
+  const resetRecaptcha = () => {
+    recaptchaRef.current?.reset();
+    setRecaptchaToken(null);
+  };
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -39,6 +62,16 @@ const CompactEnquiryForm = () => {
     const validationError = validateEnquiryForm(submissionForm);
     if (validationError) {
       setError(validationError);
+      return;
+    }
+
+    if (!isTestSpriteE2E && !RECAPTCHA_SITE_KEY) {
+      setError('reCAPTCHA is not configured. Please try again later.');
+      return;
+    }
+
+    if (!isTestSpriteE2E && !recaptchaToken) {
+      setError('Please confirm that you are not a robot.');
       return;
     }
 
@@ -53,63 +86,33 @@ const CompactEnquiryForm = () => {
         return;
       }
 
-      const isDuplicate = await checkDuplicateEnquiry(
-        submissionForm.email,
-        submissionForm.phone,
-      );
-      if (isDuplicate) {
-        setError(
-          'An enquiry with this email or phone number has already been submitted.',
+      const response = await fetch('/api/submit-enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          form: submissionForm,
+          recaptchaToken,
+        }),
+      });
+      const result = (await response.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+
+      if (!response.ok) {
+        throw new Error(
+          result?.error || 'Unable to submit your enquiry. Please try again.',
         );
-        setStatus('idle');
-        return;
       }
 
-      const { error: supabaseError } = await supabase
-        .from('indoglobal')
-        .insert([
-          {
-            fullname: submissionForm.fullName.trim(),
-            email: submissionForm.email.trim().toLowerCase(),
-            phone: submissionForm.phone.trim().replace(/[^\d+]/g, ''),
-            address: submissionForm.address.trim(),
-            course: submissionForm.course,
-            collegename: submissionForm.collegeName.trim(),
-            howheard: submissionForm.howHeard,
-            preferences: submissionForm.preferences.trim(),
-            status: 'new',
-          },
-        ]);
-
-      if (supabaseError) {
-        if (supabaseError.code === '23505') {
-          setError(
-            'An enquiry with this email or phone number has already been submitted.',
-          );
-          setStatus('idle');
-          return;
-        }
-        throw supabaseError;
-      }
-
-      try {
-        await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(submissionForm),
-        });
-      } catch (webhookError) {
-        console.error('Webhook error:', webhookError);
-      }
-
+      resetRecaptcha();
       setForm(initialEnquiryForm);
       setStatus('success');
     } catch (submissionError) {
       console.error('Submission error:', submissionError);
       setError(getSubmissionErrorMessage(submissionError));
+      resetRecaptcha();
       setStatus('idle');
     }
   };
@@ -236,6 +239,15 @@ const CompactEnquiryForm = () => {
         onChange={updateField('preferences')}
         className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all"
       />
+      {!isTestSpriteE2E ? (
+        <RecaptchaCheckbox
+          ref={recaptchaRef}
+          siteKey={RECAPTCHA_SITE_KEY}
+          onChange={handleRecaptchaChange}
+          onError={handleRecaptchaError}
+          testId="enquiry-recaptcha"
+        />
+      ) : null}
       {error ? (
         <p
           className="text-sm font-medium text-red-600"

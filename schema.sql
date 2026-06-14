@@ -6,13 +6,26 @@ create table if not exists indoglobal (
   phone text not null,
   address text,
   course text,
+  preferredcountry text,
   collegename text,
   howheard text,
   preferences text,
   source text,
   pagepath text,
+  hubspot_contact_id text,
+  hubspot_deal_id text,
+  hubspot_sync_status text check (
+    hubspot_sync_status in ('pending', 'synced', 'failed')
+  ),
+  hubspot_sync_error text,
   status text not null check (status in ('new', 'contacted', 'closed')) default 'new'
 );
+
+alter table indoglobal add column if not exists preferredcountry text;
+alter table indoglobal add column if not exists hubspot_contact_id text;
+alter table indoglobal add column if not exists hubspot_deal_id text;
+alter table indoglobal add column if not exists hubspot_sync_status text;
+alter table indoglobal add column if not exists hubspot_sync_error text;
 
 create table if not exists news_updates (
   id uuid default gen_random_uuid() primary key,
@@ -43,6 +56,16 @@ alter table blog_posts enable row level security;
 
 do $$ 
 begin 
+  if not exists (
+    select 1
+    from pg_constraint
+    where conname = 'indoglobal_hubspot_sync_status_check'
+  ) then
+    alter table indoglobal
+      add constraint indoglobal_hubspot_sync_status_check
+      check (hubspot_sync_status in ('pending', 'synced', 'failed'));
+  end if;
+
   -- Insert policy
   if not exists (select 1 from pg_policies where policyname = 'Allow anonymous inserts' and tablename = 'indoglobal') then 
     create policy "Allow anonymous inserts" on indoglobal for insert with check (true); 

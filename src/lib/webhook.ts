@@ -10,6 +10,7 @@ export const defaultWebhookSample: EnquiryFormData = {
   phone: '9876543210',
   address: 'New Delhi, India',
   course: 'MBBS',
+  preferredCountry: 'Russia',
   collegeName: 'Delhi Public School',
   howHeard: 'Instagram',
   preferences: 'Russia universities, budget around 5 lakh per year',
@@ -21,6 +22,7 @@ export const buildWebhookPayload = (form: EnquiryFormData) => ({
   phone: form.phone.trim().replace(/[^\d+]/g, ''),
   address: form.address.trim(),
   course: form.course,
+  preferredCountry: form.preferredCountry,
   collegeName: form.collegeName.trim(),
   howHeard: form.howHeard,
   preferences: form.preferences.trim(),
@@ -60,6 +62,7 @@ function doPost(e) {
       'Phone',
       'Address',
       'Course',
+      'Preferred Country',
       'College Name',
       'How Heard',
       'Preferences'
@@ -73,6 +76,7 @@ function doPost(e) {
     payload.phone || '',
     payload.address || '',
     payload.course || '',
+    payload.preferredCountry || '',
     payload.collegeName || '',
     payload.howHeard || '',
     payload.preferences || ''

@@ -9,11 +9,16 @@ export interface Enquiry {
   phone: string;
   address: string | null;
   course: string | null;
+  preferredcountry: string | null;
   collegename: string | null;
   howheard: string | null;
   preferences: string | null;
   source?: string | null;
   pagepath?: string | null;
+  hubspot_contact_id?: string | null;
+  hubspot_deal_id?: string | null;
+  hubspot_sync_status?: 'pending' | 'synced' | 'failed' | null;
+  hubspot_sync_error?: string | null;
   status: EnquiryStatus;
 }
 
@@ -40,7 +45,17 @@ export interface BlogPost {
   publish_date: string;
 }
 
-export type EnquiryUpdate = Omit<Enquiry, 'id' | 'created_at' | 'source' | 'pagepath'>;
+export type EnquiryUpdate = Omit<
+  Enquiry,
+  | 'id'
+  | 'created_at'
+  | 'source'
+  | 'pagepath'
+  | 'hubspot_contact_id'
+  | 'hubspot_deal_id'
+  | 'hubspot_sync_status'
+  | 'hubspot_sync_error'
+>;
 export type NewsDraft = Omit<NewsUpdate, 'id' | 'created_at'>;
 export type BlogDraft = Omit<BlogPost, 'id' | 'created_at'>;
 

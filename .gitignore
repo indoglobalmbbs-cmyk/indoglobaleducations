@@ -24,5 +24,6 @@ dist-ssr
 *.sw?
 .gemini/
 .env
+hubspot.config.yml
 
 testsprite_tests/tmp/config.json

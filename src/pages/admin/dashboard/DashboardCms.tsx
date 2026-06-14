@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import {
+  PREFERRED_COUNTRIES,
   validateDetailedEnquiryForm,
   type EnquiryFormData,
 } from '../../../lib/enquiry';
@@ -144,6 +145,7 @@ const enquiryToDraft = (enquiry: Enquiry | null): EnquiryUpdate | null =>
         phone: enquiry.phone,
         address: normalize(enquiry.address),
         course: normalize(enquiry.course),
+        preferredcountry: normalize(enquiry.preferredcountry),
         collegename: normalize(enquiry.collegename),
         howheard: normalize(enquiry.howheard),
         preferences: normalize(enquiry.preferences),
@@ -325,6 +327,7 @@ const DashboardCms: React.FC = () => {
       phone: draft.phone,
       address: normalize(draft.address),
       course: normalize(draft.course),
+      preferredCountry: normalize(draft.preferredcountry),
       collegeName: normalize(draft.collegename),
       howHeard: normalize(draft.howheard),
       preferences: normalize(draft.preferences),
@@ -343,6 +346,7 @@ const DashboardCms: React.FC = () => {
         phone: draft.phone.trim(),
         address: normalize(draft.address).trim(),
         course: normalize(draft.course),
+        preferredcountry: normalize(draft.preferredcountry),
         collegename: normalize(draft.collegename).trim(),
         howheard: normalize(draft.howheard),
         preferences: normalize(draft.preferences).trim(),
@@ -882,6 +886,28 @@ const SettingsPanel = ({ webhookUrl }: { webhookUrl: string }) => {
               </SelectContent>
             </Select>
           </Field>
+          <Field label="Preferred country">
+            <Select
+              value={sample.preferredCountry}
+              onValueChange={(value) =>
+                setSample((current) => ({
+                  ...current,
+                  preferredCountry: value,
+                }))
+              }
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select country" />
+              </SelectTrigger>
+              <SelectContent>
+                {PREFERRED_COUNTRIES.map((country) => (
+                  <SelectItem key={country} value={country}>
+                    {country}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </Field>
           <Field label="College name">
             <Input
               value={sample.collegeName}
@@ -1280,6 +1306,25 @@ const EnquiryDialog = ({
                   {['MBBS', 'MS', 'BDS', 'MDS', 'MD-MS'].map((course) => (
                     <SelectItem key={course} value={course}>
                       {course}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </Field>
+            <Field label="Preferred country">
+              <Select
+                value={normalize(draft.preferredcountry)}
+                onValueChange={(value) =>
+                  setDraft({ ...draft, preferredcountry: value })
+                }
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select country" />
+                </SelectTrigger>
+                <SelectContent>
+                  {PREFERRED_COUNTRIES.map((country) => (
+                    <SelectItem key={country} value={country}>
+                      {country}
                     </SelectItem>
                   ))}
                 </SelectContent>

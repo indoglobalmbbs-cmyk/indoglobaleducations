@@ -8,6 +8,7 @@ import {
 import {
   getSubmissionErrorMessage,
   initialEnquiryForm,
+  PREFERRED_COUNTRIES,
   validateEnquiryForm,
   type EnquiryFormData,
 } from '../lib/enquiry';
@@ -94,6 +95,8 @@ const CompactEnquiryForm = () => {
         body: JSON.stringify({
           form: submissionForm,
           recaptchaToken,
+          formSource: 'compact',
+          pagePath: window.location.pathname,
         }),
       });
       const result = (await response.json().catch(() => null)) as {
@@ -189,6 +192,29 @@ const CompactEnquiryForm = () => {
           <option value="BDS">BDS</option>
           <option value="MDS">MDS</option>
           <option value="MD-MS">MD-MS</option>
+        </select>
+        <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+          <FaChevronDown className="text-gray-400 text-sm" />
+        </div>
+      </div>
+      <div className="relative">
+        <select
+          aria-label="Preferred country"
+          data-testid="enquiry-preferred-country"
+          name="preferredCountry"
+          value={form.preferredCountry}
+          onChange={updateField('preferredCountry')}
+          required
+          className="w-full px-4 py-2 rounded-md border border-gray-200 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all appearance-none cursor-pointer"
+        >
+          <option value="" disabled>
+            Select Preferred Country
+          </option>
+          {PREFERRED_COUNTRIES.map((country) => (
+            <option key={country} value={country}>
+              {country}
+            </option>
+          ))}
         </select>
         <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
           <FaChevronDown className="text-gray-400 text-sm" />

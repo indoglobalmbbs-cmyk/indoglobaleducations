@@ -6,10 +6,19 @@ export interface EnquiryFormData {
   phone: string;
   address: string;
   course: string;
+  preferredCountry: string;
   collegeName: string;
   howHeard: string;
   preferences: string;
 }
+
+export const PREFERRED_COUNTRIES = [
+  "Russia",
+  "Armenia",
+  "Georgia",
+  "India",
+  "Undecided",
+] as const;
 
 export const initialEnquiryForm: EnquiryFormData = {
   fullName: "",
@@ -17,6 +26,7 @@ export const initialEnquiryForm: EnquiryFormData = {
   phone: "",
   address: "",
   course: "",
+  preferredCountry: "",
   collegeName: "",
   howHeard: "",
   preferences: "",
@@ -32,6 +42,7 @@ export const validateEnquiryForm = (form: EnquiryFormData) => {
   }
   if (form.address.trim().length < 5) return "Please enter your full address.";
   if (!form.course) return "Please select a course.";
+  if (!form.preferredCountry) return "Please select a preferred country.";
   if (form.collegeName.trim().length < 2) return "Please enter your college name.";
   if (!form.howHeard) return "Please tell us how you heard about us.";
   if (form.preferences.trim().length < 5) {

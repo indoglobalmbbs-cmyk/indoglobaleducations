@@ -82,6 +82,15 @@ create policy "Allow anonymous inserts"
   with check (true);
 ```
 
+### HubSpot Sales Setup
+
+The website creates a HubSpot contact and an associated admissions deal only
+after the enquiry is stored in Supabase. See
+[`docs/hubspot-sales-dashboard.md`](docs/hubspot-sales-dashboard.md) for private
+app scopes, pipeline bootstrap, dashboard reports, and historical backfill.
+After setup, run `pnpm hubspot:verify` to validate the token, pipeline, stage,
+and custom properties without creating CRM records.
+
 ### Development
 
 Run the development server:

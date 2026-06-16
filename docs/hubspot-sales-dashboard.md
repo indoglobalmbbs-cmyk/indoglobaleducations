@@ -16,6 +16,7 @@
    - `crm.schemas.contacts.write`
    - `crm.schemas.deals.read`
    - `crm.schemas.deals.write`
+   - `crm.objects.owners.read`
 4. Put the private app token in the server-only `HUBSPOT_ACCESS_TOKEN`
    environment variable.
 5. Run `pnpm hubspot:setup`.
@@ -33,7 +34,13 @@ environments, then redeploy:
 HUBSPOT_ACCESS_TOKEN
 HUBSPOT_PIPELINE_ID
 HUBSPOT_NEW_LEAD_STAGE_ID
+HUBSPOT_OWNER_ID
+HUBSPOT_DEAL_CURRENCY
 ```
+
+The default owner is Yoga Sidhesh (`93911131`) and the deal currency is `INR`.
+Each new website enquiry receives eight personalized follow-up tasks spanning
+the first 14 days.
 
 ## Dashboard
 
@@ -58,6 +65,22 @@ Add these single-object deal reports:
 Set the dashboard date range to the current admissions cycle. Use Deal owner,
 Deal stage, Indo Global Preferred Country, and Indo Global Course as dashboard
 filters where the subscription supports them.
+
+Create saved deal views for:
+
+- New and uncontacted leads
+- Overdue follow-up tasks
+- Leads with no next activity
+- Documents pending
+- Applications in progress
+- Offers awaiting payment
+- Visa process
+- Enrolled this intake
+- Lost leads grouped by Indo Global Loss Reason
+
+HubSpot does not currently expose dashboard/report layout or account
+timezone/currency configuration through the CLI. Set the account timezone to
+Asia/Kolkata and company currency to INR in HubSpot settings.
 
 ## Backfill
 

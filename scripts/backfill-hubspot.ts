@@ -61,6 +61,10 @@ for (const enquiry of enquiries) {
   if (!execute) continue;
 
   try {
+    const createdAt = new Date(enquiry.created_at);
+    const ageMs = Date.now() - createdAt.getTime();
+    const createFollowUpTasks =
+      Number.isFinite(ageMs) && ageMs <= 14 * 24 * 60 * 60 * 1000;
     const result = await syncEnquiryToHubSpot({
       id: enquiry.id,
       fullName: enquiry.fullname,
@@ -74,6 +78,9 @@ for (const enquiry of enquiries) {
       preferences: enquiry.preferences || 'Historical enquiry',
       formSource: enquiry.source || 'historical-backfill',
       pagePath: enquiry.pagepath || '/',
+    }, {
+      createFollowUpTasks,
+      taskStartAt: new Date(),
     });
 
     const { error: updateError } = await supabase

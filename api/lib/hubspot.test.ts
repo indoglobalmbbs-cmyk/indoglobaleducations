@@ -34,8 +34,10 @@ afterEach(async () => {
 const startMockHubSpot = async ({
   failDealCreate = false,
   existingContact = false,
+  existingTasks = false,
 } = {}) => {
   const requests: Array<{ method?: string; url?: string; body: unknown }> = [];
+  let taskId = 0;
   const server = createServer((request, response) => {
     let rawBody = '';
     request.on('data', (chunk) => {
@@ -48,6 +50,27 @@ const startMockHubSpot = async ({
 
       if (request.url?.endsWith('/search')) {
         const isContactSearch = request.url.includes('/contacts/');
+        const isTaskSearch = request.url.includes('/tasks/');
+        if (isTaskSearch && existingTasks) {
+          response.end(
+            JSON.stringify({
+              total: 1,
+              results: [
+                {
+                  id: `task-existing-${++taskId}`,
+                  properties: {
+                    hs_task_subject:
+                      body.filterGroups?.[0]?.filters?.[0]?.value || '',
+                  },
+                  createdAt: new Date().toISOString(),
+                  updatedAt: new Date().toISOString(),
+                  archived: false,
+                },
+              ],
+            }),
+          );
+          return;
+        }
         response.end(
           JSON.stringify(
             isContactSearch && existingContact
@@ -71,6 +94,22 @@ const startMockHubSpot = async ({
                 }
               : { total: 0, results: [] },
           ),
+        );
+        return;
+      }
+      if (
+        request.method === 'POST' &&
+        request.url === '/crm/v3/objects/tasks'
+      ) {
+        response.statusCode = 201;
+        response.end(
+          JSON.stringify({
+            id: `task-${++taskId}`,
+            properties: body.properties,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+            archived: false,
+          }),
         );
         return;
       }
@@ -160,6 +199,7 @@ test('creates an associated contact and admissions deal', async () => {
 
   assert.equal(result.contactId, 'contact-1');
   assert.equal(result.dealId, 'deal-1');
+  assert.equal(result.taskIds.length, 8);
   const dealRequest = mock.requests.find(
     (request) =>
       request.method === 'POST' && request.url === '/crm/v3/objects/deals',
@@ -174,8 +214,27 @@ test('creates an associated contact and admissions deal', async () => {
   };
   assert.equal(body.properties.indoglobal_preferred_country, 'Russia');
   assert.equal(body.properties.indoglobal_form_source, 'compact');
+  assert.equal(body.properties.hubspot_owner_id, '93911131');
+  assert.equal(body.properties.deal_currency_code, 'INR');
   assert.equal(body.associations[0].to.id, 'contact-1');
   assert.equal(body.associations[0].types[0].associationTypeId, 3);
+  const taskRequests = mock.requests.filter(
+    (request) =>
+      request.method === 'POST' && request.url === '/crm/v3/objects/tasks',
+  );
+  assert.equal(taskRequests.length, 8);
+  const firstTask = taskRequests[0].body as {
+    properties: Record<string, string>;
+    associations: Array<{
+      to: { id: string };
+      types: Array<{ associationTypeId: number }>;
+    }>;
+  };
+  assert.equal(firstTask.properties.hs_task_type, 'CALL');
+  assert.deepEqual(
+    firstTask.associations.map((association) => association.types[0].associationTypeId),
+    [204, 216],
+  );
 });
 
 test('removes a newly created contact when deal creation fails', async () => {
@@ -197,6 +256,40 @@ test('removes a newly created contact when deal creation fails', async () => {
         request.url === '/crm/v3/objects/contacts/contact-1',
     ),
   );
+});
+
+test('does not duplicate an existing follow-up task sequence', async () => {
+  const mock = await startMockHubSpot({ existingTasks: true });
+  const result = await syncEnquiryToHubSpot(enquiry, {
+    accessToken: 'test-token',
+    pipelineId: 'admissions',
+    stageId: 'new-lead',
+    basePath: mock.basePath,
+  });
+
+  assert.equal(result.taskIds.length, 8);
+  assert.equal(result.tasksCreated, false);
+  assert.equal(
+    mock.requests.some(
+      (request) =>
+        request.method === 'POST' && request.url === '/crm/v3/objects/tasks',
+    ),
+    false,
+  );
+});
+
+test('can backfill a lead without creating stale follow-up tasks', async () => {
+  const mock = await startMockHubSpot();
+  const result = await syncEnquiryToHubSpot(enquiry, {
+    accessToken: 'test-token',
+    pipelineId: 'admissions',
+    stageId: 'new-lead',
+    createFollowUpTasks: false,
+    basePath: mock.basePath,
+  });
+
+  assert.deepEqual(result.taskIds, []);
+  assert.equal(result.tasksCreated, false);
 });
 
 test('updates an existing contact without creating a duplicate', async () => {

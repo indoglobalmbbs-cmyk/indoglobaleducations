@@ -11,6 +11,7 @@ try {
 const accessToken = process.env.HUBSPOT_ACCESS_TOKEN;
 const pipelineId = process.env.HUBSPOT_PIPELINE_ID;
 const stageId = process.env.HUBSPOT_NEW_LEAD_STAGE_ID;
+const ownerId = process.env.HUBSPOT_OWNER_ID || '93911131';
 
 const missing = [
   !accessToken && 'HUBSPOT_ACCESS_TOKEN',
@@ -24,7 +25,7 @@ if (missing.length) {
 
 const client = new Client({ accessToken });
 
-const [pipeline, contactProperties, dealProperties] = await Promise.all([
+const [pipeline, contactProperties, dealProperties, owner] = await Promise.all([
   client.crm.pipelines.pipelinesApi.getById('deals', pipelineId),
   Promise.all(
     Object.values(HUBSPOT_PROPERTIES.contact).map((property) =>
@@ -36,6 +37,7 @@ const [pipeline, contactProperties, dealProperties] = await Promise.all([
       client.crm.properties.coreApi.getByName('deals', property),
     ),
   ),
+  client.crm.owners.ownersApi.getById(Number(ownerId)),
 ]);
 
 const newLeadStage = pipeline.stages.find((stage) => stage.id === stageId);
@@ -50,3 +52,8 @@ console.log(`Pipeline: ${pipeline.label} (${pipeline.id})`);
 console.log(`New lead stage: ${newLeadStage.label} (${newLeadStage.id})`);
 console.log(`Contact properties: ${contactProperties.length}`);
 console.log(`Deal properties: ${dealProperties.length}`);
+console.log(`Default owner: ${owner.firstName} ${owner.lastName} (${owner.id})`);
+console.log(
+  `Deal currency: ${process.env.HUBSPOT_DEAL_CURRENCY || 'INR'}`,
+);
+console.log('Task API: configured for live verification during enquiry sync.');

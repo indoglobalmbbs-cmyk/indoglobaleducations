@@ -85,10 +85,22 @@ import AvicennaBatumiMedicalUniversity from '../pages/university/georgiaUniversi
 import DavidAghmashenebeliUniversityOfGeorgia from '../pages/university/georgiaUniversities/DavidAghmashenebeliUniversityofGeorgia';
 import AkakiTsereteliStateUniversity from '../pages/university/georgiaUniversities/AkakiTsereteliStateUniversity';
 
+import LucianBlagaUniversityofSibiu from '../pages/university/romaniaUniversities/LucianBlagaUniversityofSibiu';
+import UniversityofOradea from '../pages/university/romaniaUniversities/UniversityofOradea';
+import DunareadeJosUniversityofGalati from '../pages/university/romaniaUniversities/DunareadeJosUniversityofGalati';
+import OvidiusUniversityofConstanta from '../pages/university/romaniaUniversities/OvidiusUniversityofConstanta';
+import VictorBabesUniversityofMedicineandPharmacy from '../pages/university/romaniaUniversities/VictorBabesUniversityofMedicineandPharmacy';
+import GrigoreTPopaUniversityofMedicineandPharmacy from '../pages/university/romaniaUniversities/GrigoreTPopaUniversityofMedicineandPharmacy';
+import UniversityofMedicineandPharmacyofCraiova from '../pages/university/romaniaUniversities/UniversityofMedicineandPharmacyofCraiova';
+import VasileGoldisWesternUniversityofArad from '../pages/university/romaniaUniversities/VasileGoldisWesternUniversityofArad';
+import CarolDavilaUniversityofMedicineandPharmacy from '../pages/university/romaniaUniversities/CarolDavilaUniversityofMedicineandPharmacy';
+import IuliuHatieganuUniversityofMedicineandPharmacy from '../pages/university/romaniaUniversities/IuliuHatieganuUniversityofMedicineandPharmacy';
+
 import India from '../pages/countries/india/India';
 import Russia from '../pages/countries/russia/Russia';
 import Armenia from '../pages/countries/armenia/Armenia';
 import Georgia from '../pages/countries/georgia/Georgia';
+import Romania from '../pages/countries/romania/Romania';
 import Blog from '../pages/blog/Blog';
 import News from '../pages/news/News';
 import Faqs from '../pages/faqs/Faqs';
@@ -432,10 +444,52 @@ const MainRoutes = createBrowserRouter([
         element: <AkakiTsereteliStateUniversity />,
       },
 
+      {
+        path: 'mbbs-in-romania/lucian-blaga-university-of-sibiu',
+        element: <LucianBlagaUniversityofSibiu />,
+      },
+      {
+        path: 'mbbs-in-romania/university-of-oradea',
+        element: <UniversityofOradea />,
+      },
+      {
+        path: 'mbbs-in-romania/dunarea-de-jos-university-of-galati',
+        element: <DunareadeJosUniversityofGalati />,
+      },
+      {
+        path: 'mbbs-in-romania/ovidius-university-of-constanta',
+        element: <OvidiusUniversityofConstanta />,
+      },
+      {
+        path: 'mbbs-in-romania/victor-babes-university-of-medicine-and-pharmacy',
+        element: <VictorBabesUniversityofMedicineandPharmacy />,
+      },
+      {
+        path: 'mbbs-in-romania/grigore-t-Popa-university-of-medicine-and-pharmacy',
+        element: <GrigoreTPopaUniversityofMedicineandPharmacy />,
+      },
+      {
+        path: 'mbbs-in-romania/university-of-medicine-and-pharmacy-of-craiova',
+        element: <UniversityofMedicineandPharmacyofCraiova />,
+      },
+      {
+        path: 'mbbs-in-romania/vasile-goldis-western-university-of-arad',
+        element: <VasileGoldisWesternUniversityofArad />,
+      },
+      {
+        path: 'mbbs-in-romania/carol-davila-university-of-medicine-and-pharmacy',
+        element: <CarolDavilaUniversityofMedicineandPharmacy />,
+      },
+      {
+        path: 'mbbs-in-romania/iuliu-hatieganu-university-of-medicine-and-pharmacy',
+        element: <IuliuHatieganuUniversityofMedicineandPharmacy />,
+      },
+
       { path: 'mbbs-in-india', element: <India /> },
       { path: 'mbbs-in-russia', element: <Russia /> },
       { path: 'mbbs-in-armenia', element: <Armenia /> },
       { path: 'mbbs-in-georgia', element: <Georgia /> },
+      { path: 'mbbs-in-romania', element: <Romania /> },
       { path: 'blog', element: <Blog /> },
       { path: 'news', element: <News /> },
       { path: 'faqs', element: <Faqs /> },

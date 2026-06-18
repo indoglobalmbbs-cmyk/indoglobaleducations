@@ -120,6 +120,17 @@ import avicennabatumimedicaluniversity from './georgia/avicennabatumimedicaluniv
 import davidaghmashenebeliuniversityofgeorgia from './georgia/davidaghmashenebeliuniversityofgeorgia.jpg';
 import akakitseretelistateuniversity from './georgia/akakitseretelistateuniversity.jpg';
 
+import lucianblagauniversityofsibiu from './romania/lucianblagauniversityofsibiu.jpg';
+import universityoforadea from './romania/universityoforadea.jpg';
+import dunareadejosuniversityofgalati from './romania/dunareadejosuniversityofgalati.jpg';
+import ovidiusuniversityofconstanta from './romania/ovidiusuniversityofconstanta.jpg';
+import victorbabesuniversityofmedicineandpharmacy from './romania/victorbabesuniversityofmedicineandpharmacy.jpg';
+import grigoretPopauniversityofmedicineandpharmacy from './romania/grigoretPopauniversityofmedicineandpharmacy.jpg';
+import universityofmedicineandpharmacyofcraiova from './romania/universityofmedicineandpharmacyofcraiova.jpg';
+import vasilegoldiswesternuniversityofarad from './romania/vasilegoldiswesternuniversityofarad.jpg';
+import caroldavilauniversityofmedicineandpharmacy from './romania/caroldavilauniversityofmedicineandpharmacy.jpg';
+import iuliuhatieganuuniversityofmedicineandpharmacy from './romania/iuliuhatieganuuniversityofmedicineandpharmacy.jpg';
+
 export {
   logo,
   about,
@@ -238,4 +249,14 @@ export {
   avicennabatumimedicaluniversity,
   davidaghmashenebeliuniversityofgeorgia,
   akakitseretelistateuniversity,
+  lucianblagauniversityofsibiu,
+  universityoforadea,
+  dunareadejosuniversityofgalati,
+  ovidiusuniversityofconstanta,
+  victorbabesuniversityofmedicineandpharmacy,
+  grigoretPopauniversityofmedicineandpharmacy,
+  universityofmedicineandpharmacyofcraiova,
+  vasilegoldiswesternuniversityofarad,
+  caroldavilauniversityofmedicineandpharmacy,
+  iuliuhatieganuuniversityofmedicineandpharmacy,
 };

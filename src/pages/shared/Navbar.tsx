@@ -14,6 +14,7 @@ import { russiaUniversities } from '../../data/russiaUniversities';
 import { armeniaUniversities } from '../../data/armeniaUniversities';
 import { georgiaUniversities } from '../../data/georgiaUniversities';
 import { romaniaUniversities } from '../../data/romaniaUniversities';
+import { kazakhstanUniversities } from '../../data/kazakhstanUniversities';
 
 const isTestSpriteE2E = import.meta.env.VITE_TESTSPRITE_E2E === 'true';
 
@@ -26,6 +27,7 @@ const Navbar = () => {
   const [isArmeniaOpen, setIsArmeniaOpen] = useState(false);
   const [isGeorgiaOpen, setIsGeorgiaOpen] = useState(false);
   const [isRomaniaOpen, setIsRomaniaOpen] = useState(false);
+  const [isKazakhstanOpen, setIsKazakhstanOpen] = useState(false);
   const [isCountriesOpen, setIsCountriesOpen] = useState(false);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
@@ -35,6 +37,8 @@ const Navbar = () => {
     if (location.pathname === '/mbbs-in-armenia') return 'MBBS in Armenia';
     if (location.pathname === '/mbbs-in-georgia') return 'MBBS in Georgia';
     if (location.pathname === '/mbbs-in-romania') return 'MBBS in Romania';
+    if (location.pathname === '/mbbs-in-kazakhstan')
+      return 'MBBS in Kazakhstan';
     return null;
   };
 
@@ -48,6 +52,7 @@ const Navbar = () => {
     setIsArmeniaOpen(false);
     setIsGeorgiaOpen(false);
     setIsRomaniaOpen(false);
+    setIsKazakhstanOpen(false);
     setIsCountriesOpen(false);
     setIsGalleryOpen(false);
   };
@@ -326,6 +331,33 @@ const Navbar = () => {
                   onItemClick={closeAllMenus}
                 />
               </li>
+
+              <li
+                className="relative group/kazakhstan"
+                onMouseEnter={() => setIsKazakhstanOpen(true)}
+                onMouseLeave={() => setIsKazakhstanOpen(false)}
+              >
+                <button
+                  type="button"
+                  onClick={() => setIsKazakhstanOpen(!isKazakhstanOpen)}
+                  className="relative group/item w-full block px-4 py-2 hover:bg-primary hover:text-accent transition-colors flex items-center justify-between rounded-b-lg"
+                >
+                  <span className="relative z-10 text-left">
+                    Universities of Kazakhstan
+                  </span>
+                  <FaChevronDown
+                    className={`text-md transition-transform duration-200 ${
+                      isKazakhstanOpen ? '-rotate-90' : 'rotate-0'
+                    }`}
+                  />
+                  <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
+                </button>
+                <Submenu
+                  items={kazakhstanUniversities}
+                  isOpen={isKazakhstanOpen}
+                  onItemClick={closeAllMenus}
+                />
+              </li>
             </ul>
           </li>
           <li
@@ -420,6 +452,19 @@ const Navbar = () => {
                   className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
                 >
                   <span className="relative z-10">MBBS In Romania</span>
+                  <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/mbbs-in-kazakhstan"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsCountriesOpen(false);
+                  }}
+                  className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
+                >
+                  <span className="relative z-10">MBBS In Kazakhstan</span>
                   <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
                 </Link>
               </li>

@@ -131,6 +131,16 @@ import vasilegoldiswesternuniversityofarad from './romania/vasilegoldiswesternun
 import caroldavilauniversityofmedicineandpharmacy from './romania/caroldavilauniversityofmedicineandpharmacy.jpg';
 import iuliuhatieganuuniversityofmedicineandpharmacy from './romania/iuliuhatieganuuniversityofmedicineandpharmacy.jpg';
 
+import alfarabikazakhnationaluniversity from './kazakhstan/alfarabikazakhnationaluniversity.jpg';
+import bishkekinternationalmedicalinstitute from './kazakhstan/bishkekinternationalmedicalinstitute.jpg';
+import kazakhnationalmedicaluniversity from './kazakhstan/kazakhnationalmedicaluniversity.jpg';
+import semeymedicaluniversity from './kazakhstan/semeymedicaluniversity.jpg';
+import southkazakhmedicalacademy from './kazakhstan/southkazakhmedicalacademy.jpg';
+import kokshetaustateuniversity from './kazakhstan/kokshetaustateuniversity.jpg';
+import westkazakhstanmaratospanovstatemedicaluniversity from './kazakhstan/westkazakhstanmaratospanovstatemedicaluniversity.jpg';
+import kazakhrussianmedicaluniversity from './kazakhstan/kazakhrussianmedicaluniversity.jpg';
+import caspianuniversity from './kazakhstan/caspianuniversity.jpg';
+
 export {
   logo,
   about,
@@ -259,4 +269,13 @@ export {
   vasilegoldiswesternuniversityofarad,
   caroldavilauniversityofmedicineandpharmacy,
   iuliuhatieganuuniversityofmedicineandpharmacy,
+  alfarabikazakhnationaluniversity,
+  bishkekinternationalmedicalinstitute,
+  kazakhnationalmedicaluniversity,
+  semeymedicaluniversity,
+  southkazakhmedicalacademy,
+  kokshetaustateuniversity,
+  westkazakhstanmaratospanovstatemedicaluniversity,
+  kazakhrussianmedicaluniversity,
+  caspianuniversity,
 };

@@ -96,11 +96,22 @@ import VasileGoldisWesternUniversityofArad from '../pages/university/romaniaUniv
 import CarolDavilaUniversityofMedicineandPharmacy from '../pages/university/romaniaUniversities/CarolDavilaUniversityofMedicineandPharmacy';
 import IuliuHatieganuUniversityofMedicineandPharmacy from '../pages/university/romaniaUniversities/IuliuHatieganuUniversityofMedicineandPharmacy';
 
+import AlFarabiKazakhNationalUniversity from '../pages/university/kazakhstan/AlFarabiKazakhNationalUniversity';
+import BishkekInternationalMedicalInstitute from '../pages/university/kazakhstan/BishkekInternationalMedicalInstitute';
+import KazakhNationalMedicalUniversity from '../pages/university/kazakhstan/KazakhNationalMedicalUniversity';
+import SemeyMedicalUniversity from '../pages/university/kazakhstan/SemeyMedicalUniversity';
+import SouthKazakhMedicalAcademy from '../pages/university/kazakhstan/SouthKazakhMedicalAcademy';
+import KokshetauStateUniversity from '../pages/university/kazakhstan/KokshetauStateUniversity';
+import WestKazakhstanMaratOspanovStateMedicalUniversity from '../pages/university/kazakhstan/WestKazakhstanMaratOspanovStateMedicalUniversity';
+import KazakhRussianMedicalUniversity from '../pages/university/kazakhstan/KazakhRussianMedicalUniversity';
+import CaspianUniversity from '../pages/university/kazakhstan/CaspianUniversity';
+
 import India from '../pages/countries/india/India';
 import Russia from '../pages/countries/russia/Russia';
 import Armenia from '../pages/countries/armenia/Armenia';
 import Georgia from '../pages/countries/georgia/Georgia';
 import Romania from '../pages/countries/romania/Romania';
+import Kazakhstan from '../pages/countries/kazakhstan/Kazakhstan';
 import Blog from '../pages/blog/Blog';
 import News from '../pages/news/News';
 import Faqs from '../pages/faqs/Faqs';
@@ -485,11 +496,49 @@ const MainRoutes = createBrowserRouter([
         element: <IuliuHatieganuUniversityofMedicineandPharmacy />,
       },
 
+      {
+        path: 'mbbs-in-kazakhstan/al-farabi-kazakh-national-university',
+        element: <AlFarabiKazakhNationalUniversity />,
+      },
+      {
+        path: 'mbbs-in-kazakhstan/bishkek-international-medical-institute',
+        element: <BishkekInternationalMedicalInstitute />,
+      },
+      {
+        path: 'mbbs-in-kazakhstan/kazakh-national-medical-university',
+        element: <KazakhNationalMedicalUniversity />,
+      },
+      {
+        path: 'mbbs-in-kazakhstan/semey-medical-university',
+        element: <SemeyMedicalUniversity />,
+      },
+      {
+        path: 'mbbs-in-kazakhstan/south-kazakh-medical-academy',
+        element: <SouthKazakhMedicalAcademy />,
+      },
+      {
+        path: 'mbbs-in-kazakhstan/kokshetau-state-university',
+        element: <KokshetauStateUniversity />,
+      },
+      {
+        path: 'mbbs-in-kazakhstan/west-kazakhstan-marat-ospanov-state-medical-university',
+        element: <WestKazakhstanMaratOspanovStateMedicalUniversity />,
+      },
+      {
+        path: 'mbbs-in-kazakhstan/kazakh-russian-medical-university',
+        element: <KazakhRussianMedicalUniversity />,
+      },
+      {
+        path: 'mbbs-in-kazakhstan/caspian-university',
+        element: <CaspianUniversity />,
+      },
+
       { path: 'mbbs-in-india', element: <India /> },
       { path: 'mbbs-in-russia', element: <Russia /> },
       { path: 'mbbs-in-armenia', element: <Armenia /> },
       { path: 'mbbs-in-georgia', element: <Georgia /> },
       { path: 'mbbs-in-romania', element: <Romania /> },
+      { path: 'mbbs-in-kazakhstan', element: <Kazakhstan /> },
       { path: 'blog', element: <Blog /> },
       { path: 'news', element: <News /> },
       { path: 'faqs', element: <Faqs /> },

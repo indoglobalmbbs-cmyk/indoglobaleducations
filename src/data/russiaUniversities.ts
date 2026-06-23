@@ -278,4 +278,54 @@ export const russiaUniversities = [
     path: '/mbbs-in-russia/izhevsk-state-medical-academy',
     image: izhevskstatemedicalacademy,
   },
+  // {
+  //   label: 'Amur State Medical University',
+  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
+  //   image: izhevskstatemedicalacademy,
+  // },
+  // {
+  //   label: 'Buryat State University',
+  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
+  //   image: izhevskstatemedicalacademy,
+  // },
+  // {
+  //   label: 'Ivanovo State Medical University',
+  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
+  //   image: izhevskstatemedicalacademy,
+  // },
+  // {
+  //   label: 'Irkutsk State Medical University',
+  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
+  //   image: izhevskstatemedicalacademy,
+  // },
+  // {
+  //   label: 'Lobachevsky University',
+  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
+  //   image: izhevskstatemedicalacademy,
+  // },
+  // {
+  //   label: 'MEPhI Moscow',
+  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
+  //   image: izhevskstatemedicalacademy,
+  // },
+  // {
+  //   label: 'North-Western State Medical University',
+  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
+  //   image: izhevskstatemedicalacademy,
+  // },
+  // {
+  //   label: 'Novosibirsk State University',
+  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
+  //   image: izhevskstatemedicalacademy,
+  // },
+  // {
+  //   label: 'N. P. Ogarev Mordovia State University',
+  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
+  //   image: izhevskstatemedicalacademy,
+  // },
+  // {
+  //   label: 'Pacific State Medical University',
+  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
+  //   image: izhevskstatemedicalacademy,
+  // },
 ];

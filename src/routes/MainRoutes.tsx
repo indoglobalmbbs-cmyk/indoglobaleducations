@@ -106,12 +106,16 @@ import WestKazakhstanMaratOspanovStateMedicalUniversity from '../pages/universit
 import KazakhRussianMedicalUniversity from '../pages/university/kazakhstan/KazakhRussianMedicalUniversity';
 import CaspianUniversity from '../pages/university/kazakhstan/CaspianUniversity';
 
+import UniversityOfBanjaLuka from '../pages/university/bosniaAndHerzegovina/UniversityOfBanjaLuka';
+import UniversityOfEastSarajevo from '../pages/university/bosniaAndHerzegovina/UniversityOfEastSarajevo';
+
 import India from '../pages/countries/india/India';
 import Russia from '../pages/countries/russia/Russia';
 import Armenia from '../pages/countries/armenia/Armenia';
 import Georgia from '../pages/countries/georgia/Georgia';
 import Romania from '../pages/countries/romania/Romania';
 import Kazakhstan from '../pages/countries/kazakhstan/Kazakhstan';
+import BosniaAndHerzegovina from '../pages/countries/bosniaAndHerzegovina/BosniaAndHerzegovina';
 import Blog from '../pages/blog/Blog';
 import News from '../pages/news/News';
 import Faqs from '../pages/faqs/Faqs';
@@ -533,12 +537,25 @@ const MainRoutes = createBrowserRouter([
         element: <CaspianUniversity />,
       },
 
+      {
+        path: 'mbbs-in-bosnia-and-herzegovina/university-of-banja-luka',
+        element: <UniversityOfBanjaLuka />,
+      },
+      {
+        path: 'mbbs-in-bosnia-and-herzegovina/university-of-east-sarajevo',
+        element: <UniversityOfEastSarajevo />,
+      },
+
       { path: 'mbbs-in-india', element: <India /> },
       { path: 'mbbs-in-russia', element: <Russia /> },
       { path: 'mbbs-in-armenia', element: <Armenia /> },
       { path: 'mbbs-in-georgia', element: <Georgia /> },
       { path: 'mbbs-in-romania', element: <Romania /> },
       { path: 'mbbs-in-kazakhstan', element: <Kazakhstan /> },
+      {
+        path: 'mbbs-in-bosnia-and-herzegovina',
+        element: <BosniaAndHerzegovina />,
+      },
       { path: 'blog', element: <Blog /> },
       { path: 'news', element: <News /> },
       { path: 'faqs', element: <Faqs /> },

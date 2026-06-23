@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { kazakhstanUniversities } from '../../../data/kazakhstanUniversities';
+import { bosniaAndHerzegovina } from '../../../data/bosniaAndHerzegovina';
 import { Link } from 'react-router-dom';
 import {
   FaGraduationCap,
@@ -32,19 +32,19 @@ import { armeniaSyllabus } from '../../../data/armeniaSyllabus';
 import { armeniaChallenges } from '../../../data/armeniaChallenges';
 import { armeniaCareerPaths } from '../../../data/armeniaCareerPaths';
 
-const Kazakhstan = () => {
+const BosniaAndHerzegovina = () => {
   const [showAll, setShowAll] = useState(false);
   const visibleUniversities = showAll
-    ? kazakhstanUniversities
-    : kazakhstanUniversities.slice(0, 6);
+    ? bosniaAndHerzegovina
+    : bosniaAndHerzegovina.slice(0, 6);
 
   const galleryImages = [
-    { src: banner1, title: 'MBBS University Campus in Kazakhstan' },
-    { src: banner2, title: 'Modern Medical Classrooms Kazakhstan' },
-    { src: banner3, title: 'Indian Student Life in Kazakhstan' },
+    { src: banner1, title: 'MBBS University Campus in Bosnia And Herzegovina' },
+    { src: banner2, title: 'Modern Medical Classrooms Bosnia And Herzegovina' },
+    { src: banner3, title: 'Indian Student Life in Bosnia And Herzegovina' },
     { src: banner4, title: 'Clinical Training for MBBS Students' },
-    { src: banner5, title: 'Student Hostel Facilities Kazakhstan' },
-    { src: banner6, title: 'MBBS Graduation Ceremony Kazakhstan' },
+    { src: banner5, title: 'Student Hostel Facilities Bosnia And Herzegovina' },
+    { src: banner6, title: 'MBBS Graduation Ceremony Bosnia And Herzegovina' },
   ];
 
   return (
@@ -52,17 +52,17 @@ const Kazakhstan = () => {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img
           src={mbbsRussia}
-          alt="Study MBBS in Kazakhstan - Indo Global Education"
+          alt="Study MBBS in Bosnia And Herzegovina - Indo Global Education"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
         <div className="relative z-10 container mx-auto px-6 text-white">
           <div className="text-5xl font-bold mb-4 animate-fade-in">
-            MBBS IN Kazakhstan
+            MBBS IN Bosnia And Herzegovina
           </div>
           <p className="text-xl max-w-2xl text-gray-200">
-            Indo Global Education - MBBS in Kazakhstan
+            Indo Global Education - MBBS in Bosnia And Herzegovina
           </p>
         </div>
       </section>
@@ -85,7 +85,7 @@ const Kazakhstan = () => {
           <div className="lg:w-2/3">
             <div className="mb-10 text-left">
               <div className="text-3xl font-bold text-primary mb-4">
-                Why Choose MBBS in Kazakhstan?
+                Why Choose MBBS in Bosnia And Herzegovina?
               </div>
               <div className="h-1.5 w-20 bg-accent rounded-full"></div>
             </div>
@@ -125,7 +125,8 @@ const Kazakhstan = () => {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="md:w-1/2">
             <div className="text-3xl font-bold text-primary mb-6">
-              MBBS in Kazakhstan Fee for Indian Students (Updated 2026-27)
+              MBBS in Bosnia And Herzegovina Fee for Indian Students (Updated
+              2026-27)
             </div>
             <ul className="space-y-4 text-gray-700">
               <li className="flex items-start gap-3">
@@ -174,7 +175,7 @@ const Kazakhstan = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <div className="text-3xl font-bold text-primary mb-2">
-              Top Universities in Kazakhstan
+              Top Universities in Bosnia And Herzegovina
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
           </div>
@@ -196,7 +197,7 @@ const Kazakhstan = () => {
                     {uni.label}
                   </h3>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                    {'Kazakhstan, Eastern Europe'}
+                    {'Bosnia And Herzegovina, Eastern Europe'}
                   </p>
                   <Link
                     to={uni.path}
@@ -208,7 +209,7 @@ const Kazakhstan = () => {
               </div>
             ))}
           </div>
-          {kazakhstanUniversities.length > 6 && (
+          {bosniaAndHerzegovina.length > 6 && (
             <div className="text-center mt-12">
               <button
                 onClick={() => setShowAll(!showAll)}
@@ -224,20 +225,20 @@ const Kazakhstan = () => {
         <div className="container mx-auto px-6">
           <div className="mb-10">
             <div className="text-3xl font-bold text-primary mb-4">
-              Study MBBS in Kazakhstan for Indian Students 2024-25
+              Study MBBS in Bosnia And Herzegovina for Indian Students 2024-25
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  MBBS in Kazakhstan is a popular option for medical students from
+                  MBBS in Bosnia And Herzegovina is a popular option for medical students from
                   India and abroad due to its
                   <span className="font-semibold text-primary">
                     {' '}
                     simple admission process
                   </span>
                   , high academic standards, and affordable fees. With 30 of the
-                  world’s top 100 medical universities, Kazakhstan offers excellent
+                  world’s top 100 medical universities, Bosnia And Herzegovina offers excellent
                   educational opportunities.
                 </p>
                 <p>
@@ -291,7 +292,7 @@ const Kazakhstan = () => {
                       <td className="p-4 font-bold text-primary">
                         Medium of Instruction
                       </td>
-                      <td className="p-4 text-gray-600">English & Kazakhstan</td>
+                      <td className="p-4 text-gray-600">English & Bosnia And Herzegovina</td>
                     </tr>
                     <tr>
                       <td className="p-4 font-bold text-primary">
@@ -312,10 +313,10 @@ const Kazakhstan = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <div className="text-3xl font-bold text-primary mb-4">
-              Why Study MBBS in Kazakhstan?
+              Why Study MBBS in Bosnia And Herzegovina?
             </div>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Many students from India and other countries choose Kazakhstan for
+              Many students from India and other countries choose Bosnia And Herzegovina for
               their MBBS studies due to its high academic standards and unique
               advantages.
             </p>
@@ -352,7 +353,7 @@ const Kazakhstan = () => {
                 </div>
               </div>
               <p className="text-text-muted mb-4">
-                The MBBS program in Kazakhstan lasts for <strong>6 years</strong>.
+                The MBBS program in Bosnia And Herzegovina lasts for <strong>6 years</strong>.
               </p>
               <ul className="space-y-2 text-sm text-text-muted">
                 <li className="flex gap-2">
@@ -377,7 +378,7 @@ const Kazakhstan = () => {
                 international students.
               </p>
               <p className="text-sm text-text-muted italic">
-                Support for learning Kazakhstan is provided to help students
+                Support for learning Bosnia And Herzegovina is provided to help students
                 interact with patients during clinical training.
               </p>
             </div>
@@ -529,12 +530,12 @@ const Kazakhstan = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-12">
             <div className="text-3xl font-bold text-primary mb-4">
-              Top Medical Universities in Kazakhstan
+              Top Medical Universities in Bosnia And Herzegovina
             </div>
             <div className="h-1.5 w-20 bg-accent rounded-full mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {kazakhstanUniversities.map((uni, idx) => (
+            {bosniaAndHerzegovina.map((uni, idx) => (
               <div
                 key={idx}
                 className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm border-l-4 border-accent hover:shadow-md transition-shadow"
@@ -552,7 +553,7 @@ const Kazakhstan = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-12">
             <div className="text-3xl font-bold text-primary mb-4">
-              MBBS in Kazakhstan Fees Structure 2024-25
+              MBBS in Bosnia And Herzegovina Fees Structure 2024-25
             </div>
             <p className="text-gray-600">
               Detailed breakdown of tuition and accommodation costs for
@@ -614,7 +615,7 @@ const Kazakhstan = () => {
               General Guidelines for International Students
             </div>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Kazakhstan medical universities offer a blend of high academic
+              Bosnia And Herzegovina medical universities offer a blend of high academic
               standards and practical clinical exposure, making it a top
               destination for Indian students.
             </p>
@@ -645,7 +646,7 @@ const Kazakhstan = () => {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
               <div className="text-3xl font-bold text-primary mb-6">
-                Intake for MBBS in Kazakhstan
+                Intake for MBBS in Bosnia And Herzegovina
               </div>
               <div className="space-y-6">
                 <div className="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-primary">
@@ -673,7 +674,7 @@ const Kazakhstan = () => {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    'Bilingual medium of instruction (English & Kazakhstan)',
+                    'Bilingual medium of instruction (English & Bosnia And Herzegovina)',
                     'Focus on practical skill development and clinical research',
                     'Participation in international medical seminars and events',
                     'Adherence to the globally recognized Tertiary Education System',
@@ -698,7 +699,7 @@ const Kazakhstan = () => {
                   Research & Methodology
                 </h3>
                 <p className="text-blue-100 text-sm mb-6 leading-relaxed relative z-10">
-                  Kazakhstan medical universities are renowned for their
+                  Bosnia And Herzegovina medical universities are renowned for their
                   exceptional educational infrastructure. Experienced faculties
                   assist students in medical research endeavors, ensuring that
                   proper research methodologies are emphasized from the very
@@ -724,7 +725,7 @@ const Kazakhstan = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <div className="text-3xl font-bold text-primary mb-4">
-              MBBS Syllabus in Kazakhstan (6 Years)
+              MBBS Syllabus in Bosnia And Herzegovina (6 Years)
             </div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A comprehensive curriculum designed to meet global medical
@@ -767,7 +768,7 @@ const Kazakhstan = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-12">
             <div className="text-3xl font-bold text-primary mb-4">
-              Comparison: MBBS in Kazakhstan vs. MBBS in India
+              Comparison: MBBS in Bosnia And Herzegovina vs. MBBS in India
             </div>
             <p className="text-gray-600">
               Key differences to help you make an informed career choice.
@@ -782,7 +783,7 @@ const Kazakhstan = () => {
                     Features
                   </th>
                   <th className="p-5 font-bold uppercase text-sm tracking-wider text-center bg-primary-light/10">
-                    MBBS in Kazakhstan
+                    MBBS in Bosnia And Herzegovina
                   </th>
                   <th className="p-5 rounded-tr-xl font-bold uppercase text-sm tracking-wider text-center">
                     MBBS in India
@@ -817,7 +818,7 @@ const Kazakhstan = () => {
                     Cost & Subsidies
                   </td>
                   <td className="p-5 text-center text-success font-medium">
-                    Highly subsidized by the Kazakhstan Government.
+                    Highly subsidized by the Bosnia And Herzegovina Government.
                   </td>
                   <td className="p-5 text-center">
                     Generally expensive in private sectors; competitive in govt.
@@ -887,7 +888,7 @@ const Kazakhstan = () => {
                 Government Scholarships
               </h3>
               <p className="text-sm text-blue-100 mb-4">
-                The Kazakhstan Federation offers full-funded seats covering
+                The Bosnia And Herzegovina Federation offers full-funded seats covering
                 tuition, accommodation, and living stipends for top-tier
                 students.
               </p>
@@ -961,7 +962,7 @@ const Kazakhstan = () => {
                 </div>
                 <div className="mt-6 p-4 bg-red-50 rounded-lg border-l-4 border-red-500">
                   <p className="text-xs text-red-700 font-medium italic">
-                    Note: Kazakhstan PG degrees are currently not recognized in
+                    Note: Bosnia And Herzegovina PG degrees are currently not recognized in
                     India. Students are advised to return for NEXT or pursue PG
                     in the US/UK/Canada.
                   </p>
@@ -1026,7 +1027,7 @@ const Kazakhstan = () => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Life at Kazakhstan Medical Universities
+              Life at Bosnia And Herzegovina Medical Universities
             </div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               A glimpse into the world-class infrastructure and vibrant campus
@@ -1061,4 +1062,4 @@ const Kazakhstan = () => {
   );
 };
 
-export default Kazakhstan;
+export default BosniaAndHerzegovina;

@@ -141,6 +141,9 @@ import westkazakhstanmaratospanovstatemedicaluniversity from './kazakhstan/westk
 import kazakhrussianmedicaluniversity from './kazakhstan/kazakhrussianmedicaluniversity.jpg';
 import caspianuniversity from './kazakhstan/caspianuniversity.jpg';
 
+import universityofbanjaluka from './bosniaAndHerzegovina/universityofbanjaluka.jpg';
+import universityofeastsarajevo from './bosniaAndHerzegovina/universityofeastsarajevo.jpg';
+
 export {
   logo,
   about,
@@ -278,4 +281,6 @@ export {
   westkazakhstanmaratospanovstatemedicaluniversity,
   kazakhrussianmedicaluniversity,
   caspianuniversity,
+  universityofbanjaluka,
+  universityofeastsarajevo,
 };

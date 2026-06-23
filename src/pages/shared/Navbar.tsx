@@ -15,6 +15,7 @@ import { armeniaUniversities } from '../../data/armeniaUniversities';
 import { georgiaUniversities } from '../../data/georgiaUniversities';
 import { romaniaUniversities } from '../../data/romaniaUniversities';
 import { kazakhstanUniversities } from '../../data/kazakhstanUniversities';
+import { bosniaAndHerzegovina } from '../../data/bosniaAndHerzegovina';
 
 const isTestSpriteE2E = import.meta.env.VITE_TESTSPRITE_E2E === 'true';
 
@@ -28,6 +29,7 @@ const Navbar = () => {
   const [isGeorgiaOpen, setIsGeorgiaOpen] = useState(false);
   const [isRomaniaOpen, setIsRomaniaOpen] = useState(false);
   const [isKazakhstanOpen, setIsKazakhstanOpen] = useState(false);
+  const [isBosniaOpen, setIsBosniaOpen] = useState(false);
   const [isCountriesOpen, setIsCountriesOpen] = useState(false);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
@@ -39,6 +41,8 @@ const Navbar = () => {
     if (location.pathname === '/mbbs-in-romania') return 'MBBS in Romania';
     if (location.pathname === '/mbbs-in-kazakhstan')
       return 'MBBS in Kazakhstan';
+    if (location.pathname === '/mbbs-in-bosnia-and-herzegovina')
+      return 'MBBS in Bosnia And Herzegovina';
     return null;
   };
 
@@ -53,6 +57,7 @@ const Navbar = () => {
     setIsGeorgiaOpen(false);
     setIsRomaniaOpen(false);
     setIsKazakhstanOpen(false);
+    setIsBosniaOpen(false);
     setIsCountriesOpen(false);
     setIsGalleryOpen(false);
   };
@@ -331,7 +336,6 @@ const Navbar = () => {
                   onItemClick={closeAllMenus}
                 />
               </li>
-
               <li
                 className="relative group/kazakhstan"
                 onMouseEnter={() => setIsKazakhstanOpen(true)}
@@ -355,6 +359,32 @@ const Navbar = () => {
                 <Submenu
                   items={kazakhstanUniversities}
                   isOpen={isKazakhstanOpen}
+                  onItemClick={closeAllMenus}
+                />
+              </li>
+              <li
+                className="relative group/bosnia"
+                onMouseEnter={() => setIsBosniaOpen(true)}
+                onMouseLeave={() => setIsBosniaOpen(false)}
+              >
+                <button
+                  type="button"
+                  onClick={() => setIsBosniaOpen(!isBosniaOpen)}
+                  className="relative group/item w-full block px-4 py-2 hover:bg-primary hover:text-accent transition-colors flex items-center justify-between rounded-b-lg"
+                >
+                  <span className="relative z-10 text-left">
+                    Universities of Bosnia And Herzegovina
+                  </span>
+                  <FaChevronDown
+                    className={`text-md transition-transform duration-200 ${
+                      isBosniaOpen ? '-rotate-90' : 'rotate-0'
+                    }`}
+                  />
+                  <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
+                </button>
+                <Submenu
+                  items={bosniaAndHerzegovina}
+                  isOpen={isBosniaOpen}
                   onItemClick={closeAllMenus}
                 />
               </li>
@@ -382,7 +412,7 @@ const Navbar = () => {
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
             </button>
             <ul
-              className={`md:absolute left-0 mt-2 w-44 bg-primary-light text-primary rounded-lg shadow-lg overflow-hidden transition-all duration-200 ${
+              className={`md:absolute left-0 mt-2 w-max bg-primary-light text-primary rounded-lg shadow-lg overflow-hidden transition-all duration-200 ${
                 isCountriesOpen
                   ? 'block opacity-100'
                   : 'hidden md:block md:opacity-0 md:invisible'
@@ -465,6 +495,21 @@ const Navbar = () => {
                   className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
                 >
                   <span className="relative z-10">MBBS In Kazakhstan</span>
+                  <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/mbbs-in-bosnia-and-herzegovina"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsCountriesOpen(false);
+                  }}
+                  className="relative group/item block px-4 py-2 hover:bg-primary hover:text-accent transition-colors"
+                >
+                  <span className="relative z-10">
+                    MBBS In Bosnia And Herzegovina
+                  </span>
                   <span className="absolute left-4 bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover/item:w-[calc(100%-2rem)]"></span>
                 </Link>
               </li>

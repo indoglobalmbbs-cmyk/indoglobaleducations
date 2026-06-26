@@ -45,6 +45,19 @@ import {
   dagestanstatemedicaluniversity,
   pavlovfirstsaintpetersburgstatemedicaluniversity,
   izhevskstatemedicalacademy,
+  amurstatemedicalacademy,
+  buryatstateuniversity,
+  ivanovostatemedicalacademy,
+  irkutskstatemedicaluniversity,
+  nationalresearchnuclearuniversitymephi,
+  northwesternstatemedicaluniversity,
+  novosibirskstateuniversity,
+  npogarevmordoviastateuniversity,
+  pacificstatemedicaluniversity,
+  petrozavodskstateuniversity,
+  privolzhskyresearchmedicaluniversity,
+  rostovstatemedicaluniversity,
+  ryazanstatemedicaluniversity,
 } from '../assets/images';
 
 export const russiaUniversities = [
@@ -278,54 +291,69 @@ export const russiaUniversities = [
     path: '/mbbs-in-russia/izhevsk-state-medical-academy',
     image: izhevskstatemedicalacademy,
   },
-  // {
-  //   label: 'Amur State Medical University',
-  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
-  //   image: izhevskstatemedicalacademy,
-  // },
-  // {
-  //   label: 'Buryat State University',
-  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
-  //   image: izhevskstatemedicalacademy,
-  // },
-  // {
-  //   label: 'Ivanovo State Medical University',
-  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
-  //   image: izhevskstatemedicalacademy,
-  // },
-  // {
-  //   label: 'Irkutsk State Medical University',
-  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
-  //   image: izhevskstatemedicalacademy,
-  // },
-  // {
-  //   label: 'Lobachevsky University',
-  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
-  //   image: izhevskstatemedicalacademy,
-  // },
-  // {
-  //   label: 'MEPhI Moscow',
-  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
-  //   image: izhevskstatemedicalacademy,
-  // },
-  // {
-  //   label: 'North-Western State Medical University',
-  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
-  //   image: izhevskstatemedicalacademy,
-  // },
-  // {
-  //   label: 'Novosibirsk State University',
-  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
-  //   image: izhevskstatemedicalacademy,
-  // },
-  // {
-  //   label: 'N. P. Ogarev Mordovia State University',
-  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
-  //   image: izhevskstatemedicalacademy,
-  // },
-  // {
-  //   label: 'Pacific State Medical University',
-  //   path: '/mbbs-in-russia/izhevsk-state-medical-academy',
-  //   image: izhevskstatemedicalacademy,
-  // },
+  {
+    label: 'Amur State Medical Academy',
+    path: '/mbbs-in-russia/amur-state-medical-academy',
+    image: amurstatemedicalacademy,
+  },
+  {
+    label: 'Buryat State University',
+    path: '/mbbs-in-russia/buryat-state-university',
+    image: buryatstateuniversity,
+  },
+  {
+    label: 'Ivanovo State Medical Academy',
+    path: '/mbbs-in-russia/ivanovo-state-medical-academy',
+    image: ivanovostatemedicalacademy,
+  },
+  {
+    label: 'Irkutsk State Medical University',
+    path: '/mbbs-in-russia/irkutsk-state-medical-university',
+    image: irkutskstatemedicaluniversity,
+  },
+  {
+    label: 'National Research Nuclear University MEPhI',
+    path: '/mbbs-in-russia/national-research-nuclear-university-mephi',
+    image: nationalresearchnuclearuniversitymephi,
+  },
+  {
+    label: 'North Western State Medical University',
+    path: '/mbbs-in-russia/north-western-state-medical-university',
+    image: northwesternstatemedicaluniversity,
+  },
+  {
+    label: 'Novosibirsk State University',
+    path: '/mbbs-in-russia/novosibirsk-state-university',
+    image: novosibirskstateuniversity,
+  },
+  {
+    label: 'N. P. Ogarev Mordovia State University',
+    path: '/mbbs-in-russia/n-p-ogarev-mordovia-state-university',
+    image: npogarevmordoviastateuniversity,
+  },
+  {
+    label: 'Pacific State Medical University',
+    path: '/mbbs-in-russia/pacific-state-medical-university',
+    image: pacificstatemedicaluniversity,
+  },
+  {
+    label: 'Petrozavodsk State University',
+    path: '/mbbs-in-russia/petrozavodsk-state-university',
+    image: petrozavodskstateuniversity,
+  },
+  {
+    label: 'Privolzhsky Research Medical University',
+    path: '/mbbs-in-russia/privolzhsky-research-medical-university',
+    image: privolzhskyresearchmedicaluniversity,
+  },
+  {
+    label: 'Rostov State Medical University',
+    path: '/mbbs-in-russia/rostov-state-medical-university',
+    image: rostovstatemedicaluniversity,
+  },
+  {
+    label: 'Ryazan State Medical University',
+    path: '/mbbs-in-russia/ryazan-state-medical-university',
+    image: ryazanstatemedicaluniversity,
+  },
 ];

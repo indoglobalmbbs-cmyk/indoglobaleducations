@@ -1,12 +1,12 @@
 import logo from './indoGlobal.png';
 import about from './about.jpeg';
 import about1 from './about1.jpeg';
-import banner1 from './banner1.jpeg';
-import banner2 from './banner2.jpeg';
-import banner3 from './banner3.jpeg';
-import banner4 from './banner4.jpeg';
-import banner5 from './banner5.jpeg';
-import banner6 from './banner6.jpeg';
+import banner1 from './banner1.png';
+import banner2 from './banner2.png';
+import banner3 from './banner3.png';
+import banner4 from './banner4.png';
+import banner5 from './banner5.png';
+import banner6 from './banner6.png';
 import mbbsindia from './mbbsindia.png';
 import mbbsRussia from './mbbsRussia.png';
 import russia from './russia.jpeg';
@@ -88,6 +88,19 @@ import ryazanstateuniversity from './russia/ryazanstateuniversity.jpg';
 import dagestanstatemedicaluniversity from './russia/dagestanstatemedicaluniversity.jpg';
 import pavlovfirstsaintpetersburgstatemedicaluniversity from './russia/pavlovfirstsaintpetersburgstatemedicaluniversity.jpg';
 import izhevskstatemedicalacademy from './russia/izhevskstatemedicalacademy.jpg';
+import amurstatemedicalacademy from './russia/amurstatemedicalacademy.jpg';
+import buryatstateuniversity from './russia/buryatstateuniversity.jpeg';
+import ivanovostatemedicalacademy from './russia/ivanovostatemedicalacademy.jpg';
+import irkutskstatemedicaluniversity from './russia/irkutskstatemedicaluniversity.jpg';
+import nationalresearchnuclearuniversitymephi from './russia/nationalresearchnuclearuniversitymephi.jpg';
+import northwesternstatemedicaluniversity from './russia/northwesternstatemedicaluniversity.jpg';
+import novosibirskstateuniversity from './russia/novosibirskstateuniversity.jpg';
+import npogarevmordoviastateuniversity from './russia/npogarevmordoviastateuniversity.jpg';
+import pacificstatemedicaluniversity from './russia/pacificstatemedicaluniversity.jpg';
+import petrozavodskstateuniversity from './russia/petrozavodskstateuniversity.jpg';
+import privolzhskyresearchmedicaluniversity from './russia/privolzhskyresearchmedicaluniversity.jpg';
+import rostovstatemedicaluniversity from './russia/rostovstatemedicaluniversity.jpg';
+import ryazanstatemedicaluniversity from './russia/ryazanstatemedicaluniversity.jpg';
 
 import progressmedicaluniversity from './armenia/progressmedicaluniversity.jpg';
 import mkhitargosharmenianrussianinternationaluniversity from './armenia/mkhitargosharmenianrussianinternationaluniversity.jpg';
@@ -233,6 +246,19 @@ export {
   dagestanstatemedicaluniversity,
   pavlovfirstsaintpetersburgstatemedicaluniversity,
   izhevskstatemedicalacademy,
+  amurstatemedicalacademy,
+  buryatstateuniversity,
+  ivanovostatemedicalacademy,
+  irkutskstatemedicaluniversity,
+  nationalresearchnuclearuniversitymephi,
+  northwesternstatemedicaluniversity,
+  novosibirskstateuniversity,
+  npogarevmordoviastateuniversity,
+  pacificstatemedicaluniversity,
+  petrozavodskstateuniversity,
+  privolzhskyresearchmedicaluniversity,
+  rostovstatemedicaluniversity,
+  ryazanstatemedicaluniversity,
   progressmedicaluniversity,
   mkhitargosharmenianrussianinternationaluniversity,
   yerevanhaybusakuniversity,

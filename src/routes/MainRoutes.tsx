@@ -53,6 +53,19 @@ import RyazanStateUniversity from '../pages/university/russiaUniversities/Ryazan
 import DagestanStateMedicalUniversity from '../pages/university/russiaUniversities/DagestanStateMedicalUniversity';
 import PavlovFirstSaintPetersburgStateMedicalUniversity from '../pages/university/russiaUniversities/PavlovFirstSaintPetersburgStateMedicalUniversity';
 import IzhevskStateMedicalAcademy from '../pages/university/russiaUniversities/IzhevskStateMedicalAcademy';
+import AmurStateMedicalAcademy from '../pages/university/russiaUniversities/AmurStateMedicalAcademy';
+import BuryatStateUniversity from '../pages/university/russiaUniversities/BuryatStateUniversity';
+import IvanovoStateMedicalAcademy from '../pages/university/russiaUniversities/IvanovoStateMedicalAcademy';
+import IrkutskStateMedicalUniversity from '../pages/university/russiaUniversities/IrkutskStateMedicalUniversity';
+import NationalResearchNuclearUniversityMEPhI from '../pages/university/russiaUniversities/NationalResearchNuclearUniversityMEPhI';
+import NorthWesternStateMedicalUniversity from '../pages/university/russiaUniversities/NorthWesternStateMedicalUniversity';
+import NovosibirskStateUniversity from '../pages/university/russiaUniversities/NovosibirskStateUniversity';
+import NPOgarevMordoviaStateUniversity from '../pages/university/russiaUniversities/NPOgarevMordoviaStateUniversity';
+import PacificStateMedicalUniversity from '../pages/university/russiaUniversities/PacificStateMedicalUniversity';
+import PetrozavodskStateUniversity from '../pages/university/russiaUniversities/PetrozavodskStateUniversity';
+import PrivolzhskyResearchMedicalUniversity from '../pages/university/russiaUniversities/PrivolzhskyResearchMedicalUniversity';
+import RostovStateMedicalUniversity from '../pages/university/russiaUniversities/RostovStateMedicalUniversity';
+import RyazanStateMedicalUniversity from '../pages/university/russiaUniversities/RyazanStateMedicalUniversity';
 
 import ProgressMedicalUniversity from '../pages/university/armeniaUniversities/ProgressMedicalUniversity';
 import MkhitarGoshArmenianRussianInternationalUniversity from '../pages/university/armeniaUniversities/MkhitarGoshArmenianRussianInternationalUniversity';
@@ -339,6 +352,58 @@ const MainRoutes = createBrowserRouter([
       {
         path: 'mbbs-in-russia/izhevsk-state-medical-academy',
         element: <IzhevskStateMedicalAcademy />,
+      },
+      {
+        path: 'mbbs-in-russia/amur-state-medical-academy',
+        element: <AmurStateMedicalAcademy />,
+      },
+      {
+        path: 'mbbs-in-russia/buryat-state-university',
+        element: <BuryatStateUniversity />,
+      },
+      {
+        path: 'mbbs-in-russia/ivanovo-state-medical-academy',
+        element: <IvanovoStateMedicalAcademy />,
+      },
+      {
+        path: 'mbbs-in-russia/irkutsk-state-medical-university',
+        element: <IrkutskStateMedicalUniversity />,
+      },
+      {
+        path: 'mbbs-in-russia/national-research-nuclear-university-mephi',
+        element: <NationalResearchNuclearUniversityMEPhI />,
+      },
+      {
+        path: 'mbbs-in-russia/north-western-state-medical-university',
+        element: <NorthWesternStateMedicalUniversity />,
+      },
+      {
+        path: 'mbbs-in-russia/novosibirsk-state-university',
+        element: <NovosibirskStateUniversity />,
+      },
+      {
+        path: 'mbbs-in-russia/n-p-ogarev-mordovia-state-university',
+        element: <NPOgarevMordoviaStateUniversity />,
+      },
+      {
+        path: 'mbbs-in-russia/pacific-state-medical-university',
+        element: <PacificStateMedicalUniversity />,
+      },
+      {
+        path: 'mbbs-in-russia/petrozavodsk-state-university',
+        element: <PetrozavodskStateUniversity />,
+      },
+      {
+        path: 'mbbs-in-russia/privolzhsky-research-medical-university',
+        element: <PrivolzhskyResearchMedicalUniversity />,
+      },
+      {
+        path: 'mbbs-in-russia/rostov-state-medical-university',
+        element: <RostovStateMedicalUniversity />,
+      },
+      {
+        path: 'mbbs-in-russia/ryazan-state-medical-university',
+        element: <RyazanStateMedicalUniversity />,
       },
 
       {

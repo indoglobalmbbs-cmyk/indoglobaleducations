@@ -7,6 +7,7 @@ import EnquiryModal from '../components/EnquiryModal';
 import WhatsAppWidget from '../components/WhatsAppWidget';
 import SEO from '../components/SEO';
 import ConsentBanner from '../components/ConsentBanner';
+import HubSpotPageTracker from '../components/HubSpotPageTracker';
 
 const MainLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,6 +15,7 @@ const MainLayout = () => {
 
   return (
     <div className="flex flex-col min-h-screen relative">
+      <HubSpotPageTracker />
       <SEO />
       <Navbar />
       <button
